@@ -1,9 +1,13 @@
+# GoLand
+.idea/*
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+build/league_of_legends_fight_tactics
 
 # Test binary, built with `go test -c`
 *.test
