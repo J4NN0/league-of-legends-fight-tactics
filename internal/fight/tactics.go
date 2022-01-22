@@ -7,9 +7,8 @@ import (
 	"os"
 )
 
-// Number of spell used to take hp to zero
 var fileName string
-var bestBenchmark = math.MaxInt
+var bestBenchmark = math.MaxInt // Number of spell used to take hp to zero
 
 type Tactics struct {
 }
