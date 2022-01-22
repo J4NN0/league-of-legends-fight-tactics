@@ -1,0 +1,13 @@
+name: "Jhin"
+stats:
+  hp: 100
+  atk-damage: 20
+spells:
+  - id: q
+    damage: 10
+  - id: w
+    damage: 20
+  - id: e
+    damage: 30
+  - id: r
+    damage: 40

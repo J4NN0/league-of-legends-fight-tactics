@@ -1,0 +1,13 @@
+name: "Lucian"
+stats:
+  hp: 40
+  atk-damage: 30
+spells:
+  - id: q
+    damage: 10
+  - id: w
+    damage: 20
+  - id: e
+    damage: 30
+  - id: r
+    damage: 40

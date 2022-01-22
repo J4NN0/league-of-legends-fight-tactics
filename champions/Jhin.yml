@@ -1,9 +1,0 @@
-name: "Jhin"
-stats:
-  hp: 100
-  atk-damage: 20
-spells:
-  - q
-  - w
-  - e
-  - r

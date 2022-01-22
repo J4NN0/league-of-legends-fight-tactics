@@ -14,7 +14,7 @@ cover_profile_filename := build/cover.out
 
 # === BUILD =======================================================
 build:
-	go build cmd/$(app_name)/main.go
+	go build -o build/league_of_legends_fight_tactics cmd/$(app_name)/main.go
 
 # === TEST =======================================================
 # Run all tests.
@@ -39,9 +39,17 @@ run-lint:
 	golangci-lint run ./...
 
 # === TOOLS =======================================================
-# Get a decorated HTML presentation of cover file: showing the covered (green), uncovered (red), and uninstrumented (grey) source.
+# Get a decorated HTML presentation of cover file: showing the covered (green), uncovered (red), and un-instrumented (grey) source.
 tool-read-cover:
 	go tool cover -html=$(cover_profile_filename)
 
+# Fix go.mod and go.sum
+tool-mod-tidy:
+	go mod tidy
+
+# Format go code
+tool-fmt:
+	go fmt ./...
+
 # === DEVELOPMENT =======================================================
-dev-pre-commit: build run-lint test-cover
+dev-pre-commit: tool-mod-tidy tool-fmt build run-lint test-cover
