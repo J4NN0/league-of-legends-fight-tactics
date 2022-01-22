@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"league-of-legends-fight-tactics/internal/fight"
+	"league-of-legends-fight-tactics/internal/loltactics"
 	"league-of-legends-fight-tactics/pkg/yml"
 )
 
@@ -21,6 +21,5 @@ func main() {
 	}
 	fmt.Printf("%+v\n", championLucian)
 
-	fightTactics := fight.New()
-	fightTactics.Fight(championJhin, championLucian)
+	loltactics.Fight(championJhin, championLucian)
 }

@@ -1,4 +1,4 @@
-package fight
+package loltactics
 
 import (
 	"fmt"
@@ -10,15 +10,8 @@ import (
 var fileName string
 var bestBenchmark = math.MaxInt // Number of spell used to take hp to zero
 
-type Tactics struct {
-}
-
-func New() *Tactics {
-	return &Tactics{}
-}
-
 // Fight Champion1 vs Champion2 health point
-func (t *Tactics) Fight(champion1, champion2 yml.LoLChampion) {
+func Fight(champion1, champion2 yml.LoLChampion) {
 	fileName = setFilePath(champion1, champion2)
 	fi, err := os.Create(fileName)
 	if err != nil {
@@ -37,7 +30,7 @@ func (t *Tactics) Fight(champion1, champion2 yml.LoLChampion) {
 
 // setFilePath Set filename path
 func setFilePath(champion1, champion2 yml.LoLChampion) string {
-	return fmt.Sprintf("fights/%s_vs_%s.fight", champion1.Name, champion2.Name)
+	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
 // getWorstCase Compute the worst case for allocate 'sol' array (i.e. hp / spell with less damage)

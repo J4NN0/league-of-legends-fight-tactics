@@ -1,4 +1,4 @@
-package fight
+package loltactics
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ import (
 func TestSetFilePath(t *testing.T) {
 	filename := setFilePath(yml.LoLChampion{Name: "Name1"}, yml.LoLChampion{Name: "Name2"})
 
-	assert.Equal(t, "fights/Name1_vs_Name2.fight", filename)
+	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }
 
 func TestGetWorstCase(t *testing.T) {
