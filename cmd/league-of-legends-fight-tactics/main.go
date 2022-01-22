@@ -22,6 +22,5 @@ func main() {
 	fmt.Printf("%+v\n", championLucian)
 
 	fightTactics := fight.New()
-
 	fightTactics.Fight(championJhin, championLucian)
 }

@@ -12,9 +12,9 @@ const fileExtension = ".yml"
 
 // LoLChampion LoL champion data struct
 type LoLChampion struct {
-	Name   string   `yaml:"name"`
-	Stats  stat     `yaml:"stats"`
-	Spells []Spells `yaml:"spells"`
+	Name   string  `yaml:"name"`
+	Stats  stat    `yaml:"stats"`
+	Spells []Spell `yaml:"spells"`
 }
 
 type stat struct {
@@ -22,7 +22,7 @@ type stat struct {
 	AtkDamage float32 `yaml:"atk-damage"`
 }
 
-type Spells struct {
+type Spell struct {
 	ID     string  `yaml:"id"`
 	Damage float32 `yaml:"damage"`
 }
@@ -32,7 +32,7 @@ func LoadLoLChampion(championName string) (champion LoLChampion, err error) {
 
 	yamlFile, err := ioutil.ReadFile(championYmlFilename)
 	if err != nil {
-		return champion, fmt.Errorf("error reading %s: %w", championYmlFilename, err)
+		return champion, err
 	}
 
 	err = yaml.Unmarshal(yamlFile, &champion)

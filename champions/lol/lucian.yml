@@ -1,6 +1,6 @@
 name: "Lucian"
 stats:
-  hp: 40
+  hp: 200
   atk-damage: 30
 spells:
   - id: q
