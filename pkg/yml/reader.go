@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const baseChampionPath = "champions/lol/"
+const BaseChampionPath = "champions/lol/"
 const fileExtension = ".yml"
 
 // LoLChampion LoL champion data struct
@@ -43,5 +43,5 @@ func LoadLoLChampion(championName string) (champion LoLChampion, err error) {
 }
 
 func getYMLPath(championName string) string {
-	return baseChampionPath + strings.ToLower(championName) + fileExtension
+	return BaseChampionPath + strings.ToLower(championName) + fileExtension
 }

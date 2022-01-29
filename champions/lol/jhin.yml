@@ -1,6 +1,6 @@
 name: "Jhin"
 stats:
-  hp: 100
+  hp: 50
   atk-damage: 20
 spells:
   - id: aa
