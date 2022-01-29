@@ -5,9 +5,13 @@ stats:
 spells:
   - id: q
     damage: 10
+    cooldown: 1
   - id: w
     damage: 20
+    cooldown: 2
   - id: e
     damage: 30
+    cooldown: 3
   - id: r
     damage: 40
+    cooldown: 4

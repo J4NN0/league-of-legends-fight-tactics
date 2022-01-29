@@ -23,21 +23,20 @@ type stat struct {
 }
 
 type Spell struct {
-	ID     string  `yaml:"id"`
-	Damage float32 `yaml:"damage"`
+	ID       string  `yaml:"id"`
+	Damage   float32 `yaml:"damage"`
+	Cooldown float32 `yaml:"cooldown"`
 }
 
 func LoadLoLChampion(championName string) (champion LoLChampion, err error) {
-	var championYmlFilename = getYMLPath(championName)
-
-	yamlFile, err := ioutil.ReadFile(championYmlFilename)
+	yamlFile, err := ioutil.ReadFile(getYMLPath(championName))
 	if err != nil {
-		return champion, err
+		return LoLChampion{}, err
 	}
 
 	err = yaml.Unmarshal(yamlFile, &champion)
 	if err != nil {
-		return champion, fmt.Errorf("error unmarshalling: %w", err)
+		return LoLChampion{}, fmt.Errorf("error unmarshalling: %w", err)
 	}
 
 	return champion, nil

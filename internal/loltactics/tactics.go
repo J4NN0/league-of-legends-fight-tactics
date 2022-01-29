@@ -2,28 +2,20 @@ package loltactics
 
 import (
 	"fmt"
+	"league-of-legends-fight-tactics/pkg/file"
 	"league-of-legends-fight-tactics/pkg/yml"
 	"math"
-	"os"
 )
 
 var fileName string
-var bestBenchmark = math.MaxInt // Number of spell used to take hp to zero
+var bestBenchmark float32 = math.MaxFloat32 // How many seconds to take down the enemy
 
 // Fight Champion1 vs Champion2 health point
 func Fight(champion1, champion2 yml.LoLChampion) {
-	fileName = setFilePath(champion1, champion2)
-	fi, err := os.Create(fileName)
-	if err != nil {
-		panic(err)
-	}
-	defer func() {
-		if err := fi.Close(); err != nil {
-			panic(err)
-		}
-	}()
+	var sol []yml.Spell
 
-	sol := make([]yml.Spell, getWorstCase(champion1.Spells, champion2.Stats.Hp))
+	fileName = setFilePath(champion1, champion2)
+	file.Create(fileName)
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp)
 }
@@ -33,19 +25,6 @@ func setFilePath(champion1, champion2 yml.LoLChampion) string {
 	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
-// getWorstCase Compute the worst case for allocate 'sol' array (i.e. hp / spell with less damage)
-func getWorstCase(spells []yml.Spell, hp float32) int {
-	minDamage := math.MaxFloat32
-
-	for _, spell := range spells {
-		if float64(spell.Damage) < minDamage {
-			minDamage = float64(spell.Damage)
-		}
-	}
-
-	return int(float64(hp) / minDamage)
-}
-
 func getBestRoundOfSpells(pos int, spells, sol []yml.Spell, hp float32) {
 	if isHpZero(sol, hp) {
 		setBenchmark(sol, hp)
@@ -53,8 +32,9 @@ func getBestRoundOfSpells(pos int, spells, sol []yml.Spell, hp float32) {
 	}
 
 	for i := 0; i < len(spells); i++ {
-		sol[pos] = spells[i]
+		sol = append(sol, spells[i])
 		getBestRoundOfSpells(pos+1, spells, sol, hp)
+		sol = sol[:len(sol)-1] // pop value
 	}
 }
 
@@ -66,56 +46,38 @@ func isHpZero(sol []yml.Spell, hp float32) bool {
 			return true
 		}
 	}
-
 	return false
 }
 
 func setBenchmark(spells []yml.Spell, hp float32) {
-	tmpBench := getBenchmark(spells, hp)
+	tmpBench := getBenchmark(spells)
 	if tmpBench < bestBenchmark {
 		bestBenchmark = tmpBench
-
-		fo, err := os.Create(fileName)
-		if err != nil {
-			panic(err)
-		}
-		defer func() {
-			if err := fo.Close(); err != nil {
-				panic(err)
-			}
-		}()
-
-		fmt.Printf("New solution found: %v (%d)\n", spells[:bestBenchmark], bestBenchmark)
-		_, err = fo.WriteString(getRoundSpellsToString(spells, bestBenchmark, hp))
-		if err != nil {
-			panic(err)
-		}
+		fmt.Printf("New solution found: %v (%.2fs)\n", spells, bestBenchmark)
+		file.Write(fileName, getRoundSpellsToString(spells, hp, bestBenchmark))
 	}
 }
 
-// getBenchmark Get the exact number of spells needed to take hp down to zero
-func getBenchmark(spells []yml.Spell, hp float32) int {
-	var benchmark int
+// getBenchmark Given a set of spells (that take hp down to zero), return the related benchmark
+func getBenchmark(spells []yml.Spell) float32 {
+	var benchmark float32
 
-	for i, spell := range spells {
-		hp = hp - spell.Damage
-		if hp <= 0 {
-			benchmark = i + 1
-			break
-		}
+	for _, spell := range spells {
+		benchmark += spell.Cooldown
 	}
 
 	return benchmark
 }
 
 // getRoundSpellsToString Format spells into string
-func getRoundSpellsToString(spells []yml.Spell, benchmark int, hp float32) string {
+func getRoundSpellsToString(spells []yml.Spell, hp, benchmark float32) string {
 	var spellsToString string
 
-	for i := 0; i < benchmark; i++ {
-		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", spells[i].ID, spells[i].Damage, hp, hp-spells[i].Damage)
-		hp = hp - spells[i].Damage
+	for _, s := range spells {
+		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", s.ID, s.Damage, hp, hp-s.Damage)
+		hp = hp - s.Damage
 	}
+	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 
 	return spellsToString
 }
