@@ -3,6 +3,9 @@ stats:
   hp: 40
   atk-damage: 30
 spells:
+  - id: aa
+    damage: 5
+    cooldown: 3
   - id: q
     damage: 10
     cooldown: 1
