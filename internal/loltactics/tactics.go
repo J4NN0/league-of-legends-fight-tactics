@@ -7,21 +7,23 @@ import (
 	"math"
 )
 
-var fileName string
-var bestBenchmark float32 = math.MaxFloat32 // How much time (in seconds) to slay the enemy
-var bestRoundOfSpells []lolchampion.Spell
+type bestSolution struct {
+	Benchmark float32 // How much time (in seconds) to slay the enemy
+	RoundOfSpells []lolchampion.Spell
+}
 
 // Fight Champion1 vs Champion2 health point
 func Fight(champion1, champion2 lolchampion.Champion) {
 	var sol []lolchampion.Spell
+	var bestSol = bestSolution{Benchmark: math.MaxFloat32, RoundOfSpells: []lolchampion.Spell{}}
 
-	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp)
+	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp, &bestSol)
 
-	fmt.Printf("[+] Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestRoundOfSpells, bestBenchmark)
+	fmt.Printf("[+] Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
 
-	fileName = setFilePath(champion1, champion2)
+	fileName := setFilePath(champion1, champion2)
 	file.Create(fileName)
-	file.Write(fileName, getRoundSpellsToString(bestRoundOfSpells, champion2.Stats.Hp, bestBenchmark))
+	file.Write(fileName, getRoundSpellsToString(bestSol.RoundOfSpells, champion2.Stats.Hp, bestSol.Benchmark))
 }
 
 // setFilePath Set filename path
@@ -29,15 +31,15 @@ func setFilePath(champion1, champion2 lolchampion.Champion) string {
 	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
-func getBestRoundOfSpells(pos int, spells, sol []lolchampion.Spell, hp float32) {
+func getBestRoundOfSpells(pos int, spells, sol []lolchampion.Spell, hp float32, bestSol *bestSolution) {
 	if isHpZero(sol, hp) {
-		setBenchmark(sol)
+		setBenchmark(sol, bestSol)
 		return
 	}
 
 	for i := 0; i < len(spells); i++ {
 		sol = append(sol, spells[i])
-		getBestRoundOfSpells(pos+1, spells, sol, hp)
+		getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
 		sol = sol[:len(sol)-1] // pop value
 	}
 }
@@ -53,11 +55,11 @@ func isHpZero(sol []lolchampion.Spell, hp float32) bool {
 	return false
 }
 
-func setBenchmark(spells []lolchampion.Spell) {
+func setBenchmark(spells []lolchampion.Spell, bestSol *bestSolution) {
 	tmpBench := getBenchmark(spells)
-	if tmpBench < bestBenchmark {
-		bestBenchmark = tmpBench
-		bestRoundOfSpells = spells
+	if tmpBench < bestSol.Benchmark {
+		bestSol.Benchmark = tmpBench
+		bestSol.RoundOfSpells = spells
 	}
 }
 

@@ -35,14 +35,14 @@ func fightChampion(c1Name, c2Name string) {
 		fmt.Printf("Error loading champion: %v", err)
 		return
 	}
-	fmt.Printf("%+v\n", c1)
+	// fmt.Printf("%+v\n", c1)
 
 	c2, err := lolchampion.Load(c2Name)
 	if err != nil {
 		fmt.Printf("Error loading champion: %v", err)
 		return
 	}
-	fmt.Printf("%+v\n", c2)
+	// fmt.Printf("%+v\n", c2)
 
 	loltactics.Fight(c1, c2)
 }
