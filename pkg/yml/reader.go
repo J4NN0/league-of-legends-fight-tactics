@@ -18,14 +18,14 @@ type LoLChampion struct {
 }
 
 type stat struct {
-	Hp        float32 `yaml:"hp"`
-	AtkDamage float32 `yaml:"atk-damage"`
+	Hp float32 `yaml:"hp"`
 }
 
 type Spell struct {
 	ID       string  `yaml:"id"`
 	Damage   float32 `yaml:"damage"`
 	Cooldown float32 `yaml:"cooldown"`
+	Cast     float32 `yaml:"cast"`
 }
 
 func LoadLoLChampion(championName string) (champion LoLChampion, err error) {

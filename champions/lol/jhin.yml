@@ -1,20 +1,24 @@
 name: "Jhin"
 stats:
   hp: 50
-  atk-damage: 20
 spells:
   - id: aa
     damage: 5
     cooldown: 3
+    cast: 5
   - id: q
     damage: 10
     cooldown: 1
+    cast: 5
   - id: w
     damage: 20
     cooldown: 2
+    cast: 5
   - id: e
     damage: 30
     cooldown: 3
+    cast: 5
   - id: r
     damage: 40
     cooldown: 4
+    cast: 5

@@ -43,32 +43,101 @@ func TestIsHpZero(t *testing.T) {
 	assert.Equal(t, false, isZero)
 }
 
-func TestGetBenchmark(t *testing.T) {
+func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
 	spells := []yml.Spell{
+		{
+			ID:       "aa",
+			Damage:   10,
+			Cooldown: 0.0,
+			Cast:     0.5,
+		},
 		{
 			ID:       "q",
 			Damage:   10,
 			Cooldown: 1.0,
+			Cast:     1.0,
 		},
 		{
 			ID:       "w",
 			Damage:   20,
 			Cooldown: 2.0,
+			Cast:     2.0,
 		},
 		{
 			ID:       "e",
 			Damage:   30,
 			Cooldown: 3.0,
+			Cast:     3.0,
 		},
 		{
 			ID:       "r",
 			Damage:   40,
 			Cooldown: 4.0,
+			Cast:     4.0,
 		},
 	}
 
 	benchmark := getBenchmark(spells)
-	assert.Equal(t, float32(10), benchmark)
+	assert.Equal(t, float32(10.5), benchmark)
+}
+
+func TestGetBenchmark_WithReUsageSpells(t *testing.T) {
+	spells := []yml.Spell{
+		{
+			ID:       "aa",
+			Damage:   10,
+			Cooldown: 0.0,
+			Cast:     0.5,
+		},
+		{
+			ID:       "q",
+			Damage:   10,
+			Cooldown: 1.0,
+			Cast:     1.0,
+		},
+		{
+			ID:       "w",
+			Damage:   20,
+			Cooldown: 2.0,
+			Cast:     2.0,
+		},
+		{
+			ID:       "w",
+			Damage:   20,
+			Cooldown: 2.0,
+			Cast:     2.0,
+		},
+	}
+
+	benchmark := getBenchmark(spells)
+	assert.Equal(t, float32(7.5), benchmark)
+}
+
+func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
+	usedSpells := []yml.Spell{
+		{
+			ID:       "aa",
+			Damage:   10,
+			Cooldown: 0.0,
+			Cast:     0.5,
+		},
+		{
+			ID:       "q",
+			Damage:   50,
+			Cooldown: 5.0,
+			Cast:     2.0,
+		},
+		{
+			ID:       "w",
+			Damage:   20,
+			Cooldown: 8.0,
+			Cast:     1.0,
+		},
+	}
+	spellToBeReused := yml.Spell{ID: "w", Damage: 20.0, Cooldown: 8.0, Cast: 1.0}
+
+	timeToWait := getAdditionalTimeIfSpellIsInCooldown(spellToBeReused, usedSpells)
+	assert.Equal(t, float32(8), timeToWait)
 }
 
 func TestGetRoundSpellsToString(t *testing.T) {

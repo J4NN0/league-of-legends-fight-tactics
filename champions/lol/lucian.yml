@@ -1,20 +1,24 @@
 name: "Lucian"
 stats:
   hp: 100
-  atk-damage: 30
 spells:
   - id: aa
     damage: 5
-    cooldown: 3
+    cooldown: 0
+    cast: 5
   - id: q
     damage: 10
-    cooldown: 1
+    cooldown: 5
+    cast: 1
   - id: w
     damage: 20
-    cooldown: 2
+    cooldown: 5
+    cast: 2
   - id: e
     damage: 30
-    cooldown: 3
+    cooldown: 8
+    cast: 3
   - id: r
     damage: 40
-    cooldown: 4
+    cooldown: 10
+    cast: 4

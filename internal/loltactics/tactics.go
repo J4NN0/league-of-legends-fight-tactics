@@ -61,12 +61,48 @@ func setBenchmark(spells []yml.Spell, hp float32) {
 // getBenchmark Given a set of spells (that take hp down to zero), return the related benchmark
 func getBenchmark(spells []yml.Spell) float32 {
 	var benchmark float32
+	var usedSpells []yml.Spell
 
 	for _, spell := range spells {
-		benchmark += spell.Cooldown
+		benchmark += spell.Cast + getAdditionalTimeIfSpellIsInCooldown(spell, usedSpells)
+		usedSpells = append(usedSpells, spell)
 	}
 
 	return benchmark
+}
+
+// getAdditionalTimeIfSpellIsInCooldown Get additional time to wait if spell has been used before and is therefore still in cooldown
+func getAdditionalTimeIfSpellIsInCooldown(currentSpell yml.Spell, usedSpells []yml.Spell) float32 {
+	var usedSpellPos = -1
+	var timeToWait float32
+
+	// Check if spell has been used already
+	for i, usedSpell := range usedSpells {
+		if currentSpell.ID == usedSpell.ID {
+			usedSpellPos = i + 1 // (+1 to exclude this spell from the count below, i.e. cooldown starts after cast)
+			break
+		}
+	}
+
+	// If it has been used before, check if spell is still in cooldown or not
+	if usedSpellPos != -1 {
+		var timePassed float32
+
+		// Compute how much time has passed between the first usage of the spell and its re-usage
+		for i := usedSpellPos; i < len(usedSpells); i++ {
+			timePassed += usedSpells[i].Cast
+		}
+
+		if timePassed >= currentSpell.Cooldown {
+			// Spell is ready to be used
+			timeToWait = 0
+		} else {
+			// Spell is still in cooldown
+			timeToWait = currentSpell.Cooldown - timePassed
+		}
+	}
+
+	return timeToWait
 }
 
 // getRoundSpellsToString Format spells into string

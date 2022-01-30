@@ -18,5 +18,8 @@ build/league_of_legends_fight_tactics
 # MacOS
 *.DS_Store
 
+# Env
+*.env
+
 # Dependency directories (remove the comment below to include it)
 # vendor/
