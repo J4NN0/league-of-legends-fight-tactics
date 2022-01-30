@@ -27,7 +27,8 @@ func main() {
 }
 
 func fightChampion(c1Name, c2Name string) {
-	fmt.Printf("[-] Reading %s champion data ...\n", c1Name)
+	fmt.Printf("[-] Loading %s vs %s champions data ...\n", c1Name, c2Name)
+
 	c1, err := yml.LoadLoLChampion(c1Name)
 	if err != nil {
 		fmt.Printf("Error loading champion: %v", err)
@@ -35,7 +36,6 @@ func fightChampion(c1Name, c2Name string) {
 	}
 	// fmt.Printf("%+v\n", c1)
 
-	fmt.Printf("[-] Reading %s champion data ...\n", c2Name)
 	c2, err := yml.LoadLoLChampion(c2Name)
 	if err != nil {
 		fmt.Printf("Error loading champion: %v", err)
@@ -50,7 +50,7 @@ func allChampionsFight() {
 	var champions []string
 
 	err := filepath.Walk(yml.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
-		champions = append(champions, strings.TrimSuffix(filepath.Base(path), filepath.Ext(filepath.Base(path))))
+		champions = append(champions, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
 		return nil
 	})
 	if err != nil {

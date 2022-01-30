@@ -32,7 +32,10 @@ test-cover:
 # === RUN =======================================================
 # Run application.
 run:
-	go run cmd/$(app_name)/main.go
+	go run cmd/$(app_name)/main.go -c1 $(c1) -c2 $(c2)
+
+run-all:
+	go run cmd/$(app_name)/main.go -all=true
 
 # Run application using linters: it runs linters in parallel, uses caching, supports yaml config, etc.
 run-lint:

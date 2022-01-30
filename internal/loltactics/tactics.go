@@ -8,16 +8,20 @@ import (
 )
 
 var fileName string
-var bestBenchmark float32 = math.MaxFloat32 // How many seconds to take down the enemy
+var bestBenchmark float32 = math.MaxFloat32 // How much time (in seconds) to slay the enemy
+var bestRoundOfSpells []yml.Spell
 
 // Fight Champion1 vs Champion2 health point
 func Fight(champion1, champion2 yml.LoLChampion) {
 	var sol []yml.Spell
 
+	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp)
+
+	fmt.Printf("[+] Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestRoundOfSpells, bestBenchmark)
+
 	fileName = setFilePath(champion1, champion2)
 	file.Create(fileName)
-
-	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp)
+	file.Write(fileName, getRoundSpellsToString(bestRoundOfSpells, champion2.Stats.Hp, bestBenchmark))
 }
 
 // setFilePath Set filename path
@@ -27,7 +31,7 @@ func setFilePath(champion1, champion2 yml.LoLChampion) string {
 
 func getBestRoundOfSpells(pos int, spells, sol []yml.Spell, hp float32) {
 	if isHpZero(sol, hp) {
-		setBenchmark(sol, hp)
+		setBenchmark(sol)
 		return
 	}
 
@@ -49,12 +53,11 @@ func isHpZero(sol []yml.Spell, hp float32) bool {
 	return false
 }
 
-func setBenchmark(spells []yml.Spell, hp float32) {
+func setBenchmark(spells []yml.Spell) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestBenchmark {
 		bestBenchmark = tmpBench
-		fmt.Printf("New solution found: %v (%.2fs)\n", spells, bestBenchmark)
-		file.Write(fileName, getRoundSpellsToString(spells, hp, bestBenchmark))
+		bestRoundOfSpells = spells
 	}
 }
 
