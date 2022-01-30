@@ -10,8 +10,8 @@ import (
 const BaseChampionPath = "champions/lol/"
 const fileExtension = ".yml"
 
-// LoLChampion LoL champion data struct
-type LoLChampion struct {
+// Champion LoL champion data struct
+type Champion struct {
 	Name   string  `yaml:"name"`
 	Stats  stat    `yaml:"stats"`
 	Spells []Spell `yaml:"spells"`
@@ -28,15 +28,15 @@ type Spell struct {
 	Cast     float32 `yaml:"cast"`
 }
 
-func Load(championName string) (champion LoLChampion, err error) {
+func Load(championName string) (champion Champion, err error) {
 	yamlFile, err := ioutil.ReadFile(getYMLPath(championName))
 	if err != nil {
-		return LoLChampion{}, err
+		return Champion{}, err
 	}
 
 	err = yaml.Unmarshal(yamlFile, &champion)
 	if err != nil {
-		return LoLChampion{}, fmt.Errorf("error unmarshalling: %w", err)
+		return Champion{}, fmt.Errorf("error unmarshalling: %w", err)
 	}
 
 	return champion, nil

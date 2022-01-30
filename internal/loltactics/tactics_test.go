@@ -8,7 +8,7 @@ import (
 )
 
 func TestSetFilePath(t *testing.T) {
-	filename := setFilePath(lolchampion.LoLChampion{Name: "Name1"}, lolchampion.LoLChampion{Name: "Name2"})
+	filename := setFilePath(lolchampion.Champion{Name: "Name1"}, lolchampion.Champion{Name: "Name2"})
 
 	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }

@@ -12,7 +12,7 @@ var bestBenchmark float32 = math.MaxFloat32 // How much time (in seconds) to sla
 var bestRoundOfSpells []lolchampion.Spell
 
 // Fight Champion1 vs Champion2 health point
-func Fight(champion1, champion2 lolchampion.LoLChampion) {
+func Fight(champion1, champion2 lolchampion.Champion) {
 	var sol []lolchampion.Spell
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp)
@@ -25,7 +25,7 @@ func Fight(champion1, champion2 lolchampion.LoLChampion) {
 }
 
 // setFilePath Set filename path
-func setFilePath(champion1, champion2 lolchampion.LoLChampion) string {
+func setFilePath(champion1, champion2 lolchampion.Champion) string {
 	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
