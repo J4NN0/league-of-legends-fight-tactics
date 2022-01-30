@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
 )
 
 func main() {
@@ -47,6 +48,7 @@ func fightChampion(c1Name, c2Name string) {
 }
 
 func allChampionsFight() {
+	var wg sync.WaitGroup
 	var champions []string
 
 	err := filepath.Walk(yml.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
@@ -62,8 +64,16 @@ func allChampionsFight() {
 	for _, c1 := range champions {
 		for _, c2 := range champions {
 			if c1 != c2 {
-				fightChampion(c1, c2)
+				wg.Add(1)
+				c1 := c1
+				c2 := c2
+				go func() {
+					defer wg.Done()
+					fightChampion(c1, c2)
+				}()
 			}
 		}
 	}
+
+	wg.Wait()
 }
