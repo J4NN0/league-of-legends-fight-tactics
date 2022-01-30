@@ -1,4 +1,4 @@
-package yml
+package lolchampion
 
 import (
 	"github.com/stretchr/testify/assert"

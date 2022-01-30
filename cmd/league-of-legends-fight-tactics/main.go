@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"league-of-legends-fight-tactics/internal/lolchampion"
 	"league-of-legends-fight-tactics/internal/loltactics"
-	"league-of-legends-fight-tactics/pkg/yml"
 	"os"
 	"path/filepath"
 	"strings"
@@ -30,14 +30,14 @@ func main() {
 func fightChampion(c1Name, c2Name string) {
 	fmt.Printf("[-] Loading %s vs %s champions data ...\n", c1Name, c2Name)
 
-	c1, err := yml.LoadLoLChampion(c1Name)
+	c1, err := lolchampion.Load(c1Name)
 	if err != nil {
 		fmt.Printf("Error loading champion: %v", err)
 		return
 	}
 	// fmt.Printf("%+v\n", c1)
 
-	c2, err := yml.LoadLoLChampion(c2Name)
+	c2, err := lolchampion.Load(c2Name)
 	if err != nil {
 		fmt.Printf("Error loading champion: %v", err)
 		return
@@ -51,7 +51,7 @@ func allChampionsFight() {
 	var wg sync.WaitGroup
 	var champions []string
 
-	err := filepath.Walk(yml.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(lolchampion.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
 		champions = append(champions, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
 		return nil
 	})

@@ -3,18 +3,18 @@ package loltactics
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"league-of-legends-fight-tactics/pkg/yml"
+	"league-of-legends-fight-tactics/internal/lolchampion"
 	"testing"
 )
 
 func TestSetFilePath(t *testing.T) {
-	filename := setFilePath(yml.LoLChampion{Name: "Name1"}, yml.LoLChampion{Name: "Name2"})
+	filename := setFilePath(lolchampion.LoLChampion{Name: "Name1"}, lolchampion.LoLChampion{Name: "Name2"})
 
 	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }
 
 func TestIsHpZero(t *testing.T) {
-	spells := []yml.Spell{
+	spells := []lolchampion.Spell{
 		{
 			ID:     "q",
 			Damage: 10,
@@ -44,7 +44,7 @@ func TestIsHpZero(t *testing.T) {
 }
 
 func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
-	spells := []yml.Spell{
+	spells := []lolchampion.Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
@@ -82,7 +82,7 @@ func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
 }
 
 func TestGetBenchmark_WithReUsageSpells(t *testing.T) {
-	spells := []yml.Spell{
+	spells := []lolchampion.Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
@@ -114,7 +114,7 @@ func TestGetBenchmark_WithReUsageSpells(t *testing.T) {
 }
 
 func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
-	usedSpells := []yml.Spell{
+	usedSpells := []lolchampion.Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
@@ -134,7 +134,7 @@ func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
 			Cast:     1.0,
 		},
 	}
-	spellToBeReused := yml.Spell{ID: "w", Damage: 20.0, Cooldown: 8.0, Cast: 1.0}
+	spellToBeReused := lolchampion.Spell{ID: "w", Damage: 20.0, Cooldown: 8.0, Cast: 1.0}
 
 	timeToWait := getAdditionalTimeIfSpellIsInCooldown(spellToBeReused, usedSpells)
 	assert.Equal(t, float32(8), timeToWait)
@@ -142,7 +142,7 @@ func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
 
 func TestGetRoundSpellsToString(t *testing.T) {
 	var benchmark, hp float32 = 3.0, 15.0
-	spells := []yml.Spell{
+	spells := []lolchampion.Spell{
 		{
 			ID:       "q",
 			Damage:   10,

@@ -1,4 +1,4 @@
-package yml
+package lolchampion
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ type Spell struct {
 	Cast     float32 `yaml:"cast"`
 }
 
-func LoadLoLChampion(championName string) (champion LoLChampion, err error) {
+func Load(championName string) (champion LoLChampion, err error) {
 	yamlFile, err := ioutil.ReadFile(getYMLPath(championName))
 	if err != nil {
 		return LoLChampion{}, err
