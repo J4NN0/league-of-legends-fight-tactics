@@ -2,6 +2,7 @@ package riot
 
 import (
 	"fmt"
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
 )
@@ -10,11 +11,12 @@ const dDragonLolAllChampionsUrl string = "https://ddragon.leagueoflegends.com/cd
 const dDragonLolChampionBaseUrl string = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion"
 
 type ApiClient struct {
-	hc *http.Client
+	log *log.Logger
+	hc  *http.Client
 }
 
-func NewApiClient(hc *http.Client) *ApiClient {
-	return &ApiClient{hc: hc}
+func NewApiClient(log *log.Logger, hc *http.Client) *ApiClient {
+	return &ApiClient{log: log, hc: hc}
 }
 
 type dDragonLoLAllChampionsResponse struct {
@@ -46,30 +48,30 @@ type stats struct {
 	AttackDamagePerLevel float32 `json:"attackdamageperlevel"`
 	AttackSpeed          float32 `json:"attackspeed"`
 	AttackSpeedPerLevel  float32 `json:"attackspeedperlevel"`
-	Spells               []spell ` json:"spells"`
+	Spells               []spell `json:"spells"`
 }
 
 type spell struct {
-	ID       string `json:"id"`
-	Name     string `json:"name"`
-	MaxRank  int    `json:"maxrank"`
-	Cooldown []float32
+	ID       string    `json:"id"`
+	Name     string    `json:"name"`
+	MaxRank  int       `json:"maxrank"`
+	Cooldown []float32 `json:"cooldown"`
 }
 
-func (a *ApiClient) FetchAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
+func (c *ApiClient) FetchAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
 	var allChampionsResponse dDragonLoLAllChampionsResponse
 
-	fmt.Printf("Fetching all league of legends champions ...\n")
-	err = httpclient.Get(a.hc, dDragonLolAllChampionsUrl, &allChampionsResponse)
+	c.log.Printf("Fetching all league of legends champions ...\n")
+	err = httpclient.Get(c.hc, dDragonLolAllChampionsUrl, &allChampionsResponse)
 	if err != nil {
 		return []DDragonChampionResponse{}, err
 	}
 
 	for championName := range allChampionsResponse.Data {
-		fmt.Printf("Fetching %s ...\n", championName)
-		championResponse, err := a.GetLoLChampion(championName)
+		c.log.Printf("Fetching %s ...\n", championName)
+		championResponse, err := c.GetLoLChampion(championName)
 		if err != nil {
-			fmt.Printf("[!] Could not fetch champion %s: %v\n", championName, err)
+			c.log.Warningf("Could not fetch champion %s: %v\n", championName, err)
 		}
 		championsData = append(championsData, championResponse)
 	}
@@ -77,8 +79,8 @@ func (a *ApiClient) FetchAllLoLChampions() (championsData []DDragonChampionRespo
 	return championsData, nil
 }
 
-func (a *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
-	err = httpclient.Get(a.hc, getChampionUrl(championName), &championResponse)
+func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
+	err = httpclient.Get(c.hc, getChampionUrl(championName), &championResponse)
 	if err != nil {
 		return DDragonChampionResponse{}, err
 	}

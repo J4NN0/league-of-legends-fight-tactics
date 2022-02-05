@@ -3,8 +3,10 @@ package riot
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
+	"league-of-legends-fight-tactics/internal/log"
 	"net/http"
 	"testing"
 )
@@ -53,7 +55,7 @@ func TestFetchAllLoLChampionsSuccess(t *testing.T) {
 	}
 
 	callCount := 0
-	client := NewApiClient(newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 
 		// Get all champions
@@ -93,7 +95,7 @@ func TestFetchAllLoLChampionsSuccess(t *testing.T) {
 }
 
 func TestFetchAllLoLChampionsFail_GetAllChampions(t *testing.T) {
-	client := NewApiClient(newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(dDragonLoLAllChampionsResponse{}, 403)
 	}))
 
@@ -105,7 +107,7 @@ func TestFetchAllLoLChampionsFail_GetAllChampions(t *testing.T) {
 
 func TestFetchAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 	callCount := 0
-	client := NewApiClient(newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 		if callCount == 2 {
 			return mockResponse(DDragonChampionResponse{}, 403)
@@ -139,7 +141,7 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 		},
 	}
 
-	client := NewApiClient(newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{
 			Format:  format,
 			Version: version,
@@ -163,7 +165,7 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 }
 
 func TestGetLoLChampionFail(t *testing.T) {
-	client := NewApiClient(newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{}, 403)
 	}))
 
@@ -171,4 +173,13 @@ func TestGetLoLChampionFail(t *testing.T) {
 
 	assert.Equal(t, DDragonChampionResponse{}, championResponse)
 	assert.NotNil(t, err)
+}
+
+func TestGetChampionUrl(t *testing.T) {
+	championName := "someChampionName"
+	expectedUrl := fmt.Sprintf("%s/%s.json", dDragonLolChampionBaseUrl, championName)
+
+	url := getChampionUrl(championName)
+
+	assert.Equal(t, expectedUrl, url)
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/internal/lolchampion"
 	"league-of-legends-fight-tactics/internal/loltactics"
 	"league-of-legends-fight-tactics/internal/riot"
@@ -13,6 +14,8 @@ import (
 	"sync"
 )
 
+const appName string = "lol-tactics"
+
 func main() {
 	all := flag.Bool("all", false, "generate all fights tactics (default false)")
 	c1Name := flag.String("c1", "", "first champion name")
@@ -21,12 +24,14 @@ func main() {
 	fetchAll := flag.Bool("fetchall", false, "fetch all league of legends champions")
 	flag.Parse()
 
+	logger := log.New(appName)
+
 	if *c1Name != "" && *c2Name != "" {
 		fightChampion(*c1Name, *c2Name)
 	} else if *all {
 		allChampionsFight()
 	} else if *fetchAll {
-		riotClient := riot.NewApiClient(&http.Client{})
+		riotClient := riot.NewApiClient(logger, &http.Client{})
 		_, err := riotClient.FetchAllLoLChampions()
 		if err != nil {
 			fmt.Printf("Error while fetching league of legends champions: %v", err)
