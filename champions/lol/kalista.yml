@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Kalista
+tags: Marksman
+stats:
+  hp: 0
+  hp_per_level: 534
+  armor: 21
+  armor_per_level: 4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 69
+  attack_damage_per_level: 3.5
+  attack_speed: 0.694
+  attack_speed_per_level: 4
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 69
+  max_rank: 0
+  cooldown:
+  - 0.694
+  cast: 0
+- id: KalistaMysticShot
+  name: Pierce
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: KalistaW
+  name: Sentinel
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  cast: 0
+- id: KalistaExpungeWrapper
+  name: Rend
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: KalistaRx
+  name: Fate's Call
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 150
+  - 120
+  - 90
+  cast: 0

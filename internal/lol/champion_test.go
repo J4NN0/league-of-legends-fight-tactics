@@ -1,4 +1,4 @@
-package lolchampion
+package lol
 
 import (
 	"github.com/stretchr/testify/assert"

@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Orianna
+tags: Mage, Support
+stats:
+  hp: 0
+  hp_per_level: 530
+  armor: 17
+  armor_per_level: 3
+  spell_block: 26
+  spell_block_per_level: 0.5
+  attack_damage: 40
+  attack_damage_per_level: 2.6
+  attack_speed: 0.658
+  attack_speed_per_level: 3.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 40
+  max_rank: 0
+  cooldown:
+  - 0.658
+  cast: 0
+- id: OrianaIzunaCommand
+  name: 'Command: Attack'
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 6
+  - 5.25
+  - 4.5
+  - 3.75
+  - 3
+  cast: 0
+- id: OrianaDissonanceCommand
+  name: 'Command: Dissonance'
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: OrianaRedactCommand
+  name: 'Command: Protect'
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  cast: 0
+- id: OrianaDetonateCommand
+  name: 'Command: Shockwave'
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 95
+  - 80
+  cast: 0

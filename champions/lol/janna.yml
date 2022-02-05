@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Janna
+tags: Support, Mage
+stats:
+  hp: 0
+  hp_per_level: 500
+  armor: 28
+  armor_per_level: 3.8
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 52
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 52
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: HowlingGale
+  name: Howling Gale
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: SowTheWind
+  name: Zephyr
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: EyeOfTheStorm
+  name: Eye Of The Storm
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 13.5
+  - 12
+  - 10.5
+  - 9
+  cast: 0
+- id: ReapTheWhirlwind
+  name: Monsoon
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 150
+  - 135
+  - 120
+  cast: 0

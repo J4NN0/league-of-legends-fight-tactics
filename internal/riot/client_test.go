@@ -32,14 +32,15 @@ func newTestClient(fn RoundTripFunc) *http.Client {
 	}
 }
 
-func TestFetchAllLoLChampionsSuccess(t *testing.T) {
+func TestGetAllLoLChampionsSuccess(t *testing.T) {
 	var format, version, championName = "standAloneComplex", "1.0.0", "TestName"
 	var tags = []string{"Fighter", "Tank"}
 	var hp, armor, atkDamage float32 = 1, 2, 3
 	var expectedChampionsData = []DDragonChampionResponse{
 		{
-			Format:  format,
-			Version: version,
+			Format:   format,
+			Version:  version,
+			DataName: championName,
 			Data: map[string]championData{
 				championName: {
 					Name: championName,
@@ -89,23 +90,23 @@ func TestFetchAllLoLChampionsSuccess(t *testing.T) {
 		return nil
 	}))
 
-	championsResponse, _ := client.FetchAllLoLChampions()
+	championsResponse, _ := client.GetAllLoLChampions()
 
 	assert.Equal(t, expectedChampionsData, championsResponse)
 }
 
-func TestFetchAllLoLChampionsFail_GetAllChampions(t *testing.T) {
+func TestGetAllLoLChampionsFail_GetAllChampions(t *testing.T) {
 	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(dDragonLoLAllChampionsResponse{}, 403)
 	}))
 
-	championsResponse, err := client.FetchAllLoLChampions()
+	championsResponse, err := client.GetAllLoLChampions()
 
 	assert.Equal(t, []DDragonChampionResponse{}, championsResponse)
 	assert.NotNil(t, err)
 }
 
-func TestFetchAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
+func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 	callCount := 0
 	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
@@ -115,7 +116,7 @@ func TestFetchAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 		return nil
 	}))
 
-	championsResponse, err := client.FetchAllLoLChampions()
+	championsResponse, err := client.GetAllLoLChampions()
 
 	assert.Equal(t, []DDragonChampionResponse{}, championsResponse)
 	assert.NotNil(t, err)
@@ -126,8 +127,9 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 	var tags = []string{"Fighter", "Tank"}
 	var hp, armor, atkDamage float32 = 1, 2, 3
 	var expectedChampionResponse = DDragonChampionResponse{
-		Format:  format,
-		Version: version,
+		Format:   format,
+		Version:  version,
+		DataName: championName,
 		Data: map[string]championData{
 			championName: {
 				Name: championName,
@@ -173,6 +175,11 @@ func TestGetLoLChampionFail(t *testing.T) {
 
 	assert.Equal(t, DDragonChampionResponse{}, championResponse)
 	assert.NotNil(t, err)
+}
+
+func TestSanitizeChampionName(t *testing.T) {
+	championName := sanitizeChampionName("jHiN")
+	assert.Equal(t, "Jhin", championName)
 }
 
 func TestGetChampionUrl(t *testing.T) {

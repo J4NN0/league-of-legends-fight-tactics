@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Nasus
+tags: Fighter, Tank
+stats:
+  hp: 0
+  hp_per_level: 561
+  armor: 34
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 67
+  attack_damage_per_level: 3.5
+  attack_speed: 0.638
+  attack_speed_per_level: 3.48
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 67
+  max_rank: 0
+  cooldown:
+  - 0.638
+  cast: 0
+- id: NasusQ
+  name: Siphoning Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7.5
+  - 6.5
+  - 5.5
+  - 4.5
+  - 3.5
+  cast: 0
+- id: NasusW
+  name: Wither
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 14
+  - 13
+  - 12
+  - 11
+  cast: 0
+- id: NasusE
+  name: Spirit Fire
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: NasusR
+  name: Fury of the Sands
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 120
+  - 120
+  cast: 0

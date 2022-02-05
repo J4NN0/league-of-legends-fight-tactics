@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Qiyana
+tags: Assassin, Fighter
+stats:
+  hp: 0
+  hp_per_level: 520
+  armor: 28
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 66
+  attack_damage_per_level: 3.1
+  attack_speed: 0.688
+  attack_speed_per_level: 2.1
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 66
+  max_rank: 0
+  cooldown:
+  - 0.688
+  cast: 0
+- id: QiyanaQ
+  name: Elemental Wrath / Edge of Ixtal
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: QiyanaW
+  name: Terrashape
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: QiyanaE
+  name: Audacity
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: QiyanaR
+  name: Supreme Display of Talent
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 120
+  - 120
+  cast: 0

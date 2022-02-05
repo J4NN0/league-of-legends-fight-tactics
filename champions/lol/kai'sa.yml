@@ -1,49 +1,38 @@
 version: 12.3.1
-name: Lucian
+name: Kai'Sa
 tags: Marksman
 stats:
   hp: 0
-  hp_per_level: 571
+  hp_per_level: 600
   armor: 28
   armor_per_level: 3
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 62
-  attack_damage_per_level: 2.3
-  attack_speed: 0.638
-  attack_speed_per_level: 3.3
+  attack_damage: 59
+  attack_damage_per_level: 2
+  attack_speed: 0.644
+  attack_speed_per_level: 1.8
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
+  damage: 59
   max_rank: 0
   cooldown:
-  - 0.638
+  - 0.644
   cast: 0
-- id: LucianQ
-  name: Piercing Light
+- id: KaisaQ
+  name: Icathian Rain
   damage: 0
   max_rank: 5
   cooldown:
+  - 10
   - 9
   - 8
   - 7
   - 6
-  - 5
   cast: 0
-- id: LucianW
-  name: Ardent Blaze
-  damage: 0
-  max_rank: 5
-  cooldown:
-  - 14
-  - 13
-  - 12
-  - 11
-  - 10
-  cast: 0
-- id: LucianE
-  name: Relentless Pursuit
+- id: KaisaW
+  name: Void Seeker
   damage: 0
   max_rank: 5
   cooldown:
@@ -53,12 +42,23 @@ spells:
   - 16
   - 14
   cast: 0
-- id: LucianR
-  name: The Culling
+- id: KaisaE
+  name: Supercharge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 16
+  - 14.5
+  - 13
+  - 11.5
+  - 10
+  cast: 0
+- id: KaisaR
+  name: Killer Instinct
   damage: 0
   max_rank: 3
   cooldown:
-  - 110
+  - 130
   - 100
-  - 90
+  - 70
   cast: 0

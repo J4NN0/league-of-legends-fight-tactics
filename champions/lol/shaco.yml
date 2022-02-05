@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Shaco
+tags: Assassin
+stats:
+  hp: 0
+  hp_per_level: 560
+  armor: 30
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 63
+  attack_damage_per_level: 3
+  attack_speed: 0.694
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 63
+  max_rank: 0
+  cooldown:
+  - 0.694
+  cast: 0
+- id: Deceive
+  name: Deceive
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11.5
+  - 11
+  - 10.5
+  - 10
+  cast: 0
+- id: JackInTheBox
+  name: Jack In The Box
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  cast: 0
+- id: TwoShivPoison
+  name: Two-Shiv Poison
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: HallucinateFull
+  name: Hallucinate
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

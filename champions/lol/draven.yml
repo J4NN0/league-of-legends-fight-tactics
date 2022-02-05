@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Draven
+tags: Marksman
+stats:
+  hp: 0
+  hp_per_level: 605
+  armor: 29
+  armor_per_level: 3.3
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 60
+  attack_damage_per_level: 3.61
+  attack_speed: 0.679
+  attack_speed_per_level: 2.7
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 60
+  max_rank: 0
+  cooldown:
+  - 0.679
+  cast: 0
+- id: DravenSpinning
+  name: Spinning Axe
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: DravenFury
+  name: Blood Rush
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: DravenDoubleShot
+  name: Stand Aside
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 18
+  - 17
+  - 16
+  - 15
+  - 14
+  cast: 0
+- id: DravenRCast
+  name: Whirling Death
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Hecarim
+tags: Fighter, Tank
+stats:
+  hp: 0
+  hp_per_level: 580
+  armor: 35
+  armor_per_level: 4.25
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 66
+  attack_damage_per_level: 3.2
+  attack_speed: 0.67
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 66
+  max_rank: 0
+  cooldown:
+  - 0.67
+  cast: 0
+- id: HecarimRapidSlash
+  name: Rampage
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: HecarimW
+  name: Spirit of Dread
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 18
+  - 18
+  - 18
+  - 18
+  - 18
+  cast: 0
+- id: HecarimRamp
+  name: Devastating Charge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 20
+  - 19
+  - 18
+  - 17
+  - 16
+  cast: 0
+- id: HecarimUlt
+  name: Onslaught of Shadows
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 140
+  - 120
+  - 100
+  cast: 0

@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Morgana
+tags: Mage, Support
+stats:
+  hp: 0
+  hp_per_level: 560
+  armor: 25
+  armor_per_level: 3.8
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 56
+  attack_damage_per_level: 3.5
+  attack_speed: 0.625
+  attack_speed_per_level: 1.53
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 56
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: MorganaQ
+  name: Dark Binding
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  cast: 0
+- id: MorganaW
+  name: Tormented Shadow
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: MorganaE
+  name: Black Shield
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 24
+  - 22
+  - 20
+  - 18
+  - 16
+  cast: 0
+- id: MorganaR
+  name: Soul Shackles
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 110
+  - 100
+  cast: 0

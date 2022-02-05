@@ -1,64 +1,64 @@
 version: 12.3.1
-name: Jhin
-tags: Marksman, Mage
+name: Zilean
+tags: Support, Mage
 stats:
   hp: 0
-  hp_per_level: 585
+  hp_per_level: 504
   armor: 24
-  armor_per_level: 3.5
+  armor_per_level: 3.8
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 59
-  attack_damage_per_level: 4.7
+  attack_damage: 52
+  attack_damage_per_level: 3
   attack_speed: 0.625
-  attack_speed_per_level: 0
+  attack_speed_per_level: 2.13
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
+  damage: 52
   max_rank: 0
   cooldown:
   - 0.625
   cast: 0
-- id: JhinQ
-  name: Dancing Grenade
+- id: ZileanQ
+  name: Time Bomb
   damage: 0
   max_rank: 5
   cooldown:
-  - 7
-  - 6.5
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: ZileanW
+  name: Rewind
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 12
+  - 10
+  - 8
   - 6
-  - 5.5
-  - 5
   cast: 0
-- id: JhinW
-  name: Deadly Flourish
+- id: TimeWarp
+  name: Time Warp
   damage: 0
   max_rank: 5
   cooldown:
-  - 12
-  - 12
-  - 12
-  - 12
-  - 12
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
   cast: 0
-- id: JhinE
-  name: Captive Audience
-  damage: 0
-  max_rank: 5
-  cooldown:
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  cast: 0
-- id: JhinR
-  name: Curtain Call
+- id: ChronoShift
+  name: Chronoshift
   damage: 0
   max_rank: 3
   cooldown:
   - 120
-  - 105
   - 90
+  - 60
   cast: 0

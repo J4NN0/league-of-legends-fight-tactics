@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Malzahar
+tags: Mage, Assassin
+stats:
+  hp: 0
+  hp_per_level: 510
+  armor: 18
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 1.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 55
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: MalzaharQ
+  name: Call of the Void
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: MalzaharW
+  name: Void Swarm
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: MalzaharE
+  name: Malefic Visions
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 13
+  - 11
+  - 9
+  - 7
+  cast: 0
+- id: MalzaharR
+  name: Nether Grasp
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 140
+  - 110
+  - 80
+  cast: 0

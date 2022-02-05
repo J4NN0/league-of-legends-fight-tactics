@@ -1,64 +1,64 @@
 version: 12.3.1
-name: Jhin
-tags: Marksman, Mage
+name: Zoe
+tags: Mage, Support
 stats:
   hp: 0
-  hp_per_level: 585
-  armor: 24
+  hp_per_level: 560
+  armor: 21
   armor_per_level: 3.5
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 59
-  attack_damage_per_level: 4.7
+  attack_damage: 58
+  attack_damage_per_level: 3.3
   attack_speed: 0.625
-  attack_speed_per_level: 0
+  attack_speed_per_level: 2.5
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
+  damage: 58
   max_rank: 0
   cooldown:
   - 0.625
   cast: 0
-- id: JhinQ
-  name: Dancing Grenade
+- id: ZoeQ
+  name: Paddle Star!
   damage: 0
   max_rank: 5
   cooldown:
+  - 8.5
+  - 8
+  - 7.5
   - 7
   - 6.5
-  - 6
-  - 5.5
-  - 5
   cast: 0
-- id: JhinW
-  name: Deadly Flourish
+- id: ZoeW
+  name: Spell Thief
   damage: 0
   max_rank: 5
   cooldown:
-  - 12
-  - 12
-  - 12
-  - 12
-  - 12
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
   cast: 0
-- id: JhinE
-  name: Captive Audience
+- id: ZoeE
+  name: Sleepy Trouble Bubble
   damage: 0
   max_rank: 5
   cooldown:
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
   cast: 0
-- id: JhinR
-  name: Curtain Call
+- id: ZoeR
+  name: Portal Jump
   damage: 0
   max_rank: 3
   cooldown:
-  - 120
-  - 105
-  - 90
+  - 11
+  - 8
+  - 5
   cast: 0

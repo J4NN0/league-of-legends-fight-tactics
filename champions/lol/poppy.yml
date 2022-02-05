@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Poppy
+tags: Tank, Fighter
+stats:
+  hp: 0
+  hp_per_level: 540
+  armor: 38
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 64
+  attack_damage_per_level: 4
+  attack_speed: 0.625
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 64
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: PoppyQ
+  name: Hammer Shock
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
+  cast: 0
+- id: PoppyW
+  name: Steadfast Presence
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 24
+  - 22
+  - 20
+  - 18
+  - 16
+  cast: 0
+- id: PoppyE
+  name: Heroic Charge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  cast: 0
+- id: PoppyR
+  name: Keeper's Verdict
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 140
+  - 120
+  - 100
+  cast: 0

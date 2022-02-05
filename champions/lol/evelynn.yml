@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Evelynn
+tags: Assassin, Mage
+stats:
+  hp: 0
+  hp_per_level: 572
+  armor: 37
+  armor_per_level: 3.5
+  spell_block: 32.1
+  spell_block_per_level: 1.25
+  attack_damage: 61
+  attack_damage_per_level: 3
+  attack_speed: 0.667
+  attack_speed_per_level: 2.1
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 61
+  max_rank: 0
+  cooldown:
+  - 0.667
+  cast: 0
+- id: EvelynnQ
+  name: Hate Spike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: EvelynnW
+  name: Allure
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 14
+  - 13
+  - 12
+  - 11
+  cast: 0
+- id: EvelynnE
+  name: Whiplash
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: EvelynnR
+  name: Last Caress
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

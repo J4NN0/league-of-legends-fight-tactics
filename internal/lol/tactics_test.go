@@ -1,20 +1,19 @@
-package loltactics
+package lol
 
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"league-of-legends-fight-tactics/internal/lolchampion"
 	"testing"
 )
 
 func TestSetFilePath(t *testing.T) {
-	filename := setFilePath(lolchampion.Champion{Name: "Name1"}, lolchampion.Champion{Name: "Name2"})
+	filename := setFilePath(Champion{Name: "Name1"}, Champion{Name: "Name2"})
 
 	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }
 
 func TestIsHpZero(t *testing.T) {
-	spells := []lolchampion.Spell{
+	spells := []Spell{
 		{
 			ID:     "q",
 			Damage: 10,
@@ -44,35 +43,40 @@ func TestIsHpZero(t *testing.T) {
 }
 
 func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
-	spells := []lolchampion.Spell{
+	spells := []Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
-			Cooldown: 0.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     0.5,
 		},
 		{
 			ID:       "q",
 			Damage:   10,
-			Cooldown: 1.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     1.0,
 		},
 		{
 			ID:       "w",
 			Damage:   20,
-			Cooldown: 2.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     2.0,
 		},
 		{
 			ID:       "e",
 			Damage:   30,
-			Cooldown: 3.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     3.0,
 		},
 		{
 			ID:       "r",
 			Damage:   40,
-			Cooldown: 4.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     4.0,
 		},
 	}
@@ -82,29 +86,33 @@ func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
 }
 
 func TestGetBenchmark_WithReUsageSpells(t *testing.T) {
-	spells := []lolchampion.Spell{
+	spells := []Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
-			Cooldown: 0.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     0.5,
 		},
 		{
 			ID:       "q",
 			Damage:   10,
-			Cooldown: 1.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 1},
 			Cast:     1.0,
 		},
 		{
 			ID:       "w",
 			Damage:   20,
-			Cooldown: 2.0,
+			MaxRank:  5,
+			Cooldown: []float32{5, 4, 3, 2, 2},
 			Cast:     2.0,
 		},
 		{
 			ID:       "w",
 			Damage:   20,
-			Cooldown: 2.0,
+			MaxRank:  5,
+			Cooldown: []float32{5, 4, 3, 2, 2},
 			Cast:     2.0,
 		},
 	}
@@ -114,27 +122,30 @@ func TestGetBenchmark_WithReUsageSpells(t *testing.T) {
 }
 
 func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
-	usedSpells := []lolchampion.Spell{
+	usedSpells := []Spell{
 		{
 			ID:       "aa",
 			Damage:   10,
-			Cooldown: 0.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
 			Cast:     0.5,
 		},
 		{
 			ID:       "q",
 			Damage:   50,
-			Cooldown: 5.0,
+			MaxRank:  5,
+			Cooldown: []float32{5, 5, 5, 5, 5},
 			Cast:     2.0,
 		},
 		{
 			ID:       "w",
 			Damage:   20,
-			Cooldown: 8.0,
+			MaxRank:  5,
+			Cooldown: []float32{8, 8, 8, 8, 8},
 			Cast:     1.0,
 		},
 	}
-	spellToBeReused := lolchampion.Spell{ID: "w", Damage: 20.0, Cooldown: 8.0, Cast: 1.0}
+	spellToBeReused := Spell{ID: "w", Damage: 20.0, MaxRank: 5, Cooldown: []float32{8, 8, 8, 8, 8}, Cast: 1.0}
 
 	timeToWait := getAdditionalTimeIfSpellIsInCooldown(spellToBeReused, usedSpells)
 	assert.Equal(t, float32(8), timeToWait)
@@ -142,16 +153,18 @@ func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
 
 func TestGetRoundSpellsToString(t *testing.T) {
 	var benchmark, hp float32 = 3.0, 15.0
-	spells := []lolchampion.Spell{
+	spells := []Spell{
 		{
 			ID:       "q",
 			Damage:   10,
-			Cooldown: 1.0,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 1},
 		},
 		{
 			ID:       "w",
 			Damage:   20,
-			Cooldown: 2.0,
+			MaxRank:  5,
+			Cooldown: []float32{5, 4, 3, 2, 2},
 		},
 	}
 

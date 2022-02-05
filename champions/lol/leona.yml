@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Leona
+tags: Tank, Support
+stats:
+  hp: 0
+  hp_per_level: 576
+  armor: 47
+  armor_per_level: 3.6
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 60
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 2.9
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 60
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: LeonaShieldOfDaybreak
+  name: Shield of Daybreak
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  cast: 0
+- id: LeonaSolarBarrier
+  name: Eclipse
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  cast: 0
+- id: LeonaZenithBlade
+  name: Zenith Blade
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 10.5
+  - 9
+  - 7.5
+  - 6
+  cast: 0
+- id: LeonaSolarFlare
+  name: Solar Flare
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 90
+  - 75
+  - 60
+  cast: 0

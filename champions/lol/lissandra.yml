@@ -1,38 +1,38 @@
 version: 12.3.1
-name: Lucian
-tags: Marksman
+name: Lissandra
+tags: Mage
 stats:
   hp: 0
-  hp_per_level: 571
-  armor: 28
-  armor_per_level: 3
+  hp_per_level: 550
+  armor: 22
+  armor_per_level: 3.7
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 62
-  attack_damage_per_level: 2.3
-  attack_speed: 0.638
-  attack_speed_per_level: 3.3
+  attack_damage: 55
+  attack_damage_per_level: 2.7
+  attack_speed: 0.656
+  attack_speed_per_level: 1.36
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
+  damage: 55
   max_rank: 0
   cooldown:
-  - 0.638
+  - 0.656
   cast: 0
-- id: LucianQ
-  name: Piercing Light
+- id: LissandraQ
+  name: Ice Shard
   damage: 0
   max_rank: 5
   cooldown:
-  - 9
   - 8
   - 7
   - 6
   - 5
+  - 4
   cast: 0
-- id: LucianW
-  name: Ardent Blaze
+- id: LissandraW
+  name: Ring of Frost
   damage: 0
   max_rank: 5
   cooldown:
@@ -42,23 +42,23 @@ spells:
   - 11
   - 10
   cast: 0
-- id: LucianE
-  name: Relentless Pursuit
+- id: LissandraE
+  name: Glacial Path
   damage: 0
   max_rank: 5
   cooldown:
-  - 22
-  - 20
+  - 24
+  - 21
   - 18
-  - 16
-  - 14
+  - 15
+  - 12
   cast: 0
-- id: LucianR
-  name: The Culling
+- id: LissandraR
+  name: Frozen Tomb
   damage: 0
   max_rank: 3
   cooldown:
-  - 110
+  - 120
   - 100
-  - 90
+  - 80
   cast: 0

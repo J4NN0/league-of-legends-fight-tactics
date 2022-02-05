@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Bard
+tags: Support, Mage
+stats:
+  hp: 0
+  hp_per_level: 560
+  armor: 34
+  armor_per_level: 4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 52
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 2
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 52
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: BardQ
+  name: Cosmic Binding
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: BardW
+  name: Caretaker's Shrine
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  cast: 0
+- id: BardE
+  name: Magical Journey
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 22
+  - 20.5
+  - 19
+  - 17.5
+  - 16
+  cast: 0
+- id: BardR
+  name: Tempered Fate
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 95
+  - 80
+  cast: 0

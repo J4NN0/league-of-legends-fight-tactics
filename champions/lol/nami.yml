@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Nami
+tags: Support, Mage
+stats:
+  hp: 0
+  hp_per_level: 490
+  armor: 29
+  armor_per_level: 4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 51
+  attack_damage_per_level: 3.1
+  attack_speed: 0.644
+  attack_speed_per_level: 2.61
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 51
+  max_rank: 0
+  cooldown:
+  - 0.644
+  cast: 0
+- id: NamiQ
+  name: Aqua Prison
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: NamiW
+  name: Ebb and Flow
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  cast: 0
+- id: NamiE
+  name: Tidecaller's Blessing
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  cast: 0
+- id: NamiR
+  name: Tidal Wave
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 110
+  - 100
+  cast: 0

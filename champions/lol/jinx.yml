@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Jinx
+tags: Marksman
+stats:
+  hp: 0
+  hp_per_level: 610
+  armor: 26
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 57
+  attack_damage_per_level: 3.4
+  attack_speed: 0.625
+  attack_speed_per_level: 1
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 57
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: JinxQ
+  name: Switcheroo!
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0.9
+  - 0.9
+  - 0.9
+  - 0.9
+  - 0.9
+  cast: 0
+- id: JinxW
+  name: Zap!
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
+  cast: 0
+- id: JinxE
+  name: Flame Chompers!
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 24
+  - 20.5
+  - 17
+  - 13.5
+  - 10
+  cast: 0
+- id: JinxR
+  name: Super Mega Death Rocket!
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 75
+  - 65
+  - 55
+  cast: 0

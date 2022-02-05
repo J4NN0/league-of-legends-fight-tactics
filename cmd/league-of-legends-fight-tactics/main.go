@@ -3,15 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
+	"league-of-legends-fight-tactics/internal/controller"
 	"league-of-legends-fight-tactics/internal/log"
-	"league-of-legends-fight-tactics/internal/lolchampion"
-	"league-of-legends-fight-tactics/internal/loltactics"
+	"league-of-legends-fight-tactics/internal/lol"
 	"league-of-legends-fight-tactics/internal/riot"
 	"net/http"
-	"os"
-	"path/filepath"
 	"strings"
-	"sync"
 )
 
 const appName string = "lol-tactics"
@@ -21,74 +18,27 @@ func main() {
 	c1Name := flag.String("c1", "", "first champion name")
 	c2Name := flag.String("c2", "", "second champion name")
 
-	fetchAll := flag.Bool("fetchall", false, "fetch all league of legends champions")
+	fetch := flag.String("fetch", "", "fetch and update league of legends champion")
+	fetchAll := flag.Bool("fetchall", false, "fetch and update all league of legends champions")
+
 	flag.Parse()
 
 	logger := log.New(appName)
+	riotClient := riot.NewApiClient(logger, &http.Client{})
+	fightTactics := lol.New(logger)
+
+	ctrl := controller.New(logger, riotClient, fightTactics)
 
 	if *c1Name != "" && *c2Name != "" {
-		fightChampion(*c1Name, *c2Name)
+		ctrl.ChampionsFight(strings.ToLower(*c1Name), strings.ToLower(*c2Name))
 	} else if *all {
-		allChampionsFight()
+		ctrl.AllChampionsFight()
+	} else if *fetch != "" {
+		ctrl.FetchChampion(strings.ToLower(*fetch))
 	} else if *fetchAll {
-		riotClient := riot.NewApiClient(logger, &http.Client{})
-		_, err := riotClient.FetchAllLoLChampions()
-		if err != nil {
-			fmt.Printf("Error while fetching league of legends champions: %v", err)
-		}
+		ctrl.FetchAllChampions()
 	} else {
 		fmt.Printf("Usage: main.go -c1 champion1 -c2 champion2\n")
 		flag.PrintDefaults()
 	}
-}
-
-func fightChampion(c1Name, c2Name string) {
-	fmt.Printf("[-] Loading %s vs %s champions data ...\n", c1Name, c2Name)
-
-	c1, err := lolchampion.Load(c1Name)
-	if err != nil {
-		fmt.Printf("Error loading champion: %v", err)
-		return
-	}
-	// fmt.Printf("%+v\n", c1)
-
-	c2, err := lolchampion.Load(c2Name)
-	if err != nil {
-		fmt.Printf("Error loading champion: %v", err)
-		return
-	}
-	// fmt.Printf("%+v\n", c2)
-
-	loltactics.Fight(c1, c2)
-}
-
-func allChampionsFight() {
-	var wg sync.WaitGroup
-	var champions []string
-
-	err := filepath.Walk(lolchampion.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
-		champions = append(champions, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
-		return nil
-	})
-	if err != nil {
-		panic(err)
-	}
-
-	champions = champions[1:]
-
-	for _, c1 := range champions {
-		for _, c2 := range champions {
-			if c1 != c2 {
-				wg.Add(1)
-				c1 := c1
-				c2 := c2
-				go func() {
-					defer wg.Done()
-					fightChampion(c1, c2)
-				}()
-			}
-		}
-	}
-
-	wg.Wait()
 }

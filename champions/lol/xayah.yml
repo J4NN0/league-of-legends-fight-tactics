@@ -1,64 +1,64 @@
 version: 12.3.1
-name: Lucian
+name: Xayah
 tags: Marksman
 stats:
   hp: 0
-  hp_per_level: 571
-  armor: 28
+  hp_per_level: 590
+  armor: 25
   armor_per_level: 3
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 62
-  attack_damage_per_level: 2.3
-  attack_speed: 0.638
-  attack_speed_per_level: 3.3
+  attack_damage: 60
+  attack_damage_per_level: 3.5
+  attack_speed: 0.625
+  attack_speed_per_level: 3.9
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
+  damage: 60
   max_rank: 0
   cooldown:
-  - 0.638
+  - 0.625
   cast: 0
-- id: LucianQ
-  name: Piercing Light
+- id: XayahQ
+  name: Double Daggers
   damage: 0
   max_rank: 5
   cooldown:
+  - 10
   - 9
   - 8
   - 7
   - 6
-  - 5
   cast: 0
-- id: LucianW
-  name: Ardent Blaze
+- id: XayahW
+  name: Deadly Plumage
   damage: 0
   max_rank: 5
   cooldown:
-  - 14
-  - 13
-  - 12
-  - 11
-  - 10
-  cast: 0
-- id: LucianE
-  name: Relentless Pursuit
-  damage: 0
-  max_rank: 5
-  cooldown:
-  - 22
   - 20
+  - 19
   - 18
+  - 17
   - 16
-  - 14
   cast: 0
-- id: LucianR
-  name: The Culling
+- id: XayahE
+  name: Bladecaller
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: XayahR
+  name: Featherstorm
   damage: 0
   max_rank: 3
   cooldown:
-  - 110
+  - 140
+  - 120
   - 100
-  - 90
   cast: 0

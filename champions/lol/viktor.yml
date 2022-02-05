@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Viktor
+tags: Mage
+stats:
+  hp: 0
+  hp_per_level: 530
+  armor: 23
+  armor_per_level: 4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 53
+  attack_damage_per_level: 3
+  attack_speed: 0.658
+  attack_speed_per_level: 2.11
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 53
+  max_rank: 0
+  cooldown:
+  - 0.658
+  cast: 0
+- id: ViktorPowerTransfer
+  name: Siphon Power
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: ViktorGravitonField
+  name: Gravity Field
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 17
+  - 16
+  - 15
+  - 14
+  - 13
+  cast: 0
+- id: ViktorDeathRay
+  name: Death Ray
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: ViktorChaosStorm
+  name: Chaos Storm
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

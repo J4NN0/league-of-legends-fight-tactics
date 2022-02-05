@@ -5,8 +5,10 @@ import (
 	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
+	"strings"
 )
 
+// Docs: https://developer.riotgames.com/docs/lol#data-dragon_champions
 const dDragonLolAllChampionsUrl string = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion.json"
 const dDragonLolChampionBaseUrl string = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion"
 
@@ -26,15 +28,17 @@ type dDragonLoLAllChampionsResponse struct {
 }
 
 type DDragonChampionResponse struct {
-	Format  string                  `json:"format"`
-	Version string                  `json:"version"`
-	Data    map[string]championData `json:"data"`
+	Format   string `json:"format"`
+	Version  string `json:"version"`
+	DataName string
+	Data     map[string]championData `json:"data"`
 }
 
 type championData struct {
-	Name  string   `json:"name"`
-	Tags  []string `json:"tags"`
-	Stats stats    `json:"stats"`
+	Name   string   `json:"name"`
+	Tags   []string `json:"tags"`
+	Stats  stats    `json:"stats"`
+	Spells []spell  `json:"spells"`
 }
 
 type stats struct {
@@ -48,7 +52,6 @@ type stats struct {
 	AttackDamagePerLevel float32 `json:"attackdamageperlevel"`
 	AttackSpeed          float32 `json:"attackspeed"`
 	AttackSpeedPerLevel  float32 `json:"attackspeedperlevel"`
-	Spells               []spell `json:"spells"`
 }
 
 type spell struct {
@@ -58,20 +61,19 @@ type spell struct {
 	Cooldown []float32 `json:"cooldown"`
 }
 
-func (c *ApiClient) FetchAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
+func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
 	var allChampionsResponse dDragonLoLAllChampionsResponse
 
-	c.log.Printf("Fetching all league of legends champions ...\n")
 	err = httpclient.Get(c.hc, dDragonLolAllChampionsUrl, &allChampionsResponse)
 	if err != nil {
 		return []DDragonChampionResponse{}, err
 	}
 
 	for championName := range allChampionsResponse.Data {
-		c.log.Printf("Fetching %s ...\n", championName)
+		c.log.Printf("Fetching %s ...", championName)
 		championResponse, err := c.GetLoLChampion(championName)
 		if err != nil {
-			c.log.Warningf("Could not fetch champion %s: %v\n", championName, err)
+			c.log.Warningf("Could not fetch champion %s: %v", championName, err)
 		}
 		championsData = append(championsData, championResponse)
 	}
@@ -80,11 +82,17 @@ func (c *ApiClient) FetchAllLoLChampions() (championsData []DDragonChampionRespo
 }
 
 func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
-	err = httpclient.Get(c.hc, getChampionUrl(championName), &championResponse)
+	err = httpclient.Get(c.hc, getChampionUrl(sanitizeChampionName(championName)), &championResponse)
+	championResponse.DataName = championName
 	if err != nil {
 		return DDragonChampionResponse{}, err
 	}
 	return championResponse, nil
+}
+
+// sanitizeChampionName endpoint dDragonLolChampionBaseUrl wants champion name with first letter capitalized, e.g. Jhin
+func sanitizeChampionName(championName string) string {
+	return strings.Title(strings.ToLower(championName))
 }
 
 func getChampionUrl(championName string) string {

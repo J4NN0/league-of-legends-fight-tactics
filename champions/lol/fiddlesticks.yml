@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Fiddlesticks
+tags: Mage, Support
+stats:
+  hp: 0
+  hp_per_level: 580.4
+  armor: 34
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55.36
+  attack_damage_per_level: 2.63
+  attack_speed: 0.625
+  attack_speed_per_level: 2.11
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 55.36
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: FiddleSticksQ
+  name: Terrify
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 14.5
+  - 14
+  - 13.5
+  - 13
+  cast: 0
+- id: FiddleSticksW
+  name: Bountiful Harvest
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: FiddleSticksE
+  name: Reap
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  cast: 0
+- id: FiddleSticksR
+  name: Crowstorm
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 140
+  - 110
+  - 80
+  cast: 0

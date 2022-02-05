@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Garen
+tags: Fighter, Tank
+stats:
+  hp: 0
+  hp_per_level: 620
+  armor: 36
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 0.75
+  attack_damage: 66
+  attack_damage_per_level: 4.5
+  attack_speed: 0.625
+  attack_speed_per_level: 3.65
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 66
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: GarenQ
+  name: Decisive Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: GarenW
+  name: Courage
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 23
+  - 21
+  - 19
+  - 17
+  - 15
+  cast: 0
+- id: GarenE
+  name: Judgment
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  cast: 0
+- id: GarenR
+  name: Demacian Justice
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Vayne
+tags: Marksman, Assassin
+stats:
+  hp: 0
+  hp_per_level: 515
+  armor: 23
+  armor_per_level: 3.4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 60
+  attack_damage_per_level: 2.36
+  attack_speed: 0.658
+  attack_speed_per_level: 3.3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 60
+  max_rank: 0
+  cooldown:
+  - 0.658
+  cast: 0
+- id: VayneTumble
+  name: Tumble
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 4
+  - 3.5
+  - 3
+  - 2.5
+  - 2
+  cast: 0
+- id: VayneSilveredBolts
+  name: Silver Bolts
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: VayneCondemn
+  name: Condemn
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 20
+  - 18
+  - 16
+  - 14
+  - 12
+  cast: 0
+- id: VayneInquisition
+  name: Final Hour
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 85
+  - 70
+  cast: 0

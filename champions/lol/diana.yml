@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Diana
+tags: Fighter, Mage
+stats:
+  hp: 0
+  hp_per_level: 570
+  armor: 31
+  armor_per_level: 3.1
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 57
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 2.25
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 57
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: DianaQ
+  name: Crescent Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: DianaOrbs
+  name: Pale Cascade
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 13.5
+  - 12
+  - 10.5
+  - 9
+  cast: 0
+- id: DianaTeleport
+  name: Lunar Rush
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 22
+  - 20
+  - 18
+  - 16
+  - 14
+  cast: 0
+- id: DianaR
+  name: Moonfall
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

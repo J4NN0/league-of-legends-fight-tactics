@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Rengar
+tags: Assassin, Fighter
+stats:
+  hp: 0
+  hp_per_level: 585
+  armor: 34
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 68
+  attack_damage_per_level: 3
+  attack_speed: 0.667
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 68
+  max_rank: 0
+  cooldown:
+  - 0.667
+  cast: 0
+- id: RengarQ
+  name: Savagery
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  cast: 0
+- id: RengarW
+  name: Battle Roar
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  cast: 0
+- id: RengarE
+  name: Bola Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  cast: 0
+- id: RengarR
+  name: Thrill of the Hunt
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 90
+  - 70
+  cast: 0

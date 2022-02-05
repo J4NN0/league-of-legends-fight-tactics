@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Cho'Gath
+tags: Tank, Mage
+stats:
+  hp: 0
+  hp_per_level: 574
+  armor: 38
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 69
+  attack_damage_per_level: 4.2
+  attack_speed: 0.625
+  attack_speed_per_level: 1.44
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 69
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: Rupture
+  name: Rupture
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: FeralScream
+  name: Feral Scream
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: VorpalSpikes
+  name: Vorpal Spikes
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 7
+  - 6
+  - 5
+  - 4
+  cast: 0
+- id: Feast
+  name: Feast
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 80
+  - 80
+  - 80
+  cast: 0

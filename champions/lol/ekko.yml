@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Ekko
+tags: Assassin, Fighter
+stats:
+  hp: 0
+  hp_per_level: 585
+  armor: 32
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 58
+  attack_damage_per_level: 3
+  attack_speed: 0.688
+  attack_speed_per_level: 3.3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 58
+  max_rank: 0
+  cooldown:
+  - 0.688
+  cast: 0
+- id: EkkoQ
+  name: Timewinder
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 8.5
+  - 8
+  - 7.5
+  - 7
+  cast: 0
+- id: EkkoW
+  name: Parallel Convergence
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 22
+  - 20
+  - 18
+  - 16
+  - 14
+  cast: 0
+- id: EkkoE
+  name: Phase Dive
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 8.5
+  - 8
+  - 7.5
+  - 7
+  cast: 0
+- id: EkkoR
+  name: Chronobreak
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 80
+  - 50
+  cast: 0

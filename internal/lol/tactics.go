@@ -1,25 +1,33 @@
-package loltactics
+package lol
 
 import (
 	"fmt"
-	"league-of-legends-fight-tactics/internal/lolchampion"
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/file"
 	"math"
 )
 
+type FightTactics struct {
+	log *log.Logger
+}
+
+func New(log *log.Logger) *FightTactics {
+	return &FightTactics{log: log}
+}
+
 type bestSolution struct {
 	Benchmark     float32 // How much time (in seconds) to slay the enemy
-	RoundOfSpells []lolchampion.Spell
+	RoundOfSpells []Spell
 }
 
 // Fight Champion1 vs Champion2 health point
-func Fight(champion1, champion2 lolchampion.Champion) {
-	var sol []lolchampion.Spell
-	var bestSol = bestSolution{Benchmark: math.MaxFloat32, RoundOfSpells: []lolchampion.Spell{}}
+func (f *FightTactics) Fight(champion1, champion2 Champion) {
+	var sol []Spell
+	var bestSol = bestSolution{Benchmark: math.MaxFloat32, RoundOfSpells: []Spell{}}
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp, &bestSol)
 
-	fmt.Printf("[+] Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
+	f.log.Printf("Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
 
 	fileName := setFilePath(champion1, champion2)
 	file.Create(fileName)
@@ -27,11 +35,11 @@ func Fight(champion1, champion2 lolchampion.Champion) {
 }
 
 // setFilePath Set filename path
-func setFilePath(champion1, champion2 lolchampion.Champion) string {
+func setFilePath(champion1, champion2 Champion) string {
 	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
-func getBestRoundOfSpells(pos int, spells, sol []lolchampion.Spell, hp float32, bestSol *bestSolution) {
+func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float32, bestSol *bestSolution) {
 	if isHpZero(sol, hp) {
 		setBenchmark(sol, bestSol)
 		return
@@ -45,7 +53,7 @@ func getBestRoundOfSpells(pos int, spells, sol []lolchampion.Spell, hp float32, 
 }
 
 // isHpZero True if hp is zero, false otherwise
-func isHpZero(sol []lolchampion.Spell, hp float32) bool {
+func isHpZero(sol []Spell, hp float32) bool {
 	for _, spell := range sol {
 		hp = hp - spell.Damage
 		if hp <= 0 {
@@ -55,7 +63,7 @@ func isHpZero(sol []lolchampion.Spell, hp float32) bool {
 	return false
 }
 
-func setBenchmark(spells []lolchampion.Spell, bestSol *bestSolution) {
+func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
 		bestSol.Benchmark = tmpBench
@@ -64,9 +72,9 @@ func setBenchmark(spells []lolchampion.Spell, bestSol *bestSolution) {
 }
 
 // getBenchmark Given a set of spells (that take hp down to zero), return the related benchmark
-func getBenchmark(spells []lolchampion.Spell) float32 {
+func getBenchmark(spells []Spell) float32 {
 	var benchmark float32
-	var usedSpells []lolchampion.Spell
+	var usedSpells []Spell
 
 	for _, spell := range spells {
 		benchmark += spell.Cast + getAdditionalTimeIfSpellIsInCooldown(spell, usedSpells)
@@ -77,7 +85,7 @@ func getBenchmark(spells []lolchampion.Spell) float32 {
 }
 
 // getAdditionalTimeIfSpellIsInCooldown Get additional time to wait if spell has been used before and is therefore still in cooldown
-func getAdditionalTimeIfSpellIsInCooldown(currentSpell lolchampion.Spell, usedSpells []lolchampion.Spell) float32 {
+func getAdditionalTimeIfSpellIsInCooldown(currentSpell Spell, usedSpells []Spell) float32 {
 	var usedSpellPos = -1
 	var timeToWait float32
 
@@ -98,12 +106,12 @@ func getAdditionalTimeIfSpellIsInCooldown(currentSpell lolchampion.Spell, usedSp
 			timePassed += usedSpells[i].Cast
 		}
 
-		if timePassed >= currentSpell.Cooldown {
+		if timePassed >= currentSpell.Cooldown[currentSpell.MaxRank-1] {
 			// Spell is ready to be used
 			timeToWait = 0
 		} else {
 			// Spell is still in cooldown
-			timeToWait = currentSpell.Cooldown - timePassed
+			timeToWait = currentSpell.Cooldown[currentSpell.MaxRank-1] - timePassed
 		}
 	}
 
@@ -111,7 +119,7 @@ func getAdditionalTimeIfSpellIsInCooldown(currentSpell lolchampion.Spell, usedSp
 }
 
 // getRoundSpellsToString Format spells into string
-func getRoundSpellsToString(spells []lolchampion.Spell, hp, benchmark float32) string {
+func getRoundSpellsToString(spells []Spell, hp, benchmark float32) string {
 	var spellsToString string
 
 	for _, s := range spells {

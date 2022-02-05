@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Zeri
+tags: Marksman
+stats:
+  hp: 0
+  hp_per_level: 500
+  armor: 23
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 58
+  attack_damage_per_level: 2
+  attack_speed: 0.658
+  attack_speed_per_level: 2
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 58
+  max_rank: 0
+  cooldown:
+  - 0.658
+  cast: 0
+- id: ZeriQ
+  name: Burst Fire
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: ZeriW
+  name: Ultrashock Laser
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 10
+  - 10
+  - 10
+  - 10
+  cast: 0
+- id: ZeriE
+  name: Spark Surge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 23
+  - 21.5
+  - 20
+  - 18.5
+  - 17
+  cast: 0
+- id: ZeriR
+  name: Lightning Crash
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

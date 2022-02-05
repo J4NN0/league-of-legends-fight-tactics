@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Pyke
+tags: Support, Assassin
+stats:
+  hp: 0
+  hp_per_level: 600
+  armor: 45
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 62
+  attack_damage_per_level: 2
+  attack_speed: 0.667
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 62
+  max_rank: 0
+  cooldown:
+  - 0.667
+  cast: 0
+- id: PykeQ
+  name: Bone Skewer
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: PykeW
+  name: Ghostwater Dive
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11.5
+  - 11
+  - 10.5
+  - 10
+  cast: 0
+- id: PykeE
+  name: Phantom Undertow
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 14
+  - 13
+  - 12
+  - 11
+  cast: 0
+- id: PykeR
+  name: Death From Below
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

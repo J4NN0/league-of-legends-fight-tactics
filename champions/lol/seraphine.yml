@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Seraphine
+tags: Mage, Support
+stats:
+  hp: 0
+  hp_per_level: 500
+  armor: 19
+  armor_per_level: 3
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55
+  attack_damage_per_level: 3
+  attack_speed: 0.669
+  attack_speed_per_level: 1
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 55
+  max_rank: 0
+  cooldown:
+  - 0.669
+  cast: 0
+- id: SeraphineQ
+  name: High Note
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 8.75
+  - 7.5
+  - 6.25
+  - 5
+  cast: 0
+- id: SeraphineW
+  name: Surround Sound
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 26
+  - 25
+  - 24
+  - 23
+  - 22
+  cast: 0
+- id: SeraphineE
+  name: Beat Drop
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: SeraphineR
+  name: Encore
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 160
+  - 130
+  - 100
+  cast: 0

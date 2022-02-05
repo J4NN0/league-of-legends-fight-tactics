@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Blitzcrank
+tags: Tank, Fighter
+stats:
+  hp: 0
+  hp_per_level: 583
+  armor: 40
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 62
+  attack_damage_per_level: 3.5
+  attack_speed: 0.625
+  attack_speed_per_level: 1.13
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 62
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: RocketGrab
+  name: Rocket Grab
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 20
+  - 19
+  - 18
+  - 17
+  - 16
+  cast: 0
+- id: Overdrive
+  name: Overdrive
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  cast: 0
+- id: PowerFist
+  name: Power Fist
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: StaticField
+  name: Static Field
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 60
+  - 40
+  - 20
+  cast: 0

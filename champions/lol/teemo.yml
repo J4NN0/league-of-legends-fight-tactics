@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Teemo
+tags: Marksman, Assassin
+stats:
+  hp: 0
+  hp_per_level: 528
+  armor: 24
+  armor_per_level: 3.75
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 54
+  attack_damage_per_level: 3
+  attack_speed: 0.69
+  attack_speed_per_level: 3.38
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 54
+  max_rank: 0
+  cooldown:
+  - 0.69
+  cast: 0
+- id: BlindingDart
+  name: Blinding Dart
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: MoveQuick
+  name: Move Quick
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
+  cast: 0
+- id: ToxicShot
+  name: Toxic Shot
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: TeemoRCast
+  name: Noxious Trap
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 0.25
+  - 0.25
+  - 0.25
+  cast: 0

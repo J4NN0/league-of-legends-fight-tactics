@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Skarner
+tags: Fighter, Tank
+stats:
+  hp: 0
+  hp_per_level: 580
+  armor: 38
+  armor_per_level: 3.8
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 65
+  attack_damage_per_level: 4.5
+  attack_speed: 0.625
+  attack_speed_per_level: 2.1
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 65
+  max_rank: 0
+  cooldown:
+  - 0.625
+  cast: 0
+- id: SkarnerVirulentSlash
+  name: Crystal Slash
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 3.5
+  - 3.25
+  - 3
+  - 2.75
+  - 2.5
+  cast: 0
+- id: SkarnerExoskeleton
+  name: Crystalline Exoskeleton
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 13
+  - 12.5
+  - 12
+  - 11.5
+  - 11
+  cast: 0
+- id: SkarnerFracture
+  name: Fracture
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 14
+  - 13.5
+  - 13
+  - 12.5
+  - 12
+  cast: 0
+- id: SkarnerImpale
+  name: Impale
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

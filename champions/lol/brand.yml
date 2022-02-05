@@ -1,64 +1,64 @@
 version: 12.3.1
-name: Jhin
-tags: Marksman, Mage
+name: Brand
+tags: Mage
 stats:
   hp: 0
-  hp_per_level: 585
-  armor: 24
+  hp_per_level: 520
+  armor: 22
   armor_per_level: 3.5
   spell_block: 30
   spell_block_per_level: 0.5
-  attack_damage: 59
-  attack_damage_per_level: 4.7
+  attack_damage: 57
+  attack_damage_per_level: 3
   attack_speed: 0.625
-  attack_speed_per_level: 0
+  attack_speed_per_level: 1.36
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
+  damage: 57
   max_rank: 0
   cooldown:
   - 0.625
   cast: 0
-- id: JhinQ
-  name: Dancing Grenade
+- id: BrandQ
+  name: Sear
   damage: 0
   max_rank: 5
   cooldown:
+  - 8
+  - 7.5
   - 7
   - 6.5
   - 6
-  - 5.5
-  - 5
   cast: 0
-- id: JhinW
-  name: Deadly Flourish
+- id: BrandW
+  name: Pillar of Flame
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: BrandE
+  name: Conflagration
   damage: 0
   max_rank: 5
   cooldown:
   - 12
-  - 12
-  - 12
-  - 12
-  - 12
+  - 11
+  - 10
+  - 9
+  - 8
   cast: 0
-- id: JhinE
-  name: Captive Audience
-  damage: 0
-  max_rank: 5
-  cooldown:
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  cast: 0
-- id: JhinR
-  name: Curtain Call
+- id: BrandR
+  name: Pyroclasm
   damage: 0
   max_rank: 3
   cooldown:
-  - 120
   - 105
   - 90
+  - 75
   cast: 0
