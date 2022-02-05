@@ -8,7 +8,7 @@ import (
 )
 
 type bestSolution struct {
-	Benchmark float32 // How much time (in seconds) to slay the enemy
+	Benchmark     float32 // How much time (in seconds) to slay the enemy
 	RoundOfSpells []lolchampion.Spell
 }
 

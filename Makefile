@@ -29,6 +29,14 @@ test-verbose:
 test-cover:
 	go test -cover -coverprofile=$(cover_profile_filename) ./...
 
+# Test data race
+test-race:
+	go test -race ./...
+
+# Test data race and package coverage
+test-pre-commit:
+	go test -race -cover -coverprofile=$(cover_profile_filename) ./...
+
 # === RUN =======================================================
 # Run application.
 run:
@@ -55,4 +63,4 @@ tool-fmt:
 	go fmt ./...
 
 # === DEVELOPMENT =======================================================
-dev-pre-commit: tool-mod-tidy tool-fmt build run-lint test-cover
+dev-pre-commit: tool-mod-tidy tool-fmt build run-lint test-pre-commit

@@ -16,10 +16,12 @@
        git clone https://github.com/J4NN0/league-of-legends-fight-tactics.git
        cd league-of-legends-fight-tactics
 
-3. Run fight tactics between `champion1` and `champion2` 
+3. Run 
 
-       make run c1=<championName> c2=<championName>
+   - Fight tactics between `champion1` and `champion2`
+
+         make run c1=<championName> c2=<championName>
    
-   or generate all fights tactics
+   - Generate all fights tactics
 
-       make run-all
+         make run-all
