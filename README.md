@@ -31,7 +31,13 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
        git clone https://github.com/J4NN0/league-of-legends-fight-tactics.git
        cd league-of-legends-fight-tactics
 
-3. Run 
+3. Run application
+
+    Check program's usage by running:
+
+       make run-help
+
+    In general:
 
    1. Download and/or upload champion data
       - Fetch specific champion data
