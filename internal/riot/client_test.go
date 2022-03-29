@@ -180,7 +180,44 @@ func TestGetLoLChampionFail(t *testing.T) {
 func TestSanitizeChampionName(t *testing.T) {
 	championName := sanitizeChampionName("jHiN")
 	assert.Equal(t, "Jhin", championName)
+
+	championName = sanitizeChampionName("Aurelionsol")
+	assert.Equal(t, "AurelionSol", championName)
+
+	championName = sanitizeChampionName("dRMundo")
+	assert.Equal(t, "DrMundo", championName)
+
+	championName = sanitizeChampionName("jarvanIV")
+	assert.Equal(t, "JarvanIV", championName)
+
+	championName = sanitizeChampionName("Kogmaw")
+	assert.Equal(t, "KogMaw", championName)
+
+	championName = sanitizeChampionName("Leesin")
+	assert.Equal(t, "LeeSin", championName)
+
+	championName = sanitizeChampionName("Masteryi")
+	assert.Equal(t, "MasterYi", championName)
+
+	championName = sanitizeChampionName("Missfortune")
+	assert.Equal(t, "MissFortune", championName)
+
+	championName = sanitizeChampionName("Monkeyking")
+	assert.Equal(t, "MonkeyKing", championName)
+
+	championName = sanitizeChampionName("Reksai")
+	assert.Equal(t, "RekSai", championName)
+
+	championName = sanitizeChampionName("Tahmkench")
+	assert.Equal(t, "TahmKench", championName)
+
+	championName = sanitizeChampionName("Twistedfate")
+	assert.Equal(t, "TwistedFate", championName)
+
+	championName = sanitizeChampionName("Xinzhao")
+	assert.Equal(t, "XinZhao", championName)
 }
+
 
 func TestGetChampionUrl(t *testing.T) {
 	championName := "someChampionName"

@@ -90,9 +90,36 @@ func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDrago
 	return championResponse, nil
 }
 
-// sanitizeChampionName endpoint dDragonLolChampionBaseUrl wants champion name with first letter capitalized, e.g. Jhin
+// sanitizeChampionName endpoint dDragonLolChampionBaseUrl wants champion name with first letter capitalized (e.g. TwistedFate, Jhin)
 func sanitizeChampionName(championName string) string {
-	return strings.Title(strings.ToLower(championName))
+	switch strings.ToLower(championName) {
+	case "aurelionsol":
+		return "AurelionSol"
+	case "drmundo":
+		return "DrMundo"
+	case "jarvaniv":
+		return "JarvanIV"
+	case "kogmaw":
+		return "KogMaw"
+	case "leesin":
+		return "LeeSin"
+	case "masteryi":
+		return "MasterYi"
+	case "missfortune":
+		return "MissFortune"
+	case "monkeyking":
+		return "MonkeyKing"
+	case "reksai":
+		return "RekSai"
+	case "tahmkench":
+		return "TahmKench"
+	case "twistedfate":
+		return "TwistedFate"
+	case "xinzhao":
+		return "XinZhao"
+	default:
+		return strings.Title(strings.ToLower(championName))
+	}
 }
 
 func getChampionUrl(championName string) string {

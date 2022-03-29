@@ -26,14 +26,14 @@ func main() {
 
 	app := &cli.App{
 		Name:    "loltactics",
-		Usage:   "League of Legends fight tactics",
+		Usage:   "League of Legends Tactics",
 		Version: "1.0.0",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:        "champion1",
 				Aliases:     []string{"c1"},
 				Value:       "",
-				Usage:       "first League of Legends champion name",
+				Usage:       "first league of legends champion name",
 				Required:    false,
 				Destination: &c1Name,
 			},
@@ -41,7 +41,7 @@ func main() {
 				Name:        "champion2",
 				Aliases:     []string{"c2"},
 				Value:       "",
-				Usage:       "second League of Legends champion name",
+				Usage:       "second league of legends champion name",
 				Required:    false,
 				Destination: &c2Name,
 			},
@@ -57,7 +57,7 @@ func main() {
 				Name:        "fetch",
 				Aliases:     []string{"f"},
 				Value:       "",
-				Usage:       "fetch and update a specific League of Legends champion",
+				Usage:       "fetch and update a specific league of legends champion (name must not to contain spaces)",
 				Required:    false,
 				Destination: &fetch,
 			},
@@ -65,7 +65,7 @@ func main() {
 				Name:        "fetchall",
 				Aliases:     []string{"fa"},
 				Value:       false,
-				Usage:       "fetch and update all League of Legends champions",
+				Usage:       "fetch and update all league of legends champions",
 				Required:    false,
 				Destination: &fetchAll,
 			},

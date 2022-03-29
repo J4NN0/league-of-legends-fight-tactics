@@ -16,7 +16,7 @@ func New(log *log.Logger) *FightTactics {
 }
 
 type bestSolution struct {
-	Benchmark     float32 // How much time (in seconds) to slay the enemy
+	Benchmark     float32 // time (in seconds) taken to slay the enemy
 	RoundOfSpells []Spell
 }
 
