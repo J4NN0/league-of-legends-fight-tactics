@@ -1,27 +1,22 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"github.com/urfave/cli/v2"
 	"league-of-legends-fight-tactics/internal/controller"
 	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/internal/lol"
 	"league-of-legends-fight-tactics/internal/riot"
 	"net/http"
+	"os"
 	"strings"
 )
 
 const appName string = "lol-tactics"
 
 func main() {
-	all := flag.Bool("all", false, "generate all fights tactics (default false)")
-	c1Name := flag.String("c1", "", "first champion name")
-	c2Name := flag.String("c2", "", "second champion name")
-
-	fetch := flag.String("fetch", "", "fetch and update league of legends champion")
-	fetchAll := flag.Bool("fetchall", false, "fetch and update all league of legends champions")
-
-	flag.Parse()
+	var all, fetchAll bool
+	var c1Name, c2Name, fetch string
 
 	logger := log.New(appName)
 	riotClient := riot.NewApiClient(logger, &http.Client{})
@@ -29,16 +24,70 @@ func main() {
 
 	ctrl := controller.New(logger, riotClient, fightTactics)
 
-	if *c1Name != "" && *c2Name != "" {
-		ctrl.ChampionsFight(strings.ToLower(*c1Name), strings.ToLower(*c2Name))
-	} else if *all {
-		ctrl.AllChampionsFight()
-	} else if *fetch != "" {
-		ctrl.FetchChampion(strings.ToLower(*fetch))
-	} else if *fetchAll {
-		ctrl.FetchAllChampions()
-	} else {
-		fmt.Printf("Usage: main.go -c1 champion1 -c2 champion2\n")
-		flag.PrintDefaults()
+	app := &cli.App{
+		Name:  "loltactics",
+		Usage: "League of Legends fight tactics",
+		Version: "1.0.0",
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name: "champion1",
+				Aliases: []string{"c1"},
+				Value: "",
+				Usage: "first League of Legends champion name",
+				Required: false,
+				Destination: &c1Name,
+			},
+			&cli.StringFlag{
+				Name: "champion2",
+				Aliases: []string{"c2"},
+				Value: "",
+				Usage: "second League of Legends champion name",
+				Required: false,
+				Destination: &c2Name,
+			},
+			&cli.BoolFlag{
+				Name: "all",
+				Aliases: []string{"a"},
+				Value: false,
+				Usage: "generate all fight tactics",
+				Required: false,
+				Destination: &all,
+			},
+			&cli.StringFlag{
+				Name: "fetch",
+				Aliases: []string{"f"},
+				Value: "",
+				Usage: "fetch and update a specific League of Legends champion",
+				Required: false,
+				Destination: &fetch,
+			},
+			&cli.BoolFlag{
+				Name: "fetchall",
+				Aliases: []string{"fa"},
+				Value: false,
+				Usage: "fetch and update all League of Legends champions",
+				Required: false,
+				Destination: &fetchAll,
+			},
+		},
+		Action: func(c *cli.Context) error {
+			if c1Name != "" && c2Name != "" {
+				ctrl.ChampionsFight(strings.ToLower(c1Name), strings.ToLower(c2Name))
+			} else if all {
+				ctrl.AllChampionsFight()
+			} else if fetch != "" {
+				ctrl.FetchChampion(strings.ToLower(fetch))
+			} else if fetchAll {
+				ctrl.FetchAllChampions()
+			} else {
+				return fmt.Errorf("no flags provided")
+			}
+			return nil
+		},
+	}
+
+	err := app.Run(os.Args)
+	if err != nil {
+		logger.Fatalf("%w", err)
 	}
 }
