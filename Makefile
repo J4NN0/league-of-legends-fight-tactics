@@ -8,13 +8,13 @@
 # - development - scripts for development
 
 # === CONFIG =======================================================
-app_name := league-of-legends-fight-tactics
+app_name := league-of-legends-tactics-cli
 cover_profile_filename := build/cover.out
 
 
 # === BUILD =======================================================
 build:
-	go build -o build/league_of_legends_fight_tactics cmd/$(app_name)/main.go
+	go build -o build/league_of_legends_tactics_cli cmd/$(app_name)/main.go
 
 # === TEST =======================================================
 # Run all tests.

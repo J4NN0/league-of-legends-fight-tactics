@@ -25,48 +25,48 @@ func main() {
 	ctrl := controller.New(logger, riotClient, fightTactics)
 
 	app := &cli.App{
-		Name:  "loltactics",
-		Usage: "League of Legends fight tactics",
+		Name:    "loltactics",
+		Usage:   "League of Legends fight tactics",
 		Version: "1.0.0",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name: "champion1",
-				Aliases: []string{"c1"},
-				Value: "",
-				Usage: "first League of Legends champion name",
-				Required: false,
+				Name:        "champion1",
+				Aliases:     []string{"c1"},
+				Value:       "",
+				Usage:       "first League of Legends champion name",
+				Required:    false,
 				Destination: &c1Name,
 			},
 			&cli.StringFlag{
-				Name: "champion2",
-				Aliases: []string{"c2"},
-				Value: "",
-				Usage: "second League of Legends champion name",
-				Required: false,
+				Name:        "champion2",
+				Aliases:     []string{"c2"},
+				Value:       "",
+				Usage:       "second League of Legends champion name",
+				Required:    false,
 				Destination: &c2Name,
 			},
 			&cli.BoolFlag{
-				Name: "all",
-				Aliases: []string{"a"},
-				Value: false,
-				Usage: "generate all fight tactics",
-				Required: false,
+				Name:        "all",
+				Aliases:     []string{"a"},
+				Value:       false,
+				Usage:       "generate all fight tactics",
+				Required:    false,
 				Destination: &all,
 			},
 			&cli.StringFlag{
-				Name: "fetch",
-				Aliases: []string{"f"},
-				Value: "",
-				Usage: "fetch and update a specific League of Legends champion",
-				Required: false,
+				Name:        "fetch",
+				Aliases:     []string{"f"},
+				Value:       "",
+				Usage:       "fetch and update a specific League of Legends champion",
+				Required:    false,
 				Destination: &fetch,
 			},
 			&cli.BoolFlag{
-				Name: "fetchall",
-				Aliases: []string{"fa"},
-				Value: false,
-				Usage: "fetch and update all League of Legends champions",
-				Required: false,
+				Name:        "fetchall",
+				Aliases:     []string{"fa"},
+				Value:       false,
+				Usage:       "fetch and update all League of Legends champions",
+				Required:    false,
 				Destination: &fetchAll,
 			},
 		},
@@ -88,6 +88,6 @@ func main() {
 
 	err := app.Run(os.Args)
 	if err != nil {
-		logger.Fatalf("%w", err)
+		logger.Fatalf("%v", err)
 	}
 }
