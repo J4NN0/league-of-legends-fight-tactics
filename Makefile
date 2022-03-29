@@ -51,6 +51,9 @@ run-fetch:
 run-fetchall:
 	go run cmd/$(app_name)/main.go --fetchall
 
+run-help:
+	go run cmd/$(app_name)/main.go --help
+
 # Run application using linters: it runs linters in parallel, uses caching, supports yaml config, etc.
 run-lint:
 	golangci-lint run ./...
