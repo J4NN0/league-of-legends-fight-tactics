@@ -11,7 +11,7 @@ Once the best spell output is found, it is saved in the corresponding `.loltacti
 # Table of Contents
 
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
-- [League of Legends Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#league-of-legends-champion-data)
+- [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
 
 # Usage
 
@@ -21,8 +21,8 @@ Once the best spell output is found, it is saved in the corresponding `.loltacti
 
     - Install packages: 
 
-           brew install make
-           brew install golangci-lint
+          brew install make
+          brew install golangci-lint
 
 2. Clone repo
 
@@ -49,7 +49,7 @@ Once the best spell output is found, it is saved in the corresponding `.loltacti
 
             make run-all
 
-# League of Legends Champion Data
+# Champion Data
 
 A  League of Legends champion is described by a `.yml` file with the following struct:
 
