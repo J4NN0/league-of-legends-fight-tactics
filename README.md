@@ -4,9 +4,11 @@
 
 Make two champions fight and get the best combination of spells based on the time (in seconds) it takes to kill the enemy champion.
 
-Statistics of each champion can be downloaded/updated using the official [League of Legends Riot APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Once the data has been downloaded, it is possible to make two champions fight (virtually) and get the best spell output for which the first champion can kill the second as quickly as possible. The fight takes place only from a data point of view, i.e. no graphic combat is displayed on the screen.
+Each champion data can be downloaded/updated using the official [Data Dragon League of Legends APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Data Dragon is a way, used by Riot Games, of centralizing League of Legends game data and assets, including champions, items, runes, summoner spells, and profile icons. All of which can be used by third-party developers.
 
-Once the best spell output is found, it is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round.
+Once the data has been downloaded, it is possible to make two champions fight (virtually) and get the best spell output for which the first champion can kill the second as quickly as possible. The fight takes place only from a data point of view, i.e. no graphic combat is displayed on the screen.
+
+The best spells output is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round (until he reaches zero hp).
 
 # Table of Contents
 
@@ -51,7 +53,7 @@ Once the best spell output is found, it is saved in the corresponding `.loltacti
 
 # Champion Data
 
-A  League of Legends champion is described by a `.yml` file with the following struct:
+Each league of legends champion is described by a `.yml` file with the following struct:
 
 ```yml
 version: 1.1.0
@@ -90,6 +92,7 @@ spells:
 
 ### Note
 
-- `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (`aa`).
+- `version`: data dragon [version](https://developer.riotgames.com/docs/lol#data-dragon_versions).
+- `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (i.e. `aa`).
 - `cooldown`: Minimum length of time (in seconds) to wait after using an ability before it can be used again.
 - `cast`: Length of time (in seconds) needed to summoning a spell.
