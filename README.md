@@ -1,5 +1,13 @@
 # League of Legends Fight Tactics
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
+
+Make two champions fight and get the best combination of spells based on the time (in seconds) it takes to kill the enemy champion.
+
+Statistics of each champion can be downloaded/updated using the official [League of Legends Riot APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Once the data has been downloaded, it is possible to make two champions fight (virtually) and get the best spell output for which the first champion can kill the second as quickly as possible. The fight takes place only from a data point of view, i.e. no graphic combat is displayed on the screen.
+
+Once the best spell output is found, it is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round.
+
 # Table of Contents
 
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
