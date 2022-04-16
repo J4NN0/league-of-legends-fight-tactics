@@ -164,7 +164,7 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 			ID:       spell.ID,
 			Name:     spell.Name,
 			Damage:   spell.Damage,
-			MaxRank:  spell.MaxRank,
+			MaxRank:  1, //spell.MaxRank,
 			Cooldown: spell.Cooldown,
 			Cast:     0.0,
 		})
