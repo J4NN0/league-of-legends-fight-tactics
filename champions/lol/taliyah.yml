@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 58
+  damage:
+  - 58
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: TaliyahQ
   name: Threaded Volley
-  damage: 0
+  damage:
+  - 70
+  - 95
+  - 120
+  - 145
+  - 170
   max_rank: 5
   cooldown:
   - 7
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: TaliyahWVC
   name: Seismic Shove
-  damage: 0
+  damage:
+  - 60
+  - 80
+  - 100
+  - 120
+  - 140
   max_rank: 5
   cooldown:
   - 16
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: TaliyahE
   name: Unraveled Earth
-  damage: 0
+  damage:
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
   max_rank: 5
   cooldown:
   - 16
@@ -55,7 +71,12 @@ spells:
   cast: 0
 - id: TaliyahR
   name: Weaver's Wall
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 180

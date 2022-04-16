@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 66
+  damage:
+  - 66
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: GarenQ
   name: Decisive Strike
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: GarenW
   name: Courage
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 23
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: GarenE
   name: Judgment
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 9
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: GarenR
   name: Demacian Justice
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 120

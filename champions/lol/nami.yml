@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 51
+  damage:
+  - 51
   max_rank: 1
   cooldown:
   - 0.644
   cast: 0
 - id: NamiQ
   name: Aqua Prison
-  damage: 0
+  damage:
+  - 75
+  - 130
+  - 185
+  - 240
+  - 295
   max_rank: 5
   cooldown:
   - 12
@@ -33,7 +39,8 @@ spells:
   cast: 0
 - id: NamiW
   name: Ebb and Flow
-  damage: 0
+  damage:
+  - 3
   max_rank: 5
   cooldown:
   - 10
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: NamiE
   name: Tidecaller's Blessing
-  damage: 0
+  damage:
+  - 20
+  - 35
+  - 50
+  - 65
+  - 80
   max_rank: 5
   cooldown:
   - 11
@@ -55,7 +67,10 @@ spells:
   cast: 0
 - id: NamiR
   name: Tidal Wave
-  damage: 0
+  damage:
+  - 150
+  - 250
+  - 350
   max_rank: 3
   cooldown:
   - 120

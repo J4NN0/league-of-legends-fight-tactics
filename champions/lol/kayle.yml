@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 50
+  damage:
+  - 50
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: KayleQ
   name: Radiant Blast
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: KayleW
   name: Celestial Blessing
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 15
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: KayleE
   name: Starfire Spellblade
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: KayleR
   name: Divine Judgment
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 160

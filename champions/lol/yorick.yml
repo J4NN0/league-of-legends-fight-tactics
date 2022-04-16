@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
+  damage:
+  - 62
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: YorickQ
   name: Last Rites
-  damage: 0
+  damage:
+  - 5
   max_rank: 5
   cooldown:
   - 7
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: YorickW
   name: Dark Procession
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: YorickE
   name: Mourning Mist
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: YorickR
   name: Eulogy of the Isles
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 160

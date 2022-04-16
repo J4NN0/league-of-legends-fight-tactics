@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 53
+  damage:
+  - 53
   max_rank: 1
   cooldown:
   - 0.736
   cast: 0
 - id: BandageToss
   name: Bandage Toss
-  damage: 0
+  damage:
+  - 70
+  - 95
+  - 120
+  - 145
+  - 170
   max_rank: 5
   cooldown:
   - 3
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: AuraofDespair
   name: Despair
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 1
@@ -44,7 +55,8 @@ spells:
   cast: 0
 - id: Tantrum
   name: Tantrum
-  damage: 0
+  damage:
+  - 0.5
   max_rank: 5
   cooldown:
   - 9
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: CurseoftheSadMummy
   name: Curse of the Sad Mummy
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 150

@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 57
+  damage:
+  - 57
   max_rank: 1
   cooldown:
   - 0.658
   cast: 0
 - id: ViegoQ
   name: Blade of the Ruined King
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 5
@@ -33,7 +35,8 @@ spells:
   cast: 0
 - id: ViegoW
   name: Spectral Maw
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -44,7 +47,12 @@ spells:
   cast: 0
 - id: ViegoE
   name: Harrowed Path
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 14
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: ViegoR
   name: Heartbreaker
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

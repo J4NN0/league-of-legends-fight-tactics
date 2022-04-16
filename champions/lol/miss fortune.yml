@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 52
+  damage:
+  - 52
   max_rank: 1
   cooldown:
   - 0.656
   cast: 0
 - id: MissFortuneRicochetShot
   name: Double Up
-  damage: 0
+  damage:
+  - 1
   max_rank: 5
   cooldown:
   - 7
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: MissFortuneViciousStrikes
   name: Strut
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: MissFortuneScattershot
   name: Make It Rain
-  damage: 0
+  damage:
+  - 80
+  - 115
+  - 150
+  - 185
+  - 220
   max_rank: 5
   cooldown:
   - 18
@@ -55,7 +67,12 @@ spells:
   cast: 0
 - id: MissFortuneBulletTime
   name: Bullet Time
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 57
+  damage:
+  - 57
   max_rank: 1
   cooldown:
   - 0.658
   cast: 0
 - id: SamiraQ
   name: Flair
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 6
@@ -33,7 +35,8 @@ spells:
   cast: 0
 - id: SamiraW
   name: Blade Whirl
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 30
@@ -44,7 +47,8 @@ spells:
   cast: 0
 - id: SamiraE
   name: Wild Rush
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -55,7 +59,8 @@ spells:
   cast: 0
 - id: SamiraR
   name: Inferno Trigger
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 8

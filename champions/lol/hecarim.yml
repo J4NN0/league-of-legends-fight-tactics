@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 66
+  damage:
+  - 66
   max_rank: 1
   cooldown:
   - 0.67
   cast: 0
 - id: HecarimRapidSlash
   name: Rampage
-  damage: 0
+  damage:
+  - 60
+  - 97
+  - 134
+  - 171
+  - 208
   max_rank: 5
   cooldown:
   - 4
@@ -33,7 +39,8 @@ spells:
   cast: 0
 - id: HecarimW
   name: Spirit of Dread
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 18
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: HecarimRamp
   name: Devastating Charge
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -55,7 +67,10 @@ spells:
   cast: 0
 - id: HecarimUlt
   name: Onslaught of Shadows
-  damage: 0
+  damage:
+  - 150
+  - 250
+  - 350
   max_rank: 3
   cooldown:
   - 140

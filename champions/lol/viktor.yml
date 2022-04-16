@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 53
+  damage:
+  - 53
   max_rank: 1
   cooldown:
   - 0.658
   cast: 0
 - id: ViktorPowerTransfer
   name: Siphon Power
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 9
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: ViktorGravitonField
   name: Gravity Field
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 17
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: ViktorDeathRay
   name: Death Ray
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -55,7 +71,12 @@ spells:
   cast: 0
 - id: ViktorChaosStorm
   name: Chaos Storm
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

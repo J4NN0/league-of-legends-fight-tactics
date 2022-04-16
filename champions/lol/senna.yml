@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 50
+  damage:
+  - 50
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: SennaQ
   name: Piercing Darkness
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 15
@@ -33,7 +35,8 @@ spells:
   cast: 0
 - id: SennaW
   name: Last Embrace
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 11
@@ -44,7 +47,12 @@ spells:
   cast: 0
 - id: SennaE
   name: Curse of the Black Mist
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 26
@@ -55,7 +63,8 @@ spells:
   cast: 0
 - id: SennaR
   name: Dawning Shadow
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 160

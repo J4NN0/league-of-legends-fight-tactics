@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 50
+  damage:
+  - 50
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: SorakaQ
   name: Starcall
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: SorakaW
   name: Astral Infusion
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 6
@@ -44,7 +51,8 @@ spells:
   cast: 0
 - id: SorakaE
   name: Equinox
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: SorakaR
   name: Wish
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 160

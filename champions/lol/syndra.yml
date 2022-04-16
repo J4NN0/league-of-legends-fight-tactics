@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 54
+  damage:
+  - 54
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: SyndraQ
   name: Dark Sphere
-  damage: 0
+  damage:
+  - 6
   max_rank: 5
   cooldown:
   - 4
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: SyndraW
   name: Force of Will
-  damage: 0
+  damage:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
   max_rank: 5
   cooldown:
   - 12
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: SyndraE
   name: Scatter the Weak
-  damage: 0
+  damage:
+  - 85
+  - 130
+  - 175
+  - 220
+  - 265
   max_rank: 5
   cooldown:
   - 18
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: SyndraR
   name: Unleashed Power
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 120

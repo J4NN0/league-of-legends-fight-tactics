@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 68
+  damage:
+  - 68
   max_rank: 1
   cooldown:
   - 0.711
   cast: 0
 - id: MonkeyKingDoubleAttack
   name: Crushing Blow
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 9
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: MonkeyKingDecoy
   name: Warrior Trickster
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -44,7 +51,8 @@ spells:
   cast: 0
 - id: MonkeyKingNimbus
   name: Nimbus Strike
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 10
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: MonkeyKingSpinToWin
   name: Cyclone
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 53
+  damage:
+  - 53
   max_rank: 1
   cooldown:
   - 0.668
   cast: 0
 - id: AhriOrbofDeception
   name: Orb of Deception
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 7
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: AhriFoxFire
   name: Fox-Fire
-  damage: 0
+  damage:
+  - 60
+  - 85
+  - 110
+  - 135
+  - 160
   max_rank: 5
   cooldown:
   - 9
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: AhriSeduce
   name: Charm
-  damage: 0
+  damage:
+  - 80
+  - 110
+  - 140
+  - 170
+  - 200
   max_rank: 5
   cooldown:
   - 12
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: AhriTumble
   name: Spirit Rush
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 130

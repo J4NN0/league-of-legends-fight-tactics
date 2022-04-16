@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 52
+  damage:
+  - 52
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: ZileanQ
   name: Time Bomb
-  damage: 0
+  damage:
+  - 7
   max_rank: 5
   cooldown:
   - 10
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: ZileanW
   name: Rewind
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 14
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: TimeWarp
   name: Time Warp
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 15
@@ -55,7 +67,12 @@ spells:
   cast: 0
 - id: ChronoShift
   name: Chronoshift
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

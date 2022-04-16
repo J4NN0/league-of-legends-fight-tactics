@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 55
+  damage:
+  - 55
   max_rank: 1
   cooldown:
   - 0.669
   cast: 0
 - id: SeraphineQ
   name: High Note
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 10
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: SeraphineW
   name: Surround Sound
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 26
@@ -44,7 +55,8 @@ spells:
   cast: 0
 - id: SeraphineE
   name: Beat Drop
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 13
@@ -55,7 +67,12 @@ spells:
   cast: 0
 - id: SeraphineR
   name: Encore
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 160

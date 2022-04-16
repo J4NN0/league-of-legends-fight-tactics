@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 50
+  damage:
+  - 50
   max_rank: 1
   cooldown:
   - 0.579
   cast: 0
 - id: AnnieQ
   name: Disintegrate
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 4
@@ -33,7 +35,8 @@ spells:
   cast: 0
 - id: AnnieW
   name: Incinerate
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -44,7 +47,12 @@ spells:
   cast: 0
 - id: AnnieE
   name: Molten Shield
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 14
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: AnnieR
   name: 'Summon: Tibbers'
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 120

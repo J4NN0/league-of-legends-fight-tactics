@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 56
+  damage:
+  - 56
   max_rank: 1
   cooldown:
   - 0.656
   cast: 0
 - id: PowerBall
   name: Powerball
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 16
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: DefensiveBallCurl
   name: Defensive Ball Curl
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 6
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: PuncturingTaunt
   name: Frenzying Taunt
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: Tremors2
   name: Soaring Slam
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 110

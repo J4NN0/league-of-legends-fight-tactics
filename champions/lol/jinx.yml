@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 57
+  damage:
+  - 57
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: JinxQ
   name: Switcheroo!
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 0.9
@@ -33,7 +39,8 @@ spells:
   cast: 0
 - id: JinxW
   name: Zap!
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -44,7 +51,8 @@ spells:
   cast: 0
 - id: JinxE
   name: Flame Chompers!
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 24
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: JinxR
   name: Super Mega Death Rocket!
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 75

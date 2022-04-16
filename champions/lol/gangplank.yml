@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 64
+  damage:
+  - 64
   max_rank: 1
   cooldown:
   - 0.658
   cast: 0
 - id: GangplankQWrapper
   name: Parrrley
-  damage: 0
+  damage:
+  - 20
+  - 45
+  - 70
+  - 95
+  - 120
   max_rank: 5
   cooldown:
   - 4.5
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: GangplankW
   name: Remove Scurvy
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 22
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: GangplankE
   name: Powder Keg
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 0
@@ -55,7 +71,12 @@ spells:
   cast: 0
 - id: GangplankR
   name: Cannon Barrage
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 180

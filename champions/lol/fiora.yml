@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 68
+  damage:
+  - 68
   max_rank: 1
   cooldown:
   - 0.69
   cast: 0
 - id: FioraQ
   name: Lunge
-  damage: 0
+  damage:
+  - 70
+  - 80
+  - 90
+  - 100
+  - 110
   max_rank: 5
   cooldown:
   - 13
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: FioraW
   name: Riposte
-  damage: 0
+  damage:
+  - 110
+  - 150
+  - 190
+  - 230
+  - 270
   max_rank: 5
   cooldown:
   - 24
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: FioraE
   name: Bladework
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 11
@@ -55,7 +71,12 @@ spells:
   cast: 0
 - id: FioraR
   name: Grand Challenge
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 110

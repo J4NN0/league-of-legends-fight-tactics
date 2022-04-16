@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 51
+  damage:
+  - 51
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: KarmaQ
   name: Inner Flame
-  damage: 0
+  damage:
+  - 70
+  - 120
+  - 170
+  - 220
+  - 270
   max_rank: 5
   cooldown:
   - 9
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: KarmaSpiritBind
   name: Focused Resolve
-  damage: 0
+  damage:
+  - 80
+  - 130
+  - 180
+  - 230
+  - 280
   max_rank: 5
   cooldown:
   - 12
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: KarmaSolKimShield
   name: Inspire
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 10
@@ -55,7 +71,12 @@ spells:
   cast: 0
 - id: KarmaMantra
   name: Mantra
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 4
   cooldown:
   - 40

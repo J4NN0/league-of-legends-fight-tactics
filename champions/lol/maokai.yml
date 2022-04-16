@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 64
+  damage:
+  - 64
   max_rank: 1
   cooldown:
   - 0.8
   cast: 0
 - id: MaokaiQ
   name: Bramble Smash
-  damage: 0
+  damage:
+  - 70
+  - 110
+  - 150
+  - 190
+  - 230
   max_rank: 5
   cooldown:
   - 8
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: MaokaiW
   name: Twisted Advance
-  damage: 0
+  damage:
+  - 60
+  - 85
+  - 110
+  - 135
+  - 160
   max_rank: 5
   cooldown:
   - 13
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: MaokaiE
   name: Sapling Toss
-  damage: 0
+  damage:
+  - 20
+  - 45
+  - 70
+  - 95
+  - 120
   max_rank: 5
   cooldown:
   - 10
@@ -55,7 +71,10 @@ spells:
   cast: 0
 - id: MaokaiR
   name: Nature's Grasp
-  damage: 0
+  damage:
+  - 150
+  - 225
+  - 300
   max_rank: 3
   cooldown:
   - 120

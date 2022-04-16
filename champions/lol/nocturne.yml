@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
+  damage:
+  - 62
   max_rank: 1
   cooldown:
   - 0.721
   cast: 0
 - id: NocturneDuskbringer
   name: Duskbringer
-  damage: 0
+  damage:
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
   max_rank: 5
   cooldown:
   - 8
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: NocturneShroudofDarkness
   name: Shroud of Darkness
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: NocturneUnspeakableHorror
   name: Unspeakable Horror
-  damage: 0
+  damage:
+  - 80
+  - 125
+  - 170
+  - 215
+  - 260
   max_rank: 5
   cooldown:
   - 15
@@ -55,7 +71,8 @@ spells:
   cast: 0
 - id: NocturneParanoia
   name: Paranoia
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 140

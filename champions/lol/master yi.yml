@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 66
+  damage:
+  - 66
   max_rank: 1
   cooldown:
   - 0.679
   cast: 0
 - id: AlphaStrike
   name: Alpha Strike
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 18
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: Meditate
   name: Meditate
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 28
@@ -44,7 +51,8 @@ spells:
   cast: 0
 - id: WujuStyle
   name: Wuju Style
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 18
@@ -55,7 +63,12 @@ spells:
   cast: 0
 - id: Highlander
   name: Highlander
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 3
   cooldown:
   - 85

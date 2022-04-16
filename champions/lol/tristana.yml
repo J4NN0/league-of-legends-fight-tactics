@@ -15,14 +15,20 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
+  damage:
+  - 59
   max_rank: 1
   cooldown:
   - 0.656
   cast: 0
 - id: TristanaQ
   name: Rapid Fire
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -33,7 +39,12 @@ spells:
   cast: 0
 - id: TristanaW
   name: Rocket Jump
-  damage: 0
+  damage:
+  - 95
+  - 145
+  - 195
+  - 245
+  - 295
   max_rank: 5
   cooldown:
   - 22
@@ -44,7 +55,12 @@ spells:
   cast: 0
 - id: TristanaE
   name: Explosive Charge
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 16
@@ -55,7 +71,8 @@ spells:
   cast: 0
 - id: TristanaR
   name: Buster Shot
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 120

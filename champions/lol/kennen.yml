@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 48
+  damage:
+  - 48
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: KennenShurikenHurlMissile1
   name: Thundering Shuriken
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 8
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: KennenBringTheLight
   name: Electrical Surge
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 14
@@ -44,7 +51,12 @@ spells:
   cast: 0
 - id: KennenLightningRush
   name: Lightning Rush
-  damage: 0
+  damage:
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
   max_rank: 5
   cooldown:
   - 10
@@ -55,7 +67,8 @@ spells:
   cast: 0
 - id: KennenShurikenStorm
   name: Slicing Maelstrom
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 120

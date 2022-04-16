@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 65
+  damage:
+  - 65
   max_rank: 1
   cooldown:
   - 0.656
   cast: 0
 - id: IreliaQ
   name: Bladesurge
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 11
@@ -33,7 +35,8 @@ spells:
   cast: 0
 - id: IreliaW
   name: Defiant Dance
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -44,7 +47,8 @@ spells:
   cast: 0
 - id: IreliaE
   name: Flawless Duet
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 18
@@ -55,7 +59,8 @@ spells:
   cast: 0
 - id: IreliaR
   name: Vanguard's Edge
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 140

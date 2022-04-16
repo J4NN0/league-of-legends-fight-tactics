@@ -15,14 +15,16 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 48
+  damage:
+  - 48
   max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: NeekoQ
   name: Blooming Burst
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 7
@@ -33,7 +35,12 @@ spells:
   cast: 0
 - id: NeekoW
   name: Shapesplitter
-  damage: 0
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   max_rank: 5
   cooldown:
   - 20
@@ -44,7 +51,8 @@ spells:
   cast: 0
 - id: NeekoE
   name: Tangle-Barbs
-  damage: 0
+  damage:
+  - 0
   max_rank: 5
   cooldown:
   - 12
@@ -55,7 +63,8 @@ spells:
   cast: 0
 - id: NeekoR
   name: Pop Blossom
-  damage: 0
+  damage:
+  - 0
   max_rank: 3
   cooldown:
   - 90
