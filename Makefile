@@ -14,7 +14,7 @@ cover_profile_filename := build/cover.out
 
 
 # === BUILD =======================================================
-build-loltactics:
+build-lol-tactics:
 	go build -o build/league_of_legends_tactics_cli cmd/$(app_name)/main.go
 
 # === TEST =======================================================
@@ -81,4 +81,4 @@ tool-fmt:
 	go fmt ./...
 
 # === DEVELOPMENT =======================================================
-dev-pre-commit: tool-mod-tidy tool-fmt build-loltactics run-lint test-pre-commit
+dev-pre-commit: tool-mod-tidy tool-fmt build-lol-tactics run-lint test-pre-commit
