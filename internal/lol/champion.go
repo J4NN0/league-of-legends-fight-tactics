@@ -74,5 +74,5 @@ func Write(champion Champion) error {
 }
 
 func getYMLPath(championName string) string {
-	return BaseChampionPath + strings.ToLower(championName) + fileExtension
+	return BaseChampionPath + strings.ReplaceAll(strings.ToLower(championName), " ", "") + fileExtension
 }

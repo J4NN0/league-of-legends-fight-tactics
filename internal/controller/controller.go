@@ -129,7 +129,7 @@ func (c *Controller) storeChampionToYmlFile(championData riot.DDragonChampionRes
 }
 
 func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampionResponse) lol.Champion {
-	championData := championResponse.Data[strings.Title(championResponse.DataName)]
+	championData := championResponse.Data[championResponse.DataName]
 	lolChampion := lol.Champion{
 		Version: championResponse.Version,
 		Name:    championData.Name,

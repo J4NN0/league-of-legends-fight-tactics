@@ -95,13 +95,14 @@ func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionRespons
 }
 
 func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
-	err = httpclient.Get(c.hc, getChampionUrl(sanitizeChampionName(championName)), &championResponse)
+	sanitizedChampionName := sanitizeChampionName(championName)
+	err = httpclient.Get(c.hc, getChampionUrl(sanitizedChampionName), &championResponse)
 	if err != nil {
 		return DDragonChampionResponse{}, err
 	}
 
-	championResponse.DataName = championName
-	for i, s := range championResponse.Data[strings.Title(championResponse.DataName)].Spells {
+	championResponse.DataName = sanitizedChampionName
+	for i, s := range championResponse.Data[sanitizedChampionName].Spells {
 		championResponse.Data[strings.Title(championResponse.DataName)].Spells[i].Damage = c.getSpellDamage(s)
 	}
 
