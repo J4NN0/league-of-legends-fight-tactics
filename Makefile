@@ -59,10 +59,13 @@ run-help:
 run-lint:
 	golangci-lint run ./...
 
-# === RUN =======================================================
+# === CLEAN =======================================================
 # Clean files
-clean-loltactics:
+clean-lol-fights:
 	rm fights/*
+
+clean-lol-champions:
+	rm champions/lol/*
 
 # === TOOLS =======================================================
 # Get a decorated HTML presentation of cover file: showing the covered (green), uncovered (red), and un-instrumented (grey) source.
