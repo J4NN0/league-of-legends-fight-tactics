@@ -32,7 +32,7 @@ func (f *FightTactics) Fight(champion1, champion2 Champion) {
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp, &bestSol)
 
-	f.log.Printf("[%s vs %s] Best solution found: %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
+	f.log.Printf("[%s vs %s] Best solution found: enemy slayed in %.2fs\n", champion1.Name, champion2.Name, bestSol.Benchmark)
 
 	fileName := setFilePath(champion1, champion2)
 	file.Create(fileName)
