@@ -41,9 +41,12 @@ func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float32, bestSol *bes
 	}
 
 	for i := 0; i < len(spells); i++ {
-		sol = append(sol, spells[i])
-		getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
-		sol = sol[:len(sol)-1] // pop value
+		if spells[i].Damage[0] != 0 {
+			// Exclude spells with zero damage
+			sol = append(sol, spells[i])
+			getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
+			sol = sol[:len(sol)-1] // pop value
+		}
 	}
 }
 
@@ -62,7 +65,7 @@ func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
 		bestSol.Benchmark = tmpBench
-		bestSol.RoundOfSpells = spells
+		bestSol.RoundOfSpells = append(bestSol.RoundOfSpells, spells...)
 	}
 }
 
