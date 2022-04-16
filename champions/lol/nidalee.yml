@@ -1,0 +1,86 @@
+version: 12.3.1
+name: Nidalee
+tags: Assassin, Mage
+stats:
+  hp: 570
+  hp_per_level: 95
+  armor: 28
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 58
+  attack_damage_per_level: 3.5
+  attack_speed: 0.638
+  attack_speed_per_level: 3.22
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 58
+  max_rank: 1
+  cooldown:
+  - 0.638
+  cast: 0
+- id: JavelinToss
+  name: Javelin Toss / Takedown
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: Bushwhack
+  name: Bushwhack / Pounce
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: PrimalSurge
+  name: Primal Surge / Swipe
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: AspectOfTheCougar
+  name: Aspect Of The Cougar
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 3
+  - 3
+  - 3
+  - 3
+  cast: 0

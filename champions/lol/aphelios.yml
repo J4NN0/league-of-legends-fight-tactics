@@ -1,0 +1,84 @@
+version: 12.3.1
+name: Aphelios
+tags: Marksman
+stats:
+  hp: 530
+  hp_per_level: 88
+  armor: 28
+  armor_per_level: 3
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55
+  attack_damage_per_level: 3
+  attack_speed: 0.64
+  attack_speed_per_level: 2.1
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 55
+  max_rank: 1
+  cooldown:
+  - 0.64
+  cast: 0
+- id: ApheliosQ_ClientTooltipWrapper
+  name: Weapon Abilites
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  cast: 0
+- id: ApheliosW
+  name: Phase
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0.8
+  - 0.8
+  - 0.8
+  - 0.8
+  - 0.8
+  - 0.8
+  cast: 0
+- id: ApheliosE_ClientTooltipWrapper
+  name: Weapon Queue System
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: ApheliosR
+  name: Moonlight Vigil
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 110
+  - 100
+  cast: 0

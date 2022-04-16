@@ -1,0 +1,86 @@
+version: 12.3.1
+name: Karma
+tags: Mage, Support
+stats:
+  hp: 534
+  hp_per_level: 95
+  armor: 28
+  armor_per_level: 3.8
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 51
+  attack_damage_per_level: 3.3
+  attack_speed: 0.625
+  attack_speed_per_level: 2.3
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 51
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: KarmaQ
+  name: Inner Flame
+  damage:
+  - 70
+  - 120
+  - 170
+  - 220
+  - 270
+  max_rank: 1
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: KarmaSpiritBind
+  name: Focused Resolve
+  damage:
+  - 80
+  - 130
+  - 180
+  - 230
+  - 280
+  max_rank: 1
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: KarmaSolKimShield
+  name: Inspire
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: KarmaMantra
+  name: Mantra
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 40
+  - 38
+  - 36
+  - 34
+  cast: 0

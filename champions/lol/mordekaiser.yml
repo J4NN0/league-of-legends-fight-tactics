@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Mordekaiser
+tags: Fighter
+stats:
+  hp: 575
+  hp_per_level: 90
+  armor: 37
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 61
+  attack_damage_per_level: 4
+  attack_speed: 0.625
+  attack_speed_per_level: 1
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 61
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: MordekaiserQ
+  name: Obliterate
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 9
+  - 7.75
+  - 6.5
+  - 5.25
+  - 4
+  cast: 0
+- id: MordekaiserW
+  name: Indestructible
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: MordekaiserE
+  name: Death's Grasp
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 18
+  - 16
+  - 14
+  - 12
+  - 10
+  cast: 0
+- id: MordekaiserR
+  name: Realm of Death
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 140
+  - 120
+  - 100
+  cast: 0

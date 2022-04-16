@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Renekton
+tags: Fighter, Tank
+stats:
+  hp: 590
+  hp_per_level: 92
+  armor: 35
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 69
+  attack_damage_per_level: 3.75
+  attack_speed: 0.665
+  attack_speed_per_level: 2.75
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 69
+  max_rank: 1
+  cooldown:
+  - 0.665
+  cast: 0
+- id: RenektonCleave
+  name: Cull the Meek
+  damage:
+  - 65
+  - 100
+  - 135
+  - 170
+  - 205
+  max_rank: 1
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: RenektonPreExecute
+  name: Ruthless Predator
+  damage:
+  - 5
+  - 15
+  - 25
+  - 35
+  - 45
+  max_rank: 1
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: RenektonSliceAndDice
+  name: Slice and Dice
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 18
+  - 17
+  - 16
+  - 15
+  - 14
+  cast: 0
+- id: RenektonReignOfTheTyrant
+  name: Dominus
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 120
+  - 120
+  cast: 0

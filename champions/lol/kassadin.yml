@@ -1,0 +1,83 @@
+version: 12.3.1
+name: Kassadin
+tags: Assassin, Mage
+stats:
+  hp: 576
+  hp_per_level: 105
+  armor: 19
+  armor_per_level: 2.8
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 59
+  attack_damage_per_level: 3.9
+  attack_speed: 0.64
+  attack_speed_per_level: 3.7
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 59
+  max_rank: 1
+  cooldown:
+  - 0.64
+  cast: 0
+- id: NullLance
+  name: Null Sphere
+  damage:
+  - 65
+  - 95
+  - 125
+  - 155
+  - 185
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10.5
+  - 10
+  - 9.5
+  - 9
+  cast: 0
+- id: NetherBlade
+  name: Nether Blade
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: ForcePulse
+  name: Force Pulse
+  damage:
+  - 80
+  - 105
+  - 130
+  - 155
+  - 180
+  max_rank: 1
+  cooldown:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  cast: 0
+- id: RiftWalk
+  name: Riftwalk
+  damage:
+  - 80
+  - 100
+  - 120
+  max_rank: 1
+  cooldown:
+  - 5
+  - 3.5
+  - 2
+  cast: 0

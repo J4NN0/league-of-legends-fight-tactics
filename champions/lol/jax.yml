@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Jax
+tags: Fighter, Assassin
+stats:
+  hp: 593
+  hp_per_level: 85
+  armor: 36
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 68
+  attack_damage_per_level: 4.25
+  attack_speed: 0.638
+  attack_speed_per_level: 3.4
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 68
+  max_rank: 1
+  cooldown:
+  - 0.638
+  cast: 0
+- id: JaxLeapStrike
+  name: Leap Strike
+  damage:
+  - 65
+  - 105
+  - 145
+  - 185
+  - 225
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: JaxEmpowerTwo
+  name: Empower
+  damage:
+  - 40
+  - 75
+  - 110
+  - 145
+  - 180
+  max_rank: 1
+  cooldown:
+  - 7
+  - 6
+  - 5
+  - 4
+  - 3
+  cast: 0
+- id: JaxCounterStrike
+  name: Counter Strike
+  damage:
+  - 1
+  max_rank: 1
+  cooldown:
+  - 14
+  - 12.5
+  - 11
+  - 9.5
+  - 8
+  cast: 0
+- id: JaxRelentlessAssault
+  name: Grandmaster's Might
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 80
+  - 80
+  - 80
+  cast: 0

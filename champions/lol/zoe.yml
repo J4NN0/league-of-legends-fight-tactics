@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Zoe
+tags: Mage, Support
+stats:
+  hp: 560
+  hp_per_level: 92
+  armor: 21
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 58
+  attack_damage_per_level: 3.3
+  attack_speed: 0.625
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 58
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: ZoeQ
+  name: Paddle Star!
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 8.5
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  cast: 0
+- id: ZoeW
+  name: Spell Thief
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  cast: 0
+- id: ZoeE
+  name: Sleepy Trouble Bubble
+  damage:
+  - 60
+  - 100
+  - 140
+  - 180
+  - 220
+  max_rank: 1
+  cooldown:
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
+  cast: 0
+- id: ZoeR
+  name: Portal Jump
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 11
+  - 8
+  - 5
+  cast: 0

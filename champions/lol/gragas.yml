@@ -1,0 +1,79 @@
+version: 12.3.1
+name: Gragas
+tags: Fighter, Mage
+stats:
+  hp: 600
+  hp_per_level: 95
+  armor: 38
+  armor_per_level: 3.6
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 64
+  attack_damage_per_level: 3.5
+  attack_speed: 0.675
+  attack_speed_per_level: 2.05
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 64
+  max_rank: 1
+  cooldown:
+  - 0.675
+  cast: 0
+- id: GragasQ
+  name: Barrel Roll
+  damage:
+  - 80
+  - 120
+  - 160
+  - 200
+  - 240
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: GragasW
+  name: Drunken Rage
+  damage:
+  - 7
+  max_rank: 1
+  cooldown:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  cast: 0
+- id: GragasE
+  name: Body Slam
+  damage:
+  - 80
+  - 125
+  - 170
+  - 215
+  - 260
+  max_rank: 1
+  cooldown:
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
+  cast: 0
+- id: GragasR
+  name: Explosive Cask
+  damage:
+  - 200
+  - 300
+  - 400
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

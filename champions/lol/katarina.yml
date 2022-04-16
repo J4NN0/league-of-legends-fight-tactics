@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Katarina
+tags: Assassin, Mage
+stats:
+  hp: 602
+  hp_per_level: 94
+  armor: 28
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 58
+  attack_damage_per_level: 3.2
+  attack_speed: 0.658
+  attack_speed_per_level: 2.74
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 58
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: KatarinaQ
+  name: Bouncing Blade
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: KatarinaW
+  name: Preparation
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 15
+  - 14
+  - 13
+  - 12
+  - 11
+  cast: 0
+- id: KatarinaEWrapper
+  name: Shunpo
+  damage:
+  - 15
+  - 30
+  - 45
+  - 60
+  - 75
+  max_rank: 1
+  cooldown:
+  - 14
+  - 12.5
+  - 11
+  - 9.5
+  - 8
+  cast: 0
+- id: KatarinaR
+  name: Death Lotus
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 90
+  - 60
+  - 45
+  cast: 0

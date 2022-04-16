@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Sejuani
+tags: Tank, Fighter
+stats:
+  hp: 560
+  hp_per_level: 100
+  armor: 34
+  armor_per_level: 4.25
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 66
+  attack_damage_per_level: 4
+  attack_speed: 0.688
+  attack_speed_per_level: 3.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 66
+  max_rank: 1
+  cooldown:
+  - 0.688
+  cast: 0
+- id: SejuaniQ
+  name: Arctic Assault
+  damage:
+  - 90
+  - 140
+  - 190
+  - 240
+  - 290
+  max_rank: 1
+  cooldown:
+  - 18
+  - 16.5
+  - 15
+  - 13.5
+  - 12
+  cast: 0
+- id: SejuaniW
+  name: Winter's Wrath
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: SejuaniE
+  name: Permafrost
+  damage:
+  - 1
+  max_rank: 1
+  cooldown:
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  cast: 0
+- id: SejuaniR
+  name: Glacial Prison
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Graves
+tags: Marksman
+stats:
+  hp: 555
+  hp_per_level: 92
+  armor: 33
+  armor_per_level: 3.4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 68
+  attack_damage_per_level: 4
+  attack_speed: 0.475
+  attack_speed_per_level: 2.6
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 68
+  max_rank: 1
+  cooldown:
+  - 0.475
+  cast: 0
+- id: GravesQLineSpell
+  name: End of the Line
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: GravesSmokeGrenade
+  name: Smoke Screen
+  damage:
+  - 60
+  - 110
+  - 160
+  - 210
+  - 260
+  max_rank: 1
+  cooldown:
+  - 26
+  - 24
+  - 22
+  - 20
+  - 18
+  cast: 0
+- id: GravesMove
+  name: Quickdraw
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
+  cast: 0
+- id: GravesChargeShot
+  name: Collateral Damage
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 90
+  - 60
+  cast: 0

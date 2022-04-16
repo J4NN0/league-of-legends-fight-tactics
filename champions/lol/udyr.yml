@@ -1,0 +1,91 @@
+version: 12.3.1
+name: Udyr
+tags: Fighter, Tank
+stats:
+  hp: 594
+  hp_per_level: 92
+  armor: 34
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 64
+  attack_damage_per_level: 5
+  attack_speed: 0.658
+  attack_speed_per_level: 2.67
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 64
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: UdyrTigerStance
+  name: Tiger Stance
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: UdyrTurtleStance
+  name: Turtle Stance
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: UdyrBearStance
+  name: Bear Stance
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0
+- id: UdyrPhoenixStance
+  name: Phoenix Stance
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  cast: 0

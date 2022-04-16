@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Xerath
+tags: Mage
+stats:
+  hp: 526
+  hp_per_level: 92
+  armor: 22
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 1.36
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 55
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: XerathArcanopulseChargeUp
+  name: Arcanopulse
+  damage:
+  - 70
+  - 110
+  - 150
+  - 190
+  - 230
+  max_rank: 1
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: XerathArcaneBarrage2
+  name: Eye of Destruction
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  cast: 0
+- id: XerathMageSpear
+  name: Shocking Orb
+  damage:
+  - 80
+  - 110
+  - 140
+  - 170
+  - 200
+  max_rank: 1
+  cooldown:
+  - 13
+  - 12.5
+  - 12
+  - 11.5
+  - 11
+  cast: 0
+- id: XerathLocusOfPower2
+  name: Rite of the Arcane
+  damage:
+  - 10
+  max_rank: 1
+  cooldown:
+  - 130
+  - 115
+  - 100
+  cast: 0

@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Viego
+tags: Assassin, Fighter
+stats:
+  hp: 560
+  hp_per_level: 95
+  armor: 34
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 57
+  attack_damage_per_level: 3.5
+  attack_speed: 0.658
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 57
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: ViegoQ
+  name: Blade of the Ruined King
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 5
+  - 4.5
+  - 4
+  - 3.5
+  - 3
+  cast: 0
+- id: ViegoW
+  name: Spectral Maw
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: ViegoE
+  name: Harrowed Path
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 14
+  - 12
+  - 10
+  - 8
+  - 6
+  cast: 0
+- id: ViegoR
+  name: Heartbreaker
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

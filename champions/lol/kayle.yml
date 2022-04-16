@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Kayle
+tags: Fighter, Support
+stats:
+  hp: 600
+  hp_per_level: 85
+  armor: 26
+  armor_per_level: 3
+  spell_block: 26
+  spell_block_per_level: 0.5
+  attack_damage: 50
+  attack_damage_per_level: 2.5
+  attack_speed: 0.625
+  attack_speed_per_level: 1.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 50
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: KayleQ
+  name: Radiant Blast
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: KayleW
+  name: Celestial Blessing
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
+  cast: 0
+- id: KayleE
+  name: Starfire Spellblade
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: KayleR
+  name: Divine Judgment
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 160
+  - 120
+  - 80
+  cast: 0

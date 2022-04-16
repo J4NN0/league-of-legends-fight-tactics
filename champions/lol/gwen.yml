@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Gwen
+tags: Fighter, Assassin
+stats:
+  hp: 590
+  hp_per_level: 95
+  armor: 39
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 63
+  attack_damage_per_level: 3
+  attack_speed: 0.69
+  attack_speed_per_level: 2.25
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 63
+  max_rank: 1
+  cooldown:
+  - 0.69
+  cast: 0
+- id: GwenQ
+  name: Snip Snip!
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6.5
+  - 5.75
+  - 5
+  - 4.25
+  - 3.5
+  cast: 0
+- id: GwenW
+  name: Hallowed Mist
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 22
+  - 20
+  - 18
+  - 16
+  - 14
+  cast: 0
+- id: GwenE
+  name: Skip 'n Slash
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: GwenR
+  name: Needlework
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

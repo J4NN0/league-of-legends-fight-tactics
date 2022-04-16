@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Ahri
+tags: Mage, Assassin
+stats:
+  hp: 500
+  hp_per_level: 82
+  armor: 18
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 53
+  attack_damage_per_level: 3
+  attack_speed: 0.668
+  attack_speed_per_level: 2
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 53
+  max_rank: 1
+  cooldown:
+  - 0.668
+  cast: 0
+- id: AhriOrbofDeception
+  name: Orb of Deception
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: AhriFoxFire
+  name: Fox-Fire
+  damage:
+  - 60
+  - 85
+  - 110
+  - 135
+  - 160
+  max_rank: 1
+  cooldown:
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  cast: 0
+- id: AhriSeduce
+  name: Charm
+  damage:
+  - 80
+  - 110
+  - 140
+  - 170
+  - 200
+  max_rank: 1
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: AhriTumble
+  name: Spirit Rush
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 130
+  - 105
+  - 80
+  cast: 0

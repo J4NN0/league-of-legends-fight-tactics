@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Lillia
+tags: Fighter, Mage
+stats:
+  hp: 580
+  hp_per_level: 90
+  armor: 22
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 0.75
+  attack_damage: 61
+  attack_damage_per_level: 3.1
+  attack_speed: 0.625
+  attack_speed_per_level: 2.7
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 61
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: LilliaQ
+  name: Blooming Blows
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 6
+  - 5.5
+  - 5
+  - 4.5
+  - 4
+  cast: 0
+- id: LilliaW
+  name: Watch Out! Eep!
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  cast: 0
+- id: LilliaE
+  name: Swirlseed
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 16
+  - 16
+  - 16
+  - 16
+  - 16
+  cast: 0
+- id: LilliaR
+  name: Lilting Lullaby
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 150
+  - 130
+  - 110
+  cast: 0

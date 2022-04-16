@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Gnar
+tags: Fighter, Tank
+stats:
+  hp: 510
+  hp_per_level: 65
+  armor: 32
+  armor_per_level: 2.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 57
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 6
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 57
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: GnarQ
+  name: Boomerang Throw / Boulder Toss
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 20
+  - 17.5
+  - 15
+  - 12.5
+  - 10
+  cast: 0
+- id: GnarW
+  name: Hyper / Wallop
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: GnarE
+  name: Hop / Crunch
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 22
+  - 19.5
+  - 17
+  - 14.5
+  - 12
+  cast: 0
+- id: GnarR
+  name: GNAR!
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 90
+  - 60
+  - 30
+  cast: 0

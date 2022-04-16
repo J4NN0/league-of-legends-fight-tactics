@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Rakan
+tags: Support
+stats:
+  hp: 540
+  hp_per_level: 85
+  armor: 32
+  armor_per_level: 3.9
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 62
+  attack_damage_per_level: 3.5
+  attack_speed: 0.635
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 62
+  max_rank: 1
+  cooldown:
+  - 0.635
+  cast: 0
+- id: RakanQ
+  name: Gleaming Quill
+  damage:
+  - 70
+  - 115
+  - 160
+  - 205
+  - 250
+  max_rank: 1
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: RakanW
+  name: Grand Entrance
+  damage:
+  - 70
+  - 115
+  - 160
+  - 205
+  - 250
+  max_rank: 1
+  cooldown:
+  - 18
+  - 16.5
+  - 15
+  - 13.5
+  - 12
+  cast: 0
+- id: RakanE
+  name: Battle Dance
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: RakanR
+  name: The Quickness
+  damage:
+  - 4
+  max_rank: 1
+  cooldown:
+  - 130
+  - 110
+  - 90
+  cast: 0

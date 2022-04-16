@@ -1,0 +1,73 @@
+version: 12.3.1
+name: Akshan
+tags: Marksman, Assassin
+stats:
+  hp: 560
+  hp_per_level: 90
+  armor: 26
+  armor_per_level: 3
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 52
+  attack_damage_per_level: 3.5
+  attack_speed: 0.638
+  attack_speed_per_level: 4
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 52
+  max_rank: 1
+  cooldown:
+  - 0.638
+  cast: 0
+- id: AkshanQ
+  name: Avengerang
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.25
+  - 6.5
+  - 5.75
+  - 5
+  cast: 0
+- id: AkshanW
+  name: Going Rogue
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 18
+  - 14
+  - 10
+  - 6
+  - 2
+  cast: 0
+- id: AkshanE
+  name: Heroic Swing
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 18
+  - 16.5
+  - 15
+  - 13.5
+  - 12
+  cast: 0
+- id: AkshanR
+  name: Comeuppance
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 100
+  - 85
+  - 70
+  cast: 0

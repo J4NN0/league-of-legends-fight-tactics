@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Braum
+tags: Support, Tank
+stats:
+  hp: 540
+  hp_per_level: 98
+  armor: 47
+  armor_per_level: 4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 55
+  attack_damage_per_level: 3.2
+  attack_speed: 0.644
+  attack_speed_per_level: 3.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 55
+  max_rank: 1
+  cooldown:
+  - 0.644
+  cast: 0
+- id: BraumQ
+  name: Winter's Bite
+  damage:
+  - 75
+  - 125
+  - 175
+  - 225
+  - 275
+  max_rank: 1
+  cooldown:
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  cast: 0
+- id: BraumW
+  name: Stand Behind Me
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: BraumE
+  name: Unbreakable
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 16
+  - 14
+  - 12
+  - 10
+  - 8
+  cast: 0
+- id: BraumRWrapper
+  name: Glacial Fissure
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

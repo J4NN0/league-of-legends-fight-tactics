@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Fizz
+tags: Assassin, Fighter
+stats:
+  hp: 570
+  hp_per_level: 98
+  armor: 22
+  armor_per_level: 3.4
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 58
+  attack_damage_per_level: 3
+  attack_speed: 0.658
+  attack_speed_per_level: 3.1
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 58
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: FizzQ
+  name: Urchin Strike
+  damage:
+  - 10
+  - 25
+  - 40
+  - 55
+  - 70
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: FizzW
+  name: Seastone Trident
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 7
+  - 6.5
+  - 6
+  - 5.5
+  - 5
+  cast: 0
+- id: FizzE
+  name: Playful / Trickster
+  damage:
+  - 225
+  max_rank: 1
+  cooldown:
+  - 16
+  - 14
+  - 12
+  - 10
+  - 8
+  cast: 0
+- id: FizzR
+  name: Chum the Waters
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 100
+  - 85
+  - 70
+  cast: 0

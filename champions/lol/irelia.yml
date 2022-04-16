@@ -1,0 +1,69 @@
+version: 12.3.1
+name: Irelia
+tags: Fighter, Assassin
+stats:
+  hp: 520
+  hp_per_level: 110
+  armor: 36
+  armor_per_level: 3
+  spell_block: 28
+  spell_block_per_level: 1.25
+  attack_damage: 65
+  attack_damage_per_level: 4
+  attack_speed: 0.656
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 65
+  max_rank: 1
+  cooldown:
+  - 0.656
+  cast: 0
+- id: IreliaQ
+  name: Bladesurge
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: IreliaW
+  name: Defiant Dance
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 20
+  - 18
+  - 16
+  - 14
+  - 12
+  cast: 0
+- id: IreliaE
+  name: Flawless Duet
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 18
+  - 16.5
+  - 15
+  - 13.5
+  - 12
+  cast: 0
+- id: IreliaR
+  name: Vanguard's Edge
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 140
+  - 120
+  - 100
+  cast: 0

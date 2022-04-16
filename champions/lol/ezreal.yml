@@ -1,0 +1,69 @@
+version: 12.3.1
+name: Ezreal
+tags: Marksman, Mage
+stats:
+  hp: 530
+  hp_per_level: 88
+  armor: 24
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 60
+  attack_damage_per_level: 2.5
+  attack_speed: 0.625
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 60
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: EzrealQ
+  name: Mystic Shot
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 5.5
+  - 5.25
+  - 5
+  - 4.75
+  - 4.5
+  cast: 0
+- id: EzrealW
+  name: Essence Flux
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: EzrealE
+  name: Arcane Shift
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 28
+  - 25
+  - 22
+  - 19
+  - 16
+  cast: 0
+- id: EzrealR
+  name: Trueshot Barrage
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 120
+  - 120
+  cast: 0

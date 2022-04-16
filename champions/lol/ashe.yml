@@ -1,0 +1,81 @@
+version: 12.3.1
+name: Ashe
+tags: Marksman, Support
+stats:
+  hp: 570
+  hp_per_level: 87
+  armor: 26
+  armor_per_level: 3.4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 59
+  attack_damage_per_level: 2.96
+  attack_speed: 0.658
+  attack_speed_per_level: 3.33
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 59
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: AsheQ
+  name: Ranger's Focus
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: Volley
+  name: Volley
+  damage:
+  - 20
+  - 35
+  - 50
+  - 65
+  - 80
+  max_rank: 1
+  cooldown:
+  - 18
+  - 14.5
+  - 11
+  - 7.5
+  - 4
+  cast: 0
+- id: AsheSpiritOfTheHawk
+  name: Hawkshot
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
+  cast: 0
+- id: EnchantedCrystalArrow
+  name: Enchanted Crystal Arrow
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 100
+  - 80
+  - 60
+  cast: 0

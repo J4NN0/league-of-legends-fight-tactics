@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Kled
+tags: Fighter, Tank
+stats:
+  hp: 340
+  hp_per_level: 70
+  armor: 35
+  armor_per_level: 4
+  spell_block: 28
+  spell_block_per_level: 1.25
+  attack_damage: 65
+  attack_damage_per_level: 3.5
+  attack_speed: 0.625
+  attack_speed_per_level: 3.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 65
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: KledQ
+  name: Bear Trap on a Rope
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: KledW
+  name: Violent Tendencies
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 14
+  - 12.5
+  - 11
+  - 9.5
+  - 8
+  cast: 0
+- id: KledE
+  name: Jousting
+  damage:
+  - 35
+  - 60
+  - 85
+  - 110
+  - 135
+  max_rank: 1
+  cooldown:
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  cast: 0
+- id: KledR
+  name: Chaaaaaaaarge!!!
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 160
+  - 140
+  - 120
+  cast: 0

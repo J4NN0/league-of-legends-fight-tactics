@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Vel'Koz
+tags: Mage
+stats:
+  hp: 520
+  hp_per_level: 88
+  armor: 22
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 55
+  attack_damage_per_level: 3.1416
+  attack_speed: 0.625
+  attack_speed_per_level: 1.36
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 55
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: VelkozQ
+  name: Plasma Fission
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
+  cast: 0
+- id: VelkozW
+  name: Void Rift
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  cast: 0
+- id: VelkozE
+  name: Tectonic Disruption
+  damage:
+  - 70
+  - 100
+  - 130
+  - 160
+  - 190
+  max_rank: 1
+  cooldown:
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
+  cast: 0
+- id: VelkozR
+  name: Life Form Disintegration Ray
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 100
+  - 80
+  cast: 0

@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Brand
+tags: Mage
+stats:
+  hp: 520
+  hp_per_level: 88
+  armor: 22
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 57
+  attack_damage_per_level: 3
+  attack_speed: 0.625
+  attack_speed_per_level: 1.36
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 57
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: BrandQ
+  name: Sear
+  damage:
+  - 80
+  - 110
+  - 140
+  - 170
+  - 200
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: BrandW
+  name: Pillar of Flame
+  damage:
+  - 75
+  - 120
+  - 165
+  - 210
+  - 255
+  max_rank: 1
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: BrandE
+  name: Conflagration
+  damage:
+  - 70
+  - 95
+  - 120
+  - 145
+  - 170
+  max_rank: 1
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: BrandR
+  name: Pyroclasm
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 105
+  - 90
+  - 75
+  cast: 0

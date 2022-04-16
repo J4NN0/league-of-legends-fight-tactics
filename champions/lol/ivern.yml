@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Ivern
+tags: Support, Mage
+stats:
+  hp: 585
+  hp_per_level: 85
+  armor: 27
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 50
+  attack_damage_per_level: 3
+  attack_speed: 0.644
+  attack_speed_per_level: 3.4
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 50
+  max_rank: 1
+  cooldown:
+  - 0.644
+  cast: 0
+- id: IvernQ
+  name: Rootcaller
+  damage:
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
+  max_rank: 1
+  cooldown:
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  cast: 0
+- id: IvernW
+  name: Brushmaker
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  cast: 0
+- id: IvernE
+  name: Triggerseed
+  damage:
+  - 70
+  - 90
+  - 110
+  - 130
+  - 150
+  max_rank: 1
+  cooldown:
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  cast: 0
+- id: IvernR
+  name: Daisy!
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 140
+  - 130
+  - 120
+  cast: 0

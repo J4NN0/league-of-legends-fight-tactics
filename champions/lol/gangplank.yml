@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Gangplank
+tags: Fighter
+stats:
+  hp: 570
+  hp_per_level: 90
+  armor: 35
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 64
+  attack_damage_per_level: 4
+  attack_speed: 0.658
+  attack_speed_per_level: 3.2
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 64
+  max_rank: 1
+  cooldown:
+  - 0.658
+  cast: 0
+- id: GangplankQWrapper
+  name: Parrrley
+  damage:
+  - 20
+  - 45
+  - 70
+  - 95
+  - 120
+  max_rank: 1
+  cooldown:
+  - 4.5
+  - 4.5
+  - 4.5
+  - 4.5
+  - 4.5
+  cast: 0
+- id: GangplankW
+  name: Remove Scurvy
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 22
+  - 20
+  - 18
+  - 16
+  - 14
+  cast: 0
+- id: GangplankE
+  name: Powder Keg
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cast: 0
+- id: GangplankR
+  name: Cannon Barrage
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 180
+  - 160
+  - 140
+  cast: 0
