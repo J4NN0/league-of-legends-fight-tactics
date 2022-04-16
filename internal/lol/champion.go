@@ -36,7 +36,7 @@ type Stat struct {
 type Spell struct {
 	ID       string    `yaml:"id"`
 	Name     string    `yaml:"name"`
-	Damage   float32   `yaml:"damage"`
+	Damage   []float32 `yaml:"damage"`
 	MaxRank  int       `yaml:"max_rank"`
 	Cooldown []float32 `yaml:"cooldown"`
 	Cast     float32   `yaml:"cast"`

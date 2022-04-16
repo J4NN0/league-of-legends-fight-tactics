@@ -5,6 +5,7 @@ import (
 	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -55,10 +56,17 @@ type stats struct {
 }
 
 type spell struct {
-	ID       string    `json:"id"`
-	Name     string    `json:"name"`
-	MaxRank  int       `json:"maxrank"`
-	Cooldown []float32 `json:"cooldown"`
+	ID         string    `json:"id"`
+	Name       string    `json:"name"`
+	MaxRank    int       `json:"maxrank"`
+	Cooldown   []float32 `json:"cooldown"`
+	Leveltip   leveltip  `json:"leveltip"`
+	EffectBurn []string  `json:"effectBurn"`
+	Damage     []float32
+}
+
+type leveltip struct {
+	Label []string `json:"label"`
 }
 
 func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
@@ -83,10 +91,15 @@ func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionRespons
 
 func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
 	err = httpclient.Get(c.hc, getChampionUrl(sanitizeChampionName(championName)), &championResponse)
-	championResponse.DataName = championName
 	if err != nil {
 		return DDragonChampionResponse{}, err
 	}
+
+	championResponse.DataName = championName
+	for i, s := range championResponse.Data[strings.Title(championResponse.DataName)].Spells {
+		championResponse.Data[strings.Title(championResponse.DataName)].Spells[i].Damage = c.getSpellDamage(s)
+	}
+
 	return championResponse, nil
 }
 
@@ -124,4 +137,48 @@ func sanitizeChampionName(championName string) string {
 
 func getChampionUrl(championName string) string {
 	return fmt.Sprintf("%s/%s.json", dDragonLolChampionBaseUrl, championName)
+}
+
+// setSpellsDamage
+// "ChampionName": {
+// 	"spells": [{
+//		"id": "Q",
+//  	"leveltip":{
+//   		"label":[
+//   		"Damage", <------------------------ (at index 1)
+//   		"Attack Damage",
+//   		"Cooldown",
+//   		"@AbilityResourceName@ Cost",
+//		]}
+//		"effectBurn":[
+//			null,
+//			"95/130/165/200/235", <------------------------ (get damage at index 1)
+//			"60/75/90/105/120",
+//			...,
+//  	],
+//		...,
+//	}
+// }
+func (c *ApiClient) getSpellDamage(spell spell) []float32 {
+	var spellDamages []float32
+
+	for i, l := range spell.Leveltip.Label {
+		if l == "Damage" {
+			spellsDamagePerLevelString := strings.Split(spell.EffectBurn[i+1], "/")
+			for _, damageLevel := range spellsDamagePerLevelString {
+				spellDamagePerLevel, err := strconv.ParseFloat(damageLevel, 32)
+				if err != nil {
+					c.log.Warningf("Could not set %s spell damage: %v", spell.ID, err)
+					return []float32{0, 0, 0, 0, 0}
+				}
+				spellDamages = append(spellDamages, float32(spellDamagePerLevel))
+			}
+		}
+	}
+
+	if len(spellDamages) == 0 {
+		spellDamages = []float32{0, 0, 0, 0, 0}
+	}
+
+	return spellDamages
 }

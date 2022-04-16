@@ -123,8 +123,8 @@ func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 }
 
 func TestGetLoLChampionSuccess(t *testing.T) {
-	var format, version, championName = "standAloneComplex", "1.0.0", "TestName"
-	var tags = []string{"Fighter", "Tank"}
+	var format, version, championName, spellID = "standAloneComplex", "1.0.0", "TestName", "spellID"
+	var tags, labels, effects = []string{"Fighter", "Tank"}, []string{"Damage", "Attack Damage", "Cooldown"}, []string{"", "95/130/165/200/235", "60/75/90/105/120"}
 	var hp, armor, atkDamage float32 = 1, 2, 3
 	var expectedChampionResponse = DDragonChampionResponse{
 		Format:   format,
@@ -138,6 +138,16 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 					Hp:           hp,
 					Armor:        armor,
 					AttackDamage: atkDamage,
+				},
+				Spells: []spell{
+					{
+						ID: spellID,
+						Leveltip: leveltip{
+							Label: labels,
+						},
+						EffectBurn: effects,
+						Damage:     []float32{95, 130, 165, 200, 235},
+					},
 				},
 			},
 		},
@@ -155,6 +165,15 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 						Hp:           hp,
 						Armor:        armor,
 						AttackDamage: atkDamage,
+					},
+					Spells: []spell{
+						{
+							ID: spellID,
+							Leveltip: leveltip{
+								Label: labels,
+							},
+							EffectBurn: effects,
+						},
 					},
 				},
 			},
@@ -225,4 +244,36 @@ func TestGetChampionUrl(t *testing.T) {
 	url := getChampionUrl(championName)
 
 	assert.Equal(t, expectedUrl, url)
+}
+
+func TestGetSpellDamage(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		Leveltip: leveltip{
+			Label: []string{"Damage", "Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "95/130/165/200/235", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{95, 130, 165, 200, 235}
+
+	riotClient := NewApiClient(log.New("test"), &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
+}
+
+func TestGetSpellDamage_NoDamageLable(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		Leveltip: leveltip{
+			Label: []string{"Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{0, 0, 0, 0, 0}
+
+	riotClient := NewApiClient(log.New("test"), &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
 }

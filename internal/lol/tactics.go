@@ -50,7 +50,7 @@ func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float32, bestSol *bes
 // isHpZero True if hp is zero, false otherwise
 func isHpZero(sol []Spell, hp float32) bool {
 	for _, spell := range sol {
-		hp = hp - spell.Damage
+		hp = hp - spell.Damage[spell.MaxRank-1]
 		if hp <= 0 {
 			return true
 		}
@@ -118,8 +118,8 @@ func getRoundSpellsToString(spells []Spell, hp, benchmark float32) string {
 	var spellsToString string
 
 	for _, s := range spells {
-		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", s.ID, s.Damage, hp, hp-s.Damage)
-		hp = hp - s.Damage
+		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", s.ID, s.Damage, hp, hp-s.Damage[s.MaxRank-1])
+		hp = hp - s.Damage[s.MaxRank-1]
 	}
 	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 
