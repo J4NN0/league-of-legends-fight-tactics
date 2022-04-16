@@ -2,7 +2,6 @@ package riot
 
 import (
 	"fmt"
-	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
 	"strconv"
@@ -14,11 +13,17 @@ const dDragonLolAllChampionsUrl string = "https://ddragon.leagueoflegends.com/cd
 const dDragonLolChampionBaseUrl string = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion"
 
 type ApiClient struct {
-	log *log.Logger
+	log Logger
 	hc  *http.Client
 }
 
-func NewApiClient(log *log.Logger, hc *http.Client) *ApiClient {
+type Logger interface {
+	Printf(fmt string, args ...interface{})
+	Warningf(fmt string, args ...interface{})
+	Fatalf(fmt string, args ...interface{})
+}
+
+func NewApiClient(log Logger, hc *http.Client) *ApiClient {
 	return &ApiClient{log: log, hc: hc}
 }
 

@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/internal/lol"
 	"league-of-legends-fight-tactics/internal/riot"
 	"os"
@@ -11,12 +10,18 @@ import (
 )
 
 type Controller struct {
-	log          *log.Logger
+	log          Logger
 	riotClient   *riot.ApiClient
 	fightTactics *lol.FightTactics
 }
 
-func New(log *log.Logger, riotClient *riot.ApiClient, fightTactics *lol.FightTactics) *Controller {
+type Logger interface {
+	Printf(fmt string, args ...interface{})
+	Warningf(fmt string, args ...interface{})
+	Fatalf(fmt string, args ...interface{})
+}
+
+func New(log Logger, riotClient *riot.ApiClient, fightTactics *lol.FightTactics) *Controller {
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 

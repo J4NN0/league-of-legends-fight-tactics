@@ -2,16 +2,21 @@ package lol
 
 import (
 	"fmt"
-	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/file"
 	"math"
 )
 
 type FightTactics struct {
-	log *log.Logger
+	log Logger
 }
 
-func New(log *log.Logger) *FightTactics {
+type Logger interface {
+	Printf(fmt string, args ...interface{})
+	Warningf(fmt string, args ...interface{})
+	Fatalf(fmt string, args ...interface{})
+}
+
+func New(log Logger) *FightTactics {
 	return &FightTactics{log: log}
 }
 
