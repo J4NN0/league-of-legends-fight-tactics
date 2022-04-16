@@ -12,9 +12,9 @@ import (
 
 type MockLogger struct{}
 
-func (m *MockLogger) Printf(fmt string, args ...interface{})   {}
-func (m *MockLogger) Warningf(fmt string, args ...interface{}) {}
-func (m *MockLogger) Fatalf(fmt string, args ...interface{})   {}
+func (m *MockLogger) Printf(_ string, _ ...interface{})   {}
+func (m *MockLogger) Warningf(_ string, _ ...interface{}) {}
+func (m *MockLogger) Fatalf(_ string, _ ...interface{})   {}
 
 func mockResponse(obj interface{}, status int) *http.Response {
 	jsonMarshal, _ := json.Marshal(obj)
@@ -202,44 +202,70 @@ func TestGetLoLChampionFail(t *testing.T) {
 }
 
 func TestSanitizeChampionName(t *testing.T) {
-	championName := sanitizeChampionName("jHiN")
-	assert.Equal(t, "Jhin", championName)
+	t.Run("sanitizeChampionName Jhin", func(t *testing.T) {
+		championName := sanitizeChampionName("jHiN")
+		assert.Equal(t, "Jhin", championName)
+	})
 
-	championName = sanitizeChampionName("Aurelionsol")
-	assert.Equal(t, "AurelionSol", championName)
+	t.Run("sanitizeChampionName AurelionSol", func(t *testing.T) {
+		championName := sanitizeChampionName("Aurelionsol")
+		assert.Equal(t, "AurelionSol", championName)
+	})
 
-	championName = sanitizeChampionName("dRMundo")
-	assert.Equal(t, "DrMundo", championName)
+	t.Run("sanitizeChampionName DrMundo", func(t *testing.T) {
+		championName := sanitizeChampionName("dRMundo")
+		assert.Equal(t, "DrMundo", championName)
+	})
 
-	championName = sanitizeChampionName("jarvanIV")
-	assert.Equal(t, "JarvanIV", championName)
+	t.Run("sanitizeChampionName JarvanIV", func(t *testing.T) {
+		championName := sanitizeChampionName("jarvanIV")
+		assert.Equal(t, "JarvanIV", championName)
+	})
 
-	championName = sanitizeChampionName("Kogmaw")
-	assert.Equal(t, "KogMaw", championName)
+	t.Run("sanitizeChampionName KogMaw", func(t *testing.T) {
+		championName := sanitizeChampionName("Kogmaw")
+		assert.Equal(t, "KogMaw", championName)
+	})
 
-	championName = sanitizeChampionName("Leesin")
-	assert.Equal(t, "LeeSin", championName)
+	t.Run("sanitizeChampionName LeeSin", func(t *testing.T) {
+		championName := sanitizeChampionName("Leesin")
+		assert.Equal(t, "LeeSin", championName)
+	})
 
-	championName = sanitizeChampionName("Masteryi")
-	assert.Equal(t, "MasterYi", championName)
+	t.Run("sanitizeChampionName MasterYi", func(t *testing.T) {
+		championName := sanitizeChampionName("Masteryi")
+		assert.Equal(t, "MasterYi", championName)
+	})
 
-	championName = sanitizeChampionName("Missfortune")
-	assert.Equal(t, "MissFortune", championName)
+	t.Run("sanitizeChampionName MissFortune", func(t *testing.T) {
+		championName := sanitizeChampionName("Missfortune")
+		assert.Equal(t, "MissFortune", championName)
+	})
 
-	championName = sanitizeChampionName("Monkeyking")
-	assert.Equal(t, "MonkeyKing", championName)
+	t.Run("sanitizeChampionName MonkeyKing", func(t *testing.T) {
+		championName := sanitizeChampionName("Monkeyking")
+		assert.Equal(t, "MonkeyKing", championName)
+	})
 
-	championName = sanitizeChampionName("Reksai")
-	assert.Equal(t, "RekSai", championName)
+	t.Run("sanitizeChampionName RekSai", func(t *testing.T) {
+		championName := sanitizeChampionName("Reksai")
+		assert.Equal(t, "RekSai", championName)
+	})
 
-	championName = sanitizeChampionName("Tahmkench")
-	assert.Equal(t, "TahmKench", championName)
+	t.Run("sanitizeChampionName TahmKench", func(t *testing.T) {
+		championName := sanitizeChampionName("Tahmkench")
+		assert.Equal(t, "TahmKench", championName)
+	})
 
-	championName = sanitizeChampionName("Twistedfate")
-	assert.Equal(t, "TwistedFate", championName)
+	t.Run("sanitizeChampionName TwistedFate", func(t *testing.T) {
+		championName := sanitizeChampionName("Twistedfate")
+		assert.Equal(t, "TwistedFate", championName)
+	})
 
-	championName = sanitizeChampionName("Xinzhao")
-	assert.Equal(t, "XinZhao", championName)
+	t.Run("sanitizeChampionName XinZhao", func(t *testing.T) {
+		championName := sanitizeChampionName("Xinzhao")
+		assert.Equal(t, "XinZhao", championName)
+	})
 }
 
 func TestGetChampionUrl(t *testing.T) {
@@ -267,13 +293,29 @@ func TestGetSpellDamage(t *testing.T) {
 	assert.Equal(t, expectedDamage, damage)
 }
 
-func TestGetSpellDamage_NoDamageLable(t *testing.T) {
+func TestGetSpellDamage_NoDamageLabel(t *testing.T) {
 	spellTest := spell{
 		ID: "sampleSpell",
 		Leveltip: leveltip{
 			Label: []string{"Attack Damage", "Cooldown"},
 		},
 		EffectBurn: []string{"", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{0, 0, 0, 0, 0}
+
+	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
+}
+
+func TestGetSpellDamageFail(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		Leveltip: leveltip{
+			Label: []string{"Damage", "Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "not/numbers/in/here/lol", "60/75/90/105/120"},
 	}
 	expectedDamage := []float32{0, 0, 0, 0, 0}
 
