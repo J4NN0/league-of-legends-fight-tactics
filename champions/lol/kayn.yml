@@ -2,8 +2,8 @@ version: 12.3.1
 name: Kayn
 tags: Fighter, Assassin
 stats:
-  hp: 0
-  hp_per_level: 585
+  hp: 585
+  hp_per_level: 85
   armor: 38
   armor_per_level: 3.3
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 68
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.669
   cast: 0

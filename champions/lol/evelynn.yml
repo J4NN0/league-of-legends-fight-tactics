@@ -2,8 +2,8 @@ version: 12.3.1
 name: Evelynn
 tags: Assassin, Mage
 stats:
-  hp: 0
-  hp_per_level: 572
+  hp: 572
+  hp_per_level: 84
   armor: 37
   armor_per_level: 3.5
   spell_block: 32.1
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 61
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.667
   cast: 0

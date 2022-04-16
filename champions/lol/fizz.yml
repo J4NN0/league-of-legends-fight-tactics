@@ -2,8 +2,8 @@ version: 12.3.1
 name: Fizz
 tags: Assassin, Fighter
 stats:
-  hp: 0
-  hp_per_level: 570
+  hp: 570
+  hp_per_level: 98
   armor: 22
   armor_per_level: 3.4
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 58
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.658
   cast: 0

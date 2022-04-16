@@ -2,8 +2,8 @@ version: 12.3.1
 name: Skarner
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 580
+  hp: 580
+  hp_per_level: 85
   armor: 38
   armor_per_level: 3.8
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 65
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

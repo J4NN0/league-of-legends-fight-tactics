@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Lee Sin
+tags: Fighter, Assassin
+stats:
+  hp: 575
+  hp_per_level: 85
+  armor: 36
+  armor_per_level: 3.7
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 68
+  attack_damage_per_level: 3.7
+  attack_speed: 0.651
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 68
+  max_rank: 1
+  cooldown:
+  - 0.651
+  cast: 0
+- id: BlindMonkQOne
+  name: Sonic Wave / Resonating Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  cast: 0
+- id: BlindMonkWOne
+  name: Safeguard / Iron Will
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: BlindMonkEOne
+  name: Tempest / Cripple
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 9
+  - 9
+  - 9
+  - 9
+  - 9
+  cast: 0
+- id: BlindMonkRKick
+  name: Dragon's Rage
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 85
+  - 60
+  cast: 0

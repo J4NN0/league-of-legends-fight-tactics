@@ -2,8 +2,8 @@ version: 12.3.1
 name: Nautilus
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 576
+  hp: 576
+  hp_per_level: 86
   armor: 39
   armor_per_level: 3.75
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 61
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.706
   cast: 0

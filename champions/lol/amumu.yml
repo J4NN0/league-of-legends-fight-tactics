@@ -2,8 +2,8 @@ version: 12.3.1
 name: Amumu
 tags: Tank, Mage
 stats:
-  hp: 0
-  hp_per_level: 615
+  hp: 615
+  hp_per_level: 75
   armor: 30
   armor_per_level: 3
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 53
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.736
   cast: 0

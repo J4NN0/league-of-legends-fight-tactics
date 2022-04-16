@@ -2,8 +2,8 @@ version: 12.3.1
 name: Kassadin
 tags: Assassin, Mage
 stats:
-  hp: 0
-  hp_per_level: 576
+  hp: 576
+  hp_per_level: 105
   armor: 19
   armor_per_level: 2.8
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 59
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.64
   cast: 0

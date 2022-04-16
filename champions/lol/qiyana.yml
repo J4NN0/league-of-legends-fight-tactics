@@ -2,8 +2,8 @@ version: 12.3.1
 name: Qiyana
 tags: Assassin, Fighter
 stats:
-  hp: 0
-  hp_per_level: 520
+  hp: 520
+  hp_per_level: 110
   armor: 28
   armor_per_level: 3.5
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 66
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.688
   cast: 0

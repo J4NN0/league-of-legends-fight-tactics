@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Aurelion Sol
+tags: Mage
+stats:
+  hp: 575
+  hp_per_level: 92
+  armor: 19
+  armor_per_level: 3.6
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 57
+  attack_damage_per_level: 3.2
+  attack_speed: 0.625
+  attack_speed_per_level: 1.36
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 57
+  max_rank: 1
+  cooldown:
+  - 0.625
+  cast: 0
+- id: AurelionSolQ
+  name: Starsurge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: AurelionSolW
+  name: Celestial Expansion
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 6.5
+  - 5
+  - 3.5
+  - 2
+  cast: 0
+- id: AurelionSolE
+  name: Comet of Legend
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 80
+  - 75
+  - 70
+  - 65
+  - 60
+  cast: 0
+- id: AurelionSolR
+  name: Voice of Light
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 110
+  - 90
+  - 70
+  cast: 0

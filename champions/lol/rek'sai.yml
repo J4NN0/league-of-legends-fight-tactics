@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Rek'Sai
+tags: Fighter
+stats:
+  hp: 570
+  hp_per_level: 85
+  armor: 36
+  armor_per_level: 3.75
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 64
+  attack_damage_per_level: 3
+  attack_speed: 0.667
+  attack_speed_per_level: 2
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 64
+  max_rank: 1
+  cooldown:
+  - 0.667
+  cast: 0
+- id: RekSaiQ
+  name: Queen's Wrath / Prey Seeker
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: RekSaiW
+  name: Burrow / Un-burrow
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: RekSaiE
+  name: Furious Bite / Tunnel
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: RekSaiRWrapper
+  name: Void Rush
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Lucian
 tags: Marksman
 stats:
-  hp: 0
-  hp_per_level: 571
+  hp: 571
+  hp_per_level: 86
   armor: 28
   armor_per_level: 3
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 62
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.638
   cast: 0

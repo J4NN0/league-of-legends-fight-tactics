@@ -2,8 +2,8 @@ version: 12.3.1
 name: Ahri
 tags: Mage, Assassin
 stats:
-  hp: 0
-  hp_per_level: 500
+  hp: 500
+  hp_per_level: 82
   armor: 18
   armor_per_level: 3.5
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 53
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.668
   cast: 0

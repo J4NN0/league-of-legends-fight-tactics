@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Kog'Maw
+tags: Marksman, Mage
+stats:
+  hp: 565
+  hp_per_level: 85
+  armor: 24
+  armor_per_level: 3.25
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 61
+  attack_damage_per_level: 3.11
+  attack_speed: 0.665
+  attack_speed_per_level: 2.65
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 61
+  max_rank: 1
+  cooldown:
+  - 0.665
+  cast: 0
+- id: KogMawQ
+  name: Caustic Spittle
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 8
+  - 8
+  - 8
+  - 8
+  - 8
+  cast: 0
+- id: KogMawBioArcaneBarrage
+  name: Bio-Arcane Barrage
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 17
+  - 17
+  - 17
+  - 17
+  - 17
+  cast: 0
+- id: KogMawVoidOoze
+  name: Void Ooze
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: KogMawLivingArtillery
+  name: Living Artillery
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 2
+  - 1.5
+  - 1
+  cast: 0

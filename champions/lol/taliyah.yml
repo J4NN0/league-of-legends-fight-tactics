@@ -2,8 +2,8 @@ version: 12.3.1
 name: Taliyah
 tags: Mage, Support
 stats:
-  hp: 0
-  hp_per_level: 532
+  hp: 532
+  hp_per_level: 90
   armor: 20
   armor_per_level: 3.5
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 58
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

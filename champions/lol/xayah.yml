@@ -2,8 +2,8 @@ version: 12.3.1
 name: Xayah
 tags: Marksman
 stats:
-  hp: 0
-  hp_per_level: 590
+  hp: 590
+  hp_per_level: 88
   armor: 25
   armor_per_level: 3
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 60
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

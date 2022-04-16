@@ -2,8 +2,8 @@ version: 12.3.1
 name: Cho'Gath
 tags: Tank, Mage
 stats:
-  hp: 0
-  hp_per_level: 574
+  hp: 574
+  hp_per_level: 80
   armor: 38
   armor_per_level: 3.5
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 69
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

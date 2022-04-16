@@ -2,8 +2,8 @@ version: 12.3.1
 name: Yuumi
 tags: Support, Mage
 stats:
-  hp: 0
-  hp_per_level: 480
+  hp: 480
+  hp_per_level: 70
   armor: 25
   armor_per_level: 3
   spell_block: 25
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 55
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

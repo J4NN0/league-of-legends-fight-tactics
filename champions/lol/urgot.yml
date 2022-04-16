@@ -2,8 +2,8 @@ version: 12.3.1
 name: Urgot
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 585
+  hp: 585
+  hp_per_level: 88
   armor: 36
   armor_per_level: 4.25
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 63
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

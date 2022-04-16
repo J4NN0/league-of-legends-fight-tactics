@@ -1,0 +1,64 @@
+version: 12.3.1
+name: Xin Zhao
+tags: Fighter, Assassin
+stats:
+  hp: 570
+  hp_per_level: 92
+  armor: 35
+  armor_per_level: 3.5
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 63
+  attack_damage_per_level: 3
+  attack_speed: 0.645
+  attack_speed_per_level: 3.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage: 63
+  max_rank: 1
+  cooldown:
+  - 0.645
+  cast: 0
+- id: XinZhaoQ
+  name: Three Talon Strike
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 7
+  - 6.5
+  - 6
+  - 5.5
+  - 5
+  cast: 0
+- id: XinZhaoW
+  name: Wind Becomes Lightning
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  cast: 0
+- id: XinZhaoE
+  name: Audacious Charge
+  damage: 0
+  max_rank: 5
+  cooldown:
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
+  cast: 0
+- id: XinZhaoR
+  name: Crescent Guard
+  damage: 0
+  max_rank: 3
+  cooldown:
+  - 120
+  - 110
+  - 100
+  cast: 0

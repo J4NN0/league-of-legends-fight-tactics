@@ -2,8 +2,8 @@ version: 12.3.1
 name: Taric
 tags: Support, Fighter
 stats:
-  hp: 0
-  hp_per_level: 575
+  hp: 575
+  hp_per_level: 85
   armor: 40
   armor_per_level: 3.4
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 55
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

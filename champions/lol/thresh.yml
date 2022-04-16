@@ -2,8 +2,8 @@ version: 12.3.1
 name: Thresh
 tags: Support, Fighter
 stats:
-  hp: 0
-  hp_per_level: 530
+  hp: 530
+  hp_per_level: 95
   armor: 28
   armor_per_level: 0
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 56
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Zilean
 tags: Support, Mage
 stats:
-  hp: 0
-  hp_per_level: 504
+  hp: 504
+  hp_per_level: 82
   armor: 24
   armor_per_level: 3.8
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 52
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

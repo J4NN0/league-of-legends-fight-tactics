@@ -2,8 +2,8 @@ version: 12.3.1
 name: Lux
 tags: Mage, Support
 stats:
-  hp: 0
-  hp_per_level: 490
+  hp: 490
+  hp_per_level: 85
   armor: 19
   armor_per_level: 4
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 54
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.669
   cast: 0

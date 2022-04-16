@@ -2,8 +2,8 @@ version: 12.3.1
 name: Kennen
 tags: Mage, Marksman
 stats:
-  hp: 0
-  hp_per_level: 541
+  hp: 541
+  hp_per_level: 84
   armor: 29
   armor_per_level: 3.75
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 48
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

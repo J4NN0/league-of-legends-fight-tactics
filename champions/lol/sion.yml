@@ -2,8 +2,8 @@ version: 12.3.1
 name: Sion
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 545
+  hp: 545
+  hp_per_level: 73
   armor: 32
   armor_per_level: 3
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 68
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.679
   cast: 0

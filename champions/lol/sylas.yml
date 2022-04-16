@@ -2,8 +2,8 @@ version: 12.3.1
 name: Sylas
 tags: Mage, Assassin
 stats:
-  hp: 0
-  hp_per_level: 525
+  hp: 525
+  hp_per_level: 115
   armor: 27
   armor_per_level: 4
   spell_block: 32
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 61
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.645
   cast: 0

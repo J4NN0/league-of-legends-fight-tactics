@@ -2,8 +2,8 @@ version: 12.3.1
 name: Malphite
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 574
+  hp: 574
+  hp_per_level: 90
   armor: 37
   armor_per_level: 3.75
   spell_block: 28
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 62
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.736
   cast: 0

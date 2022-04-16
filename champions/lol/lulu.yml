@@ -2,8 +2,8 @@ version: 12.3.1
 name: Lulu
 tags: Support, Mage
 stats:
-  hp: 0
-  hp_per_level: 525
+  hp: 525
+  hp_per_level: 74
   armor: 29
   armor_per_level: 3.7
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 47
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0

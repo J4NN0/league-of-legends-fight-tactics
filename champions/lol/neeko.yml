@@ -2,8 +2,8 @@ version: 12.3.1
 name: Neeko
 tags: Mage, Support
 stats:
-  hp: 0
-  hp_per_level: 540
+  hp: 540
+  hp_per_level: 90
   armor: 21
   armor_per_level: 4
   spell_block: 30
@@ -16,7 +16,7 @@ spells:
 - id: aa
   name: Auto Attack
   damage: 48
-  max_rank: 0
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
