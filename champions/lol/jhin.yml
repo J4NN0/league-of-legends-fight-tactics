@@ -2,7 +2,7 @@ version: 12.3.1
 name: Jhin
 tags: Marksman, Mage
 stats:
-  hp: 100
+  hp: 585
   hp_per_level: 93
   armor: 24
   armor_per_level: 3.5
