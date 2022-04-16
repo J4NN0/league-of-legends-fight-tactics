@@ -27,16 +27,11 @@ func (f *FightTactics) Fight(champion1, champion2 Champion) {
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp, &bestSol)
 
-	f.log.Printf("Best solution found (%s vs %s): %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
+	f.log.Printf("[%s vs %s] Best solution found: %v (slayed in %.2fs)\n", champion1.Name, champion2.Name, bestSol.RoundOfSpells, bestSol.Benchmark)
 
 	fileName := setFilePath(champion1, champion2)
 	file.Create(fileName)
 	file.Write(fileName, getRoundSpellsToString(bestSol.RoundOfSpells, champion2.Stats.Hp, bestSol.Benchmark))
-}
-
-// setFilePath Set filename path
-func setFilePath(champion1, champion2 Champion) string {
-	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
 
 func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float32, bestSol *bestSolution) {
@@ -71,7 +66,7 @@ func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	}
 }
 
-// getBenchmark Given a set of spells (that take hp down to zero), return the related benchmark
+// getBenchmark Given a set of spells (that takes hp down to zero), return related benchmark
 func getBenchmark(spells []Spell) float32 {
 	var benchmark float32
 	var usedSpells []Spell
@@ -129,4 +124,9 @@ func getRoundSpellsToString(spells []Spell, hp, benchmark float32) string {
 	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 
 	return spellsToString
+}
+
+// setFilePath Set filename path
+func setFilePath(champion1, champion2 Champion) string {
+	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }

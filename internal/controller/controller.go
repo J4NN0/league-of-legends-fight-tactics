@@ -121,7 +121,8 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 		Name:    championData.Name,
 		Tags:    strings.Join(championData.Tags, ", "),
 		Stats: lol.Stat{
-			HpPerLevel:           championData.Stats.Hp,
+			Hp:                   championData.Stats.Hp,
+			HpPerLevel:           championData.Stats.HpPerLevel,
 			Armor:                championData.Stats.Armor,
 			ArmorPerLevel:        championData.Stats.ArmorPerLevel,
 			SpellBlock:           championData.Stats.SpellBlock,
@@ -138,7 +139,7 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 		ID:       "aa",
 		Name:     "Auto Attack",
 		Damage:   championData.Stats.AttackDamage,
-		MaxRank:  0, // it has no rank
+		MaxRank:  1, // it has no rank
 		Cooldown: []float32{championData.Stats.AttackSpeed},
 		Cast:     0,
 	}}
