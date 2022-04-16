@@ -11,8 +11,8 @@ import (
 
 type Controller struct {
 	log          Logger
-	riotClient   *riot.ApiClient
-	fightTactics *lol.FightTactics
+	riotClient   RiotClient
+	fightTactics LolFightTactics
 }
 
 type Logger interface {
@@ -21,7 +21,16 @@ type Logger interface {
 	Fatalf(fmt string, args ...interface{})
 }
 
-func New(log Logger, riotClient *riot.ApiClient, fightTactics *lol.FightTactics) *Controller {
+type RiotClient interface {
+	GetAllLoLChampions() (championsData []riot.DDragonChampionResponse, err error)
+	GetLoLChampion(championName string) (championResponse riot.DDragonChampionResponse, err error)
+}
+
+type LolFightTactics interface {
+	Fight(champion1, champion2 lol.Champion)
+}
+
+func New(log Logger, riotClient RiotClient, fightTactics *lol.FightTactics) *Controller {
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 
