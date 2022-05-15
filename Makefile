@@ -1,8 +1,8 @@
 # Makefile
 #
-# - config - tooling versions and variable configs
+# - config - variable configs
 # - build - build application
-# - test - run tests
+# - test - application tests
 # - run - run application
 # - tools - golang useful tools
 # - development - scripts for development
@@ -71,5 +71,9 @@ tool-mod-tidy:
 tool-fmt:
 	go fmt ./...
 
+# Examine Go source code and reports suspicious constructs
+tool-vet:
+	go vet ./...
+
 # === DEVELOPMENT =======================================================
-dev-pre-commit: tool-mod-tidy tool-fmt build run-lint test-pre-commit
+dev-pre-commit: tool-mod-tidy tool-fmt build run-lint tool-vet test-pre-commit

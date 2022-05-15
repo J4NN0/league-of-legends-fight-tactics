@@ -50,7 +50,7 @@ func TestGetSuccess(t *testing.T) {
 	assert.Equal(t, expected, dest)
 }
 
-func TestGetFailNot200(t *testing.T) {
+func TestGetFail_Not200(t *testing.T) {
 	client := newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse([]string{}, 400)
 	})
@@ -60,33 +60,16 @@ func TestGetFailNot200(t *testing.T) {
 	assert.Contains(t, err.Error(), "HTTP status not OK")
 }
 
-func TestExtractItemSuccess(t *testing.T) {
-	expected := MockStruct{Field1: "Field1", Field2: "Field2"}
+func TestGetFail_UnmarshalWrongStruct(t *testing.T) {
+	path := "some/path"
 	dest := MockStruct{}
 
-	expectedJsn, _ := json.Marshal(expected)
-	_ = unmarshalToInterface(expectedJsn, &dest)
+	client := newTestClient(func(req *http.Request) *http.Response {
+		assert.Equal(t, req.URL.String(), path)
+		return mockResponse([]byte("xxx"), 200)
+	})
 
-	assert.Equal(t, expected, dest)
-}
-
-func TestExtractItemWrongStruct(t *testing.T) {
-	notMyMock := struct {
-		SomeField string
-	}{
-		SomeField: "WhatAField",
-	}
-	myMock := MockStruct{}
-
-	notMyMockJsn, _ := json.Marshal(notMyMock)
-	_ = unmarshalToInterface(notMyMockJsn, &myMock)
-
-	assert.Equal(t, MockStruct{}, myMock)
-}
-
-func TestExtractItemFail(t *testing.T) {
-	dest := ""
-	err := unmarshalToInterface([]byte("xxx"), &dest)
+	err := Get(client, path, &dest)
 
 	assert.NotNil(t, err)
 }

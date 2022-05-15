@@ -67,7 +67,7 @@ func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
 		bestSol.Benchmark = tmpBench
-		bestSol.RoundOfSpells = spells
+		copy(bestSol.RoundOfSpells, spells)
 	}
 }
 

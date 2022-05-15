@@ -29,17 +29,10 @@ func Get(client *http.Client, url string, destination interface{}) error {
 		return fmt.Errorf("HTTP status not OK, got %d instead", resp.StatusCode)
 	}
 
-	if err := unmarshalToInterface(respBody, destination); err != nil {
+	err = json.Unmarshal(respBody, &destination)
+	if err != nil {
 		return fmt.Errorf("failed to unmarshal response body: %w", err)
 	}
 
-	return nil
-}
-
-func unmarshalToInterface(body []byte, interfaceItem interface{}) error {
-	marshalError := json.Unmarshal(body, &interfaceItem)
-	if marshalError != nil {
-		return fmt.Errorf("failed to unmarshal interface from body: %w", marshalError)
-	}
 	return nil
 }

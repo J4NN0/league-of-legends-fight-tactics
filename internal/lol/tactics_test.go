@@ -6,10 +6,54 @@ import (
 	"testing"
 )
 
+func getMockSpells() []Spell {
+	return []Spell{
+		{
+			ID:       "aa",
+			Damage:   10,
+			MaxRank:  1,
+			Cooldown: []float32{4, 3, 2, 1, 0},
+			Cast:     0.5,
+		},
+		{
+			ID:       "q",
+			Damage:   10,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
+			Cast:     1.0,
+		},
+		{
+			ID:       "w",
+			Damage:   20,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
+			Cast:     2.0,
+		},
+		{
+			ID:       "e",
+			Damage:   30,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
+			Cast:     3.0,
+		},
+		{
+			ID:       "r",
+			Damage:   40,
+			MaxRank:  5,
+			Cooldown: []float32{4, 3, 2, 1, 0},
+			Cast:     4.0,
+		},
+	}
+}
+
 func TestSetFilePath(t *testing.T) {
 	filename := setFilePath(Champion{Name: "Name1"}, Champion{Name: "Name2"})
 
 	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
+}
+
+func TestGetBestRoundOfSpells(t *testing.T) {
+	spells := getMockSpells()
 }
 
 func TestIsHpZero(t *testing.T) {

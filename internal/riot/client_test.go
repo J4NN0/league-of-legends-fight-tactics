@@ -218,7 +218,6 @@ func TestSanitizeChampionName(t *testing.T) {
 	assert.Equal(t, "XinZhao", championName)
 }
 
-
 func TestGetChampionUrl(t *testing.T) {
 	championName := "someChampionName"
 	expectedUrl := fmt.Sprintf("%s/%s.json", dDragonLolChampionBaseUrl, championName)

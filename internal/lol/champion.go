@@ -8,8 +8,10 @@ import (
 	"strings"
 )
 
-const BaseChampionPath = "champions/lol/"
-const fileExtension = ".yml"
+const (
+	BaseChampionPath = "champions/lol/"
+	fileExtension    = ".yml"
+)
 
 // Champion LoL champion data struct
 type Champion struct {
