@@ -2,8 +2,8 @@ version: 12.3.1
 name: Kha'Zix
 tags: Assassin
 stats:
-  hp: 0
-  hp_per_level: 573
+  hp: 573
+  hp_per_level: 85
   armor: 36
   armor_per_level: 3
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 63
-  max_rank: 0
+  damage:
+  - 63
+  max_rank: 1
   cooldown:
   - 0.668
   cast: 0
 - id: KhazixQ
   name: Taste Their Fear
-  damage: 0
-  max_rank: 5
+  damage:
+  - 60
+  - 85
+  - 110
+  - 135
+  - 160
+  max_rank: 1
   cooldown:
   - 4
   - 4
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: KhazixW
   name: Void Spike
-  damage: 0
-  max_rank: 5
+  damage:
+  - 85
+  - 115
+  - 145
+  - 175
+  - 205
+  max_rank: 1
   cooldown:
   - 9
   - 9
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: KhazixE
   name: Leap
-  damage: 0
-  max_rank: 5
+  damage:
+  - 65
+  - 100
+  - 135
+  - 170
+  - 205
+  max_rank: 1
   cooldown:
   - 20
   - 18
@@ -55,8 +71,13 @@ spells:
   cast: 0
 - id: KhazixR
   name: Void Assault
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 100
   - 85

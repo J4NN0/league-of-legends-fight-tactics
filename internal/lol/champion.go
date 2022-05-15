@@ -38,7 +38,7 @@ type Stat struct {
 type Spell struct {
 	ID       string    `yaml:"id"`
 	Name     string    `yaml:"name"`
-	Damage   float32   `yaml:"damage"`
+	Damage   []float32 `yaml:"damage"`
 	MaxRank  int       `yaml:"max_rank"`
 	Cooldown []float32 `yaml:"cooldown"`
 	Cast     float32   `yaml:"cast"`
@@ -76,5 +76,5 @@ func Write(champion Champion) error {
 }
 
 func getYMLPath(championName string) string {
-	return BaseChampionPath + strings.ToLower(championName) + fileExtension
+	return BaseChampionPath + strings.ReplaceAll(strings.ToLower(championName), " ", "") + fileExtension
 }

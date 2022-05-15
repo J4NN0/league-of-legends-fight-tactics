@@ -2,8 +2,8 @@ version: 12.3.1
 name: Alistar
 tags: Tank, Support
 stats:
-  hp: 0
-  hp_per_level: 600
+  hp: 600
+  hp_per_level: 106
   armor: 44
   armor_per_level: 3.5
   spell_block: 32
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
-  max_rank: 0
+  damage:
+  - 62
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: Pulverize
   name: Pulverize
-  damage: 0
-  max_rank: 5
+  damage:
+  - 1
+  max_rank: 1
   cooldown:
   - 15
   - 14
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: Headbutt
   name: Headbutt
-  damage: 0
-  max_rank: 5
+  damage:
+  - 700
+  max_rank: 1
   cooldown:
   - 14
   - 13
@@ -44,8 +47,9 @@ spells:
   cast: 0
 - id: AlistarE
   name: Trample
-  damage: 0
-  max_rank: 5
+  damage:
+  - 5
+  max_rank: 1
   cooldown:
   - 12
   - 11.5
@@ -55,8 +59,13 @@ spells:
   cast: 0
 - id: FerociousHowl
   name: Unbreakable Will
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 100

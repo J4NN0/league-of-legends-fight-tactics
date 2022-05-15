@@ -2,8 +2,8 @@ version: 12.3.1
 name: Veigar
 tags: Mage
 stats:
-  hp: 0
-  hp_per_level: 505
+  hp: 505
+  hp_per_level: 94
   armor: 23
   armor_per_level: 3.75
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 52
-  max_rank: 0
+  damage:
+  - 52
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: VeigarBalefulStrike
   name: Baleful Strike
-  damage: 0
-  max_rank: 5
+  damage:
+  - 80
+  - 120
+  - 160
+  - 200
+  - 240
+  max_rank: 1
   cooldown:
   - 6
   - 5.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: VeigarDarkMatter
   name: Dark Matter
-  damage: 0
-  max_rank: 5
+  damage:
+  - 100
+  - 150
+  - 200
+  - 250
+  - 300
+  max_rank: 1
   cooldown:
   - 0
   - 0
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: VeigarEventHorizon
   name: Event Horizon
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 18
   - 16.5
@@ -55,8 +71,11 @@ spells:
   cast: 0
 - id: VeigarR
   name: Primordial Burst
-  damage: 0
-  max_rank: 3
+  damage:
+  - 175
+  - 250
+  - 325
+  max_rank: 1
   cooldown:
   - 120
   - 90

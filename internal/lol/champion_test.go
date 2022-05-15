@@ -2,15 +2,14 @@ package lol
 
 import (
 	"github.com/stretchr/testify/assert"
-	"strings"
 	"testing"
 )
 
 func TestGetYMLPath(t *testing.T) {
-	championName := "someChampionName"
+	championName := "some Champion Name"
 
 	path := getYMLPath(championName)
-	expectedPath := BaseChampionPath + strings.ToLower(championName) + fileExtension
+	expectedPath := BaseChampionPath + "somechampionname" + fileExtension
 
 	assert.Equal(t, expectedPath, path)
 }

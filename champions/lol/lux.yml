@@ -2,8 +2,8 @@ version: 12.3.1
 name: Lux
 tags: Mage, Support
 stats:
-  hp: 0
-  hp_per_level: 490
+  hp: 490
+  hp_per_level: 85
   armor: 19
   armor_per_level: 4
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 54
-  max_rank: 0
+  damage:
+  - 54
+  max_rank: 1
   cooldown:
   - 0.669
   cast: 0
 - id: LuxLightBinding
   name: Light Binding
-  damage: 0
-  max_rank: 5
+  damage:
+  - 80
+  - 120
+  - 160
+  - 200
+  - 240
+  max_rank: 1
   cooldown:
   - 11
   - 11
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: LuxPrismaticWave
   name: Prismatic Barrier
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 14
   - 13
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: LuxLightStrikeKugel
   name: Lucent Singularity
-  damage: 0
-  max_rank: 5
+  damage:
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  max_rank: 1
   cooldown:
   - 10
   - 9.5
@@ -55,8 +71,9 @@ spells:
   cast: 0
 - id: LuxR
   name: Final Spark
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 60
   - 50

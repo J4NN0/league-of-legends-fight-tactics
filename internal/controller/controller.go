@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/internal/lol"
 	"league-of-legends-fight-tactics/internal/riot"
 	"os"
@@ -11,12 +10,27 @@ import (
 )
 
 type Controller struct {
-	log          *log.Logger
-	riotClient   *riot.ApiClient
-	fightTactics *lol.FightTactics
+	log          Logger
+	riotClient   RiotClient
+	fightTactics LolFightTactics
 }
 
-func New(log *log.Logger, riotClient *riot.ApiClient, fightTactics *lol.FightTactics) *Controller {
+type Logger interface {
+	Printf(fmt string, args ...interface{})
+	Warningf(fmt string, args ...interface{})
+	Fatalf(fmt string, args ...interface{})
+}
+
+type RiotClient interface {
+	GetAllLoLChampions() (championsData []riot.DDragonChampionResponse, err error)
+	GetLoLChampion(championName string) (championResponse riot.DDragonChampionResponse, err error)
+}
+
+type LolFightTactics interface {
+	Fight(champion1, champion2 lol.Champion)
+}
+
+func New(log Logger, riotClient RiotClient, fightTactics *lol.FightTactics) *Controller {
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 
@@ -115,13 +129,14 @@ func (c *Controller) storeChampionToYmlFile(championData riot.DDragonChampionRes
 }
 
 func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampionResponse) lol.Champion {
-	championData := championResponse.Data[strings.Title(championResponse.DataName)]
+	championData := championResponse.Data[championResponse.DataName]
 	lolChampion := lol.Champion{
 		Version: championResponse.Version,
 		Name:    championData.Name,
 		Tags:    strings.Join(championData.Tags, ", "),
 		Stats: lol.Stat{
-			HpPerLevel:           championData.Stats.Hp,
+			Hp:                   championData.Stats.Hp,
+			HpPerLevel:           championData.Stats.HpPerLevel,
 			Armor:                championData.Stats.Armor,
 			ArmorPerLevel:        championData.Stats.ArmorPerLevel,
 			SpellBlock:           championData.Stats.SpellBlock,
@@ -137,8 +152,8 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 	lolChampion.Spells = []lol.Spell{{
 		ID:       "aa",
 		Name:     "Auto Attack",
-		Damage:   championData.Stats.AttackDamage,
-		MaxRank:  0, // it has no rank
+		Damage:   []float32{championData.Stats.AttackDamage},
+		MaxRank:  1, // it has no rank
 		Cooldown: []float32{championData.Stats.AttackSpeed},
 		Cast:     0,
 	}}
@@ -148,8 +163,8 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 		lolChampion.Spells = append(lolChampion.Spells, lol.Spell{
 			ID:       spell.ID,
 			Name:     spell.Name,
-			Damage:   0.0,
-			MaxRank:  spell.MaxRank,
+			Damage:   spell.Damage,
+			MaxRank:  1, //spell.MaxRank,
 			Cooldown: spell.Cooldown,
 			Cast:     0.0,
 		})

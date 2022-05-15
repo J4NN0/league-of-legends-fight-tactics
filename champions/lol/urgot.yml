@@ -2,8 +2,8 @@ version: 12.3.1
 name: Urgot
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 585
+  hp: 585
+  hp_per_level: 88
   armor: 36
   armor_per_level: 4.25
   spell_block: 32
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 63
-  max_rank: 0
+  damage:
+  - 63
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: UrgotQ
   name: Corrosive Charge
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 10
   - 9.5
@@ -33,8 +35,13 @@ spells:
   cast: 0
 - id: UrgotW
   name: Purge
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 9
@@ -44,8 +51,9 @@ spells:
   cast: 0
 - id: UrgotE
   name: Disdain
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 16
   - 15.5
@@ -55,8 +63,9 @@ spells:
   cast: 0
 - id: UrgotR
   name: Fear Beyond Death
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 100
   - 85

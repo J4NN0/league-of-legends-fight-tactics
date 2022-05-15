@@ -2,8 +2,8 @@ version: 12.3.1
 name: Cassiopeia
 tags: Mage
 stats:
-  hp: 0
-  hp_per_level: 560
+  hp: 560
+  hp_per_level: 90
   armor: 18
   armor_per_level: 3.5
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 53
-  max_rank: 0
+  damage:
+  - 53
+  max_rank: 1
   cooldown:
   - 0.647
   cast: 0
 - id: CassiopeiaQ
   name: Noxious Blast
-  damage: 0
-  max_rank: 5
+  damage:
+  - 75
+  - 110
+  - 145
+  - 180
+  - 215
+  max_rank: 1
   cooldown:
   - 3.5
   - 3.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: CassiopeiaW
   name: Miasma
-  damage: 0
-  max_rank: 5
+  damage:
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  max_rank: 1
   cooldown:
   - 24
   - 22
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: CassiopeiaE
   name: Twin Fang
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 0.75
   - 0.75
@@ -55,8 +71,9 @@ spells:
   cast: 0
 - id: CassiopeiaR
   name: Petrifying Gaze
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 100

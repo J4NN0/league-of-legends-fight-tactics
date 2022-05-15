@@ -2,8 +2,8 @@ version: 12.3.1
 name: Kai'Sa
 tags: Marksman
 stats:
-  hp: 0
-  hp_per_level: 600
+  hp: 600
+  hp_per_level: 88
   armor: 28
   armor_per_level: 3
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
-  max_rank: 0
+  damage:
+  - 59
+  max_rank: 1
   cooldown:
   - 0.644
   cast: 0
 - id: KaisaQ
   name: Icathian Rain
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 10
   - 9
@@ -33,8 +39,9 @@ spells:
   cast: 0
 - id: KaisaW
   name: Void Seeker
-  damage: 0
-  max_rank: 5
+  damage:
+  - 100
+  max_rank: 1
   cooldown:
   - 22
   - 20
@@ -44,8 +51,13 @@ spells:
   cast: 0
 - id: KaisaE
   name: Supercharge
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 16
   - 14.5
@@ -55,8 +67,13 @@ spells:
   cast: 0
 - id: KaisaR
   name: Killer Instinct
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 130
   - 100

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Ziggs
 tags: Mage
 stats:
-  hp: 0
-  hp_per_level: 536
+  hp: 536
+  hp_per_level: 92
   armor: 22
   armor_per_level: 3.3
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 54
-  max_rank: 0
+  damage:
+  - 54
+  max_rank: 1
   cooldown:
   - 0.656
   cast: 0
 - id: ZiggsQ
   name: Bouncing Bomb
-  damage: 0
-  max_rank: 5
+  damage:
+  - 85
+  - 135
+  - 185
+  - 235
+  - 285
+  max_rank: 1
   cooldown:
   - 6
   - 5.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: ZiggsW
   name: Satchel Charge
-  damage: 0
-  max_rank: 5
+  damage:
+  - 70
+  - 105
+  - 140
+  - 175
+  - 210
+  max_rank: 1
   cooldown:
   - 20
   - 18
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: ZiggsE
   name: Hexplosive Minefield
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 16
   - 16
@@ -55,8 +71,11 @@ spells:
   cast: 0
 - id: ZiggsR
   name: Mega Inferno Bomb
-  damage: 0
-  max_rank: 3
+  damage:
+  - 300
+  - 450
+  - 600
+  max_rank: 1
   cooldown:
   - 120
   - 95

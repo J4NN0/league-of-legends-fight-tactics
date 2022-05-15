@@ -2,8 +2,8 @@ version: 12.3.1
 name: Zac
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 615
+  hp: 615
+  hp_per_level: 95
   armor: 33
   armor_per_level: 3.5
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 60
-  max_rank: 0
+  damage:
+  - 60
+  max_rank: 1
   cooldown:
   - 0.736
   cast: 0
 - id: ZacQ
   name: Stretching Strikes
-  damage: 0
-  max_rank: 5
+  damage:
+  - 40
+  - 55
+  - 70
+  - 85
+  - 100
+  max_rank: 1
   cooldown:
   - 15
   - 13.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: ZacW
   name: Unstable Matter
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 5
   - 5
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: ZacE
   name: Elastic Slingshot
-  damage: 0
-  max_rank: 5
+  damage:
+  - 60
+  - 110
+  - 160
+  - 210
+  - 260
+  max_rank: 1
   cooldown:
   - 24
   - 21
@@ -55,8 +71,13 @@ spells:
   cast: 0
 - id: ZacR
   name: Let's Bounce!
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 130
   - 115

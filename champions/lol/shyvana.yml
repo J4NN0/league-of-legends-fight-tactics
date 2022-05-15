@@ -2,8 +2,8 @@ version: 12.3.1
 name: Shyvana
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 595
+  hp: 595
+  hp_per_level: 95
   armor: 38
   armor_per_level: 3.35
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 66
-  max_rank: 0
+  damage:
+  - 66
+  max_rank: 1
   cooldown:
   - 0.658
   cast: 0
 - id: ShyvanaDoubleAttack
   name: Twin Bite
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 7
   - 6.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: ShyvanaImmolationAura
   name: Burnout
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +55,9 @@ spells:
   cast: 0
 - id: ShyvanaFireball
   name: Flame Breath
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 11
@@ -55,8 +67,13 @@ spells:
   cast: 0
 - id: ShyvanaTransformCast
   name: Dragon's Descent
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 0
   - 0

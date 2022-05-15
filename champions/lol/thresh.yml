@@ -2,8 +2,8 @@ version: 12.3.1
 name: Thresh
 tags: Support, Fighter
 stats:
-  hp: 0
-  hp_per_level: 530
+  hp: 530
+  hp_per_level: 95
   armor: 28
   armor_per_level: 0
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 56
-  max_rank: 0
+  damage:
+  - 56
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: ThreshQ
   name: Death Sentence
-  damage: 0
-  max_rank: 5
+  damage:
+  - 80
+  - 120
+  - 160
+  - 200
+  - 240
+  max_rank: 1
   cooldown:
   - 20
   - 18
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: ThreshW
   name: Dark Passage
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 22
   - 20.5
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: ThreshE
   name: Flay
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 13
   - 12.25
@@ -55,8 +71,11 @@ spells:
   cast: 0
 - id: ThreshRPenta
   name: The Box
-  damage: 0
-  max_rank: 3
+  damage:
+  - 250
+  - 400
+  - 550
+  max_rank: 1
   cooldown:
   - 140
   - 120

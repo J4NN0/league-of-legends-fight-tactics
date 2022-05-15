@@ -2,8 +2,8 @@ version: 12.3.1
 name: Senna
 tags: Marksman, Support
 stats:
-  hp: 0
-  hp_per_level: 520
+  hp: 520
+  hp_per_level: 75
   armor: 28
   armor_per_level: 3.5
   spell_block: 30
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 50
-  max_rank: 0
+  damage:
+  - 50
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: SennaQ
   name: Piercing Darkness
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 15
   - 15
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: SennaW
   name: Last Embrace
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 11
   - 11
@@ -44,8 +47,13 @@ spells:
   cast: 0
 - id: SennaE
   name: Curse of the Black Mist
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 26
   - 24.5
@@ -55,8 +63,9 @@ spells:
   cast: 0
 - id: SennaR
   name: Dawning Shadow
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 160
   - 140

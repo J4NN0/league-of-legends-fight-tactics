@@ -2,8 +2,8 @@ version: 12.3.1
 name: Maokai
 tags: Tank, Mage
 stats:
-  hp: 0
-  hp_per_level: 565
+  hp: 565
+  hp_per_level: 95
   armor: 39
   armor_per_level: 4
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 64
-  max_rank: 0
+  damage:
+  - 64
+  max_rank: 1
   cooldown:
   - 0.8
   cast: 0
 - id: MaokaiQ
   name: Bramble Smash
-  damage: 0
-  max_rank: 5
+  damage:
+  - 70
+  - 110
+  - 150
+  - 190
+  - 230
+  max_rank: 1
   cooldown:
   - 8
   - 7.25
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: MaokaiW
   name: Twisted Advance
-  damage: 0
-  max_rank: 5
+  damage:
+  - 60
+  - 85
+  - 110
+  - 135
+  - 160
+  max_rank: 1
   cooldown:
   - 13
   - 12
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: MaokaiE
   name: Sapling Toss
-  damage: 0
-  max_rank: 5
+  damage:
+  - 20
+  - 45
+  - 70
+  - 95
+  - 120
+  max_rank: 1
   cooldown:
   - 10
   - 10
@@ -55,8 +71,11 @@ spells:
   cast: 0
 - id: MaokaiR
   name: Nature's Grasp
-  damage: 0
-  max_rank: 3
+  damage:
+  - 150
+  - 225
+  - 300
+  max_rank: 1
   cooldown:
   - 120
   - 100

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Sylas
 tags: Mage, Assassin
 stats:
-  hp: 0
-  hp_per_level: 525
+  hp: 525
+  hp_per_level: 115
   armor: 27
   armor_per_level: 4
   spell_block: 32
@@ -15,15 +15,18 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 61
-  max_rank: 0
+  damage:
+  - 61
+  max_rank: 1
   cooldown:
   - 0.645
   cast: 0
 - id: SylasQ
   name: Chain Lash
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 10
   - 9
@@ -33,8 +36,9 @@ spells:
   cast: 0
 - id: SylasW
   name: Kingslayer
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 13
   - 11.25
@@ -44,8 +48,9 @@ spells:
   cast: 0
 - id: SylasE
   name: Abscond / Abduct
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 14
   - 13
@@ -55,8 +60,13 @@ spells:
   cast: 0
 - id: SylasR
   name: Hijack
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 100
   - 70

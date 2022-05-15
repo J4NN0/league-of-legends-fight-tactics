@@ -2,8 +2,8 @@ version: 12.3.1
 name: Nautilus
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 576
+  hp: 576
+  hp_per_level: 86
   armor: 39
   armor_per_level: 3.75
   spell_block: 32
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 61
-  max_rank: 0
+  damage:
+  - 61
+  max_rank: 1
   cooldown:
   - 0.706
   cast: 0
 - id: NautilusAnchorDrag
   name: Dredge Line
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 14
   - 13
@@ -33,8 +35,13 @@ spells:
   cast: 0
 - id: NautilusPiercingGaze
   name: Titan's Wrath
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +51,9 @@ spells:
   cast: 0
 - id: NautilusSplashZone
   name: Riptide
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 7
   - 6.5
@@ -55,8 +63,9 @@ spells:
   cast: 0
 - id: NautilusGrandLine
   name: Depth Charge
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 100

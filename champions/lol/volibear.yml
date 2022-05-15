@@ -2,8 +2,8 @@ version: 12.3.1
 name: Volibear
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 580
+  hp: 580
+  hp_per_level: 90
   armor: 31
   armor_per_level: 4
   spell_block: 32
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 60
-  max_rank: 0
+  damage:
+  - 60
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: VolibearQ
   name: Thundering Smash
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 14
   - 13
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: VolibearW
   name: Frenzied Maul
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 5
   - 5
@@ -44,8 +47,9 @@ spells:
   cast: 0
 - id: VolibearE
   name: Sky Splitter
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 13
   - 13
@@ -55,8 +59,11 @@ spells:
   cast: 0
 - id: VolibearR
   name: Stormbringer
-  damage: 0
-  max_rank: 3
+  damage:
+  - 75
+  - 115
+  - 155
+  max_rank: 1
   cooldown:
   - 160
   - 140

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Elise
 tags: Mage, Fighter
 stats:
-  hp: 0
-  hp_per_level: 555
+  hp: 555
+  hp_per_level: 93
   armor: 27
   armor_per_level: 4
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 55
-  max_rank: 0
+  damage:
+  - 55
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: EliseHumanQ
   name: Neurotoxin / Venomous Bite
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 6
   - 6
@@ -33,8 +39,9 @@ spells:
   cast: 0
 - id: EliseHumanW
   name: Volatile Spiderling / Skittering Frenzy
-  damage: 0
-  max_rank: 5
+  damage:
+  - 4
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +51,13 @@ spells:
   cast: 0
 - id: EliseHumanE
   name: Cocoon / Rappel
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 11.5
@@ -55,8 +67,13 @@ spells:
   cast: 0
 - id: EliseR
   name: Spider Form
-  damage: 0
-  max_rank: 4
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 4
   - 4

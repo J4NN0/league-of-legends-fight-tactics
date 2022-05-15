@@ -2,8 +2,8 @@ version: 12.3.1
 name: Rell
 tags: Tank
 stats:
-  hp: 0
-  hp_per_level: 540
+  hp: 540
+  hp_per_level: 90
   armor: 32
   armor_per_level: 3
   spell_block: 32.1
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 55
-  max_rank: 0
+  damage:
+  - 55
+  max_rank: 1
   cooldown:
   - 0.55
   cast: 0
 - id: RellQ
   name: Shattering Strike
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 9
   - 8
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: RellW_Dismount
   name: 'Ferromancy: Crash Down'
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 11
   - 11
@@ -44,8 +47,9 @@ spells:
   cast: 0
 - id: RellE
   name: Attract and Repel
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 18
   - 16.25
@@ -55,8 +59,13 @@ spells:
   cast: 0
 - id: RellR
   name: Magnet Storm
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 100

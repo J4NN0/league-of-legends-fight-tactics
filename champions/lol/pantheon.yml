@@ -2,8 +2,8 @@ version: 12.3.1
 name: Pantheon
 tags: Fighter, Assassin
 stats:
-  hp: 0
-  hp_per_level: 580
+  hp: 580
+  hp_per_level: 95
   armor: 40
   armor_per_level: 3.75
   spell_block: 28
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 64
-  max_rank: 0
+  damage:
+  - 64
+  max_rank: 1
   cooldown:
   - 0.644
   cast: 0
 - id: PantheonQ
   name: Comet Spear
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 13
   - 11.75
@@ -33,8 +39,9 @@ spells:
   cast: 0
 - id: PantheonW
   name: Shield Vault
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 13
   - 12
@@ -44,8 +51,13 @@ spells:
   cast: 0
 - id: PantheonE
   name: Aegis Assault
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 22
   - 20.5
@@ -55,8 +67,9 @@ spells:
   cast: 0
 - id: PantheonR
   name: Grand Starfall
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 180
   - 165

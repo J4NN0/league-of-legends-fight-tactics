@@ -4,6 +4,7 @@
 # - build - build application
 # - test - application tests
 # - run - run application
+# - clean - clean files
 # - tools - golang useful tools
 # - development - scripts for development
 
@@ -13,7 +14,7 @@ cover_profile_filename := build/cover.out
 
 
 # === BUILD =======================================================
-build:
+build-lol-tactics:
 	go build -o build/league_of_legends_tactics_cli cmd/$(app_name)/main.go
 
 # === TEST =======================================================
@@ -58,6 +59,14 @@ run-help:
 run-lint:
 	golangci-lint run ./...
 
+# === CLEAN =======================================================
+# Clean files
+clean-lol-fights:
+	rm fights/*
+
+clean-lol-champions:
+	rm champions/lol/*
+
 # === TOOLS =======================================================
 # Get a decorated HTML presentation of cover file: showing the covered (green), uncovered (red), and un-instrumented (grey) source.
 tool-read-cover:
@@ -76,4 +85,4 @@ tool-vet:
 	go vet ./...
 
 # === DEVELOPMENT =======================================================
-dev-pre-commit: tool-mod-tidy tool-fmt build run-lint tool-vet test-pre-commit
+dev-pre-commit: tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test-pre-commit

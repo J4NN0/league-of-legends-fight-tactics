@@ -7,7 +7,10 @@
 *.dll
 *.so
 *.dylib
-build/league_of_legends_fight_tactics
+build/league_of_legends_tactics_cli
+
+#
+*.loltactics
 
 # Test binary, built with `go test -c`
 *.test

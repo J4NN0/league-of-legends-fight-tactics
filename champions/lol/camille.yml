@@ -2,8 +2,8 @@ version: 12.3.1
 name: Camille
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 576
+  hp: 576
+  hp_per_level: 85
   armor: 35
   armor_per_level: 3.8
   spell_block: 32.1
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 68
-  max_rank: 0
+  damage:
+  - 68
+  max_rank: 1
   cooldown:
   - 0.644
   cast: 0
 - id: CamilleQ
   name: Precision Protocol
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 9
   - 8.25
@@ -33,8 +39,9 @@ spells:
   cast: 0
 - id: CamilleW
   name: Tactical Sweep
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 17
   - 15.5
@@ -44,8 +51,9 @@ spells:
   cast: 0
 - id: CamilleE
   name: Hookshot
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 16
   - 15
@@ -55,8 +63,13 @@ spells:
   cast: 0
 - id: CamilleR
   name: The Hextech Ultimatum
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 140
   - 115

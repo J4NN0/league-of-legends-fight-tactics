@@ -2,8 +2,8 @@ version: 12.3.1
 name: Taric
 tags: Support, Fighter
 stats:
-  hp: 0
-  hp_per_level: 575
+  hp: 575
+  hp_per_level: 85
   armor: 40
   armor_per_level: 3.4
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 55
-  max_rank: 0
+  damage:
+  - 55
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: TaricQ
   name: Starlight's Touch
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 3
   - 3
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: TaricW
   name: Bastion
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 15
   - 15
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: TaricE
   name: Dazzle
-  damage: 0
-  max_rank: 5
+  damage:
+  - 90
+  - 130
+  - 170
+  - 210
+  - 250
+  max_rank: 1
   cooldown:
   - 17
   - 16
@@ -55,8 +71,13 @@ spells:
   cast: 0
 - id: TaricR
   name: Cosmic Radiance
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 180
   - 150

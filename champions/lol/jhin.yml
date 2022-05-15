@@ -2,8 +2,8 @@ version: 12.3.1
 name: Jhin
 tags: Marksman, Mage
 stats:
-  hp: 0
-  hp_per_level: 585
+  hp: 585
+  hp_per_level: 93
   armor: 24
   armor_per_level: 3.5
   spell_block: 30
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 59
-  max_rank: 0
+  damage:
+  - 59
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: JhinQ
   name: Dancing Grenade
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 7
   - 6.5
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: JhinW
   name: Deadly Flourish
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +47,9 @@ spells:
   cast: 0
 - id: JhinE
   name: Captive Audience
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 2
   - 2
@@ -55,8 +59,9 @@ spells:
   cast: 0
 - id: JhinR
   name: Curtain Call
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 105

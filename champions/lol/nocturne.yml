@@ -2,8 +2,8 @@ version: 12.3.1
 name: Nocturne
 tags: Assassin, Fighter
 stats:
-  hp: 0
-  hp_per_level: 585
+  hp: 585
+  hp_per_level: 95
   armor: 38
   armor_per_level: 3.5
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
-  max_rank: 0
+  damage:
+  - 62
+  max_rank: 1
   cooldown:
   - 0.721
   cast: 0
 - id: NocturneDuskbringer
   name: Duskbringer
-  damage: 0
-  max_rank: 5
+  damage:
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
+  max_rank: 1
   cooldown:
   - 8
   - 8
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: NocturneShroudofDarkness
   name: Shroud of Darkness
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 20
   - 18
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: NocturneUnspeakableHorror
   name: Unspeakable Horror
-  damage: 0
-  max_rank: 5
+  damage:
+  - 80
+  - 125
+  - 170
+  - 215
+  - 260
+  max_rank: 1
   cooldown:
   - 15
   - 14
@@ -55,8 +71,9 @@ spells:
   cast: 0
 - id: NocturneParanoia
   name: Paranoia
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 140
   - 115

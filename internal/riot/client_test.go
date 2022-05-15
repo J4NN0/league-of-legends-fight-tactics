@@ -6,10 +6,15 @@ import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
 	"io/ioutil"
-	"league-of-legends-fight-tactics/internal/log"
 	"net/http"
 	"testing"
 )
+
+type MockLogger struct{}
+
+func (m *MockLogger) Printf(_ string, _ ...interface{})   {}
+func (m *MockLogger) Warningf(_ string, _ ...interface{}) {}
+func (m *MockLogger) Fatalf(_ string, _ ...interface{})   {}
 
 func mockResponse(obj interface{}, status int) *http.Response {
 	jsonMarshal, _ := json.Marshal(obj)
@@ -40,7 +45,7 @@ func TestGetAllLoLChampionsSuccess(t *testing.T) {
 		{
 			Format:   format,
 			Version:  version,
-			DataName: championName,
+			DataName: sanitizeChampionName(championName),
 			Data: map[string]championData{
 				championName: {
 					Name: championName,
@@ -56,7 +61,7 @@ func TestGetAllLoLChampionsSuccess(t *testing.T) {
 	}
 
 	callCount := 0
-	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 
 		// Get all champions
@@ -96,7 +101,7 @@ func TestGetAllLoLChampionsSuccess(t *testing.T) {
 }
 
 func TestGetAllLoLChampionsFail_GetAllChampions(t *testing.T) {
-	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(dDragonLoLAllChampionsResponse{}, 403)
 	}))
 
@@ -108,7 +113,7 @@ func TestGetAllLoLChampionsFail_GetAllChampions(t *testing.T) {
 
 func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 	callCount := 0
-	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 		if callCount == 2 {
 			return mockResponse(DDragonChampionResponse{}, 403)
@@ -123,13 +128,14 @@ func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 }
 
 func TestGetLoLChampionSuccess(t *testing.T) {
-	var format, version, championName = "standAloneComplex", "1.0.0", "TestName"
-	var tags = []string{"Fighter", "Tank"}
+	var format, version, championName, spellID = "standAloneComplex", "1.0.0", "TestName", "spellID"
+	var tags, labels, effects = []string{"Fighter", "Tank"}, []string{"Damage", "Attack Damage", "Cooldown"}, []string{"", "95/130/165/200/235", "60/75/90/105/120"}
 	var hp, armor, atkDamage float32 = 1, 2, 3
+	var damages = []float32{95, 130, 165, 200, 235}
 	var expectedChampionResponse = DDragonChampionResponse{
 		Format:   format,
 		Version:  version,
-		DataName: championName,
+		DataName: sanitizeChampionName(championName),
 		Data: map[string]championData{
 			championName: {
 				Name: championName,
@@ -139,11 +145,21 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 					Armor:        armor,
 					AttackDamage: atkDamage,
 				},
+				Spells: []spell{
+					{
+						ID: spellID,
+						LevelTip: levelTip{
+							Label: labels,
+						},
+						EffectBurn: effects,
+						Damage:     damages,
+					},
+				},
 			},
 		},
 	}
 
-	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{
 			Format:  format,
 			Version: version,
@@ -156,6 +172,16 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 						Armor:        armor,
 						AttackDamage: atkDamage,
 					},
+					Spells: []spell{
+						{
+							ID: spellID,
+							LevelTip: levelTip{
+								Label: labels,
+							},
+							EffectBurn: effects,
+							Damage:     damages,
+						},
+					},
 				},
 			},
 		}, 200)
@@ -167,7 +193,7 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 }
 
 func TestGetLoLChampionFail(t *testing.T) {
-	client := NewApiClient(log.New("testApp"), newTestClient(func(req *http.Request) *http.Response {
+	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{}, 403)
 	}))
 
@@ -178,51 +204,125 @@ func TestGetLoLChampionFail(t *testing.T) {
 }
 
 func TestSanitizeChampionName(t *testing.T) {
-	championName := sanitizeChampionName("jHiN")
-	assert.Equal(t, "Jhin", championName)
+	t.Run("sanitizeChampionName Jhin", func(t *testing.T) {
+		championName := sanitizeChampionName("jHiN")
+		assert.Equal(t, "Jhin", championName)
+	})
 
-	championName = sanitizeChampionName("Aurelionsol")
-	assert.Equal(t, "AurelionSol", championName)
+	t.Run("sanitizeChampionName AurelionSol", func(t *testing.T) {
+		championName := sanitizeChampionName("Aurelionsol")
+		assert.Equal(t, "AurelionSol", championName)
+	})
 
-	championName = sanitizeChampionName("dRMundo")
-	assert.Equal(t, "DrMundo", championName)
+	t.Run("sanitizeChampionName DrMundo", func(t *testing.T) {
+		championName := sanitizeChampionName("dRMundo")
+		assert.Equal(t, "DrMundo", championName)
+	})
 
-	championName = sanitizeChampionName("jarvanIV")
-	assert.Equal(t, "JarvanIV", championName)
+	t.Run("sanitizeChampionName JarvanIV", func(t *testing.T) {
+		championName := sanitizeChampionName("jarvanIV")
+		assert.Equal(t, "JarvanIV", championName)
+	})
 
-	championName = sanitizeChampionName("Kogmaw")
-	assert.Equal(t, "KogMaw", championName)
+	t.Run("sanitizeChampionName KogMaw", func(t *testing.T) {
+		championName := sanitizeChampionName("Kogmaw")
+		assert.Equal(t, "KogMaw", championName)
+	})
 
-	championName = sanitizeChampionName("Leesin")
-	assert.Equal(t, "LeeSin", championName)
+	t.Run("sanitizeChampionName LeeSin", func(t *testing.T) {
+		championName := sanitizeChampionName("Leesin")
+		assert.Equal(t, "LeeSin", championName)
+	})
 
-	championName = sanitizeChampionName("Masteryi")
-	assert.Equal(t, "MasterYi", championName)
+	t.Run("sanitizeChampionName MasterYi", func(t *testing.T) {
+		championName := sanitizeChampionName("Masteryi")
+		assert.Equal(t, "MasterYi", championName)
+	})
 
-	championName = sanitizeChampionName("Missfortune")
-	assert.Equal(t, "MissFortune", championName)
+	t.Run("sanitizeChampionName MissFortune", func(t *testing.T) {
+		championName := sanitizeChampionName("Missfortune")
+		assert.Equal(t, "MissFortune", championName)
+	})
 
-	championName = sanitizeChampionName("Monkeyking")
-	assert.Equal(t, "MonkeyKing", championName)
+	t.Run("sanitizeChampionName MonkeyKing", func(t *testing.T) {
+		championName := sanitizeChampionName("Monkeyking")
+		assert.Equal(t, "MonkeyKing", championName)
+	})
 
-	championName = sanitizeChampionName("Reksai")
-	assert.Equal(t, "RekSai", championName)
+	t.Run("sanitizeChampionName RekSai", func(t *testing.T) {
+		championName := sanitizeChampionName("Reksai")
+		assert.Equal(t, "RekSai", championName)
+	})
 
-	championName = sanitizeChampionName("Tahmkench")
-	assert.Equal(t, "TahmKench", championName)
+	t.Run("sanitizeChampionName TahmKench", func(t *testing.T) {
+		championName := sanitizeChampionName("Tahmkench")
+		assert.Equal(t, "TahmKench", championName)
+	})
 
-	championName = sanitizeChampionName("Twistedfate")
-	assert.Equal(t, "TwistedFate", championName)
+	t.Run("sanitizeChampionName TwistedFate", func(t *testing.T) {
+		championName := sanitizeChampionName("Twistedfate")
+		assert.Equal(t, "TwistedFate", championName)
+	})
 
-	championName = sanitizeChampionName("Xinzhao")
-	assert.Equal(t, "XinZhao", championName)
+	t.Run("sanitizeChampionName XinZhao", func(t *testing.T) {
+		championName := sanitizeChampionName("Xinzhao")
+		assert.Equal(t, "XinZhao", championName)
+	})
 }
 
-func TestGetChampionUrl(t *testing.T) {
+func TestGetChampionURL(t *testing.T) {
 	championName := "someChampionName"
-	expectedUrl := fmt.Sprintf("%s/%s.json", dDragonLolChampionBaseUrl, championName)
+	expectedURL := fmt.Sprintf("%s/%s.json", dDragonLolChampionBaseURL, championName)
 
-	url := getChampionUrl(championName)
+	url := getChampionURL(championName)
 
-	assert.Equal(t, expectedUrl, url)
+	assert.Equal(t, expectedURL, url)
+}
+
+func TestGetSpellDamage(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		LevelTip: levelTip{
+			Label: []string{"Damage", "Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "95/130/165/200/235", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{95, 130, 165, 200, 235}
+
+	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
+}
+
+func TestGetSpellDamage_NoDamageLabel(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		LevelTip: levelTip{
+			Label: []string{"Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{0, 0, 0, 0, 0}
+
+	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
+}
+
+func TestGetSpellDamageFail(t *testing.T) {
+	spellTest := spell{
+		ID: "sampleSpell",
+		LevelTip: levelTip{
+			Label: []string{"Damage", "Attack Damage", "Cooldown"},
+		},
+		EffectBurn: []string{"", "not/numbers/in/here/lol", "60/75/90/105/120"},
+	}
+	expectedDamage := []float32{0, 0, 0, 0, 0}
+
+	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	damage := riotClient.getSpellDamage(spellTest)
+
+	assert.Equal(t, expectedDamage, damage)
 }

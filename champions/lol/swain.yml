@@ -2,8 +2,8 @@ version: 12.3.1
 name: Swain
 tags: Mage, Fighter
 stats:
-  hp: 0
-  hp_per_level: 525
+  hp: 525
+  hp_per_level: 85
   armor: 23
   armor_per_level: 4
   spell_block: 30
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 58
-  max_rank: 0
+  damage:
+  - 58
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: SwainQ
   name: Death's Hand
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 9
   - 7.5
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: SwainW
   name: Vision of Empire
-  damage: 0
-  max_rank: 5
+  damage:
+  - 80
+  - 120
+  - 160
+  - 200
+  - 240
+  max_rank: 1
   cooldown:
   - 22
   - 21
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: SwainE
   name: Nevermove
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 10
   - 10
@@ -55,8 +71,13 @@ spells:
   cast: 0
 - id: SwainR
   name: Demonic Ascension
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 120

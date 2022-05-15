@@ -1,0 +1,85 @@
+version: 12.3.1
+name: Dr. Mundo
+tags: Fighter, Tank
+stats:
+  hp: 583
+  hp_per_level: 89
+  armor: 32
+  armor_per_level: 3
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 61
+  attack_damage_per_level: 4.2
+  attack_speed: 0.72
+  attack_speed_per_level: 3.3
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 61
+  max_rank: 1
+  cooldown:
+  - 0.72
+  cast: 0
+- id: DrMundoQ
+  name: Infected Bonesaw
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: DrMundoW
+  name: Heart Zapper
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 17
+  - 16.5
+  - 16
+  - 15.5
+  - 15
+  cast: 0
+- id: DrMundoE
+  name: Blunt Force Trauma
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: DrMundoR
+  name: Maximum Dosage
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 110
+  - 100
+  - 90
+  cast: 0

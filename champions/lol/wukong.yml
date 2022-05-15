@@ -1,0 +1,77 @@
+version: 12.3.1
+name: Wukong
+tags: Fighter, Tank
+stats:
+  hp: 540
+  hp_per_level: 85
+  armor: 31
+  armor_per_level: 3.5
+  spell_block: 28
+  spell_block_per_level: 1.25
+  attack_damage: 68
+  attack_damage_per_level: 3.5
+  attack_speed: 0.711
+  attack_speed_per_level: 3
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 68
+  max_rank: 1
+  cooldown:
+  - 0.711
+  cast: 0
+- id: MonkeyKingDoubleAttack
+  name: Crushing Blow
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 9
+  - 8.5
+  - 8
+  - 7.5
+  - 7
+  cast: 0
+- id: MonkeyKingDecoy
+  name: Warrior Trickster
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 20
+  - 19
+  - 18
+  - 17
+  - 16
+  cast: 0
+- id: MonkeyKingNimbus
+  name: Nimbus Strike
+  damage:
+  - 0
+  max_rank: 1
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: MonkeyKingSpinToWin
+  name: Cyclone
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
+  cooldown:
+  - 120
+  - 105
+  - 90
+  cast: 0

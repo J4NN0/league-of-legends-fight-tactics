@@ -2,8 +2,8 @@ version: 12.3.1
 name: Rumble
 tags: Fighter, Mage
 stats:
-  hp: 0
-  hp_per_level: 589
+  hp: 589
+  hp_per_level: 85
   armor: 31
   armor_per_level: 3.5
   spell_block: 28
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 61
-  max_rank: 0
+  damage:
+  - 61
+  max_rank: 1
   cooldown:
   - 0.644
   cast: 0
 - id: RumbleFlameThrower
   name: Flamespitter
-  damage: 0
-  max_rank: 5
+  damage:
+  - 180
+  - 220
+  - 260
+  - 300
+  - 340
+  max_rank: 1
   cooldown:
   - 10
   - 9
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: RumbleShield
   name: Scrap Shield
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 6
   - 6
@@ -44,8 +55,9 @@ spells:
   cast: 0
 - id: RumbleGrenade
   name: Electro Harpoon
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 0.5
   - 0.5
@@ -55,8 +67,13 @@ spells:
   cast: 0
 - id: RumbleCarpetBomb
   name: The Equalizer
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 100
   - 85

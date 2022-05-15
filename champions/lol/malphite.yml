@@ -2,8 +2,8 @@ version: 12.3.1
 name: Malphite
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 574
+  hp: 574
+  hp_per_level: 90
   armor: 37
   armor_per_level: 3.75
   spell_block: 28
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 62
-  max_rank: 0
+  damage:
+  - 62
+  max_rank: 1
   cooldown:
   - 0.736
   cast: 0
 - id: SeismicShard
   name: Seismic Shard
-  damage: 0
-  max_rank: 5
+  damage:
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  max_rank: 1
   cooldown:
   - 8
   - 8
@@ -33,8 +39,9 @@ spells:
   cast: 0
 - id: Obduracy
   name: Thunderclap
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +51,9 @@ spells:
   cast: 0
 - id: Landslide
   name: Ground Slam
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 7
   - 7
@@ -55,8 +63,11 @@ spells:
   cast: 0
 - id: UFSlash
   name: Unstoppable Force
-  damage: 0
-  max_rank: 3
+  damage:
+  - 200
+  - 300
+  - 400
+  max_rank: 1
   cooldown:
   - 130
   - 105

@@ -2,8 +2,8 @@ version: 12.3.1
 name: Ezreal
 tags: Marksman, Mage
 stats:
-  hp: 0
-  hp_per_level: 530
+  hp: 530
+  hp_per_level: 88
   armor: 24
   armor_per_level: 3.5
   spell_block: 30
@@ -15,15 +15,17 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 60
-  max_rank: 0
+  damage:
+  - 60
+  max_rank: 1
   cooldown:
   - 0.625
   cast: 0
 - id: EzrealQ
   name: Mystic Shot
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 5.5
   - 5.25
@@ -33,8 +35,9 @@ spells:
   cast: 0
 - id: EzrealW
   name: Essence Flux
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 12
   - 12
@@ -44,8 +47,9 @@ spells:
   cast: 0
 - id: EzrealE
   name: Arcane Shift
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 28
   - 25
@@ -55,8 +59,9 @@ spells:
   cast: 0
 - id: EzrealR
   name: Trueshot Barrage
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  max_rank: 1
   cooldown:
   - 120
   - 120

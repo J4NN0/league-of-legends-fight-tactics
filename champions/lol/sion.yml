@@ -2,8 +2,8 @@ version: 12.3.1
 name: Sion
 tags: Tank, Fighter
 stats:
-  hp: 0
-  hp_per_level: 545
+  hp: 545
+  hp_per_level: 73
   armor: 32
   armor_per_level: 3
   spell_block: 32
@@ -15,15 +15,21 @@ stats:
 spells:
 - id: aa
   name: Auto Attack
-  damage: 68
-  max_rank: 0
+  damage:
+  - 68
+  max_rank: 1
   cooldown:
   - 0.679
   cast: 0
 - id: SionQ
   name: Decimating Smash
-  damage: 0
-  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 10
   - 9
@@ -33,8 +39,13 @@ spells:
   cast: 0
 - id: SionW
   name: Soul Furnace
-  damage: 0
-  max_rank: 5
+  damage:
+  - 40
+  - 65
+  - 90
+  - 115
+  - 140
+  max_rank: 1
   cooldown:
   - 15
   - 14
@@ -44,8 +55,13 @@ spells:
   cast: 0
 - id: SionE
   name: Roar of the Slayer
-  damage: 0
-  max_rank: 5
+  damage:
+  - 65
+  - 100
+  - 135
+  - 170
+  - 205
+  max_rank: 1
   cooldown:
   - 12
   - 11
@@ -55,8 +71,13 @@ spells:
   cast: 0
 - id: SionR
   name: Unstoppable Onslaught
-  damage: 0
-  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  max_rank: 1
   cooldown:
   - 140
   - 100
