@@ -86,15 +86,16 @@ func (c *Controller) AllChampionsFight() {
 
 func (c *Controller) FetchChampion(championName string) {
 	c.log.Printf("Fetching %s ...", championName)
+
 	championData, err := c.riotClient.GetLoLChampion(championName)
 	if err != nil {
 		c.log.Fatalf("Error while fetching league of legends champions: %v", err)
 		return
 	}
 
-	err = c.storeChampionToYmlFile(championData)
+	err = storeChampionToYMLFile(championData)
 	if err != nil {
-		c.log.Fatalf("Could not save %s into yml file: %v", championName, err)
+		c.log.Fatalf("Could not store %s champion data: %v", championName, err)
 		return
 	}
 
@@ -106,21 +107,21 @@ func (c *Controller) FetchAllChampions() {
 
 	championsData, err := c.riotClient.GetAllLoLChampions()
 	if err != nil {
-		c.log.Fatalf("Error while fetching league of legends champions: %v", err)
+		c.log.Fatalf("Error while fetching all league of legends champions: %v", err)
 		return
 	}
 
 	for _, champion := range championsData {
-		err = c.storeChampionToYmlFile(champion)
+		err = storeChampionToYMLFile(champion)
 		if err != nil {
-			c.log.Fatalf("Could not save %s into yml file: %v", champion.DataName, err)
-			return
+			c.log.Warningf("Could not store %s champion data: %v", champion.DataName, err)
+		} else {
+			c.log.Printf("%s successfully stored", champion.DataName)
 		}
-		c.log.Printf("%s successfully stored", champion.DataName)
 	}
 }
 
-func (c *Controller) storeChampionToYmlFile(championData riot.DDragonChampionResponse) error {
+func storeChampionToYMLFile(championData riot.DDragonChampionResponse) error {
 	err := lol.Write(mapChampionResponseToLolChampionStruct(championData))
 	if err != nil {
 		return err
@@ -164,7 +165,7 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 			ID:       spell.ID,
 			Name:     spell.Name,
 			Damage:   spell.Damage,
-			MaxRank:  1, //spell.MaxRank,
+			MaxRank:  spell.MaxRank,
 			Cooldown: spell.Cooldown,
 			Cast:     0.0,
 		})

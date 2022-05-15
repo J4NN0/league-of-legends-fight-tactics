@@ -6,10 +6,8 @@ import (
 	"testing"
 )
 
-func TestSetFilePath(t *testing.T) {
-	filename := setFilePath(Champion{Name: "Name1"}, Champion{Name: "Name2"})
+func TestGetBestRoundOfSpells(t *testing.T) {
 
-	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }
 
 func TestIsHpZero(t *testing.T) {
@@ -36,14 +34,20 @@ func TestIsHpZero(t *testing.T) {
 		},
 	}
 
-	isZero := isHpZero(spells, 30)
-	assert.Equal(t, true, isZero)
+	t.Run("hp below zero", func(t *testing.T) {
+		isZero := isHpZero(spells, 30)
+		assert.Equal(t, true, isZero)
+	})
 
-	isZero = isHpZero(spells, 40)
-	assert.Equal(t, true, isZero)
+	t.Run("hp zero", func(t *testing.T) {
+		isZero := isHpZero(spells, 40)
+		assert.Equal(t, true, isZero)
+	})
 
-	isZero = isHpZero(spells, 50)
-	assert.Equal(t, false, isZero)
+	t.Run("hp not zero", func(t *testing.T) {
+		isZero := isHpZero(spells, 50)
+		assert.Equal(t, false, isZero)
+	})
 }
 
 func TestGetBenchmark_WithNoReUsageSpells(t *testing.T) {
@@ -178,4 +182,10 @@ func TestGetRoundSpellsToString(t *testing.T) {
 	expectedString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 
 	assert.Equal(t, expectedString, spellsToString)
+}
+
+func TestSetFilePath(t *testing.T) {
+	filename := setFilePath(Champion{Name: "Name1"}, Champion{Name: "Name2"})
+
+	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }

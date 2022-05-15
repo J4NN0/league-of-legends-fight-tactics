@@ -6,6 +6,8 @@ import (
 	"math"
 )
 
+// TODO: only considering spell's first rank atm, but need to consider all (e.g. 'q' has 5 ranks, etc.)
+
 type FightTactics struct {
 	log Logger
 }
@@ -47,7 +49,7 @@ func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float32, bestSol *bes
 
 	for i := 0; i < len(spells); i++ {
 		if spells[i].Damage[0] != 0 {
-			// Exclude spells with zero damage
+			// TODO: excluding spells with zero damage atm, but need to take their passive into account
 			sol = append(sol, spells[i])
 			getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
 			sol = sol[:len(sol)-1] // pop value
@@ -76,7 +78,7 @@ func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	}
 }
 
-// getBenchmark Given a set of spells (that takes hp down to zero), return related benchmark
+// getBenchmark Given a set of spells (that takes hp down to zero), return related benchmark: time needed to slay enemy
 func getBenchmark(spells []Spell) float32 {
 	var benchmark float32
 	var usedSpells []Spell
