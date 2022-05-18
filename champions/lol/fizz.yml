@@ -29,7 +29,7 @@ spells:
   - 40
   - 55
   - 70
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 7
   - 6.5
@@ -57,7 +57,7 @@ spells:
   name: Playful / Trickster
   damage:
   - 225
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 14
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 85

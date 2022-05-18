@@ -29,7 +29,7 @@ spells:
   - 145
   - 185
   - 225
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -45,7 +45,7 @@ spells:
   - 110
   - 145
   - 180
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 7
   - 6
@@ -57,7 +57,7 @@ spells:
   name: Counter Strike
   damage:
   - 1
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 12.5
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 80
   - 80

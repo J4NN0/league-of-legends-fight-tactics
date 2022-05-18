@@ -25,7 +25,7 @@ spells:
   name: Time Bomb
   damage:
   - 7
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 12
@@ -57,7 +57,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 15
   - 15
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 90

@@ -29,7 +29,7 @@ spells:
   - 150
   - 190
   - 230
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -41,7 +41,7 @@ spells:
   name: Eye of Destruction
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 13
@@ -57,7 +57,7 @@ spells:
   - 140
   - 170
   - 200
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 13
   - 12.5
@@ -69,7 +69,7 @@ spells:
   name: Rite of the Arcane
   damage:
   - 10
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 130
   - 115

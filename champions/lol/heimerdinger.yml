@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 1
   - 1
@@ -45,7 +45,7 @@ spells:
   - 24
   - 30
   - 36
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 11
   - 10
@@ -57,7 +57,7 @@ spells:
   name: CH-2 Electron Storm Grenade
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 85

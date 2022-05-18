@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -45,7 +45,7 @@ spells:
   - 0.04
   - 0.045
   - 0.05
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 4
   - 4
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -73,7 +73,7 @@ spells:
   name: Leap of Faith
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 95

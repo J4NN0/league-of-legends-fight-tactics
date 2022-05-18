@@ -1,5 +1,5 @@
 version: 12.3.1
-name: Nunu & Willump
+name: Nunu
 tags: Tank, Fighter
 stats:
   hp: 540
@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 14
@@ -57,7 +57,7 @@ spells:
   name: Snowball Barrage
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 14
@@ -69,7 +69,7 @@ spells:
   name: Absolute Zero
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 110
   - 100

@@ -25,7 +25,7 @@ spells:
   name: Orb of Deception
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 7
   - 7
@@ -41,7 +41,7 @@ spells:
   - 110
   - 135
   - 160
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -57,7 +57,7 @@ spells:
   - 140
   - 170
   - 200
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -69,7 +69,7 @@ spells:
   name: Spirit Rush
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 130
   - 105

@@ -29,7 +29,7 @@ spells:
   - 145
   - 180
   - 215
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 3.5
   - 3.5
@@ -45,7 +45,7 @@ spells:
   - 30
   - 35
   - 40
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 24
   - 22
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0.75
   - 0.75
@@ -73,7 +73,7 @@ spells:
   name: Petrifying Gaze
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 100

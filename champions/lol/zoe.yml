@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8.5
   - 8
@@ -41,7 +41,7 @@ spells:
   name: Spell Thief
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0.25
   - 0.25
@@ -57,7 +57,7 @@ spells:
   - 140
   - 180
   - 220
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 11
   - 8

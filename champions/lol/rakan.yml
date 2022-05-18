@@ -29,7 +29,7 @@ spells:
   - 160
   - 205
   - 250
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -45,7 +45,7 @@ spells:
   - 160
   - 205
   - 250
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 16.5
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -73,7 +73,7 @@ spells:
   name: The Quickness
   damage:
   - 4
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 130
   - 110

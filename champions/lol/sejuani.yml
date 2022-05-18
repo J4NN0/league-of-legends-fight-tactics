@@ -29,7 +29,7 @@ spells:
   - 190
   - 240
   - 290
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 16.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -57,7 +57,7 @@ spells:
   name: Permafrost
   damage:
   - 1
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 1.5
   - 1.5
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 100

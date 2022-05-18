@@ -25,7 +25,7 @@ spells:
   name: To the Skies! / Shock Blast
   damage:
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 16
   - 14
@@ -38,7 +38,7 @@ spells:
   name: Lightning Field / Hyper Charge
   damage:
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 10
   - 10
@@ -55,7 +55,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 20
   - 18

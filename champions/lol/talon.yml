@@ -29,7 +29,7 @@ spells:
   - 105
   - 125
   - 145
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8.5
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -73,7 +73,7 @@ spells:
   name: Shadow Assault
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 80

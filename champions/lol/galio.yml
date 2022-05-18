@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 17.5
@@ -57,7 +57,7 @@ spells:
   name: Justice Punch
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -69,7 +69,7 @@ spells:
   name: Hero's Entrance
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 200
   - 180

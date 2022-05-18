@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -45,7 +45,7 @@ spells:
   - 50
   - 65
   - 80
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 14.5
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 5
   - 5
@@ -73,7 +73,7 @@ spells:
   name: Enchanted Crystal Arrow
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 80

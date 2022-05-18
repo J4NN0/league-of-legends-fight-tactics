@@ -1,5 +1,5 @@
 version: 12.3.1
-name: Master Yi
+name: MasterYi
 tags: Assassin, Fighter
 stats:
   hp: 599
@@ -25,7 +25,7 @@ spells:
   name: Alpha Strike
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 17.5
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 28
   - 28
@@ -53,7 +53,7 @@ spells:
   name: Wuju Style
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 17
@@ -69,7 +69,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 85
   - 85

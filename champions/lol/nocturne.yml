@@ -29,7 +29,7 @@ spells:
   - 25
   - 30
   - 35
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 20
   - 18
@@ -61,7 +61,7 @@ spells:
   - 170
   - 215
   - 260
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -73,7 +73,7 @@ spells:
   name: Paranoia
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 140
   - 115

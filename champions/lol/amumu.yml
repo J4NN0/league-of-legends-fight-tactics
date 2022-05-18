@@ -29,7 +29,7 @@ spells:
   - 120
   - 145
   - 170
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 3
   - 3
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 1
   - 1
@@ -57,7 +57,7 @@ spells:
   name: Tantrum
   damage:
   - 0.5
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -69,7 +69,7 @@ spells:
   name: Curse of the Sad Mummy
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 150
   - 125

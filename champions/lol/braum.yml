@@ -29,7 +29,7 @@ spells:
   - 175
   - 225
   - 275
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 14
@@ -73,7 +73,7 @@ spells:
   name: Glacial Fissure
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 100

@@ -25,7 +25,7 @@ spells:
   name: Radiant Blast
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 15
   - 15
@@ -57,7 +57,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -69,7 +69,7 @@ spells:
   name: Divine Judgment
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 160
   - 120

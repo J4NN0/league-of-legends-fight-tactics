@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 6
   - 6
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 120
   - 105
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -73,7 +73,7 @@ spells:
   name: Infinite Duress
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 110
   - 90

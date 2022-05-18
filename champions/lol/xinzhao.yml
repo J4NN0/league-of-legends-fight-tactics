@@ -1,5 +1,5 @@
 version: 12.3.1
-name: Xin Zhao
+name: XinZhao
 tags: Fighter, Assassin
 stats:
   hp: 570
@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 7
   - 6.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -61,7 +61,7 @@ spells:
   - 100
   - 125
   - 150
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 11
   - 11
@@ -73,7 +73,7 @@ spells:
   name: Crescent Guard
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 110

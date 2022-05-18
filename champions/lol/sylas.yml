@@ -26,7 +26,7 @@ spells:
   damage:
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -38,7 +38,7 @@ spells:
   name: Kingslayer
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 13
   - 11.25
@@ -50,7 +50,7 @@ spells:
   name: Abscond / Abduct
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 13
@@ -66,7 +66,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 70

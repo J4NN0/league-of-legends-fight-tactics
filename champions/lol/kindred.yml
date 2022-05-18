@@ -29,7 +29,7 @@ spells:
   - 110
   - 135
   - 160
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -45,7 +45,7 @@ spells:
   - 50
   - 55
   - 60
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 17
@@ -57,7 +57,7 @@ spells:
   name: Mounting Dread
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 13
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 180
   - 150

@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 9
   - 9
@@ -46,7 +46,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 0.8
   - 0.8
@@ -63,7 +63,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 6
   cooldown:
   - 0
   - 0
@@ -76,7 +76,7 @@ spells:
   name: Moonlight Vigil
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 110

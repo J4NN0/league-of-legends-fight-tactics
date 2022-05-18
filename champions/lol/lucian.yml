@@ -29,7 +29,7 @@ spells:
   - 165
   - 200
   - 235
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -45,7 +45,7 @@ spells:
   - 145
   - 180
   - 215
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 13
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 22
   - 20
@@ -73,7 +73,7 @@ spells:
   name: The Culling
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 110
   - 100

@@ -1,5 +1,5 @@
 version: 12.3.1
-name: Kog'Maw
+name: KogMaw
 tags: Marksman, Mage
 stats:
   hp: 565
@@ -29,7 +29,7 @@ spells:
   - 25
   - 30
   - 35
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 17
   - 17
@@ -61,7 +61,7 @@ spells:
   - 165
   - 210
   - 255
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -73,7 +73,7 @@ spells:
   name: Living Artillery
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 2
   - 1.5

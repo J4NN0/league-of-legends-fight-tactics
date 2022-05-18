@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 6
   - 6
@@ -41,7 +41,7 @@ spells:
   name: Volatile Spiderling / Skittering Frenzy
   damage:
   - 4
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -57,7 +57,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11.5
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 4
   cooldown:
   - 4
   - 4

@@ -25,7 +25,7 @@ spells:
   name: Corrosive Charge
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 9
@@ -53,7 +53,7 @@ spells:
   name: Disdain
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 15.5
@@ -65,7 +65,7 @@ spells:
   name: Fear Beyond Death
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 85

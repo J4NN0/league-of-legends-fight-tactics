@@ -29,7 +29,7 @@ spells:
   - 165
   - 210
   - 255
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 20
   - 19
@@ -61,7 +61,7 @@ spells:
   - 220
   - 270
   - 320
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 16
@@ -73,7 +73,7 @@ spells:
   name: Missile Barrage
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 2
   - 2

@@ -29,7 +29,7 @@ spells:
   - 120
   - 130
   - 140
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 5
   - 5
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 24
   - 21.5
@@ -73,7 +73,7 @@ spells:
   name: Noxian Guillotine
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 100

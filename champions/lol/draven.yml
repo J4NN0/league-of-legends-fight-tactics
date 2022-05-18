@@ -25,7 +25,7 @@ spells:
   name: Spinning Axe
   damage:
   - 100
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -57,7 +57,7 @@ spells:
   - 145
   - 180
   - 215
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 17
@@ -69,7 +69,7 @@ spells:
   name: Whirling Death
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 90

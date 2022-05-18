@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -45,7 +45,7 @@ spells:
   - 90
   - 115
   - 140
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -61,7 +61,7 @@ spells:
   - 135
   - 170
   - 205
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -77,7 +77,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 140
   - 100

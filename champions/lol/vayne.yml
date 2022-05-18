@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 4
   - 3.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -57,7 +57,7 @@ spells:
   name: Condemn
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 20
   - 18
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 100
   - 85

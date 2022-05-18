@@ -29,7 +29,7 @@ spells:
   - 70
   - 95
   - 120
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 8.5
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11.5
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -73,7 +73,7 @@ spells:
   name: Call of the Forge God
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 140
   - 120

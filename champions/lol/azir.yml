@@ -29,7 +29,7 @@ spells:
   - 110
   - 130
   - 150
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 14
   - 12
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 1.5
   - 1.5
@@ -57,7 +57,7 @@ spells:
   name: Shifting Sands
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 19
   - 18
@@ -71,7 +71,7 @@ spells:
   - 175
   - 325
   - 475
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 105

@@ -29,7 +29,7 @@ spells:
   - 185
   - 240
   - 295
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -41,7 +41,7 @@ spells:
   name: Ebb and Flow
   damage:
   - 3
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 10
@@ -57,7 +57,7 @@ spells:
   - 50
   - 65
   - 80
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 11
   - 11
@@ -71,7 +71,7 @@ spells:
   - 150
   - 250
   - 350
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 110

@@ -133,7 +133,7 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 	championData := championResponse.Data[championResponse.DataName]
 	lolChampion := lol.Champion{
 		Version: championResponse.Version,
-		Name:    championData.Name,
+		Name:    championResponse.DataName,
 		Tags:    strings.Join(championData.Tags, ", "),
 		Stats: lol.Stat{
 			Hp:                   championData.Stats.Hp,

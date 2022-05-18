@@ -29,7 +29,7 @@ spells:
   - 150
   - 190
   - 230
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 6
   - 6
@@ -41,7 +41,7 @@ spells:
   name: Rune Prison
   damage:
   - 1.5
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -57,7 +57,7 @@ spells:
   - 100
   - 110
   - 120
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 3.5
   - 3.25
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 210
   - 180

@@ -25,7 +25,7 @@ spells:
   name: Poison Trail
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -41,7 +41,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 17
   - 16
@@ -57,7 +57,7 @@ spells:
   - 70
   - 80
   - 90
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -73,7 +73,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 110

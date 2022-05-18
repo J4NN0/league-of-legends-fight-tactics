@@ -25,7 +25,7 @@ spells:
   name: Mystic Shot
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 5.5
   - 5.25
@@ -37,7 +37,7 @@ spells:
   name: Essence Flux
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -49,7 +49,7 @@ spells:
   name: Arcane Shift
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 28
   - 25
@@ -61,7 +61,7 @@ spells:
   name: Trueshot Barrage
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 120

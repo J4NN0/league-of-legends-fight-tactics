@@ -25,7 +25,7 @@ spells:
   name: Bladesurge
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 11
   - 10
@@ -37,7 +37,7 @@ spells:
   name: Defiant Dance
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 20
   - 18
@@ -49,7 +49,7 @@ spells:
   name: Flawless Duet
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 16.5
@@ -61,7 +61,7 @@ spells:
   name: Vanguard's Edge
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 140
   - 120

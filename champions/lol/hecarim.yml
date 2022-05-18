@@ -29,7 +29,7 @@ spells:
   - 134
   - 171
   - 208
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 4
   - 4
@@ -41,7 +41,7 @@ spells:
   name: Spirit of Dread
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 18
   - 18
@@ -57,7 +57,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 20
   - 19
@@ -71,7 +71,7 @@ spells:
   - 150
   - 250
   - 350
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 140
   - 120

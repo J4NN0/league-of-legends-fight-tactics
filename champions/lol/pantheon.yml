@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 13
   - 11.75
@@ -41,7 +41,7 @@ spells:
   name: Shield Vault
   damage:
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -57,7 +57,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 22
   - 20.5
@@ -69,7 +69,7 @@ spells:
   name: Grand Starfall
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 180
   - 165

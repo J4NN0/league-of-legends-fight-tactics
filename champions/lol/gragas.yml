@@ -29,7 +29,7 @@ spells:
   - 160
   - 200
   - 240
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 11
   - 10
@@ -41,7 +41,7 @@ spells:
   name: Drunken Rage
   damage:
   - 7
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 5
   - 5
@@ -57,7 +57,7 @@ spells:
   - 170
   - 215
   - 260
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -71,7 +71,7 @@ spells:
   - 200
   - 300
   - 400
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 120
   - 100

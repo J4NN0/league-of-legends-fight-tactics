@@ -1,5 +1,5 @@
 version: 12.3.1
-name: Lee Sin
+name: LeeSin
 tags: Fighter, Assassin
 stats:
   hp: 575
@@ -29,7 +29,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -45,7 +45,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -61,7 +61,7 @@ spells:
   - 0
   - 0
   - 0
-  max_rank: 1
+  max_rank: 5
   cooldown:
   - 9
   - 9
@@ -73,7 +73,7 @@ spells:
   name: Dragon's Rage
   damage:
   - 0
-  max_rank: 1
+  max_rank: 3
   cooldown:
   - 110
   - 85
