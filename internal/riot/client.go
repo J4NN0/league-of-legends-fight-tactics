@@ -2,6 +2,7 @@ package riot
 
 import (
 	"fmt"
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
 	"strconv"
@@ -14,19 +15,19 @@ const (
 	dDragonLolChampionBaseURL = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion"
 )
 
-type ApiClient struct {
-	log Logger
+type Client interface {
+	GetAllLoLChampions() (championsData []DDragonChampionResponse, err error)
+	GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error)
+	getSpellDamage(spell spell) []float32
+}
+
+type Concrete struct {
+	log log.Logger
 	hc  *http.Client
 }
 
-type Logger interface {
-	Printf(fmt string, args ...interface{})
-	Warningf(fmt string, args ...interface{})
-	Fatalf(fmt string, args ...interface{})
-}
-
-func NewApiClient(log Logger, hc *http.Client) *ApiClient {
-	return &ApiClient{log: log, hc: hc}
+func NewClient(log log.Logger, hc *http.Client) Client {
+	return &Concrete{log: log, hc: hc}
 }
 
 type dDragonLoLAllChampionsResponse struct {
@@ -76,7 +77,7 @@ type levelTip struct {
 	Label []string `json:"label"`
 }
 
-func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
+func (c *Concrete) GetAllLoLChampions() (championsData []DDragonChampionResponse, err error) {
 	var allChampionsResponse dDragonLoLAllChampionsResponse
 
 	err = httpclient.Get(c.hc, dDragonLolAllChampionsURL, &allChampionsResponse)
@@ -96,7 +97,7 @@ func (c *ApiClient) GetAllLoLChampions() (championsData []DDragonChampionRespons
 	return championsData, nil
 }
 
-func (c *ApiClient) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
+func (c *Concrete) GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error) {
 	sanitizedChampionName := sanitizeChampionName(championName)
 	err = httpclient.Get(c.hc, getChampionURL(sanitizedChampionName), &championResponse)
 	if err != nil {
@@ -167,7 +168,7 @@ func getChampionURL(championName string) string {
 //		...,
 //	}
 // }
-func (c *ApiClient) getSpellDamage(spell spell) []float32 {
+func (c *Concrete) getSpellDamage(spell spell) []float32 {
 	var spellDamages []float32
 
 	for i, l := range spell.LevelTip.Label {

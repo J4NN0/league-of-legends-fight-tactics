@@ -19,7 +19,7 @@ func main() {
 	var c1Name, c2Name, fetch string
 
 	logger := log.New(appName)
-	riotClient := riot.NewApiClient(logger, &http.Client{})
+	riotClient := riot.NewClient(logger, &http.Client{})
 	fightTactics := lol.New(logger)
 
 	ctrl := controller.New(logger, riotClient, fightTactics)

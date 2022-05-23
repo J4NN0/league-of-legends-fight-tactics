@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/internal/lol"
 	"league-of-legends-fight-tactics/internal/riot"
 	"os"
@@ -10,27 +11,12 @@ import (
 )
 
 type Controller struct {
-	log          Logger
-	riotClient   RiotClient
-	fightTactics LolFightTactics
+	log          log.Logger
+	riotClient   riot.Client
+	fightTactics lol.Tactics
 }
 
-type Logger interface {
-	Printf(fmt string, args ...interface{})
-	Warningf(fmt string, args ...interface{})
-	Fatalf(fmt string, args ...interface{})
-}
-
-type RiotClient interface {
-	GetAllLoLChampions() (championsData []riot.DDragonChampionResponse, err error)
-	GetLoLChampion(championName string) (championResponse riot.DDragonChampionResponse, err error)
-}
-
-type LolFightTactics interface {
-	Fight(champion1, champion2 lol.Champion)
-}
-
-func New(log Logger, riotClient RiotClient, fightTactics *lol.FightTactics) *Controller {
+func New(log log.Logger, riotClient riot.Client, fightTactics lol.Tactics) *Controller {
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 

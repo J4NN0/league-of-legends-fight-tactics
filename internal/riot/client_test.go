@@ -61,7 +61,7 @@ func TestGetAllLoLChampionsSuccess(t *testing.T) {
 	}
 
 	callCount := 0
-	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
+	client := NewClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 
 		// Get all champions
@@ -101,7 +101,7 @@ func TestGetAllLoLChampionsSuccess(t *testing.T) {
 }
 
 func TestGetAllLoLChampionsFail_GetAllChampions(t *testing.T) {
-	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
+	client := NewClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(dDragonLoLAllChampionsResponse{}, 403)
 	}))
 
@@ -113,7 +113,7 @@ func TestGetAllLoLChampionsFail_GetAllChampions(t *testing.T) {
 
 func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 	callCount := 0
-	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
+	client := NewClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		callCount = callCount + 1
 		if callCount == 2 {
 			return mockResponse(DDragonChampionResponse{}, 403)
@@ -159,7 +159,7 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 		},
 	}
 
-	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
+	client := NewClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{
 			Format:  format,
 			Version: version,
@@ -193,7 +193,7 @@ func TestGetLoLChampionSuccess(t *testing.T) {
 }
 
 func TestGetLoLChampionFail(t *testing.T) {
-	client := NewApiClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
+	client := NewClient(&MockLogger{}, newTestClient(func(req *http.Request) *http.Response {
 		return mockResponse(DDragonChampionResponse{}, 403)
 	}))
 
@@ -289,7 +289,7 @@ func TestGetSpellDamage(t *testing.T) {
 	}
 	expectedDamage := []float32{95, 130, 165, 200, 235}
 
-	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	riotClient := NewClient(&MockLogger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)
 
 	assert.Equal(t, expectedDamage, damage)
@@ -305,7 +305,7 @@ func TestGetSpellDamage_NoDamageLabel(t *testing.T) {
 	}
 	expectedDamage := []float32{0, 0, 0, 0, 0}
 
-	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	riotClient := NewClient(&MockLogger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)
 
 	assert.Equal(t, expectedDamage, damage)
@@ -321,7 +321,7 @@ func TestGetSpellDamageFail(t *testing.T) {
 	}
 	expectedDamage := []float32{0, 0, 0, 0, 0}
 
-	riotClient := NewApiClient(&MockLogger{}, &http.Client{})
+	riotClient := NewClient(&MockLogger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)
 
 	assert.Equal(t, expectedDamage, damage)

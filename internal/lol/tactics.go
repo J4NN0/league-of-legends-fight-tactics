@@ -2,23 +2,22 @@ package lol
 
 import (
 	"fmt"
+	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/file"
 	"math"
 )
 
 // TODO: only considering spell's first rank atm, but need to consider all (e.g. 'q' has 5 ranks, etc.)
 
+type Tactics interface {
+	Fight(champion1, champion2 Champion)
+}
+
 type FightTactics struct {
-	log Logger
+	log log.Logger
 }
 
-type Logger interface {
-	Printf(fmt string, args ...interface{})
-	Warningf(fmt string, args ...interface{})
-	Fatalf(fmt string, args ...interface{})
-}
-
-func New(log Logger) *FightTactics {
+func New(log log.Logger) Tactics {
 	return &FightTactics{log: log}
 }
 
