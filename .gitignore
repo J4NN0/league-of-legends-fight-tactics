@@ -9,7 +9,7 @@
 *.dylib
 build/league_of_legends_tactics_cli
 
-#
+# Leauge of Legends fight tactics file result
 *.loltactics
 
 # Test binary, built with `go test -c`
