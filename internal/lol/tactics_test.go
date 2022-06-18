@@ -3,11 +3,42 @@ package lol
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
+	"math"
 	"testing"
 )
 
-func TestGetBestRoundOfSpells(t *testing.T) {
+func getTestChampion(mockChampion string) (champion Champion, err error) {
+	yamlFile, err := ioutil.ReadFile(fmt.Sprintf("../../tests/champions/%s.yml", mockChampion))
+	if err != nil {
+		return Champion{}, err
+	}
 
+	err = yaml.Unmarshal(yamlFile, &champion)
+	if err != nil {
+		return Champion{}, fmt.Errorf("error unmarshalling: %w", err)
+	}
+
+	return champion, nil
+}
+
+func TestGetBestRoundOfSpells(t *testing.T) {
+	var sol []Spell
+	var bestSol = bestSolution{Benchmark: math.MaxFloat32, RoundOfSpells: []Spell{}}
+
+	t.Run("aa", func(t *testing.T) {
+		var enemyHp float32 = 200.0
+		champion, err := getTestChampion("mock1")
+
+		getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
+
+		aaUsedTimes := enemyHp / champion.Spells[0].Damage[0]
+		aaCooldown := champion.Spells[0].Cooldown[0]
+
+		assert.Nil(t, err)
+		assert.Equal(t, aaUsedTimes * aaCooldown, bestSol.Benchmark)
+	})
 }
 
 func TestIsHpZero(t *testing.T) {

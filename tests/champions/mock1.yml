@@ -1,0 +1,23 @@
+version: 1.0.0
+name: Test Champion 1
+tags: Only AA
+stats:
+  hp: 580
+  hp_per_level: 90
+  armor: 38
+  armor_per_level: 3.25
+  spell_block: 32
+  spell_block_per_level: 1.25
+  attack_damage: 60
+  attack_damage_per_level: 5
+  attack_speed: 0.651
+  attack_speed_per_level: 2.5
+spells:
+- id: aa
+  name: Auto Attack
+  damage:
+  - 20
+  max_rank: 1
+  cooldown:
+  - 0.7
+  cast: 0

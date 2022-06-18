@@ -71,13 +71,11 @@ func setBenchmark(spells []Spell, bestSol *bestSolution) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
 		bestSol.Benchmark = tmpBench
-		// copy(bestSol.RoundOfSpells, spells)
-		bestSol.RoundOfSpells = []Spell{}
-		bestSol.RoundOfSpells = append(bestSol.RoundOfSpells, spells...)
+		copy(bestSol.RoundOfSpells, spells)
 	}
 }
 
-// getBenchmark Given a set of spells (that takes hp down to zero), return related benchmark: time needed to slay enemy
+// getBenchmark Given a set of spells (which brings the hp to zero), return the relevant benchmark (i.e. time needed to kill the enemy)
 func getBenchmark(spells []Spell) float32 {
 	var benchmark float32
 	var usedSpells []Spell
@@ -90,7 +88,7 @@ func getBenchmark(spells []Spell) float32 {
 	return benchmark
 }
 
-// getAdditionalTimeIfSpellIsInCooldown Get additional time to wait if spell has been used before and is therefore still in cooldown
+// getAdditionalTimeIfSpellIsInCooldown Get additional waiting time if the spell has been used previously and is therefore still in cooldown.
 func getAdditionalTimeIfSpellIsInCooldown(currentSpell Spell, usedSpells []Spell) float32 {
 	var usedSpellPos = -1
 	var timeToWait float32
