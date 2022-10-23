@@ -1,7 +1,8 @@
 package main
 
 import (
-	"fmt"
+	"context"
+	"errors"
 	"github.com/urfave/cli/v2"
 	"league-of-legends-fight-tactics/internal/controller"
 	"league-of-legends-fight-tactics/internal/log"
@@ -15,8 +16,11 @@ import (
 const appName string = "lol-tactics"
 
 func main() {
-	var all, fetchAll bool
-	var c1Name, c2Name, fetch string
+	var tacticsAll, fetchAll bool
+	var fetch string
+	var championsName *cli.StringSlice
+
+	ctx := context.Background()
 
 	logger := log.New(appName)
 	riotClient := riot.NewClient(logger, &http.Client{})
@@ -29,29 +33,36 @@ func main() {
 		Usage:   "League of Legends Tactics",
 		Version: "1.0.0",
 		Flags: []cli.Flag{
-			&cli.StringFlag{
-				Name:        "champion1",
-				Aliases:     []string{"c1"},
-				Value:       "",
-				Usage:       "first league of legends champion name",
+			&cli.StringSliceFlag{
+				Name:        "tactics",
+				Aliases:     []string{"t"},
+				Value:       nil,
+				Usage:       "league of legends champions name",
 				Required:    false,
-				Destination: &c1Name,
-			},
-			&cli.StringFlag{
-				Name:        "champion2",
-				Aliases:     []string{"c2"},
-				Value:       "",
-				Usage:       "second league of legends champion name",
-				Required:    false,
-				Destination: &c2Name,
+				Destination: championsName,
+				Action: func(context *cli.Context, i []string) error {
+					c1Name := i[0]
+					c2Name := i[1]
+					if c1Name != "" && c2Name != "" {
+						ctrl.ChampionsFight(strings.ToLower(c1Name), strings.ToLower(c2Name))
+						return nil
+					}
+					return errors.New("champion name is empty")
+				},
 			},
 			&cli.BoolFlag{
-				Name:        "all",
-				Aliases:     []string{"a"},
+				Name:        "tacticsall",
+				Aliases:     []string{"ta"},
 				Value:       false,
 				Usage:       "generate all fight tactics",
 				Required:    false,
-				Destination: &all,
+				Destination: &tacticsAll,
+				Action: func(context *cli.Context, b bool) error {
+					if b {
+						ctrl.AllChampionsFight()
+					}
+					return nil
+				},
 			},
 			&cli.StringFlag{
 				Name:        "fetch",
@@ -60,6 +71,13 @@ func main() {
 				Usage:       "fetch and update a specific league of legends champion (name must not to contain spaces)",
 				Required:    false,
 				Destination: &fetch,
+				Action: func(context *cli.Context, s string) error {
+					if s != "" {
+						ctrl.FetchChampion(strings.ToLower(fetch))
+						return nil
+					}
+					return errors.New("champion name is empty")
+				},
 			},
 			&cli.BoolFlag{
 				Name:        "fetchall",
@@ -68,26 +86,25 @@ func main() {
 				Usage:       "fetch and update all league of legends champions",
 				Required:    false,
 				Destination: &fetchAll,
+				Action: func(context *cli.Context, b bool) error {
+					if b {
+						ctrl.FetchAllChampions()
+					}
+					return nil
+				},
 			},
 		},
-		Action: func(c *cli.Context) error {
-			if c1Name != "" && c2Name != "" {
-				ctrl.ChampionsFight(strings.ToLower(c1Name), strings.ToLower(c2Name))
-			} else if all {
-				ctrl.AllChampionsFight()
-			} else if fetch != "" {
-				ctrl.FetchChampion(strings.ToLower(fetch))
-			} else if fetchAll {
-				ctrl.FetchAllChampions()
-			} else {
-				return fmt.Errorf("no flags provided")
-			}
-			return nil
+		Action: func(context *cli.Context) error {
+			return errors.New("no input provided")
 		},
 	}
 
 	err := app.Run(os.Args)
 	if err != nil {
+		_ = cli.ShowAppHelp(&cli.Context{
+			Context: ctx,
+			App:     app,
+		})
 		logger.Fatalf("%v", err)
 	}
 }
