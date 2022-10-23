@@ -2,13 +2,15 @@ package riot
 
 import (
 	"fmt"
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
-	"league-of-legends-fight-tactics/internal/log"
-	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // Docs: https://developer.riotgames.com/docs/lol#data-dragon_champions

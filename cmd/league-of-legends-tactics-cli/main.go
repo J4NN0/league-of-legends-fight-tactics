@@ -3,14 +3,15 @@ package main
 import (
 	"context"
 	"errors"
-	"github.com/urfave/cli/v2"
-	"league-of-legends-fight-tactics/internal/controller"
-	"league-of-legends-fight-tactics/internal/log"
-	"league-of-legends-fight-tactics/internal/lol"
-	"league-of-legends-fight-tactics/internal/riot"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/controller"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/riot"
+	"github.com/urfave/cli/v2"
 )
 
 const appName string = "lol-tactics"

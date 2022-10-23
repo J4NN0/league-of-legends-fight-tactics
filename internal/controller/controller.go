@@ -1,13 +1,14 @@
 package controller
 
 import (
-	"league-of-legends-fight-tactics/internal/log"
-	"league-of-legends-fight-tactics/internal/lol"
-	"league-of-legends-fight-tactics/internal/riot"
 	"os"
 	"path/filepath"
 	"strings"
 	"sync"
+
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/riot"
 )
 
 type Controller struct {

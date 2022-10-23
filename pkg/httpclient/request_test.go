@@ -1,10 +1,11 @@
 package httpclient
 
 import (
-	"github.com/stretchr/testify/assert"
-	"league-of-legends-fight-tactics/tests/mock"
 	"net/http"
 	"testing"
+
+	"github.com/J4NN0/league-of-legends-fight-tactics/tests/mock"
+	"github.com/stretchr/testify/assert"
 )
 
 type MockStruct struct {

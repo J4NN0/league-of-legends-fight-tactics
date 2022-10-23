@@ -2,12 +2,13 @@ package lol
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v2"
 	"math"
 	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
+	"gopkg.in/yaml.v2"
 )
 
 const (

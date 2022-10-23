@@ -2,10 +2,12 @@ package lol
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v2"
-	"league-of-legends-fight-tactics/pkg/file"
 	"os"
 	"strings"
+
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
+
+	"gopkg.in/yaml.v2"
 )
 
 const (
