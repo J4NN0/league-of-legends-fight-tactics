@@ -42,16 +42,19 @@ tool-cover:
 
 # Fix go.mod and go.sum
 tool-mod-tidy:
+	@echo "---> Checking module requirements"
 	go mod tidy
 .PHONY: tool-mod-tidy
 
 # Format go code
 tool-fmt:
+	@echo "---> Formatting code"
 	go fmt ./...
 .PHONY: tool-fmt
 
 # Examine Go source code and reports suspicious constructs
 tool-vet:
+	@echo "---> Checking Go source code"
 	go vet ./...
 .PHONY: tool-vet
 
