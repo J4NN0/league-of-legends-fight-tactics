@@ -139,9 +139,9 @@ func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampio
 	lolChampion.Spells = []lol.Spell{{
 		ID:       "aa",
 		Name:     "Auto Attack",
-		Damage:   []float32{championData.Stats.AttackDamage},
+		Damage:   []float64{championData.Stats.AttackDamage},
 		MaxRank:  1, // it has no rank
-		Cooldown: []float32{championData.Stats.AttackSpeed},
+		Cooldown: []float64{championData.Stats.AttackSpeed},
 		Cast:     0,
 	}}
 

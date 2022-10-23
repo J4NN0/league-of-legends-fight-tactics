@@ -1,6 +1,6 @@
-version: 1.0.00
-name: Test Champion 2
-tags: Mage, Assassin
+version: 1.0.0
+name: Test Champion 3
+tags: Only spells
 stats:
   hp: 500
   hp_per_level: 82
@@ -13,34 +13,30 @@ stats:
   attack_speed: 0.668
   attack_speed_per_level: 2
 spells:
-- id: aa
-  name: Auto Attack
-  damage:
-  - 53
-  max_rank: 1
-  cooldown:
-  - 0.668
-  cast: 0
 - id: Q
   name: Q Test
   damage:
-  - 0
+    - 30
+    - 65
+    - 95
+    - 100
+    - 120
   max_rank: 5
   cooldown:
   - 7
-  - 7
-  - 7
-  - 7
-  - 7
-  cast: 0
+  - 6
+  - 5
+  - 4
+  - 3
+  cast: 2
 - id: W
   name: W Test
   damage:
+  - 20
+  - 30
+  - 40
+  - 50
   - 60
-  - 85
-  - 110
-  - 135
-  - 160
   max_rank: 5
   cooldown:
   - 9
@@ -48,30 +44,32 @@ spells:
   - 7
   - 6
   - 5
-  cast: 0
+  cast: 2
 - id: E
   name: E Test
   damage:
   - 80
-  - 110
+  - 100
+  - 120
+  - 130
   - 140
-  - 170
-  - 200
   max_rank: 5
   cooldown:
+  - 15
+  - 14
+  - 13
   - 12
   - 12
-  - 12
-  - 12
-  - 12
-  cast: 0
+  cast: 4
 - id: R
   name: R Test
   damage:
-  - 0
+  - 100
+  - 120
+  - 130
   max_rank: 3
   cooldown:
-  - 130
-  - 105
+  - 120
+  - 100
   - 80
-  cast: 0
+  cast: 3

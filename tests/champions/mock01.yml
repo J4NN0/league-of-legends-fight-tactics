@@ -19,5 +19,5 @@ spells:
   - 20
   max_rank: 1
   cooldown:
-  - 0.7
-  cast: 0
+  - 0.0
+  cast: 1

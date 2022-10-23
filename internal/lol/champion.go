@@ -3,8 +3,8 @@ package lol
 import (
 	"fmt"
 	"gopkg.in/yaml.v2"
-	"io/ioutil"
 	"league-of-legends-fight-tactics/pkg/file"
+	"os"
 	"strings"
 )
 
@@ -23,29 +23,29 @@ type Champion struct {
 }
 
 type Stat struct {
-	Hp                   float32 `yaml:"hp"`
-	HpPerLevel           float32 `yaml:"hp_per_level"`
-	Armor                float32 `yaml:"armor"`
-	ArmorPerLevel        float32 `yaml:"armor_per_level"`
-	SpellBlock           float32 `yaml:"spell_block"`
-	SpellBlockPerLevel   float32 `yaml:"spell_block_per_level"`
-	AttackDamage         float32 `yaml:"attack_damage"`
-	AttackDamagePerLevel float32 `yaml:"attack_damage_per_level"`
-	AttackSpeed          float32 `yaml:"attack_speed"`
-	AttackSpeedPerLevel  float32 `yaml:"attack_speed_per_level"`
+	Hp                   float64 `yaml:"hp"`
+	HpPerLevel           float64 `yaml:"hp_per_level"`
+	Armor                float64 `yaml:"armor"`
+	ArmorPerLevel        float64 `yaml:"armor_per_level"`
+	SpellBlock           float64 `yaml:"spell_block"`
+	SpellBlockPerLevel   float64 `yaml:"spell_block_per_level"`
+	AttackDamage         float64 `yaml:"attack_damage"`
+	AttackDamagePerLevel float64 `yaml:"attack_damage_per_level"`
+	AttackSpeed          float64 `yaml:"attack_speed"`
+	AttackSpeedPerLevel  float64 `yaml:"attack_speed_per_level"`
 }
 
 type Spell struct {
 	ID       string    `yaml:"id"`
 	Name     string    `yaml:"name"`
-	Damage   []float32 `yaml:"damage"`
+	Damage   []float64 `yaml:"damage"`
 	MaxRank  int       `yaml:"max_rank"`
-	Cooldown []float32 `yaml:"cooldown"`
-	Cast     float32   `yaml:"cast"`
+	Cooldown []float64 `yaml:"cooldown"`
+	Cast     float64   `yaml:"cast"`
 }
 
 func Read(championName string) (champion Champion, err error) {
-	yamlFile, err := ioutil.ReadFile(getYMLPath(championName))
+	yamlFile, err := os.ReadFile(getYMLPath(championName))
 	if err != nil {
 		return Champion{}, err
 	}
@@ -67,7 +67,7 @@ func Write(champion Champion) error {
 		return err
 	}
 
-	err = ioutil.WriteFile(fileName, data, 0)
+	err = os.WriteFile(fileName, data, 0)
 	if err != nil {
 		return err
 	}

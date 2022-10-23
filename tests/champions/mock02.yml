@@ -1,0 +1,31 @@
+version: 1.0.0
+name: Test Champion 2
+tags: Only one spell
+stats:
+  hp: 500
+  hp_per_level: 82
+  armor: 18
+  armor_per_level: 3.5
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 53
+  attack_damage_per_level: 3
+  attack_speed: 0.668
+  attack_speed_per_level: 2
+spells:
+- id: Q
+  name: Q Test
+  damage:
+  - 80
+  - 90
+  - 100
+  - 110
+  - 120
+  max_rank: 5
+  cooldown:
+  - 7
+  - 6
+  - 5
+  - 4
+  - 3
+  cast: 3

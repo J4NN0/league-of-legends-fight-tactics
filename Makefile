@@ -58,8 +58,8 @@ tool-vet:
 # Run application using linters: it runs linters in parallel, uses caching, supports yaml config, etc.
 run-lint:
 	@echo "---> Running linter"
-	golangci-lint run ./...
+	golangci-lint run ./... --timeout=3m
 .PHONY: run-lint
 
 # === DEVELOPMENT =======================================================
-dev-pre-commit: tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test
+pre-commit: tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test

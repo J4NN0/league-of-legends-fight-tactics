@@ -11,7 +11,7 @@ import (
 func TestGetAllLoLChampionsSuccess(t *testing.T) {
 	var format, version, championName = "standAloneComplex", "1.0.0", "TestName"
 	var tags = []string{"Fighter", "Tank"}
-	var hp, armor, atkDamage float32 = 1, 2, 3
+	var hp, armor, atkDamage float64 = 1, 2, 3
 	var expectedChampionsData = []DDragonChampionResponse{
 		{
 			Format:   format,
@@ -101,8 +101,8 @@ func TestGetAllLoLChampionsFail_GetLoLChampion(t *testing.T) {
 func TestGetLoLChampionSuccess(t *testing.T) {
 	var format, version, championName, spellID = "standAloneComplex", "1.0.0", "TestName", "spellID"
 	var tags, labels, effects = []string{"Fighter", "Tank"}, []string{"Damage", "Attack Damage", "Cooldown"}, []string{"", "95/130/165/200/235", "60/75/90/105/120"}
-	var hp, armor, atkDamage float32 = 1, 2, 3
-	var damages = []float32{95, 130, 165, 200, 235}
+	var hp, armor, atkDamage float64 = 1, 2, 3
+	var damages = []float64{95, 130, 165, 200, 235}
 	var expectedChampionResponse = DDragonChampionResponse{
 		Format:   format,
 		Version:  version,
@@ -258,7 +258,7 @@ func TestGetSpellDamage(t *testing.T) {
 		},
 		EffectBurn: []string{"", "95/130/165/200/235", "60/75/90/105/120"},
 	}
-	expectedDamage := []float32{95, 130, 165, 200, 235}
+	expectedDamage := []float64{95, 130, 165, 200, 235}
 
 	riotClient := NewClient(&mock.Logger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)
@@ -274,7 +274,7 @@ func TestGetSpellDamage_NoDamageLabel(t *testing.T) {
 		},
 		EffectBurn: []string{"", "60/75/90/105/120"},
 	}
-	expectedDamage := []float32{0, 0, 0, 0, 0}
+	expectedDamage := []float64{0, 0, 0, 0, 0}
 
 	riotClient := NewClient(&mock.Logger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)
@@ -290,7 +290,7 @@ func TestGetSpellDamageFail(t *testing.T) {
 		},
 		EffectBurn: []string{"", "not/numbers/in/here/lol", "60/75/90/105/120"},
 	}
-	expectedDamage := []float32{0, 0, 0, 0, 0}
+	expectedDamage := []float64{0, 0, 0, 0, 0}
 
 	riotClient := NewClient(&mock.Logger{}, &http.Client{})
 	damage := riotClient.getSpellDamage(spellTest)

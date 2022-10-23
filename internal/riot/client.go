@@ -2,6 +2,8 @@ package riot
 
 import (
 	"fmt"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"league-of-legends-fight-tactics/internal/log"
 	"league-of-legends-fight-tactics/pkg/httpclient"
 	"net/http"
@@ -18,7 +20,7 @@ const (
 type Client interface {
 	GetAllLoLChampions() (championsData []DDragonChampionResponse, err error)
 	GetLoLChampion(championName string) (championResponse DDragonChampionResponse, err error)
-	getSpellDamage(spell spell) []float32
+	getSpellDamage(spell spell) []float64
 }
 
 type Concrete struct {
@@ -51,26 +53,26 @@ type championData struct {
 }
 
 type stats struct {
-	Hp                   float32 `json:"hp"`
-	HpPerLevel           float32 `json:"hpperlevel"`
-	Armor                float32 `json:"armor"`
-	ArmorPerLevel        float32 `json:"armorperlevel"`
-	SpellBlock           float32 `json:"spellblock"`
-	SpellBlockPerLevel   float32 `json:"spellblockperlevel"`
-	AttackDamage         float32 `json:"attackdamage"`
-	AttackDamagePerLevel float32 `json:"attackdamageperlevel"`
-	AttackSpeed          float32 `json:"attackspeed"`
-	AttackSpeedPerLevel  float32 `json:"attackspeedperlevel"`
+	Hp                   float64 `json:"hp"`
+	HpPerLevel           float64 `json:"hpperlevel"`
+	Armor                float64 `json:"armor"`
+	ArmorPerLevel        float64 `json:"armorperlevel"`
+	SpellBlock           float64 `json:"spellblock"`
+	SpellBlockPerLevel   float64 `json:"spellblockperlevel"`
+	AttackDamage         float64 `json:"attackdamage"`
+	AttackDamagePerLevel float64 `json:"attackdamageperlevel"`
+	AttackSpeed          float64 `json:"attackspeed"`
+	AttackSpeedPerLevel  float64 `json:"attackspeedperlevel"`
 }
 
 type spell struct {
 	ID         string    `json:"id"`
 	Name       string    `json:"name"`
 	MaxRank    int       `json:"maxrank"`
-	Cooldown   []float32 `json:"cooldown"`
+	Cooldown   []float64 `json:"cooldown"`
 	LevelTip   levelTip  `json:"leveltip"`
 	EffectBurn []string  `json:"effectBurn"`
-	Damage     []float32
+	Damage     []float64
 }
 
 type levelTip struct {
@@ -106,7 +108,7 @@ func (c *Concrete) GetLoLChampion(championName string) (championResponse DDragon
 
 	championResponse.DataName = sanitizedChampionName
 	for i, s := range championResponse.Data[sanitizedChampionName].Spells {
-		championResponse.Data[strings.Title(championResponse.DataName)].Spells[i].Damage = c.getSpellDamage(s)
+		championResponse.Data[cases.Title(language.English).String(championResponse.DataName)].Spells[i].Damage = c.getSpellDamage(s)
 	}
 
 	return championResponse, nil
@@ -140,7 +142,7 @@ func sanitizeChampionName(championName string) string {
 	case "xinzhao":
 		return "XinZhao"
 	default:
-		return strings.Title(strings.ToLower(championName))
+		return cases.Title(language.English).String(championName)
 	}
 }
 
@@ -149,27 +151,28 @@ func getChampionURL(championName string) string {
 }
 
 // setSpellsDamage
-// "ChampionName": {
-// 	"spells": [{
-//		"id": "Q",
-//  	"leveltip":{
-//   		"label":[
-//   		"Damage", <------------------------ (at index 1)
-//   		"Attack Damage",
-//   		"Cooldown",
-//   		"@AbilityResourceName@ Cost",
-//		]}
-//		"effectBurn":[
-//			null,
-//			"95/130/165/200/235", <------------------------ (get damage at index 1)
-//			"60/75/90/105/120",
+//
+//	"ChampionName": {
+//		"spells": [{
+//			"id": "Q",
+//	 	"leveltip":{
+//	  		"label":[
+//	  		"Damage", <------------------------ (at index 1)
+//	  		"Attack Damage",
+//	  		"Cooldown",
+//	  		"@AbilityResourceName@ Cost",
+//			]}
+//			"effectBurn":[
+//				null,
+//				"95/130/165/200/235", <------------------------ (get damage at index 1)
+//				"60/75/90/105/120",
+//				...,
+//	 	],
 //			...,
-//  	],
-//		...,
+//		}
 //	}
-// }
-func (c *Concrete) getSpellDamage(spell spell) []float32 {
-	var spellDamages []float32
+func (c *Concrete) getSpellDamage(spell spell) []float64 {
+	var spellDamages []float64
 
 	for i, l := range spell.LevelTip.Label {
 		if l == "Damage" {
@@ -178,15 +181,15 @@ func (c *Concrete) getSpellDamage(spell spell) []float32 {
 				spellDamagePerLevel, err := strconv.ParseFloat(damageLevel, 32)
 				if err != nil {
 					c.log.Warningf("Could not set %s spell damage: %v", spell.ID, err)
-					return []float32{0, 0, 0, 0, 0}
+					return []float64{0, 0, 0, 0, 0}
 				}
-				spellDamages = append(spellDamages, float32(spellDamagePerLevel))
+				spellDamages = append(spellDamages, spellDamagePerLevel)
 			}
 		}
 	}
 
 	if len(spellDamages) == 0 {
-		spellDamages = []float32{0, 0, 0, 0, 0}
+		spellDamages = []float64{0, 0, 0, 0, 0}
 	}
 
 	return spellDamages

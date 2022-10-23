@@ -3,7 +3,7 @@ package mock
 import (
 	"bytes"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -11,7 +11,7 @@ func Response(obj interface{}, status int) *http.Response {
 	jsonMarshal, _ := json.Marshal(obj)
 	return &http.Response{
 		StatusCode: status,
-		Body:       ioutil.NopCloser(bytes.NewReader(jsonMarshal)),
+		Body:       io.NopCloser(bytes.NewReader(jsonMarshal)),
 		Header:     make(http.Header),
 	}
 }
