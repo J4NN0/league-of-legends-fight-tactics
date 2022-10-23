@@ -17,8 +17,8 @@ import (
 const appName string = "lol-tactics"
 
 func main() {
-	var tacticsAll, fetchAll bool
-	var fetch string
+	var tactics, downloadAll bool
+	var download string
 	var championsName *cli.StringSlice
 
 	ctx := context.Background()
@@ -35,8 +35,8 @@ func main() {
 		Version: "1.0.0",
 		Flags: []cli.Flag{
 			&cli.StringSliceFlag{
-				Name:        "tactics",
-				Aliases:     []string{"t"},
+				Name:        "fight",
+				Aliases:     []string{"f"},
 				Value:       nil,
 				Usage:       "league of legends champions name",
 				Required:    false,
@@ -52,12 +52,12 @@ func main() {
 				},
 			},
 			&cli.BoolFlag{
-				Name:        "tacticsall",
-				Aliases:     []string{"ta"},
+				Name:        "tactics",
+				Aliases:     []string{"t"},
 				Value:       false,
 				Usage:       "generate all fight tactics",
 				Required:    false,
-				Destination: &tacticsAll,
+				Destination: &tactics,
 				Action: func(context *cli.Context, b bool) error {
 					if b {
 						ctrl.AllChampionsFight()
@@ -66,27 +66,27 @@ func main() {
 				},
 			},
 			&cli.StringFlag{
-				Name:        "fetch",
-				Aliases:     []string{"f"},
+				Name:        "download",
+				Aliases:     []string{"d"},
 				Value:       "",
-				Usage:       "fetch and update a specific league of legends champion (name must not to contain spaces)",
+				Usage:       "download and update a specific league of legends champion (name must not to contain spaces)",
 				Required:    false,
-				Destination: &fetch,
+				Destination: &download,
 				Action: func(context *cli.Context, s string) error {
 					if s != "" {
-						ctrl.FetchChampion(strings.ToLower(fetch))
+						ctrl.FetchChampion(strings.ToLower(download))
 						return nil
 					}
 					return errors.New("champion name is empty")
 				},
 			},
 			&cli.BoolFlag{
-				Name:        "fetchall",
-				Aliases:     []string{"fa"},
+				Name:        "download_all",
+				Aliases:     []string{"da", "a"},
 				Value:       false,
-				Usage:       "fetch and update all league of legends champions",
+				Usage:       "download and update all league of legends champions",
 				Required:    false,
-				Destination: &fetchAll,
+				Destination: &downloadAll,
 				Action: func(context *cli.Context, b bool) error {
 					if b {
 						ctrl.FetchAllChampions()
