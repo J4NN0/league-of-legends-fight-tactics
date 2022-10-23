@@ -4,9 +4,9 @@
 
 Make two champions fight and get the best combination of spells based on the time (in seconds) it takes to kill the enemy champion.
 
-Each champion data can be downloaded/updated using the official [Data Dragon League of Legends APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Data Dragon is a way, used by Riot Games, of centralizing League of Legends game data and assets, including champions, items, runes, summoner spells, and profile icons. All of which can be used by third-party developers.
+Each champion data can be downloaded/updated from the official [Data Dragon League of Legends APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Data Dragon is a way, used by Riot Games, of centralizing League of Legends game data and assets, including champions, items, runes, summoner spells, and profile icons. All of which can be used by third-party developers.
 
-Once the data has been downloaded, it is possible to make two champions fight (virtually) and get the best spell output for which the first champion can kill the second as quickly as possible. The fight takes place only from a data point of view, i.e. no graphic combat is displayed on the screen.
+Once the data has been downloaded (custom data can be also provided as far as they follow the same `.yml` struct), it is possible to make two champions fight and get the best round of spells for which the first champion can kill the second as quickly as possible. The fight takes place only from a data point of view, i.e. no graphic combat is displayed on the screen.
 
 The best spells output is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round (until he reaches zero hp).
 
@@ -41,9 +41,9 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
 
    1. Download and/or upload champion data
       - Fetch specific champion data
-   
+
             make run-fetch f=CHAMPION_NAME
-   
+
       - Fetch all champions data
 
             make run-fetchall
@@ -52,30 +52,29 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
       - Fight tactics between two specific champions (`c1` vs `c2`)
 
             make run c1=CHAMPION_NAME c2=CHAMPION_NAME
-   
+
       - Generate all fights tactics
 
             make run-all
 
 # Champion Data
 
-Each league of legends champion is described by a `.yml` file with the following struct:
-
+Each league of legends champion is described by a `.yml` as follows:
 ```yml
 version: 1.1.0
 name: champion name
 tags: Fighter, Tank
 stats:
-  hp: 0
-  hp_per_level: 580
-  armor: 38
-  armor_per_level: 3.25
-  spell_block: 32
-  spell_block_per_level: 1.25
-  attack_damage: 60
+  hp: 500
+  hp_per_level: 80
+  armor: 20
+  armor_per_level: 4
+  spell_block: 30
+  spell_block_per_level: 0.5
+  attack_damage: 50
   attack_damage_per_level: 5
-  attack_speed: 0.651
-  attack_speed_per_level: 2.5
+  attack_speed: 0.6
+  attack_speed_per_level: 2
 spells:
   - id: aa
     name: spell name
