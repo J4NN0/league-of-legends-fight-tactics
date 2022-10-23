@@ -12,10 +12,11 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
 
 # Table of Contents
 
+- [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
 - [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
 
-# Usage
+# Setup
 
 1. Prerequisites
 
@@ -31,31 +32,42 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
        git clone https://github.com/J4NN0/league-of-legends-fight-tactics.git
        cd league-of-legends-fight-tactics
 
-3. Run application
+3. Install
 
-    Check program's usage by running:
+       make install-lol-tactics
 
-       make run-help
+# Usage
 
-    In general:
+- Show help
 
-   1. Download and/or upload champion data
-      - Fetch specific champion data
+      loltactics --help
 
-            make run-fetch f=CHAMPION_NAME
+- Download and/or upload champion data
+   - Fetch specific champion data
 
-      - Fetch all champions data
+         loltactics --download=CHAMPION_NAME
 
-            make run-fetchall
+   - Fetch all champions data
 
-   2. Fight tactics
-      - Fight tactics between two specific champions (`c1` vs `c2`)
+         loltactics --download_all
 
-            make run c1=CHAMPION_NAME c2=CHAMPION_NAME
+- Fight tactics
+   - Fight tactics between two (no more) champions (e.g. `lucian` vs `jhin`)
 
-      - Generate all fights tactics
+         loltactics --fight=lucian --fight=jhin
 
-            make run-all
+   - Generate all fights tactics
+
+         loltactics --tactics
+
+- Clean
+  - Clean tactics file
+
+        make clean-lol-fights
+
+  - Clean champions data
+
+        make clean-lol-champions
 
 # Champion Data
 
@@ -95,7 +107,7 @@ spells:
 ...
 ```
 
-### Note
+### Data overview
 
 - `version`: data dragon [version](https://developer.riotgames.com/docs/lol#data-dragon_versions).
 - `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (i.e. `aa`).
