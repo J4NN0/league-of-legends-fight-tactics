@@ -1,35 +1,34 @@
-version: 12.3.1
-name: Velkoz
+id: Velkoz
+name: Vel'Koz
+title: the Eye of the Void
 tags: Mage
+passive:
+  name: Organic Deconstruction
+  description: Vel'Koz's abilities apply <keywordName>Organic Deconstruction</keywordName>
+    to enemies on hit. If 3 stacks are accumulated, the enemy will take a burst of
+    true damage.
 stats:
-  hp: 520
-  hp_per_level: 88
-  armor: 22
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 590
   attack_damage: 55
-  attack_damage_per_level: 3.1416
-  attack_speed: 0.625
-  attack_speed_per_level: 1.36
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 55
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: VelkozQ
   name: Plasma Fission
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 7
   - 7
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: VelkozW
   name: Void Rift
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 30
+  - 50
+  - 70
+  - 90
+  - 110
   cooldown:
   - 1.5
   - 1.5
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: VelkozE
   name: Tectonic Disruption
+  max_rank: 5
   damage:
   - 70
   - 100
   - 130
   - 160
   - 190
-  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -71,13 +70,11 @@ spells:
   cast: 0
 - id: VelkozR
   name: Life Form Disintegration Ray
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 450
+  - 625
+  - 800
   cooldown:
   - 120
   - 100

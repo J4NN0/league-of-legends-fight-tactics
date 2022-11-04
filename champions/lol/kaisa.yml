@@ -1,35 +1,34 @@
-version: 12.3.1
-name: Kaisa
+id: Kaisa
+name: Kai'Sa
+title: Daughter of the Void
 tags: Marksman
+passive:
+  name: Second Skin
+  description: Kai'Sa's basic attacks stack Plasma, dealing increasing bonus magic
+    damage. Allies' immobilizing effects help stack Plasma. Additionally, Kai'Sa's
+    item purchases upgrade her basic spells to have more powerful properties.
 stats:
-  hp: 600
-  hp_per_level: 88
-  armor: 28
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 670
   attack_damage: 59
-  attack_damage_per_level: 2
-  attack_speed: 0.644
-  attack_speed_per_level: 1.8
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 59
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: KaisaQ
   name: Icathian Rain
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 40
+  - 55
+  - 70
+  - 85
+  - 100
   cooldown:
   - 10
   - 9
@@ -39,9 +38,13 @@ spells:
   cast: 0
 - id: KaisaW
   name: Void Seeker
-  damage:
-  - 100
   max_rank: 5
+  damage:
+  - 30
+  - 55
+  - 80
+  - 105
+  - 130
   cooldown:
   - 22
   - 20
@@ -51,13 +54,13 @@ spells:
   cast: 0
 - id: KaisaE
   name: Supercharge
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
   cooldown:
   - 16
   - 14.5
@@ -67,13 +70,11 @@ spells:
   cast: 0
 - id: KaisaR
   name: Killer Instinct
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 130
   - 100

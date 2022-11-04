@@ -1,35 +1,33 @@
-version: 12.3.1
-name: KogMaw
+id: KogMaw
+name: Kog'Maw
+title: the Mouth of the Abyss
 tags: Marksman, Mage
+passive:
+  name: Icathian Surprise
+  description: 4 seconds after dying, Kogmaw explodes, dealing true damage to surrounding
+    enemies.
 stats:
-  hp: 565
-  hp_per_level: 85
-  armor: 24
-  armor_per_level: 3.25
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 635
   attack_damage: 61
-  attack_damage_per_level: 3.11
-  attack_speed: 0.665
-  attack_speed_per_level: 2.65
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.665
+  - 0
   cast: 0
 - id: KogMawQ
   name: Caustic Spittle
-  damage:
-  - 15
-  - 20
-  - 25
-  - 30
-  - 35
   max_rank: 5
+  damage:
+  - 90
+  - 140
+  - 190
+  - 240
+  - 290
   cooldown:
   - 8
   - 8
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: KogMawBioArcaneBarrage
   name: Bio-Arcane Barrage
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 130
+  - 150
+  - 170
+  - 190
+  - 210
   cooldown:
   - 17
   - 17
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: KogMawVoidOoze
   name: Void Ooze
+  max_rank: 5
   damage:
   - 75
   - 120
   - 165
   - 210
   - 255
-  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -71,9 +69,11 @@ spells:
   cast: 0
 - id: KogMawLivingArtillery
   name: Living Artillery
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 2
   - 1.5
