@@ -121,7 +121,6 @@ func storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
 func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataExtended) lol.Champion {
 	lolChampion := lol.Champion{
 		DataDragonID: ddChampion.ID,
-		Version:      ddChampion.Version,
 		Name:         ddChampion.ChampionData.Name,
 		Title:        ddChampion.Title,
 		Tags:         strings.Join(ddChampion.Tags, ", "),
@@ -148,10 +147,14 @@ func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataEx
 
 	// Add remaining spells
 	for _, spell := range ddChampion.Spells {
+		var spellDamages []float64
+		if len(spell.Effect) >= 1 {
+			spellDamages = spell.Effect[1] // effect and effectBurn arrays have a null value in the 0 index (aka they are arrays 1-based)
+		}
 		lolChampion.Spells = append(lolChampion.Spells, lol.Spell{
 			ID:       spell.ID,
 			Name:     spell.Name,
-			Damage:   nil, // TODO: to fix
+			Damage:   spellDamages,
 			MaxRank:  spell.MaxRank,
 			Cooldown: spell.Cooldown,
 			Cast:     0.0, // it cannot be retrieved from DataDragon APIs

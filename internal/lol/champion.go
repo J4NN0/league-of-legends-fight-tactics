@@ -18,7 +18,6 @@ const (
 // Champion LoL champion data struct
 type Champion struct {
 	DataDragonID string  `yaml:"id"`
-	Version      string  `json:"version"`
 	Name         string  `yaml:"name"`
 	Title        string  `yaml:"title"`
 	Tags         string  `yaml:"tags"`

@@ -3,6 +3,7 @@ package riot
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient"
@@ -10,6 +11,9 @@ import (
 	"github.com/KnutZuidema/golio/api"
 	"github.com/KnutZuidema/golio/datadragon"
 	"github.com/sirupsen/logrus"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // Docs: https://developer.riotgames.com/docs/lol#data-dragon_champions
@@ -31,7 +35,7 @@ type Concrete struct {
 func NewClient(log log.Logger, hc *http.Client, apiKey, region string) Client {
 	client := golio.NewClient(apiKey,
 		golio.WithRegion(api.Region(region)),
-		golio.WithLogger(logrus.New().WithField("foo", "bar")),
+		golio.WithLogger(logrus.New().WithField("riot", region)),
 	)
 	return &Concrete{log: log, hc: hc, riotDD: client}
 }
@@ -63,9 +67,44 @@ func (c *Concrete) GetAllLoLChampions() ([]datadragon.ChampionDataExtended, erro
 }
 
 func (c *Concrete) GetLoLChampion(championName string) (datadragon.ChampionDataExtended, error) {
-	ddChampion, err := c.riotDD.DataDragon.GetChampion(championName)
+	sanitizedChampionName := sanitizeChampionName(championName)
+	ddChampion, err := c.riotDD.DataDragon.GetChampion(sanitizedChampionName)
 	if err != nil {
 		return datadragon.ChampionDataExtended{}, fmt.Errorf("could not get champion from datadragon: %w", err)
 	}
 	return ddChampion, nil
+}
+
+// sanitizeChampionName Data Dragon APIs want champion name with first letter capitalized (e.g. TwistedFate, Jhin - plus Wukong’s internal name is monkeyking)
+func sanitizeChampionName(championName string) string {
+	switch strings.ToLower(championName) {
+	case "aurelionsol":
+		return "AurelionSol"
+	case "drmundo":
+		return "DrMundo"
+	case "jarvaniv":
+		return "JarvanIV"
+	case "kogmaw":
+		return "KogMaw"
+	case "leesin":
+		return "LeeSin"
+	case "masteryi":
+		return "MasterYi"
+	case "missfortune":
+		return "MissFortune"
+	case "monkeyking":
+		return "MonkeyKing"
+	case "wukong":
+		return "MonkeyKing"
+	case "reksai":
+		return "RekSai"
+	case "tahmkench":
+		return "TahmKench"
+	case "twistedfate":
+		return "TwistedFate"
+	case "xinzhao":
+		return "XinZhao"
+	default:
+		return cases.Title(language.English).String(championName)
+	}
 }
