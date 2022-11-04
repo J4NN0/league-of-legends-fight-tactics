@@ -17,31 +17,32 @@ const (
 
 // Champion LoL champion data struct
 type Champion struct {
-	Version string  `json:"version"`
-	Name    string  `yaml:"name"`
-	Tags    string  `yaml:"tags"`
-	Stats   Stat    `yaml:"stats"`
-	Spells  []Spell `yaml:"spells"`
+	DataDragonID string  `yaml:"id"`
+	Version      string  `json:"version"`
+	Name         string  `yaml:"name"`
+	Title        string  `yaml:"title"`
+	Tags         string  `yaml:"tags"`
+	Passive      Passive `yaml:"passive"`
+	Stats        Stats   `yaml:"stats"`
+	Spells       []Spell `yaml:"spells"`
 }
 
-type Stat struct {
-	Hp                   float64 `yaml:"hp"`
-	HpPerLevel           float64 `yaml:"hp_per_level"`
-	Armor                float64 `yaml:"armor"`
-	ArmorPerLevel        float64 `yaml:"armor_per_level"`
-	SpellBlock           float64 `yaml:"spell_block"`
-	SpellBlockPerLevel   float64 `yaml:"spell_block_per_level"`
-	AttackDamage         float64 `yaml:"attack_damage"`
-	AttackDamagePerLevel float64 `yaml:"attack_damage_per_level"`
-	AttackSpeed          float64 `yaml:"attack_speed"`
-	AttackSpeedPerLevel  float64 `yaml:"attack_speed_per_level"`
+type Passive struct {
+	Name        string `yaml:"name"`
+	Description string `yaml:"description"`
+}
+
+type Stats struct {
+	HealthPoints float64 `yaml:"health_points"`
+	AttackDamage float64 `yaml:"attack_damage"`
+	AttackSpeed  float64 `yaml:"attack_speed"`
 }
 
 type Spell struct {
 	ID       string    `yaml:"id"`
 	Name     string    `yaml:"name"`
-	Damage   []float64 `yaml:"damage"`
 	MaxRank  int       `yaml:"max_rank"`
+	Damage   []float64 `yaml:"damage"`
 	Cooldown []float64 `yaml:"cooldown"`
 	Cast     float64   `yaml:"cast"`
 }

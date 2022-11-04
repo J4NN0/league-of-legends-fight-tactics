@@ -9,6 +9,7 @@ import (
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/riot"
+	"github.com/KnutZuidema/golio/datadragon"
 )
 
 type Controller struct {
@@ -21,22 +22,22 @@ func New(log log.Logger, riotClient riot.Client, fightTactics lol.Tactics) *Cont
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 
-func (c *Controller) ChampionsFight(c1Name, c2Name string) {
-	c.log.Printf("Loading %s vs %s champions data ...\n", c1Name, c2Name)
+func (c *Controller) ChampionsFight(championName1, championName2 string) {
+	c.log.Printf("Loading %s vs %s champions data ...\n", championName1, championName2)
 
-	c1, err := lol.Read(c1Name)
+	lolChampion1, err := lol.Read(championName1)
 	if err != nil {
-		c.log.Fatalf("Error loading champion: %v", err)
+		c.log.Fatalf("Error loading champion %s: %v", championName1, err)
 		return
 	}
 
-	c2, err := lol.Read(c2Name)
+	lolChampion2, err := lol.Read(championName2)
 	if err != nil {
-		c.log.Fatalf("Error loading champion: %v", err)
+		c.log.Fatalf("Error loading champion %s: %v", championName2, err)
 		return
 	}
 
-	c.fightTactics.Fight(c1, c2)
+	c.fightTactics.Fight(lolChampion1, lolChampion2)
 }
 
 func (c *Controller) AllChampionsFight() {
@@ -92,69 +93,68 @@ func (c *Controller) FetchChampion(championName string) {
 func (c *Controller) FetchAllChampions() {
 	c.log.Printf("Fetching all league of legends champions ...\n")
 
-	championsData, err := c.riotClient.GetAllLoLChampions()
+	ddChampions, err := c.riotClient.GetAllLoLChampions()
 	if err != nil {
 		c.log.Fatalf("Error while fetching all league of legends champions: %v", err)
 		return
 	}
 
-	for _, champion := range championsData {
+	for _, champion := range ddChampions {
 		err = storeChampionToYMLFile(champion)
 		if err != nil {
-			c.log.Warningf("Could not store %s champion data: %v", champion.DataName, err)
+			c.log.Warningf("Could not store %s champion data: %v", champion.ChampionData.Name, err)
 		} else {
-			c.log.Printf("%s successfully stored", champion.DataName)
+			c.log.Printf("%s successfully stored", champion.ChampionData.Name)
 		}
 	}
 }
 
-func storeChampionToYMLFile(championData riot.DDragonChampionResponse) error {
-	err := lol.Write(mapChampionResponseToLolChampionStruct(championData))
+func storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
+	lolChampion := mapChampionResponseToLolChampionStruct(ddChampion)
+	err := lol.Write(lolChampion)
 	if err != nil {
 		return err
 	}
 	return nil
 }
 
-func mapChampionResponseToLolChampionStruct(championResponse riot.DDragonChampionResponse) lol.Champion {
-	championData := championResponse.Data[championResponse.DataName]
+func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataExtended) lol.Champion {
 	lolChampion := lol.Champion{
-		Version: championResponse.Version,
-		Name:    championResponse.DataName,
-		Tags:    strings.Join(championData.Tags, ", "),
-		Stats: lol.Stat{
-			Hp:                   championData.Stats.Hp,
-			HpPerLevel:           championData.Stats.HpPerLevel,
-			Armor:                championData.Stats.Armor,
-			ArmorPerLevel:        championData.Stats.ArmorPerLevel,
-			SpellBlock:           championData.Stats.SpellBlock,
-			SpellBlockPerLevel:   championData.Stats.SpellBlockPerLevel,
-			AttackDamage:         championData.Stats.AttackDamage,
-			AttackDamagePerLevel: championData.Stats.AttackDamagePerLevel,
-			AttackSpeed:          championData.Stats.AttackSpeed,
-			AttackSpeedPerLevel:  championData.Stats.AttackSpeedPerLevel,
+		DataDragonID: ddChampion.ID,
+		Version:      ddChampion.Version,
+		Name:         ddChampion.ChampionData.Name,
+		Title:        ddChampion.Title,
+		Tags:         strings.Join(ddChampion.Tags, ", "),
+		Passive: lol.Passive{
+			Name:        ddChampion.Passive.Name,
+			Description: ddChampion.Passive.Description,
+		},
+		Stats: lol.Stats{
+			HealthPoints: ddChampion.Stats.HealthPoints,
+			AttackDamage: ddChampion.Stats.AttackDamage,
+			AttackSpeed:  ddChampion.Stats.AttackSpeedOffset,
+		},
+		Spells: []lol.Spell{
+			{
+				ID:       "aa",
+				Name:     "Auto Attack",
+				Damage:   []float64{ddChampion.Stats.AttackDamage},
+				MaxRank:  1, // it has no upgrade
+				Cooldown: []float64{ddChampion.Stats.AttackSpeedOffset},
+				Cast:     0, // it cannot be retrieved from DataDragon APIs
+			},
 		},
 	}
 
-	// Add auto attack to list of spells
-	lolChampion.Spells = []lol.Spell{{
-		ID:       "aa",
-		Name:     "Auto Attack",
-		Damage:   []float64{championData.Stats.AttackDamage},
-		MaxRank:  1, // it has no rank
-		Cooldown: []float64{championData.Stats.AttackSpeed},
-		Cast:     0,
-	}}
-
-	// Add champion spells
-	for _, spell := range championData.Spells {
+	// Add remaining spells
+	for _, spell := range ddChampion.Spells {
 		lolChampion.Spells = append(lolChampion.Spells, lol.Spell{
 			ID:       spell.ID,
 			Name:     spell.Name,
-			Damage:   spell.Damage,
+			Damage:   nil, // TODO: to fix
 			MaxRank:  spell.MaxRank,
 			Cooldown: spell.Cooldown,
-			Cast:     0.0,
+			Cast:     0.0, // it cannot be retrieved from DataDragon APIs
 		})
 	}
 

@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"net/http"
 	"os"
 	"strings"
@@ -23,12 +24,26 @@ func main() {
 
 	ctx := context.Background()
 
+	// Logger
 	logger := log.New(appName)
-	riotClient := riot.NewClient(logger, &http.Client{})
+
+	// Config
+	cliConfig, err := config.ReadConfig()
+	if err != nil {
+		logger.Fatalf("config reading failed: %v", err)
+		return
+	}
+
+	// Riot Client
+	riotClient := riot.NewClient(logger, &http.Client{}, cliConfig.RiotAPIKey, cliConfig.LoLRegion)
+
+	// LoL Tactics
 	fightTactics := lol.New(logger)
 
+	// Controller
 	ctrl := controller.New(logger, riotClient, fightTactics)
 
+	// CLI App
 	app := &cli.App{
 		Name:    "loltactics",
 		Usage:   "League of Legends Tactics",
@@ -103,7 +118,7 @@ func main() {
 		},
 	}
 
-	err := app.Run(os.Args)
+	err = app.Run(os.Args)
 	if err != nil {
 		_ = cli.ShowAppHelp(&cli.Context{
 			Context: ctx,
@@ -114,7 +129,7 @@ func main() {
 }
 
 func isInputProvided(tactics, downloadAll bool, download string, championsName *cli.StringSlice) bool {
-	if tactics == false && downloadAll == false && download == "" && championsName == nil {
+	if !tactics && !downloadAll && download == "" && championsName == nil {
 		return false
 	}
 	return true

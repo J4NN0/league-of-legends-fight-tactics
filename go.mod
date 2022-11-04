@@ -3,10 +3,11 @@ module github.com/J4NN0/league-of-legends-fight-tactics
 go 1.19
 
 require (
+	github.com/KnutZuidema/golio v0.0.0-20220228083517-e9a630a5acc7
+	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/sirupsen/logrus v1.9.0
 	github.com/stretchr/testify v1.8.0
 	github.com/urfave/cli/v2 v2.20.3
-	golang.org/x/text v0.4.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 

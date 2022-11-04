@@ -32,13 +32,13 @@ func (f *FightTactics) Fight(champion1, champion2 Champion) {
 	var sol []Spell
 	var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 
-	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.Hp, &bestSol)
+	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.HealthPoints, &bestSol)
 
 	f.log.Printf("[%s vs %s] Best solution found: enemy slayed in %.2fs\n", champion1.Name, champion2.Name, bestSol.Benchmark)
 
 	fileName := setFilePath(champion1, champion2)
 	file.Create(fileName)
-	file.Write(fileName, getRoundSpellsToString(bestSol.RoundOfSpells, champion2.Stats.Hp, bestSol.Benchmark))
+	file.Write(fileName, getRoundSpellsToString(bestSol.RoundOfSpells, champion2.Stats.HealthPoints, bestSol.Benchmark))
 }
 
 func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *bestSolution) {
