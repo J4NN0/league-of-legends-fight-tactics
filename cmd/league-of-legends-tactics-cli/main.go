@@ -19,24 +19,20 @@ import (
 const appName string = "lol-tactics"
 
 func main() {
-	var tactics, downloadAll bool
-	var download string
-	var championsName *cli.StringSlice
-
 	ctx := context.Background()
 
 	// Logger
 	log := logger.New(appName)
 
 	// Config
-	cliConfig, err := config.ReadConfig()
+	appConfig, err := config.ReadConfig()
 	if err != nil {
 		log.Fatalf("config reading failed: %v", err)
 		return
 	}
 
 	// Riot Client
-	riotClient := riot.NewClient(log, &http.Client{}, cliConfig.RiotAPIKey, cliConfig.LoLRegion)
+	riotClient := riot.NewClient(log, &http.Client{}, appConfig.RiotAPIKey, appConfig.LoLRegion)
 
 	// LoL Tactics
 	lolTactics := lol.NewTactics(log)
@@ -45,6 +41,9 @@ func main() {
 	ctrl := controller.New(log, riotClient, lolTactics)
 
 	// CLI App
+	var tactics, downloadAll bool
+	var download string
+	var championsName *cli.StringSlice
 	app := &cli.App{
 		Name:    "loltactics",
 		Usage:   "League of Legends Tactics",
