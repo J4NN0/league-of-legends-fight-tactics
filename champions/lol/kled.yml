@@ -1,35 +1,36 @@
-version: 12.3.1
+id: Kled
 name: Kled
+title: the Cantankerous Cavalier
 tags: Fighter, Tank
+passive:
+  name: Skaarl, the Cowardly Lizard
+  description: Kled rides his trusty steed, Skaarl, who takes damage for him. When
+    Skaarl's health depletes, Kled dismounts.<br><br>While dismounted, Kled's abilities
+    change and he deals less damage to champions. Kled can restore Skaarl's courage
+    by fighting enemies. At maximum courage, Kled remounts with a portion of Skaarl's
+    health.
 stats:
-  hp: 340
-  hp_per_level: 70
-  armor: 35
-  armor_per_level: 4
-  spell_block: 28
-  spell_block_per_level: 1.25
+  health_points: 410
   attack_damage: 65
-  attack_damage_per_level: 3.5
-  attack_speed: 0.625
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 65
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: KledQ
   name: Bear Trap on a Rope
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 30
+  - 55
+  - 80
+  - 105
+  - 130
   cooldown:
   - 11
   - 10
@@ -39,29 +40,29 @@ spells:
   cast: 0
 - id: KledW
   name: Violent Tendencies
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 4.5
+  - 5
+  - 5.5
+  - 6
+  - 6.5
   cooldown:
-  - 14
-  - 12.5
   - 11
   - 9.5
   - 8
+  - 6.5
+  - 5
   cast: 0
 - id: KledE
   name: Jousting
+  max_rank: 5
   damage:
   - 35
   - 60
   - 85
   - 110
   - 135
-  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -71,15 +72,13 @@ spells:
   cast: 0
 - id: KledR
   name: Chaaaaaaaarge!!!
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 4
+  - 5
+  - 6
   cooldown:
-  - 160
   - 140
-  - 120
+  - 125
+  - 110
   cast: 0

@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Poppy
 name: Poppy
+title: Keeper of the Hammer
 tags: Tank, Fighter
+passive:
+  name: Iron Ambassador
+  description: Poppy throws her buckler that bounces off the target. Poppy can pick
+    it up to gain a temporary shield.
 stats:
-  hp: 540
-  hp_per_level: 90
-  armor: 38
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 610
   attack_damage: 64
-  attack_damage_per_level: 4
-  attack_speed: 0.625
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 64
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: PoppyQ
   name: Hammer Shock
+  max_rank: 5
   damage:
   - 40
   - 60
   - 80
   - 100
   - 120
-  max_rank: 5
   cooldown:
   - 8
   - 7
@@ -39,25 +37,29 @@ spells:
   cast: 0
 - id: PoppyW
   name: Steadfast Presence
-  damage:
-  - 40
   max_rank: 5
+  damage:
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   cooldown:
-  - 24
-  - 22
   - 20
   - 18
   - 16
+  - 14
+  - 12
   cast: 0
 - id: PoppyE
   name: Heroic Charge
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 60
+  - 80
+  - 100
+  - 120
+  - 140
   cooldown:
   - 14
   - 13
@@ -67,9 +69,11 @@ spells:
   cast: 0
 - id: PoppyR
   name: Keeper's Verdict
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 140
   - 120

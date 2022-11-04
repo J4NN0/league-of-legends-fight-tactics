@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Zed
 name: Zed
+title: the Master of Shadows
 tags: Assassin
+passive:
+  name: Contempt for the Weak
+  description: Zed's basic attacks against low health targets deals bonus Magic Damage.
+    This effect can only occur once every few seconds against the same enemy champion.
 stats:
-  hp: 584
-  hp_per_level: 85
-  armor: 32
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 654
   attack_damage: 63
-  attack_damage_per_level: 3.4
-  attack_speed: 0.651
-  attack_speed_per_level: 3.3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 63
-  max_rank: 1
   cooldown:
-  - 0.651
+  - 0
   cast: 0
 - id: ZedQ
   name: Razor Shuriken
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 6
   - 6
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: ZedW
   name: Living Shadow
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 5.25
+  - 5.25
+  - 5.25
+  - 5.25
+  - 5.25
   cooldown:
   - 20
   - 18.5
@@ -51,9 +53,13 @@ spells:
   cast: 0
 - id: ZedE
   name: Shadow Slash
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 5
   - 4.5
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: ZedR
   name: Death Mark
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

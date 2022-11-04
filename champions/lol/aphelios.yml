@@ -1,35 +1,36 @@
-version: 12.3.1
+id: Aphelios
 name: Aphelios
+title: the Weapon of the Faithful
 tags: Marksman
+passive:
+  name: The Hitman and the Seer
+  description: 'Aphelios wields 5 Lunari Weapons made by his sister Alune. He has
+    access to two at a time: one main-hand and one off-hand. Each weapon has a unique
+    Basic Attack and Ability. Attacks and abilities consume a weapon''s ammo. When
+    out of ammo, Aphelios discards the weapon and Alune summons the next of the 5. '
 stats:
-  hp: 530
-  hp_per_level: 88
-  armor: 28
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 580
   attack_damage: 55
-  attack_damage_per_level: 3
-  attack_speed: 0.64
-  attack_speed_per_level: 2.1
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 55
-  max_rank: 1
   cooldown:
-  - 0.64
+  - 0
   cast: 0
 - id: ApheliosQ_ClientTooltipWrapper
   name: Weapon Abilites
+  max_rank: 6
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 6
+  - 0
   cooldown:
   - 9
   - 9
@@ -40,13 +41,14 @@ spells:
   cast: 0
 - id: ApheliosW
   name: Phase
+  max_rank: 6
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 6
+  - 0
   cooldown:
   - 0.8
   - 0.8
@@ -57,13 +59,14 @@ spells:
   cast: 0
 - id: ApheliosE_ClientTooltipWrapper
   name: Weapon Queue System
+  max_rank: 6
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 6
+  - 0
   cooldown:
   - 0
   - 0
@@ -74,9 +77,11 @@ spells:
   cast: 0
 - id: ApheliosR
   name: Moonlight Vigil
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 120
   - 110

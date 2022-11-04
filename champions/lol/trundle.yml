@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Trundle
 name: Trundle
+title: the Troll King
 tags: Fighter, Tank
+passive:
+  name: King's Tribute
+  description: When an enemy unit dies near Trundle, he heals for a percent of its
+    maximum Health.
 stats:
-  hp: 616
-  hp_per_level: 96
-  armor: 37
-  armor_per_level: 2.7
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 686
   attack_damage: 68
-  attack_damage_per_level: 3
-  attack_speed: 0.67
-  attack_speed_per_level: 2.9
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 68
-  max_rank: 1
   cooldown:
-  - 0.67
+  - 0
   cast: 0
 - id: TrundleTrollSmash
   name: Chomp
+  max_rank: 5
   damage:
   - 20
   - 40
   - 60
   - 80
   - 100
-  max_rank: 5
   cooldown:
   - 3.5
   - 3.5
@@ -39,29 +37,29 @@ spells:
   cast: 0
 - id: trundledesecrate
   name: Frozen Domain
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 20
+  - 28
+  - 36
+  - 44
+  - 52
   cooldown:
+  - 18
+  - 17
+  - 16
   - 15
   - 14
-  - 13
-  - 12
-  - 11
   cast: 0
 - id: TrundleCircle
   name: Pillar of Ice
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
   cooldown:
   - 24
   - 22
@@ -71,13 +69,11 @@ spells:
   cast: 0
 - id: TrundlePain
   name: Subjugate
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

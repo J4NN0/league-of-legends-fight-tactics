@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Irelia
 name: Irelia
+title: the Blade Dancer
 tags: Fighter, Assassin
+passive:
+  name: Ionian Fervor
+  description: When Irelia strikes enemies with spells she gains stacking bonus Attack
+    Speed. At maximum stacks she also gains bonus damage on hit.
 stats:
-  hp: 520
-  hp_per_level: 110
-  armor: 36
-  armor_per_level: 3
-  spell_block: 28
-  spell_block_per_level: 1.25
+  health_points: 590
   attack_damage: 65
-  attack_damage_per_level: 4
-  attack_speed: 0.656
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 65
-  max_rank: 1
   cooldown:
-  - 0.656
+  - 0
   cast: 0
 - id: IreliaQ
   name: Bladesurge
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 11
   - 10
@@ -35,9 +37,13 @@ spells:
   cast: 0
 - id: IreliaW
   name: Defiant Dance
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 20
   - 18
@@ -47,21 +53,27 @@ spells:
   cast: 0
 - id: IreliaE
   name: Flawless Duet
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 18
-  - 16.5
+  - 16
   - 15
-  - 13.5
+  - 14
+  - 13
   - 12
   cast: 0
 - id: IreliaR
   name: Vanguard's Edge
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 140
   - 120

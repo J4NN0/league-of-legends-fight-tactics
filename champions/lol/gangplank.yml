@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Gangplank
 name: Gangplank
+title: the Saltwater Scourge
 tags: Fighter
+passive:
+  name: Trial by Fire
+  description: Every few seconds, Gangplank's melee strike will set his opponent on
+    fire.
 stats:
-  hp: 570
-  hp_per_level: 90
-  armor: 35
-  armor_per_level: 3
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 600
   attack_damage: 64
-  attack_damage_per_level: 4
-  attack_speed: 0.658
-  attack_speed_per_level: 3.2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 64
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: GangplankQWrapper
   name: Parrrley
-  damage:
-  - 20
-  - 45
-  - 70
-  - 95
-  - 120
   max_rank: 5
+  damage:
+  - 10
+  - 40
+  - 70
+  - 100
+  - 130
   cooldown:
   - 4.5
   - 4.5
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: GangplankW
   name: Remove Scurvy
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 45
+  - 70
+  - 95
+  - 120
+  - 145
   cooldown:
   - 22
   - 20
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: GangplankE
   name: Powder Keg
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 3
+  - 3
+  - 4
+  - 4
+  - 5
   cooldown:
   - 0
   - 0
@@ -71,13 +69,11 @@ spells:
   cast: 0
 - id: GangplankR
   name: Cannon Barrage
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 40
+  - 70
+  - 100
   cooldown:
   - 180
   - 160

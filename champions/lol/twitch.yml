@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Twitch
 name: Twitch
+title: the Plague Rat
 tags: Marksman, Assassin
+passive:
+  name: Deadly Venom
+  description: Twitch's basic attacks infect the target, dealing true damage each
+    second.
 stats:
-  hp: 612
-  hp_per_level: 86
-  armor: 27
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 682
   attack_damage: 59
-  attack_damage_per_level: 3.11
-  attack_speed: 0.679
-  attack_speed_per_level: 3.38
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 59
-  max_rank: 1
   cooldown:
-  - 0.679
+  - 0
   cast: 0
 - id: TwitchHideInShadows
   name: Ambush
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 40
+  - 45
+  - 50
+  - 55
+  - 60
   cooldown:
   - 16
   - 16
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: TwitchVenomCask
   name: Venom Cask
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -55,9 +53,13 @@ spells:
   cast: 0
 - id: TwitchExpunge
   name: Contaminate
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11
@@ -67,13 +69,11 @@ spells:
   cast: 0
 - id: TwitchFullAutomatic
   name: Spray and Pray
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 90
   - 90

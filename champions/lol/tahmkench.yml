@@ -1,35 +1,35 @@
-version: 12.3.1
-name: TahmKench
+id: TahmKench
+name: Tahm Kench
+title: The River King
 tags: Support, Tank
+passive:
+  name: An Acquired Taste
+  description: Tahm Kench puts the heft of his immense body behind his attacks, gaining
+    extra damage based on his total health. Damaging enemy champions builds stacks
+    of <spellName>An Acquired Taste</spellName>. At three stacks, he can use <spellName>Devour</spellName>
+    on an enemy champion.
 stats:
-  hp: 570
-  hp_per_level: 95
-  armor: 42
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 640
   attack_damage: 56
-  attack_damage_per_level: 3.2
-  attack_speed: 0.658
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 56
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: TahmKenchQ
   name: Tongue Lash
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 7
   - 6.5
@@ -39,9 +39,13 @@ spells:
   cast: 0
 - id: TahmKenchW
   name: Abyssal Dive
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 21
   - 20
@@ -51,13 +55,13 @@ spells:
   cast: 0
 - id: TahmKenchE
   name: Thick Skin
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 3
   - 3
@@ -67,9 +71,11 @@ spells:
   cast: 0
 - id: TahmKenchRWrapper
   name: Devour
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 0
   - 0

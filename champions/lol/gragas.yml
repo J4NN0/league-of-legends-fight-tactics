@@ -1,47 +1,48 @@
-version: 12.3.1
+id: Gragas
 name: Gragas
+title: the Rabble Rouser
 tags: Fighter, Mage
+passive:
+  name: Happy Hour
+  description: Gragas periodically heals upon using a skill.
 stats:
-  hp: 600
-  hp_per_level: 95
-  armor: 38
-  armor_per_level: 3.6
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 670
   attack_damage: 64
-  attack_damage_per_level: 3.5
-  attack_speed: 0.675
-  attack_speed_per_level: 2.05
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 64
-  max_rank: 1
   cooldown:
-  - 0.675
+  - 0
   cast: 0
 - id: GragasQ
   name: Barrel Roll
+  max_rank: 5
   damage:
   - 80
   - 120
   - 160
   - 200
   - 240
-  max_rank: 5
   cooldown:
-  - 11
   - 10
   - 9
   - 8
   - 7
+  - 6
   cast: 0
 - id: GragasW
   name: Drunken Rage
-  damage:
-  - 7
   max_rank: 5
+  damage:
+  - 10
+  - 12
+  - 14
+  - 16
+  - 18
   cooldown:
   - 5
   - 5
@@ -51,27 +52,27 @@ spells:
   cast: 0
 - id: GragasE
   name: Body Slam
+  max_rank: 5
   damage:
   - 80
   - 125
   - 170
   - 215
   - 260
-  max_rank: 5
   cooldown:
-  - 16
-  - 15
   - 14
+  - 13.5
   - 13
+  - 12.5
   - 12
   cast: 0
 - id: GragasR
   name: Explosive Cask
+  max_rank: 3
   damage:
   - 200
   - 300
   - 400
-  max_rank: 3
   cooldown:
   - 120
   - 100

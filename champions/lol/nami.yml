@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Nami
 name: Nami
+title: the Tidecaller
 tags: Support, Mage
+passive:
+  name: Surging Tides
+  description: When Nami's Abilities hit allied champions they gain Move Speed for
+    a short duration.
 stats:
-  hp: 490
-  hp_per_level: 74
-  armor: 29
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 560
   attack_damage: 51
-  attack_damage_per_level: 3.1
-  attack_speed: 0.644
-  attack_speed_per_level: 2.61
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 51
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: NamiQ
   name: Aqua Prison
+  max_rank: 5
   damage:
   - 75
   - 130
   - 185
   - 240
   - 295
-  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -39,9 +37,13 @@ spells:
   cast: 0
 - id: NamiW
   name: Ebb and Flow
-  damage:
-  - 3
   max_rank: 5
+  damage:
+  - 70
+  - 110
+  - 150
+  - 190
+  - 230
   cooldown:
   - 10
   - 10
@@ -51,13 +53,13 @@ spells:
   cast: 0
 - id: NamiE
   name: Tidecaller's Blessing
-  damage:
-  - 20
-  - 35
-  - 50
-  - 65
-  - 80
   max_rank: 5
+  damage:
+  - 25
+  - 40
+  - 55
+  - 70
+  - 85
   cooldown:
   - 11
   - 11
@@ -67,11 +69,11 @@ spells:
   cast: 0
 - id: NamiR
   name: Tidal Wave
+  max_rank: 3
   damage:
   - 150
   - 250
   - 350
-  max_rank: 3
   cooldown:
   - 120
   - 110

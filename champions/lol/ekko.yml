@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Ekko
 name: Ekko
+title: the Boy Who Shattered Time
 tags: Assassin, Fighter
+passive:
+  name: Z-Drive Resonance
+  description: Every third attack or damaging spell on the same target deals bonus
+    magic damage, and grants Ekko a burst of speed if the target is a champion.<br><br>
 stats:
-  hp: 585
-  hp_per_level: 85
-  armor: 32
-  armor_per_level: 3
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 655
   attack_damage: 58
-  attack_damage_per_level: 3
-  attack_speed: 0.688
-  attack_speed_per_level: 3.3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 58
-  max_rank: 1
   cooldown:
-  - 0.688
+  - 0
   cast: 0
 - id: EkkoQ
   name: Timewinder
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 60
+  - 75
+  - 90
+  - 105
+  - 120
   cooldown:
   - 9
   - 8.5
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: EkkoW
   name: Parallel Convergence
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 375
+  - 375
+  - 375
+  - 375
+  - 375
   cooldown:
   - 22
   - 20
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: EkkoE
   name: Phase Dive
+  max_rank: 5
   damage:
   - 50
   - 75
   - 100
   - 125
   - 150
-  max_rank: 5
   cooldown:
   - 9
   - 8.5
@@ -71,9 +69,11 @@ spells:
   cast: 0
 - id: EkkoR
   name: Chronobreak
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 110
   - 80

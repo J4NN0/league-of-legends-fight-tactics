@@ -1,31 +1,32 @@
-version: 12.3.1
+id: Soraka
 name: Soraka
+title: the Starchild
 tags: Support, Mage
+passive:
+  name: Salvation
+  description: Soraka runs faster towards nearby low health allies.
 stats:
-  hp: 535
-  hp_per_level: 74
-  armor: 32
-  armor_per_level: 3.8
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 605
   attack_damage: 50
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 2.14
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 50
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SorakaQ
   name: Starcall
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 7
@@ -35,13 +36,13 @@ spells:
   cast: 0
 - id: SorakaW
   name: Astral Infusion
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 6
   - 5
@@ -51,9 +52,13 @@ spells:
   cast: 0
 - id: SorakaE
   name: Equinox
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 20
   - 19
@@ -63,13 +68,11 @@ spells:
   cast: 0
 - id: SorakaR
   name: Wish
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 160
   - 145

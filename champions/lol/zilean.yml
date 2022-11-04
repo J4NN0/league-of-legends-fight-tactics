@@ -1,31 +1,34 @@
-version: 12.3.1
+id: Zilean
 name: Zilean
+title: the Chronokeeper
 tags: Support, Mage
+passive:
+  name: Time In A Bottle
+  description: Zilean stores time as Experience and can grant it to his allies. When
+    he has enough Experience to finish an ally's level up, he can right-click them
+    to impart it. Zilean receives as much Experience as he gives.
 stats:
-  hp: 504
-  hp_per_level: 82
-  armor: 24
-  armor_per_level: 3.8
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 574
   attack_damage: 52
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 2.13
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 52
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: ZileanQ
   name: Time Bomb
-  damage:
-  - 7
   max_rank: 5
+  damage:
+  - 75
+  - 115
+  - 165
+  - 230
+  - 300
   cooldown:
   - 10
   - 9.5
@@ -35,13 +38,13 @@ spells:
   cast: 0
 - id: ZileanW
   name: Rewind
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 20
+  - 30
+  - 40
+  - 50
+  - 60
   cooldown:
   - 14
   - 12
@@ -51,13 +54,13 @@ spells:
   cast: 0
 - id: TimeWarp
   name: Time Warp
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 2.5
+  - 2.5
+  - 2.5
+  - 2.5
+  - 2.5
   cooldown:
   - 15
   - 15
@@ -67,13 +70,11 @@ spells:
   cast: 0
 - id: ChronoShift
   name: Chronoshift
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 90

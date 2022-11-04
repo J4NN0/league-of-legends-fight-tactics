@@ -1,35 +1,37 @@
-version: 12.3.1
+id: Zac
 name: Zac
+title: the Secret Weapon
 tags: Tank, Fighter
+passive:
+  name: Cell Division
+  description: Each time Zac hits an enemy with an ability, he sheds a chunk of himself
+    that can be reabsorbed to restore Health. Upon taking fatal damage, Zac splits
+    into 4 bloblets that attempt to recombine. If any bloblets remain, he will revive
+    with an amount of Health depending on the Health of the surviving bloblets. Each
+    bloblet has a percentage of Zac's maximum Health, Armor and Magic Resistance.
+    This ability has a 5 minute cooldown.
 stats:
-  hp: 615
-  hp_per_level: 95
-  armor: 33
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 685
   attack_damage: 60
-  attack_damage_per_level: 3.4
-  attack_speed: 0.736
-  attack_speed_per_level: 1.6
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 60
-  max_rank: 1
   cooldown:
-  - 0.736
+  - 0
   cast: 0
 - id: ZacQ
   name: Stretching Strikes
+  max_rank: 5
   damage:
   - 40
   - 55
   - 70
   - 85
   - 100
-  max_rank: 5
   cooldown:
   - 15
   - 13.5
@@ -39,13 +41,13 @@ spells:
   cast: 0
 - id: ZacW
   name: Unstable Matter
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 35
+  - 50
+  - 65
+  - 80
+  - 95
   cooldown:
   - 5
   - 5
@@ -55,13 +57,13 @@ spells:
   cast: 0
 - id: ZacE
   name: Elastic Slingshot
+  max_rank: 5
   damage:
   - 60
   - 110
   - 160
   - 210
   - 260
-  max_rank: 5
   cooldown:
   - 24
   - 21
@@ -71,13 +73,11 @@ spells:
   cast: 0
 - id: ZacR
   name: Let's Bounce!
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 150
+  - 250
+  - 350
   cooldown:
   - 130
   - 115

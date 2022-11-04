@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Shyvana
 name: Shyvana
+title: the Half-Dragon
 tags: Fighter, Tank
+passive:
+  name: Fury of the Dragonborn
+  description: Shyvana deals bonus damage to dragons and gains Armor and Magic Resistance.
+    As Shyvana and her allies slay more dragons, she gains more bonus Armor and Magic
+    Resistance.
 stats:
-  hp: 595
-  hp_per_level: 95
-  armor: 38
-  armor_per_level: 3.35
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 665
   attack_damage: 66
-  attack_damage_per_level: 3.4
-  attack_speed: 0.658
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 66
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: ShyvanaDoubleAttack
   name: Twin Bite
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 7
   - 6.5
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: ShyvanaImmolationAura
   name: Burnout
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -55,9 +54,13 @@ spells:
   cast: 0
 - id: ShyvanaFireball
   name: Flame Breath
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11
@@ -67,13 +70,11 @@ spells:
   cast: 0
 - id: ShyvanaTransformCast
   name: Dragon's Descent
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 0
   - 0

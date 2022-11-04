@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Lillia
 name: Lillia
+title: the Bashful Bloom
 tags: Fighter, Mage
+passive:
+  name: Dream-Laden Bough
+  description: Hitting a champion or monster with a skill will deal additional max
+    Health damage over time.
 stats:
-  hp: 580
-  hp_per_level: 90
-  armor: 22
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 0.75
+  health_points: 625
   attack_damage: 61
-  attack_damage_per_level: 3.1
-  attack_speed: 0.625
-  attack_speed_per_level: 2.7
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: LilliaQ
   name: Blooming Blows
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 6
   - 5.5
@@ -39,9 +37,13 @@ spells:
   cast: 0
 - id: LilliaW
   name: Watch Out! Eep!
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 14
   - 13
@@ -51,9 +53,13 @@ spells:
   cast: 0
 - id: LilliaE
   name: Swirlseed
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 16
   - 16
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: LilliaR
   name: Lilting Lullaby
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 150
   - 130

@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Qiyana
 name: Qiyana
+title: Empress of the Elements
 tags: Assassin, Fighter
+passive:
+  name: Royal Privilege
+  description: Qiyana's first basic attack or ability against each enemy deals bonus
+    damage.
 stats:
-  hp: 520
-  hp_per_level: 110
-  armor: 28
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 590
   attack_damage: 66
-  attack_damage_per_level: 3.1
-  attack_speed: 0.688
-  attack_speed_per_level: 2.1
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 66
-  max_rank: 1
   cooldown:
-  - 0.688
+  - 0
   cast: 0
 - id: QiyanaQ
   name: Elemental Wrath / Edge of Ixtal
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 7
   - 7
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: QiyanaW
   name: Terrashape
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 7
   - 7
@@ -51,13 +53,13 @@ spells:
   cast: 0
 - id: QiyanaE
   name: Audacity
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -67,13 +69,11 @@ spells:
   cast: 0
 - id: QiyanaR
   name: Supreme Display of Talent
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 120

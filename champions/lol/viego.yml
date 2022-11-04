@@ -1,31 +1,35 @@
-version: 12.3.1
+id: Viego
 name: Viego
+title: The Ruined King
 tags: Assassin, Fighter
+passive:
+  name: Sovereign's Domination
+  description: Enemies who fall before Viego become wraiths. By attacking a wraith,
+    Viego temporarily seizes control of the dead enemy's body, healing for a percentage
+    of his target's max health and gaining access to their basic abilities and items.
+    He replaces their Ultimate with a free cast of his own.
 stats:
-  hp: 560
-  hp_per_level: 95
-  armor: 34
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 630
   attack_damage: 57
-  attack_damage_per_level: 3.5
-  attack_speed: 0.658
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 57
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: ViegoQ
   name: Blade of the Ruined King
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 5
   - 4.5
@@ -35,9 +39,13 @@ spells:
   cast: 0
 - id: ViegoW
   name: Spectral Maw
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 8
@@ -47,13 +55,13 @@ spells:
   cast: 0
 - id: ViegoE
   name: Harrowed Path
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 14
   - 12
@@ -63,13 +71,11 @@ spells:
   cast: 0
 - id: ViegoR
   name: Heartbreaker
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

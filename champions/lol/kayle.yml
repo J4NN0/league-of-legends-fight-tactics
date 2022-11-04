@@ -1,31 +1,34 @@
-version: 12.3.1
+id: Kayle
 name: Kayle
+title: the Righteous
 tags: Fighter, Support
+passive:
+  name: Divine Ascent
+  description: Kayle's attacks are empowered by the heavens as she levels up and spends
+    skill points. Her wings are lit aflame as she progressively gains Attack Speed,
+    Move Speed, Attack Range, and waves of fire on her attacks.
 stats:
-  hp: 600
-  hp_per_level: 85
-  armor: 26
-  armor_per_level: 3
-  spell_block: 26
-  spell_block_per_level: 0.5
+  health_points: 670
   attack_damage: 50
-  attack_damage_per_level: 2.5
-  attack_speed: 0.625
-  attack_speed_per_level: 1.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 50
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: KayleQ
   name: Radiant Blast
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11
@@ -35,13 +38,13 @@ spells:
   cast: 0
 - id: KayleW
   name: Celestial Blessing
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 15
   - 15
@@ -51,13 +54,13 @@ spells:
   cast: 0
 - id: KayleE
   name: Starfire Spellblade
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -67,9 +70,11 @@ spells:
   cast: 0
 - id: KayleR
   name: Divine Judgment
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 160
   - 120

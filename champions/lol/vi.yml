@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Vi
 name: Vi
+title: the Piltover Enforcer
 tags: Fighter, Assassin
+passive:
+  name: Blast Shield
+  description: Vi charges a shield over time. The shield can be activated by hitting
+    an enemy with an ability.
 stats:
-  hp: 585
-  hp_per_level: 85
-  armor: 30
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 655
   attack_damage: 63
-  attack_damage_per_level: 3
-  attack_speed: 0.644
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 63
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: ViQ
   name: Vault Breaker
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 55
+  - 80
+  - 105
+  - 130
+  - 155
   cooldown:
   - 12
   - 10.5
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: ViW
   name: Denting Blows
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 4
+  - 5.5
+  - 7
+  - 8.5
+  - 10
   cooldown:
   - 0
   - 0
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: ViE
   name: Relentless Force
+  max_rank: 5
   damage:
   - 10
   - 30
   - 50
   - 70
   - 90
-  max_rank: 5
   cooldown:
   - 1
   - 1
@@ -71,13 +69,11 @@ spells:
   cast: 0
 - id: ViR
   name: Cease and Desist
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

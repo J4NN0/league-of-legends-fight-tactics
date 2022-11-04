@@ -1,47 +1,53 @@
-version: 12.3.1
+id: Syndra
 name: Syndra
-tags: Mage, Support
+title: the Dark Sovereign
+tags: Mage
+passive:
+  name: Transcendent
+  description: 'Syndra collects Splinters of Wrath from gaining levels and damaging
+    enemies which upgrade her abilities.<br><br><font color=''#FF9900''>Dark Sphere</font>:
+    Syndra can hold an additional charge<br><font color=''#FF9900''>Force of Will</font>:
+    Bonus true damage.<br><font color=''#FF9900''>Scatter the Weak</font>: Increased
+    width and slows all targets<br><font color=''#FF9900''>Unleashed Power</font>:
+    Executes low health targets'
 stats:
-  hp: 523
-  hp_per_level: 90
-  armor: 25
-  armor_per_level: 3.4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 563
   attack_damage: 54
-  attack_damage_per_level: 2.9
-  attack_speed: 0.625
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 54
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SyndraQ
   name: Dark Sphere
-  damage:
-  - 6
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
+  - 7
+  - 7
+  - 7
+  - 7
+  - 7
   cast: 0
 - id: SyndraW
   name: Force of Will
-  damage:
-  - 12
-  - 11
-  - 10
-  - 9
-  - 8
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11
@@ -51,25 +57,27 @@ spells:
   cast: 0
 - id: SyndraE
   name: Scatter the Weak
-  damage:
-  - 85
-  - 130
-  - 175
-  - 220
-  - 265
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 18
-  - 17
-  - 16
   - 15
-  - 14
+  - 15
+  - 15
+  - 15
+  - 15
   cast: 0
 - id: SyndraR
   name: Unleashed Power
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 120
   - 100

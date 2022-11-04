@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Sett
 name: Sett
+title: the Boss
 tags: Fighter, Tank
+passive:
+  name: Pit Grit
+  description: Sett's basic attacks alternate between left and right punch. Right
+    punch is slightly stronger and faster. Sett also hates losing, gaining additional
+    health regeneration based off of his missing health.
 stats:
-  hp: 600
-  hp_per_level: 93
-  armor: 33
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 670
   attack_damage: 60
-  attack_damage_per_level: 4
-  attack_speed: 0.625
-  attack_speed_per_level: 1.75
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 60
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SettQ
   name: Knuckle Down
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 9
   - 8
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: SettW
   name: Haymaker
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 18
   - 16.5
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: SettE
   name: Facebreaker
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 16
   - 14.5
@@ -71,13 +70,11 @@ spells:
   cast: 0
 - id: SettR
   name: The Show Stopper
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Nocturne
 name: Nocturne
+title: the Eternal Nightmare
 tags: Assassin, Fighter
+passive:
+  name: Umbra Blades
+  description: Every few seconds, Nocturne's next attack strikes surrounding enemies
+    for bonus physical damage and heals himself. <br><br>Nocturne's basic attacks
+    reduce this cooldown.
 stats:
-  hp: 585
-  hp_per_level: 95
-  armor: 38
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 0.75
+  health_points: 655
   attack_damage: 62
-  attack_damage_per_level: 3.1
-  attack_speed: 0.721
-  attack_speed_per_level: 2.7
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 62
-  max_rank: 1
   cooldown:
-  - 0.721
+  - 0
   cast: 0
 - id: NocturneDuskbringer
   name: Duskbringer
+  max_rank: 5
   damage:
   - 15
   - 20
   - 25
   - 30
   - 35
-  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: NocturneShroudofDarkness
   name: Shroud of Darkness
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 60
+  - 70
+  - 80
+  - 90
+  - 100
   cooldown:
   - 20
   - 18
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: NocturneUnspeakableHorror
   name: Unspeakable Horror
+  max_rank: 5
   damage:
   - 80
   - 125
   - 170
   - 215
   - 260
-  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -71,9 +70,11 @@ spells:
   cast: 0
 - id: NocturneParanoia
   name: Paranoia
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 140
   - 115

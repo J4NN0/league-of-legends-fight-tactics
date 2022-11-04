@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Gwen
 name: Gwen
+title: The Hallowed Seamstress
 tags: Fighter, Assassin
+passive:
+  name: A Thousand Cuts
+  description: 'Gwen''s attacks deal bonus magic damage based on the targets health.
+    She heals for a portion of the damage dealt to champions by this effect. '
 stats:
-  hp: 590
-  hp_per_level: 95
-  armor: 39
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 620
   attack_damage: 63
-  attack_damage_per_level: 3
-  attack_speed: 0.69
-  attack_speed_per_level: 2.25
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 63
-  max_rank: 1
   cooldown:
-  - 0.69
+  - 0
   cast: 0
 - id: GwenQ
   name: Snip Snip!
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 6.5
   - 5.75
@@ -39,45 +37,43 @@ spells:
   cast: 0
 - id: GwenW
   name: Hallowed Mist
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 22
+  - 21
   - 20
+  - 19
   - 18
-  - 16
-  - 14
   cast: 0
 - id: GwenE
   name: Skip 'n Slash
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 13
+  - 12.5
   - 12
+  - 11.5
   - 11
-  - 10
-  - 9
   cast: 0
 - id: GwenR
   name: Needlework
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

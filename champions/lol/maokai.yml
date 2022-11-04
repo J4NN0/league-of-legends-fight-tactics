@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Maokai
 name: Maokai
+title: the Twisted Treant
 tags: Tank, Mage
+passive:
+  name: Sap Magic
+  description: Maokai's basic attack also heals him and deals additional damage on
+    a moderate cooldown. Each time Maokai casts a spell or is struck by an enemy's
+    spell, this cooldown is reduced.
 stats:
-  hp: 565
-  hp_per_level: 95
-  armor: 39
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 635
   attack_damage: 64
-  attack_damage_per_level: 3.3
-  attack_speed: 0.8
-  attack_speed_per_level: 2.125
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 64
-  max_rank: 1
   cooldown:
-  - 0.8
+  - 0
   cast: 0
 - id: MaokaiQ
   name: Bramble Smash
-  damage:
-  - 70
-  - 110
-  - 150
-  - 190
-  - 230
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 7.25
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: MaokaiW
   name: Twisted Advance
+  max_rank: 5
   damage:
   - 60
   - 85
   - 110
   - 135
   - 160
-  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: MaokaiE
   name: Sapling Toss
-  damage:
-  - 20
-  - 45
-  - 70
-  - 95
-  - 120
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 10
   - 10
@@ -71,13 +70,13 @@ spells:
   cast: 0
 - id: MaokaiR
   name: Nature's Grasp
-  damage:
-  - 150
-  - 225
-  - 300
   max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
   cooldown:
   - 120
+  - 110
   - 100
-  - 80
   cast: 0

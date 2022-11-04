@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Riven
 name: Riven
+title: the Exile
 tags: Fighter, Assassin
+passive:
+  name: Runic Blade
+  description: Riven's abilities charge her blade, and her basic attacks expend charges
+    to deal an additional damage.
 stats:
-  hp: 560
-  hp_per_level: 86
-  armor: 33
-  armor_per_level: 3.2
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 630
   attack_damage: 64
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 64
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: RivenTriCleave
   name: Broken Wings
+  max_rank: 5
   damage:
   - 15
   - 35
   - 55
   - 75
   - 95
-  max_rank: 5
   cooldown:
   - 13
   - 13
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: RivenMartyr
   name: Ki Burst
+  max_rank: 5
   damage:
   - 65
   - 95
   - 125
   - 155
   - 185
-  max_rank: 5
   cooldown:
   - 11
   - 10
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: RivenFeint
   name: Valor
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 80
+  - 105
+  - 130
+  - 155
+  - 180
   cooldown:
   - 10
   - 9
@@ -71,13 +69,11 @@ spells:
   cast: 0
 - id: RivenFengShuiEngine
   name: Blade of the Exile
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 100
+  - 150
+  - 200
   cooldown:
   - 120
   - 90

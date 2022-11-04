@@ -1,35 +1,35 @@
-version: 12.3.1
+id: Caitlyn
 name: Caitlyn
+title: the Sheriff of Piltover
 tags: Marksman
+passive:
+  name: Headshot
+  description: Every few basic attacks, or against a target she has trapped or netted,
+    Caitlyn will fire a headshot dealing bonus damage that scales with her critical
+    strike chance. On trapped or netted targets, Caitlyn's Headshot attack range is
+    doubled.
 stats:
-  hp: 510
-  hp_per_level: 93
-  armor: 28
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 580
   attack_damage: 62
-  attack_damage_per_level: 3.4
-  attack_speed: 0.681
-  attack_speed_per_level: 4
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 62
-  max_rank: 1
   cooldown:
-  - 0.681
+  - 0
   cast: 0
 - id: CaitlynQ
   name: Piltover Peacemaker
-  damage:
-  - 50
-  - 90
-  - 130
-  - 170
-  - 210
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 10
   - 9
@@ -39,13 +39,13 @@ spells:
   cast: 0
 - id: CaitlynW
   name: Yordle Snap Trap
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   cooldown:
   - 0.5
   - 0.5
@@ -55,25 +55,27 @@ spells:
   cast: 0
 - id: CaitlynE
   name: 90 Caliber Net
-  damage:
-  - 70
-  - 110
-  - 150
-  - 190
-  - 230
   max_rank: 5
+  damage:
+  - 80
+  - 130
+  - 180
+  - 230
+  - 280
   cooldown:
   - 16
-  - 14.5
-  - 13
-  - 11.5
+  - 14
+  - 12
   - 10
+  - 8
   cast: 0
 - id: CaitlynR
   name: Ace in the Hole
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 90
   - 75

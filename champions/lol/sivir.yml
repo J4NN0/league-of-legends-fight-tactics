@@ -1,79 +1,78 @@
-version: 12.3.1
+id: Sivir
 name: Sivir
+title: the Battle Mistress
 tags: Marksman
+passive:
+  name: Fleet of Foot
+  description: Sivir gains a short burst of Move Speed when she attacks an enemy champion.
 stats:
-  hp: 562
-  hp_per_level: 90
-  armor: 26
-  armor_per_level: 3.25
-  spell_block: 30
-  spell_block_per_level: 0.5
-  attack_damage: 63
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 1.6
+  health_points: 600
+  attack_damage: 58
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
-  damage:
-  - 63
   max_rank: 1
+  damage:
+  - 58
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SivirQ
   name: Boomerang Blade
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 7
-  - 7
-  - 7
-  - 7
-  - 7
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
   cast: 0
 - id: SivirW
   name: Ricochet
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
-  - 10.5
-  - 9
-  - 7.5
-  - 6
+  - 12
+  - 12
+  - 12
+  - 12
   cast: 0
 - id: SivirE
   name: Spell Shield
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
+  - 1.5
   cooldown:
-  - 22
-  - 19
-  - 16
-  - 13
-  - 10
+  - 24
+  - 22.5
+  - 21
+  - 19.5
+  - 18
   cast: 0
 - id: SivirR
   name: On The Hunt
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

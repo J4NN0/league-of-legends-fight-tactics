@@ -1,35 +1,37 @@
-version: 12.3.1
+id: Sona
 name: Sona
+title: Maven of the Strings
 tags: Support, Mage
+passive:
+  name: Power Chord
+  description: '<passive>Accelerando</passive>: Sona gains non-Ultimate ability haste
+    permanently for her basic abilities as she uses her abilities well, up to a cap.
+    Beyond that cap, further successful uses reduce her ultimate''s remaining cooldown
+    instead.<br><br><passive>Power Chord</passive>: Every few spell casts, Sona''s
+    next attack will deal bonus magic damage in addition to an additional effect based
+    on what basic Ability Sona last activated.'
 stats:
-  hp: 480
-  hp_per_level: 77
-  armor: 26
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 550
   attack_damage: 49
-  attack_damage_per_level: 3
-  attack_speed: 0.644
-  attack_speed_per_level: 2.3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 49
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: SonaQ
   name: Hymn of Valor
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -39,13 +41,13 @@ spells:
   cast: 0
 - id: SonaW
   name: Aria of Perseverance
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 10
   - 10
@@ -55,13 +57,13 @@ spells:
   cast: 0
 - id: SonaE
   name: Song of Celerity
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 14
   - 14
@@ -71,9 +73,11 @@ spells:
   cast: 0
 - id: SonaR
   name: Crescendo
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 140
   - 120

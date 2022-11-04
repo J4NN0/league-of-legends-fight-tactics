@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Mordekaiser
 name: Mordekaiser
+title: the Iron Revenant
 tags: Fighter
+passive:
+  name: Darkness Rise
+  description: Mordekaiser gains a powerful damage aura and Move Speed after landing
+    3 attacks or spells against champions or monsters.
 stats:
-  hp: 575
-  hp_per_level: 90
-  armor: 37
-  armor_per_level: 3
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 645
   attack_damage: 61
-  attack_damage_per_level: 4
-  attack_speed: 0.625
-  attack_speed_per_level: 1
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: MordekaiserQ
   name: Obliterate
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 9
   - 7.75
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: MordekaiserW
   name: Indestructible
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -51,9 +53,13 @@ spells:
   cast: 0
 - id: MordekaiserE
   name: Death's Grasp
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 18
   - 16
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: MordekaiserR
   name: Realm of Death
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 140
   - 120

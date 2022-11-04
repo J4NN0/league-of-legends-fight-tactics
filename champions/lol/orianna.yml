@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Orianna
 name: Orianna
+title: the Lady of Clockwork
 tags: Mage, Support
+passive:
+  name: Clockwork Windup
+  description: Orianna's Attacks deal additional magic damage. This damage increases
+    the more Orianna Attacks the same target.
 stats:
-  hp: 530
-  hp_per_level: 91
-  armor: 17
-  armor_per_level: 3
-  spell_block: 26
-  spell_block_per_level: 0.5
+  health_points: 600
   attack_damage: 40
-  attack_damage_per_level: 2.6
-  attack_speed: 0.658
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 40
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: OrianaIzunaCommand
   name: 'Command: Attack'
+  max_rank: 5
   damage:
   - 60
   - 90
   - 120
   - 150
   - 180
-  max_rank: 5
   cooldown:
   - 6
   - 5.25
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: OrianaDissonanceCommand
   name: 'Command: Dissonance'
+  max_rank: 5
   damage:
   - 60
   - 105
   - 150
   - 195
   - 240
-  max_rank: 5
   cooldown:
   - 7
   - 7
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: OrianaRedactCommand
   name: 'Command: Protect'
-  damage:
-  - 60
-  - 100
-  - 140
-  - 180
-  - 220
   max_rank: 5
+  damage:
+  - 55
+  - 90
+  - 125
+  - 160
+  - 195
   cooldown:
   - 9
   - 9
@@ -71,9 +69,11 @@ spells:
   cast: 0
 - id: OrianaDetonateCommand
   name: 'Command: Shockwave'
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 110
   - 95

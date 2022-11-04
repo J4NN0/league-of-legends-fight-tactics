@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Lulu
 name: Lulu
+title: the Fae Sorceress
 tags: Support, Mage
+passive:
+  name: Pix, Faerie Companion
+  description: Pix fires magical bolts of energy whenever the champion he's following
+    attacks another enemy unit. These bolts are homing, but can be intercepted by
+    other units.
 stats:
-  hp: 525
-  hp_per_level: 74
-  armor: 29
-  armor_per_level: 3.7
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 595
   attack_damage: 47
-  attack_damage_per_level: 2.6
-  attack_speed: 0.625
-  attack_speed_per_level: 2.25
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 47
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: LuluQ
   name: Glitterlance
+  max_rank: 5
   damage:
   - 70
   - 105
   - 140
   - 175
   - 210
-  max_rank: 5
   cooldown:
   - 7
   - 7
@@ -39,29 +38,29 @@ spells:
   cast: 0
 - id: LuluW
   name: Whimsy
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
+  - 0.25
   cooldown:
   - 17
+  - 16.5
   - 16
+  - 15.5
   - 15
-  - 14
-  - 13
   cast: 0
 - id: LuluE
   name: Help, Pix!
-  damage:
-  - 80
-  - 120
-  - 160
-  - 200
-  - 240
   max_rank: 5
+  damage:
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
   cooldown:
   - 8
   - 8
@@ -71,13 +70,11 @@ spells:
   cast: 0
 - id: LuluR
   name: Wild Growth
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

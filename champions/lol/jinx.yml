@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Jinx
 name: Jinx
+title: the Loose Cannon
 tags: Marksman
+passive:
+  name: Get Excited!
+  description: Jinx receives massively increased Move Speed and Attack Speed whenever
+    she helps kill or destroy an enemy champions epic jungle monster, or structure.
 stats:
-  hp: 610
-  hp_per_level: 86
-  armor: 26
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
-  attack_damage: 57
-  attack_damage_per_level: 3.4
-  attack_speed: 0.625
-  attack_speed_per_level: 1
+  health_points: 630
+  attack_damage: 59
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
-  damage:
-  - 57
   max_rank: 1
+  damage:
+  - 59
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: JinxQ
   name: Switcheroo!
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 0.9
   - 0.9
@@ -39,9 +37,13 @@ spells:
   cast: 0
 - id: JinxW
   name: Zap!
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 7
@@ -51,9 +53,13 @@ spells:
   cast: 0
 - id: JinxE
   name: Flame Chompers!
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 24
   - 20.5
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: JinxR
   name: Super Mega Death Rocket!
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 75
   - 65

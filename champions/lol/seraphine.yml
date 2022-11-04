@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Seraphine
 name: Seraphine
+title: the Starry-Eyed Songstress
 tags: Mage, Support
+passive:
+  name: Stage Presence
+  description: Every third basic spell will cast twice from Seraphine. Additionally,
+    casting spells near allies grants her bonus magic damage and range on her next
+    basic attack.
 stats:
-  hp: 500
-  hp_per_level: 90
-  armor: 19
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 570
   attack_damage: 55
-  attack_damage_per_level: 3
-  attack_speed: 0.669
-  attack_speed_per_level: 1
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 55
-  max_rank: 1
   cooldown:
-  - 0.669
+  - 0
   cast: 0
 - id: SeraphineQ
   name: High Note
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 10
   - 8.75
@@ -39,41 +38,43 @@ spells:
   cast: 0
 - id: SeraphineW
   name: Surround Sound
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
+  - 28
   - 26
-  - 25
   - 24
-  - 23
   - 22
+  - 20
   cast: 0
 - id: SeraphineE
   name: Beat Drop
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 13
-  - 12
-  - 11
   - 10
-  - 9
+  - 10
+  - 10
+  - 10
+  - 10
   cast: 0
 - id: SeraphineR
   name: Encore
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 160
   - 130

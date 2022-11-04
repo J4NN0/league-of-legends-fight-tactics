@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Annie
 name: Annie
+title: the Dark Child
 tags: Mage
+passive:
+  name: Pyromania
+  description: After casting 4 spells, Annie's next offensive spell will stun the
+    target.
 stats:
-  hp: 524
-  hp_per_level: 88
-  armor: 19
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 594
   attack_damage: 50
-  attack_damage_per_level: 2.63
-  attack_speed: 0.579
-  attack_speed_per_level: 1.36
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 50
-  max_rank: 1
   cooldown:
-  - 0.579
+  - 0
   cast: 0
 - id: AnnieQ
   name: Disintegrate
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 4
   - 4
@@ -35,9 +37,13 @@ spells:
   cast: 0
 - id: AnnieW
   name: Incinerate
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 8
@@ -47,13 +53,13 @@ spells:
   cast: 0
 - id: AnnieE
   name: Molten Shield
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 14
   - 13
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: AnnieR
   name: 'Summon: Tibbers'
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 100

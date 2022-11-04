@@ -1,74 +1,83 @@
-version: 12.3.1
+id: Sylas
 name: Sylas
+title: the Unshackled
 tags: Mage, Assassin
+passive:
+  name: Petricite Burst
+  description: 'After casting a spell, Sylas stores a charge of Petricite Burst. Sylas''s
+    basic attacks will expend a charge and whirl his energized chains around him dealing
+    bonus magic damage to enemies hit. While Sylas has a charge of Petricite Burst,
+    he gains attack speed. '
 stats:
-  hp: 525
-  hp_per_level: 115
-  armor: 27
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.75
+  health_points: 575
   attack_damage: 61
-  attack_damage_per_level: 3
-  attack_speed: 0.645
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.645
+  - 0
   cast: 0
 - id: SylasQ
   name: Chain Lash
+  max_rank: 5
   damage:
   - 0
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
   cooldown:
+  - 11
   - 10
   - 9
   - 8
   - 7
-  - 6
   cast: 0
 - id: SylasW
   name: Kingslayer
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 13
-  - 11.25
-  - 9.5
-  - 7.75
+  - 12
+  - 10.5
+  - 9
+  - 7.5
   - 6
   cast: 0
 - id: SylasE
   name: Abscond / Abduct
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 14
   - 13
   - 12
   - 11
   - 10
+  - 9
   cast: 0
 - id: SylasR
   name: Hijack
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
-  - 100
-  - 70
-  - 40
+  - 80
+  - 55
+  - 30
   cast: 0

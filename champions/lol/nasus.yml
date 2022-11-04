@@ -1,35 +1,32 @@
-version: 12.3.1
+id: Nasus
 name: Nasus
+title: the Curator of the Sands
 tags: Fighter, Tank
+passive:
+  name: Soul Eater
+  description: Nasus drains his foe's spiritual energy, giving him bonus Life Steal.
 stats:
-  hp: 561
-  hp_per_level: 90
-  armor: 34
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 631
   attack_damage: 67
-  attack_damage_per_level: 3.5
-  attack_speed: 0.638
-  attack_speed_per_level: 3.48
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 67
-  max_rank: 1
   cooldown:
-  - 0.638
+  - 0
   cast: 0
 - id: NasusQ
   name: Siphoning Strike
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 30
+  - 50
+  - 70
+  - 90
+  - 110
   cooldown:
   - 7.5
   - 6.5
@@ -39,13 +36,13 @@ spells:
   cast: 0
 - id: NasusW
   name: Wither
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -55,13 +52,13 @@ spells:
   cast: 0
 - id: NasusE
   name: Spirit Fire
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 11
+  - 19
+  - 27
+  - 35
+  - 43
   cooldown:
   - 12
   - 12
@@ -71,13 +68,11 @@ spells:
   cast: 0
 - id: NasusR
   name: Fury of the Sands
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 120

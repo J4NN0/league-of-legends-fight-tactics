@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Ahri
 name: Ahri
+title: the Nine-Tailed Fox
 tags: Mage, Assassin
+passive:
+  name: Essence Theft
+  description: After killing 9 minions or monsters, Ahri heals.<br>After taking down
+    an enemy champion, Ahri heals for a greater amount.
 stats:
-  hp: 500
-  hp_per_level: 82
-  armor: 18
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 570
   attack_damage: 53
-  attack_damage_per_level: 3
-  attack_speed: 0.668
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 53
-  max_rank: 1
   cooldown:
-  - 0.668
+  - 0
   cast: 0
 - id: AhriOrbofDeception
   name: Orb of Deception
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 7
   - 7
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: AhriFoxFire
   name: Fox-Fire
-  damage:
-  - 60
-  - 85
-  - 110
-  - 135
-  - 160
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 9
   - 8
@@ -51,27 +53,29 @@ spells:
   cast: 0
 - id: AhriSeduce
   name: Charm
-  damage:
-  - 80
-  - 110
-  - 140
-  - 170
-  - 200
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 12
-  - 12
-  - 12
-  - 12
-  - 12
+  - 14
+  - 14
+  - 14
+  - 14
+  - 14
   cast: 0
 - id: AhriTumble
   name: Spirit Rush
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
-  - 130
-  - 105
-  - 80
+  - 140
+  - 115
+  - 90
   cast: 0

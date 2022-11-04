@@ -1,31 +1,37 @@
-version: 12.3.1
+id: Senna
 name: Senna
+title: the Redeemer
 tags: Marksman, Support
+passive:
+  name: Absolution
+  description: When units die near Senna, their souls are periodically trapped by
+    the Black Mist. Senna can attack these souls to free them, absorbing the Mist
+    that held them in death. Mist fuels her Relic Cannon's power with increased Attack
+    Damage, Attack Range, and Critical Strike Chance. <br><br>Attacks from Senna's
+    Relic Cannon take longer to fire, deal bonus damage, and briefly grant her a portion
+    of her target's Move Speed.
 stats:
-  hp: 520
-  hp_per_level: 75
-  armor: 28
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 530
   attack_damage: 50
-  attack_damage_per_level: 0
-  attack_speed: 0.625
-  attack_speed_per_level: 4
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 50
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SennaQ
   name: Piercing Darkness
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 15
   - 15
@@ -35,9 +41,13 @@ spells:
   cast: 0
 - id: SennaW
   name: Last Embrace
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 11
   - 11
@@ -47,13 +57,13 @@ spells:
   cast: 0
 - id: SennaE
   name: Curse of the Black Mist
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 26
   - 24.5
@@ -63,9 +73,11 @@ spells:
   cast: 0
 - id: SennaR
   name: Dawning Shadow
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 160
   - 140

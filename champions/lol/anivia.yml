@@ -1,47 +1,49 @@
-version: 12.3.1
+id: Anivia
 name: Anivia
+title: the Cryophoenix
 tags: Mage, Support
+passive:
+  name: Rebirth
+  description: Upon taking fatal damage, Anivia reverts to an egg and is reborn with
+    full health.
 stats:
-  hp: 480
-  hp_per_level: 82
-  armor: 21
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 550
   attack_damage: 51
-  attack_damage_per_level: 3.2
-  attack_speed: 0.625
-  attack_speed_per_level: 1.68
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 51
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: FlashFrost
   name: Flash Frost
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
+  - 12
   - 11
   - 10
   - 9
   - 8
-  - 7
   cast: 0
 - id: Crystallize
   name: Crystallize
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
   cooldown:
   - 17
   - 17
@@ -51,9 +53,13 @@ spells:
   cast: 0
 - id: Frostbite
   name: Frostbite
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 4
   - 4
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: GlacialStorm
   name: Glacial Storm
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 4
   - 3

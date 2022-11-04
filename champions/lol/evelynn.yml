@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Evelynn
 name: Evelynn
+title: Agony's Embrace
 tags: Assassin, Mage
+passive:
+  name: Demon Shade
+  description: When out of combat, Evelynn enters Demon Shade. Demon Shade heals Evelynn
+    when she is low on health and grants Camouflage after level 6.
 stats:
-  hp: 572
-  hp_per_level: 84
-  armor: 37
-  armor_per_level: 3.5
-  spell_block: 32.1
-  spell_block_per_level: 1.25
+  health_points: 642
   attack_damage: 61
-  attack_damage_per_level: 3
-  attack_speed: 0.667
-  attack_speed_per_level: 2.1
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.667
+  - 0
   cast: 0
 - id: EvelynnQ
   name: Hate Spike
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 4
   - 4
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: EvelynnW
   name: Allure
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   cooldown:
   - 15
   - 14
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: EvelynnE
   name: Whiplash
+  max_rank: 5
   damage:
   - 55
   - 70
   - 85
   - 100
   - 115
-  max_rank: 5
   cooldown:
   - 8
   - 8
@@ -71,11 +69,11 @@ spells:
   cast: 0
 - id: EvelynnR
   name: Last Caress
+  max_rank: 3
   damage:
   - 125
   - 250
   - 375
-  max_rank: 3
   cooldown:
   - 120
   - 100

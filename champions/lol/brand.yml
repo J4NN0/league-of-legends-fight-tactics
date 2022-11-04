@@ -1,35 +1,36 @@
-version: 12.3.1
+id: Brand
 name: Brand
+title: the Burning Vengeance
 tags: Mage
+passive:
+  name: Blaze
+  description: Brand's spells light his targets ablaze, dealing damage over 4 seconds,
+    stacking up to 3 times. If Brand kills an enemy while it is ablaze he regains
+    mana. When Blaze reaches max stacks on a Champion or large monster, it becomes
+    unstable. It detonates in 2 seconds, applying spell effects and dealing massive
+    damage in an area around the victim.
 stats:
-  hp: 520
-  hp_per_level: 88
-  armor: 22
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 590
   attack_damage: 57
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 1.36
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 57
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: BrandQ
   name: Sear
+  max_rank: 5
   damage:
   - 80
   - 110
   - 140
   - 170
   - 200
-  max_rank: 5
   cooldown:
   - 8
   - 7.5
@@ -39,13 +40,13 @@ spells:
   cast: 0
 - id: BrandW
   name: Pillar of Flame
+  max_rank: 5
   damage:
   - 75
   - 120
   - 165
   - 210
   - 255
-  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -55,13 +56,13 @@ spells:
   cast: 0
 - id: BrandE
   name: Conflagration
+  max_rank: 5
   damage:
   - 70
   - 95
   - 120
   - 145
   - 170
-  max_rank: 5
   cooldown:
   - 12
   - 11
@@ -71,13 +72,11 @@ spells:
   cast: 0
 - id: BrandR
   name: Pyroclasm
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 105
   - 90

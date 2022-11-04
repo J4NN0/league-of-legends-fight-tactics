@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Shen
 name: Shen
+title: the Eye of Twilight
 tags: Tank
+passive:
+  name: Ki Barrier
+  description: After casting a spell, Shen gets a shield. Affecting other champions
+    reduces the cooldown of this effect.
 stats:
-  hp: 540
-  hp_per_level: 85
-  armor: 34
-  armor_per_level: 3
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 610
   attack_damage: 60
-  attack_damage_per_level: 3
-  attack_speed: 0.751
-  attack_speed_per_level: 3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 60
-  max_rank: 1
   cooldown:
-  - 0.751
+  - 0
   cast: 0
 - id: ShenQ
   name: Twilight Assault
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   cooldown:
   - 8
   - 7.25
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: ShenW
   name: Spirit's Refuge
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 1.75
+  - 1.75
+  - 1.75
+  - 1.75
+  - 1.75
   cooldown:
   - 18
   - 16.5
@@ -55,9 +53,13 @@ spells:
   cast: 0
 - id: ShenE
   name: Shadow Dash
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 18
   - 16
@@ -67,13 +69,11 @@ spells:
   cast: 0
 - id: ShenR
   name: Stand United
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 200
   - 180

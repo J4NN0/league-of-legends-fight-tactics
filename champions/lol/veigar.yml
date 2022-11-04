@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Veigar
 name: Veigar
+title: the Tiny Master of Evil
 tags: Mage
+passive:
+  name: Phenomenal Evil Power
+  description: Veigar is the greatest Evil to ever strike at the hearts of Runeterra
+    - and he's only getting bigger! Striking an enemy Champion with a spell or scoring
+    a takedown grants Veigar permanently increased Ability Power.
 stats:
-  hp: 505
-  hp_per_level: 94
-  armor: 23
-  armor_per_level: 3.75
-  spell_block: 32
-  spell_block_per_level: 0.5
+  health_points: 575
   attack_damage: 52
-  attack_damage_per_level: 2.7
-  attack_speed: 0.625
-  attack_speed_per_level: 2.24
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 52
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: VeigarBalefulStrike
   name: Baleful Strike
+  max_rank: 5
   damage:
   - 80
   - 120
   - 160
   - 200
   - 240
-  max_rank: 5
   cooldown:
   - 6
   - 5.5
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: VeigarDarkMatter
   name: Dark Matter
+  max_rank: 5
   damage:
   - 100
   - 150
   - 200
   - 250
   - 300
-  max_rank: 5
   cooldown:
   - 0
   - 0
@@ -55,27 +54,27 @@ spells:
   cast: 0
 - id: VeigarEventHorizon
   name: Event Horizon
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 1.5
+  - 1.75
+  - 2
+  - 2.25
+  - 2.5
   cooldown:
-  - 18
-  - 16.5
-  - 15
-  - 13.5
-  - 12
+  - 20
+  - 18.5
+  - 17
+  - 15.5
+  - 14
   cast: 0
 - id: VeigarR
   name: Primordial Burst
+  max_rank: 3
   damage:
   - 175
   - 250
   - 325
-  max_rank: 3
   cooldown:
   - 120
   - 90

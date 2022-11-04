@@ -1,35 +1,32 @@
-version: 12.3.1
+id: Zoe
 name: Zoe
+title: the Aspect of Twilight
 tags: Mage, Support
+passive:
+  name: More Sparkles!
+  description: Zoe's next basic attack after casting a spell deals bonus magic damage.
 stats:
-  hp: 560
-  hp_per_level: 92
-  armor: 21
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 630
   attack_damage: 58
-  attack_damage_per_level: 3.3
-  attack_speed: 0.625
-  attack_speed_per_level: 2.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 58
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: ZoeQ
   name: Paddle Star!
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 50
+  - 80
+  - 110
+  - 140
+  - 170
   cooldown:
   - 8.5
   - 8
@@ -39,9 +36,13 @@ spells:
   cast: 0
 - id: ZoeW
   name: Spell Thief
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 0.25
   - 0.25
@@ -51,13 +52,13 @@ spells:
   cast: 0
 - id: ZoeE
   name: Sleepy Trouble Bubble
-  damage:
-  - 60
-  - 100
-  - 140
-  - 180
-  - 220
   max_rank: 5
+  damage:
+  - 70
+  - 110
+  - 150
+  - 190
+  - 230
   cooldown:
   - 16
   - 15
@@ -67,13 +68,11 @@ spells:
   cast: 0
 - id: ZoeR
   name: Portal Jump
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - -0.3
+  - -0.4
+  - -0.5
   cooldown:
   - 11
   - 8

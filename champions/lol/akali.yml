@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Akali
 name: Akali
+title: the Rogue Assassin
 tags: Assassin
+passive:
+  name: Assassin's Mark
+  description: Dealing spell damage to a champion creates a ring of energy around
+    them. Exiting that ring empowers Akali's next Attack with bonus range and damage.
 stats:
-  hp: 500
-  hp_per_level: 105
-  armor: 23
-  armor_per_level: 3.5
-  spell_block: 37
-  spell_block_per_level: 1.25
+  health_points: 570
   attack_damage: 62
-  attack_damage_per_level: 3.3
-  attack_speed: 0.625
-  attack_speed_per_level: 3.2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 62
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: AkaliQ
   name: Five Point Strike
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 1.5
   - 1.5
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: AkaliW
   name: Twilight Shroud
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 140
+  - 140
+  - 140
+  - 140
+  - 140
   cooldown:
   - 20
   - 20
@@ -51,13 +53,13 @@ spells:
   cast: 0
 - id: AkaliE
   name: Shuriken Flip
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
   cooldown:
   - 16
   - 14.5
@@ -67,13 +69,11 @@ spells:
   cast: 0
 - id: AkaliR
   name: Perfect Execution
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 60
+  - 120
+  - 180
   cooldown:
   - 100
   - 80

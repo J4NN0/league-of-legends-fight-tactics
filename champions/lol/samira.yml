@@ -1,31 +1,36 @@
-version: 12.3.1
+id: Samira
 name: Samira
+title: the Desert Rose
 tags: Marksman
+passive:
+  name: Daredevil Impulse
+  description: Samira builds a combo by hitting attacks or abilities unique from the
+    previous hit. Samira's attacks in melee range deal additional magic damage. Samira's
+    attacks against enemies affected by <status>Immobilizing</status> effects will
+    dash her to her attack range. If the enemy is <status>Knocked Up</status>, she
+    also keeps them <status>Knocked Up</status> briefly.
 stats:
-  hp: 530
-  hp_per_level: 88
-  armor: 26
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 600
   attack_damage: 57
-  attack_damage_per_level: 3
-  attack_speed: 0.658
-  attack_speed_per_level: 3.3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 57
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: SamiraQ
   name: Flair
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 6
   - 5
@@ -35,9 +40,13 @@ spells:
   cast: 0
 - id: SamiraW
   name: Blade Whirl
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 30
   - 28
@@ -47,9 +56,13 @@ spells:
   cast: 0
 - id: SamiraE
   name: Wild Rush
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 20
   - 18
@@ -59,11 +72,13 @@ spells:
   cast: 0
 - id: SamiraR
   name: Inferno Trigger
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
-  - 8
-  - 8
-  - 8
+  - 5
+  - 5
+  - 5
   cast: 0

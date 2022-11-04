@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Volibear
 name: Volibear
+title: the Relentless Storm
 tags: Fighter, Tank
+passive:
+  name: The Relentless Storm
+  description: Volibear's Attacks and abilities grant Attack Speed, and eventually
+    cause his Attacks to deal bonus magic damage to nearby enemies.
 stats:
-  hp: 580
-  hp_per_level: 90
-  armor: 31
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 650
   attack_damage: 60
-  attack_damage_per_level: 3.5
-  attack_speed: 0.625
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 60
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: VolibearQ
   name: Thundering Smash
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 14
   - 13
@@ -35,9 +37,13 @@ spells:
   cast: 0
 - id: VolibearW
   name: Frenzied Maul
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 5
   - 5
@@ -47,9 +53,13 @@ spells:
   cast: 0
 - id: VolibearE
   name: Sky Splitter
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 13
   - 13
@@ -59,11 +69,11 @@ spells:
   cast: 0
 - id: VolibearR
   name: Stormbringer
+  max_rank: 3
   damage:
   - 75
   - 115
   - 155
-  max_rank: 3
   cooldown:
   - 160
   - 140

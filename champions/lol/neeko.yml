@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Neeko
 name: Neeko
+title: the Curious Chameleon
 tags: Mage, Support
+passive:
+  name: Inherent Glamour
+  description: Neeko can look like an ally champion. Taking damage from enemy Champions
+    or casting damaging spells breaks the disguise.
 stats:
-  hp: 540
-  hp_per_level: 90
-  armor: 21
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 610
   attack_damage: 48
-  attack_damage_per_level: 2.5
-  attack_speed: 0.625
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 48
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: NeekoQ
   name: Blooming Burst
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 7
   - 7
@@ -35,25 +37,29 @@ spells:
   cast: 0
 - id: NeekoW
   name: Shapesplitter
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
-  - 20
-  - 19
-  - 18
-  - 17
   - 16
+  - 15
+  - 14
+  - 13
+  - 12
   cast: 0
 - id: NeekoE
   name: Tangle-Barbs
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11.5
@@ -63,9 +69,11 @@ spells:
   cast: 0
 - id: NeekoR
   name: Pop Blossom
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 90
   - 90

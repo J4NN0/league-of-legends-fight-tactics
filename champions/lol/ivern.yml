@@ -1,35 +1,35 @@
-version: 12.3.1
+id: Ivern
 name: Ivern
+title: the Green Father
 tags: Support, Mage
+passive:
+  name: Friend of the Forest
+  description: Ivern cannot attack or be attacked by non-epic monsters. Ivern can
+    create magical groves on jungle camps which grow over time. When the grove is
+    fully grown, Ivern may free the monsters to receive gold and experience. After
+    level 5 Ivern can share jungle buffs with allies.
 stats:
-  hp: 585
-  hp_per_level: 85
-  armor: 27
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 655
   attack_damage: 50
-  attack_damage_per_level: 3
-  attack_speed: 0.644
-  attack_speed_per_level: 3.4
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 50
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: IvernQ
   name: Rootcaller
-  damage:
-  - 15
-  - 20
-  - 25
-  - 30
-  - 35
   max_rank: 5
+  damage:
+  - 1.2
+  - 1.4
+  - 1.6
+  - 1.8
+  - 2
   cooldown:
   - 14
   - 13
@@ -39,13 +39,13 @@ spells:
   cast: 0
 - id: IvernW
   name: Brushmaker
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
   cooldown:
   - 0.5
   - 0.5
@@ -55,13 +55,13 @@ spells:
   cast: 0
 - id: IvernE
   name: Triggerseed
-  damage:
-  - 70
-  - 90
-  - 110
-  - 130
-  - 150
   max_rank: 5
+  damage:
+  - 80
+  - 115
+  - 150
+  - 185
+  - 220
   cooldown:
   - 11
   - 10
@@ -71,13 +71,11 @@ spells:
   cast: 0
 - id: IvernR
   name: Daisy!
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 1300
+  - 2600
+  - 3900
   cooldown:
   - 140
   - 130

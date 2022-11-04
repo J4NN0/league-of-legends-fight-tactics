@@ -1,35 +1,35 @@
-version: 12.3.1
+id: Katarina
 name: Katarina
+title: the Sinister Blade
 tags: Assassin, Mage
+passive:
+  name: Voracity
+  description: Whenever an enemy champion dies that Katarina has damaged recently,
+    her remaining ability cooldowns are dramatically reduced.<br><br>If Katarina picks
+    up a <font color='#FFF673'>Dagger</font>, she uses it to slash through all nearby
+    enemies, dealing magic damage.
 stats:
-  hp: 602
-  hp_per_level: 94
-  armor: 28
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 672
   attack_damage: 58
-  attack_damage_per_level: 3.2
-  attack_speed: 0.658
-  attack_speed_per_level: 2.74
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 58
-  max_rank: 1
   cooldown:
-  - 0.658
+  - 0
   cast: 0
 - id: KatarinaQ
   name: Bouncing Blade
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 11
   - 10
@@ -39,13 +39,13 @@ spells:
   cast: 0
 - id: KatarinaW
   name: Preparation
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 15
   - 14
@@ -55,13 +55,13 @@ spells:
   cast: 0
 - id: KatarinaEWrapper
   name: Shunpo
-  damage:
-  - 15
-  - 30
-  - 45
-  - 60
-  - 75
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 14
   - 12.5
@@ -71,13 +71,11 @@ spells:
   cast: 0
 - id: KatarinaR
   name: Death Lotus
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 90
   - 60

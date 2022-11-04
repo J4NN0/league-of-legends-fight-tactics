@@ -1,31 +1,32 @@
-version: 12.3.1
+id: Kennen
 name: Kennen
+title: the Heart of the Tempest
 tags: Mage, Marksman
+passive:
+  name: Mark of the Storm
+  description: Kennen stuns enemies he hits 3 times with his abilities.
 stats:
-  hp: 541
-  hp_per_level: 84
-  armor: 29
-  armor_per_level: 3.75
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 611
   attack_damage: 48
-  attack_damage_per_level: 3.75
-  attack_speed: 0.625
-  attack_speed_per_level: 3.4
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 48
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: KennenShurikenHurlMissile1
   name: Thundering Shuriken
-  damage:
-  - 0
   max_rank: 5
+  damage:
+  - 75
+  - 120
+  - 165
+  - 210
+  - 255
   cooldown:
   - 8
   - 7
@@ -35,29 +36,29 @@ spells:
   cast: 0
 - id: KennenBringTheLight
   name: Electrical Surge
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 70
+  - 95
+  - 120
+  - 145
+  - 170
   cooldown:
-  - 14
-  - 12
-  - 10
-  - 8
+  - 13
+  - 11.25
+  - 9.5
+  - 7.75
   - 6
   cast: 0
 - id: KennenLightningRush
   name: Lightning Rush
-  damage:
-  - 10
-  - 20
-  - 30
-  - 40
-  - 50
   max_rank: 5
+  damage:
+  - 85
+  - 125
+  - 165
+  - 205
+  - 245
   cooldown:
   - 10
   - 9
@@ -67,9 +68,11 @@ spells:
   cast: 0
 - id: KennenShurikenStorm
   name: Slicing Maelstrom
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 120
   - 120

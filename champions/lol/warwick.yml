@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Warwick
 name: Warwick
+title: the Uncaged Wrath of Zaun
 tags: Fighter, Tank
+passive:
+  name: Eternal Hunger
+  description: Warwick's basic attacks deal bonus magic damage. If Warwick is below
+    50% health, he heals the same amount. If Warwick is below 25% health, this healing
+    triples.
 stats:
-  hp: 550
-  hp_per_level: 85
-  armor: 33
-  armor_per_level: 3.2
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 620
   attack_damage: 65
-  attack_damage_per_level: 3
-  attack_speed: 0.638
-  attack_speed_per_level: 2.3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 65
-  max_rank: 1
   cooldown:
-  - 0.638
+  - 0
   cast: 0
 - id: WarwickQ
   name: Jaws of the Beast
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
   cooldown:
   - 6
   - 6
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: WarwickW
   name: Blood Hunt
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
   cooldown:
   - 120
   - 105
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: WarwickE
   name: Primal Howl
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
   cooldown:
   - 15
   - 14
@@ -71,9 +70,11 @@ spells:
   cast: 0
 - id: WarwickR
   name: Infinite Duress
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 110
   - 90

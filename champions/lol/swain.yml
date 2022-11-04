@@ -1,51 +1,49 @@
-version: 12.3.1
+id: Swain
 name: Swain
+title: the Noxian Grand General
 tags: Mage, Fighter
+passive:
+  name: Ravenous Flock
+  description: Swain's ravens collect <i>Soul Fragments</i> that heal him and permanently
+    increase his maximum health.
 stats:
-  hp: 525
-  hp_per_level: 85
-  armor: 23
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 595
   attack_damage: 58
-  attack_damage_per_level: 2.7
-  attack_speed: 0.625
-  attack_speed_per_level: 2.11
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 58
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: SwainQ
   name: Death's Hand
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 55
+  - 75
+  - 95
+  - 115
+  - 135
   cooldown:
-  - 9
-  - 7.5
+  - 7
   - 6
-  - 4.5
+  - 5
+  - 4
   - 3
   cast: 0
 - id: SwainW
   name: Vision of Empire
+  max_rank: 5
   damage:
   - 80
-  - 120
-  - 160
-  - 200
-  - 240
-  max_rank: 5
+  - 115
+  - 150
+  - 185
+  - 220
   cooldown:
   - 22
   - 21
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: SwainE
   name: Nevermove
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 35
+  - 45
+  - 55
+  - 65
+  - 75
   cooldown:
   - 10
   - 10
@@ -71,15 +69,13 @@ spells:
   cast: 0
 - id: SwainR
   name: Demonic Ascension
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
-  - 120
-  - 120
-  - 120
+  - 100
+  - 80
+  - 60
   cast: 0

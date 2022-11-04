@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Singed
 name: Singed
+title: the Mad Chemist
 tags: Tank, Fighter
+passive:
+  name: Noxious Slipstream
+  description: Singed drafts off nearby champions, gaining a burst of Move Speed when
+    passing them.
 stats:
-  hp: 580
-  hp_per_level: 85
-  armor: 34
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 650
   attack_damage: 63
-  attack_damage_per_level: 3.38
-  attack_speed: 0.613
-  attack_speed_per_level: 1.9
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 63
-  max_rank: 1
   cooldown:
-  - 0.613
+  - 0
   cast: 0
 - id: PoisonTrail
   name: Poison Trail
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 0
   - 0
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: MegaAdhesive
   name: Mega Adhesive
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 50
+  - 55
+  - 60
+  - 65
+  - 70
   cooldown:
   - 17
   - 16
@@ -51,13 +53,13 @@ spells:
   cast: 0
 - id: Fling
   name: Fling
+  max_rank: 5
   damage:
   - 50
   - 60
   - 70
   - 80
   - 90
-  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -67,13 +69,11 @@ spells:
   cast: 0
 - id: InsanityPotion
   name: Insanity Potion
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 110

@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Lux
 name: Lux
+title: the Lady of Luminosity
 tags: Mage, Support
+passive:
+  name: Illumination
+  description: Lux's damaging spells charge the target with energy for a few seconds.
+    Lux's next attack ignites the energy, dealing bonus magic damage (depending on
+    Lux's level) to the target.
 stats:
-  hp: 490
-  hp_per_level: 85
-  armor: 19
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 560
   attack_damage: 54
-  attack_damage_per_level: 3.3
-  attack_speed: 0.669
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 54
-  max_rank: 1
   cooldown:
-  - 0.669
+  - 0
   cast: 0
 - id: LuxLightBinding
   name: Light Binding
+  max_rank: 5
   damage:
   - 80
   - 120
   - 160
   - 200
   - 240
-  max_rank: 5
   cooldown:
   - 11
   - 11
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: LuxPrismaticWave
   name: Prismatic Barrier
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
   cooldown:
   - 14
   - 13
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: LuxLightStrikeKugel
   name: Lucent Singularity
+  max_rank: 5
   damage:
   - 25
   - 30
   - 35
   - 40
   - 45
-  max_rank: 5
   cooldown:
   - 10
   - 9.5
@@ -71,9 +70,11 @@ spells:
   cast: 0
 - id: LuxR
   name: Final Spark
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 60
   - 50

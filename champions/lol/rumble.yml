@@ -1,35 +1,35 @@
-version: 12.3.1
+id: Rumble
 name: Rumble
+title: the Mechanized Menace
 tags: Fighter, Mage
+passive:
+  name: Junkyard Titan
+  description: Every spell Rumble casts gives him Heat. When he reaches 50% Heat he
+    reaches Danger Zone, granting all his basic abilities bonus effects. When he reaches
+    100% Heat, he starts Overheating, gaining bonus Attack Speed and granting his
+    basic attacks bonus damage, but making him unable to cast spells for a few seconds.
 stats:
-  hp: 589
-  hp_per_level: 85
-  armor: 31
-  armor_per_level: 3.5
-  spell_block: 28
-  spell_block_per_level: 0.75
+  health_points: 659
   attack_damage: 61
-  attack_damage_per_level: 3.2
-  attack_speed: 0.644
-  attack_speed_per_level: 1.85
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 61
-  max_rank: 1
   cooldown:
-  - 0.644
+  - 0
   cast: 0
 - id: RumbleFlameThrower
   name: Flamespitter
+  max_rank: 5
   damage:
   - 180
   - 220
   - 260
   - 300
   - 340
-  max_rank: 5
   cooldown:
   - 10
   - 9
@@ -39,13 +39,13 @@ spells:
   cast: 0
 - id: RumbleShield
   name: Scrap Shield
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 60
+  - 90
+  - 120
+  - 150
+  - 180
   cooldown:
   - 6
   - 6
@@ -55,9 +55,13 @@ spells:
   cast: 0
 - id: RumbleGrenade
   name: Electro Harpoon
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 0.5
   - 0.5
@@ -67,13 +71,11 @@ spells:
   cast: 0
 - id: RumbleCarpetBomb
   name: The Equalizer
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 100
   - 85

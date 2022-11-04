@@ -1,35 +1,35 @@
-version: 12.3.1
+id: Sejuani
 name: Sejuani
+title: Fury of the North
 tags: Tank, Fighter
+passive:
+  name: Fury of the North
+  description: After being out of combat, Sejuani gains Frost Armor which grants Armor
+    and Magic Resist and immunity to slows. Frost Armor persists for a short time
+    after Sejuani takes damage.  Sejuani can damage a stunned enemy to shatter it,
+    dealing massive magic damage.
 stats:
-  hp: 560
-  hp_per_level: 100
-  armor: 34
-  armor_per_level: 4.25
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 630
   attack_damage: 66
-  attack_damage_per_level: 4
-  attack_speed: 0.688
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 66
-  max_rank: 1
   cooldown:
-  - 0.688
+  - 0
   cast: 0
 - id: SejuaniQ
   name: Arctic Assault
+  max_rank: 5
   damage:
   - 90
   - 140
   - 190
   - 240
   - 290
-  max_rank: 5
   cooldown:
   - 18
   - 16.5
@@ -39,13 +39,13 @@ spells:
   cast: 0
 - id: SejuaniW
   name: Winter's Wrath
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
   cooldown:
   - 9
   - 8
@@ -55,9 +55,13 @@ spells:
   cast: 0
 - id: SejuaniE
   name: Permafrost
+  max_rank: 5
   damage:
   - 1
-  max_rank: 5
+  - 1
+  - 1
+  - 1
+  - 1
   cooldown:
   - 1.5
   - 1.5
@@ -67,13 +71,11 @@ spells:
   cast: 0
 - id: SejuaniR
   name: Glacial Prison
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 125
+  - 150
+  - 175
   cooldown:
   - 120
   - 100

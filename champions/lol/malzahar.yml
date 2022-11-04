@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Malzahar
 name: Malzahar
+title: the Prophet of the Void
 tags: Mage, Assassin
+passive:
+  name: Void Shift
+  description: When he hasn't recently taken damage or been crowd controlled, Malzahar
+    gains massive damage reduction and crowd control immunity, lingering for a short
+    period after taking damage.
 stats:
-  hp: 510
-  hp_per_level: 87
-  armor: 18
-  armor_per_level: 3.5
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 580
   attack_damage: 55
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 1.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 55
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: MalzaharQ
   name: Call of the Void
+  max_rank: 5
   damage:
   - 70
   - 105
   - 140
   - 175
   - 210
-  max_rank: 5
   cooldown:
   - 6
   - 6
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: MalzaharW
   name: Void Swarm
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 8
+  - 8
+  - 9
+  - 9
+  - 10
   cooldown:
   - 8
   - 8
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: MalzaharE
   name: Malefic Visions
+  max_rank: 5
   damage:
   - 80
   - 115
   - 150
   - 185
   - 220
-  max_rank: 5
   cooldown:
   - 15
   - 13
@@ -71,13 +70,11 @@ spells:
   cast: 0
 - id: MalzaharR
   name: Nether Grasp
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 2
+  - 3
+  - 4
   cooldown:
   - 140
   - 110

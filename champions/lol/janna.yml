@@ -1,35 +1,33 @@
-version: 12.3.1
+id: Janna
 name: Janna
+title: the Storm's Fury
 tags: Support, Mage
+passive:
+  name: Tailwind
+  description: Janna gains bonus Move Speed moving towards allied champions and nearby
+    allied champions gain this bonus when moving toward her.
 stats:
-  hp: 500
-  hp_per_level: 70
-  armor: 28
-  armor_per_level: 3.8
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 570
   attack_damage: 52
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 52
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: HowlingGale
   name: Howling Gale
+  max_rank: 5
   damage:
   - 60
   - 85
   - 110
   - 135
   - 160
-  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -39,13 +37,13 @@ spells:
   cast: 0
 - id: SowTheWind
   name: Zephyr
-  damage:
-  - 70
-  - 100
-  - 130
-  - 160
-  - 190
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 12
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: EyeOfTheStorm
   name: Eye Of The Storm
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 75
+  - 100
+  - 125
+  - 150
+  - 175
   cooldown:
   - 15
   - 13.5
@@ -71,13 +69,11 @@ spells:
   cast: 0
 - id: ReapTheWhirlwind
   name: Monsoon
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 150
   - 135

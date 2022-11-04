@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Shaco
 name: Shaco
+title: the Demon Jester
 tags: Assassin
+passive:
+  name: Backstab
+  description: Shaco's basic attacks and Two-Shiv Poison deal additional damage when
+    striking from behind.
 stats:
-  hp: 560
-  hp_per_level: 89
-  armor: 30
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 630
   attack_damage: 63
-  attack_damage_per_level: 3
-  attack_speed: 0.694
-  attack_speed_per_level: 3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 63
-  max_rank: 1
   cooldown:
-  - 0.694
+  - 0
   cast: 0
 - id: Deceive
   name: Deceive
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 12
   - 11.5
@@ -35,25 +37,29 @@ spells:
   cast: 0
 - id: JackInTheBox
   name: Jack In The Box
+  max_rank: 5
   damage:
   - 35
   - 50
   - 65
   - 80
   - 95
-  max_rank: 5
   cooldown:
-  - 16
-  - 16
-  - 16
-  - 16
-  - 16
+  - 15
+  - 15
+  - 15
+  - 15
+  - 15
   cast: 0
 - id: TwoShivPoison
   name: Two-Shiv Poison
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 8
   - 8
@@ -63,13 +69,11 @@ spells:
   cast: 0
 - id: HallucinateFull
   name: Hallucinate
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 100
   - 90

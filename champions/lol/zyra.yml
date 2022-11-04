@@ -1,31 +1,34 @@
-version: 12.3.1
+id: Zyra
 name: Zyra
+title: Rise of the Thorns
 tags: Mage, Support
+passive:
+  name: Garden of Thorns
+  description: Seeds spawn around Zyra periodically, becoming faster with level. Zyra
+    can cast Deadly Spines or Grasping Roots near seeds to grow plants, who fight
+    for Zyra.
 stats:
-  hp: 504
-  hp_per_level: 79
-  armor: 29
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 574
   attack_damage: 53
-  attack_damage_per_level: 3.2
-  attack_speed: 0.625
-  attack_speed_per_level: 2.11
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 53
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: ZyraQ
   name: Deadly Spines
-  damage:
-  - 0
   max_rank: 5
+  damage:
+  - 60
+  - 95
+  - 130
+  - 165
+  - 200
   cooldown:
   - 7
   - 6.5
@@ -35,13 +38,13 @@ spells:
   cast: 0
 - id: ZyraW
   name: Rampant Growth
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 20
+  - 20
+  - 20
+  - 20
+  - 20
   cooldown:
   - 0
   - 0
@@ -51,9 +54,13 @@ spells:
   cast: 0
 - id: ZyraE
   name: Grasping Roots
-  damage:
-  - 2
   max_rank: 5
+  damage:
+  - 60
+  - 105
+  - 150
+  - 195
+  - 240
   cooldown:
   - 12
   - 12
@@ -63,9 +70,11 @@ spells:
   cast: 0
 - id: ZyraR
   name: Stranglethorns
-  damage:
-  - 50
   max_rank: 3
+  damage:
+  - 1
+  - 1
+  - 1
   cooldown:
   - 110
   - 100

@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Fiora
 name: Fiora
+title: the Grand Duelist
 tags: Fighter, Assassin
+passive:
+  name: Duelist's Dance
+  description: Fiora has revealed a <keywordMajor>Vital</keywordMajor> on this Champion.
+    If she hits the <keywordMajor>Vital</keywordMajor>, she <healing>restores Health</healing>
+    and gains <speed>Move Speed</speed>.
 stats:
-  hp: 550
-  hp_per_level: 85
-  armor: 33
-  armor_per_level: 3.5
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 620
   attack_damage: 68
-  attack_damage_per_level: 3.3
-  attack_speed: 0.69
-  attack_speed_per_level: 3.2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 68
-  max_rank: 1
   cooldown:
-  - 0.69
+  - 0
   cast: 0
 - id: FioraQ
   name: Lunge
+  max_rank: 5
   damage:
   - 70
   - 80
   - 90
   - 100
   - 110
-  max_rank: 5
   cooldown:
   - 13
   - 11.25
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: FioraW
   name: Riposte
+  max_rank: 5
   damage:
   - 110
   - 150
   - 190
   - 230
   - 270
-  max_rank: 5
   cooldown:
   - 24
   - 22
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: FioraE
   name: Bladework
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
   cooldown:
   - 11
   - 10
@@ -71,13 +70,11 @@ spells:
   cast: 0
 - id: FioraR
   name: Grand Challenge
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 8
+  - 8
+  - 8
   cooldown:
   - 110
   - 90

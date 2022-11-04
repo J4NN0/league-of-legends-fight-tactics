@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Yorick
 name: Yorick
+title: Shepherd of Souls
 tags: Fighter, Tank
+passive:
+  name: Shepherd of Souls
+  description: <font color='#FF9900'>The Cursed Horde:</font> Yorick can summon Mist
+    Walkers to swarm and attack nearby enemies.
 stats:
-  hp: 580
-  hp_per_level: 100
-  armor: 39
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 650
   attack_damage: 62
-  attack_damage_per_level: 5
-  attack_speed: 0.625
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 62
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: YorickQ
   name: Last Rites
-  damage:
-  - 5
   max_rank: 5
+  damage:
+  - 30
+  - 55
+  - 80
+  - 105
+  - 130
   cooldown:
   - 7
   - 6.25
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: YorickW
   name: Dark Procession
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
   cooldown:
   - 20
   - 18
@@ -51,13 +53,13 @@ spells:
   cast: 0
 - id: YorickE
   name: Mourning Mist
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 70
+  - 105
+  - 140
+  - 175
+  - 210
   cooldown:
   - 12
   - 11
@@ -67,9 +69,11 @@ spells:
   cast: 0
 - id: YorickR
   name: Eulogy of the Isles
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 160
   - 130

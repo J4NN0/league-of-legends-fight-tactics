@@ -1,35 +1,34 @@
-version: 12.3.1
+id: Ornn
 name: Ornn
+title: The Fire below the Mountain
 tags: Tank, Fighter
+passive:
+  name: Living Forge
+  description: Ornn gains an additional bonus Armor and Magic Resistance from all
+    sources.<br><br>Ornn can spend gold to forge non-consumable items anywhere.<br><br>Additionally,
+    he can create masterwork items for himself and for his allies.
 stats:
-  hp: 590
-  hp_per_level: 95
-  armor: 33
-  armor_per_level: 4
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 660
   attack_damage: 69
-  attack_damage_per_level: 3.5
-  attack_speed: 0.625
-  attack_speed_per_level: 2
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 69
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: OrnnQ
   name: Volcanic Rupture
+  max_rank: 5
   damage:
   - 20
   - 45
   - 70
   - 95
   - 120
-  max_rank: 5
   cooldown:
   - 9
   - 8.5
@@ -39,13 +38,13 @@ spells:
   cast: 0
 - id: OrnnW
   name: Bellows Breath
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
   - 11.5
@@ -55,13 +54,13 @@ spells:
   cast: 0
 - id: OrnnE
   name: Searing Charge
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 16
   - 15
@@ -71,9 +70,11 @@ spells:
   cast: 0
 - id: OrnnR
   name: Call of the Forge God
+  max_rank: 3
   damage:
   - 0
-  max_rank: 3
+  - 0
+  - 0
   cooldown:
   - 140
   - 120

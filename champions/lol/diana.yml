@@ -1,31 +1,33 @@
-version: 12.3.1
+id: Diana
 name: Diana
+title: Scorn of the Moon
 tags: Fighter, Mage
+passive:
+  name: Moonsilver Blade
+  description: Every third strike cleaves nearby enemies for an additional magic damage.
+    After casting a spell, Diana gains Attack Speed for her next 3 attacks.
 stats:
-  hp: 570
-  hp_per_level: 95
-  armor: 31
-  armor_per_level: 3.1
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 640
   attack_damage: 57
-  attack_damage_per_level: 3
-  attack_speed: 0.625
-  attack_speed_per_level: 2.25
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 57
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: DianaQ
   name: Crescent Strike
-  damage:
-  - 1
   max_rank: 5
+  damage:
+  - 60
+  - 95
+  - 130
+  - 165
+  - 200
   cooldown:
   - 8
   - 7.5
@@ -35,9 +37,13 @@ spells:
   cast: 0
 - id: DianaOrbs
   name: Pale Cascade
+  max_rank: 5
   damage:
   - 5
-  max_rank: 5
+  - 5
+  - 5
+  - 5
+  - 5
   cooldown:
   - 15
   - 13.5
@@ -47,13 +53,13 @@ spells:
   cast: 0
 - id: DianaTeleport
   name: Lunar Rush
-  damage:
-  - 50
-  - 75
-  - 100
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 4
+  - 4
+  - 4
+  - 0
+  - 0
   cooldown:
   - 22
   - 20
@@ -63,9 +69,11 @@ spells:
   cast: 0
 - id: DianaR
   name: Moonfall
-  damage:
-  - 2
   max_rank: 3
+  damage:
+  - -0.35
+  - -0.4
+  - -0.45
   cooldown:
   - 100
   - 90

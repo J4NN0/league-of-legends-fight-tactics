@@ -1,35 +1,32 @@
-version: 12.3.1
+id: Heimerdinger
 name: Heimerdinger
+title: the Revered Inventor
 tags: Mage, Support
+passive:
+  name: Hextech Affinity
+  description: Gain Move Speed while near allied towers and turrets deployed by Heimerdinger.
 stats:
-  hp: 488
-  hp_per_level: 87
-  armor: 19
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 558
   attack_damage: 56
-  attack_damage_per_level: 2.7
-  attack_speed: 0.625
-  attack_speed_per_level: 1.36
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 56
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: HeimerdingerQ
   name: H-28 G Evolution Turret
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 6
+  - 9
+  - 12
+  - 15
+  - 18
   cooldown:
   - 1
   - 1
@@ -39,13 +36,13 @@ spells:
   cast: 0
 - id: HeimerdingerW
   name: Hextech Micro-Rockets
-  damage:
-  - 12
-  - 18
-  - 24
-  - 30
-  - 36
   max_rank: 5
+  damage:
+  - 60
+  - 90
+  - 120
+  - 150
+  - 180
   cooldown:
   - 11
   - 10
@@ -55,25 +52,27 @@ spells:
   cast: 0
 - id: HeimerdingerE
   name: CH-2 Electron Storm Grenade
+  max_rank: 5
   damage:
   - 0
-  max_rank: 5
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
-  - 12
-  - 12
-  - 12
-  - 12
-  - 12
+  - 11
+  - 11
+  - 11
+  - 11
+  - 11
   cast: 0
 - id: HeimerdingerR
   name: UPGRADE!!!
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 3
+  damage:
+  - 100
+  - 140
+  - 180
   cooldown:
   - 100
   - 85

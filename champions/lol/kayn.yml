@@ -1,35 +1,37 @@
-version: 12.3.1
+id: Kayn
 name: Kayn
+title: the Shadow Reaper
 tags: Fighter, Assassin
+passive:
+  name: The Darkin Scythe
+  description: Kayn wields an ancient weapon and fights Rhaast, the darkin within
+    it, for control. Either the <font color='#fe5c50'>Darkin</font> will triumph,
+    or Kayn will master Rhaast and become the <font color='#8484fb'>Shadow Assassin</font>.<br><br><font
+    color='#fe5c50'>Darkin:</font> Heal for a percentage of spell damage dealt to
+    champions.<br><br><font color='#8484fb'>Shadow Assassin:</font> For the first
+    few seconds in combat with enemy champions, deal bonus damage.
 stats:
-  hp: 585
-  hp_per_level: 85
-  armor: 38
-  armor_per_level: 3.3
-  spell_block: 32
-  spell_block_per_level: 1.25
+  health_points: 655
   attack_damage: 68
-  attack_damage_per_level: 3.3
-  attack_speed: 0.669
-  attack_speed_per_level: 2.7
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 68
-  max_rank: 1
   cooldown:
-  - 0.669
+  - 0
   cast: 0
 - id: KaynQ
   name: Reaping Slash
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 75
+  - 95
+  - 115
+  - 135
+  - 155
   cooldown:
   - 7
   - 6.5
@@ -39,13 +41,13 @@ spells:
   cast: 0
 - id: KaynW
   name: Blade's Reach
+  max_rank: 5
   damage:
   - 90
   - 135
   - 180
   - 225
   - 270
-  max_rank: 5
   cooldown:
   - 13
   - 12
@@ -55,13 +57,13 @@ spells:
   cast: 0
 - id: KaynE
   name: Shadow Step
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 40
+  - 40
+  - 40
+  - 40
+  - 40
   cooldown:
   - 21
   - 19
@@ -71,11 +73,11 @@ spells:
   cast: 0
 - id: KaynR
   name: Umbral Trespass
+  max_rank: 3
   damage:
   - 150
   - 250
   - 350
-  max_rank: 3
   cooldown:
   - 120
   - 100

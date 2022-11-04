@@ -1,51 +1,49 @@
-version: 12.3.1
+id: Thresh
 name: Thresh
+title: the Chain Warden
 tags: Support, Fighter
+passive:
+  name: Damnation
+  description: Thresh can harvest the souls of enemies that die near him, permanently
+    granting him Armor and Ability Power.
 stats:
-  hp: 530
-  hp_per_level: 95
-  armor: 28
-  armor_per_level: 0
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 600
   attack_damage: 56
-  attack_damage_per_level: 2.2
-  attack_speed: 0.625
-  attack_speed_per_level: 3.5
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 56
-  max_rank: 1
   cooldown:
-  - 0.625
+  - 0
   cast: 0
 - id: ThreshQ
   name: Death Sentence
-  damage:
-  - 80
-  - 120
-  - 160
-  - 200
-  - 240
   max_rank: 5
+  damage:
+  - 100
+  - 140
+  - 180
+  - 220
+  - 260
   cooldown:
-  - 20
-  - 18
-  - 16
-  - 14
-  - 12
+  - 19
+  - 17
+  - 15
+  - 13
+  - 11
   cast: 0
 - id: ThreshW
   name: Dark Passage
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
   cooldown:
   - 22
   - 20.5
@@ -55,13 +53,13 @@ spells:
   cast: 0
 - id: ThreshE
   name: Flay
-  damage:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
   max_rank: 5
+  damage:
+  - 75
+  - 110
+  - 145
+  - 180
+  - 215
   cooldown:
   - 13
   - 12.25
@@ -71,11 +69,11 @@ spells:
   cast: 0
 - id: ThreshRPenta
   name: The Box
+  max_rank: 3
   damage:
   - 250
   - 400
   - 550
-  max_rank: 3
   cooldown:
   - 140
   - 120

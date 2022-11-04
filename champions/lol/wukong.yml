@@ -1,0 +1,81 @@
+id: MonkeyKing
+name: Wukong
+title: the Monkey King
+tags: Fighter, Tank
+passive:
+  name: Stone Skin
+  description: Wukong gains stacking armor and max health regeneration while fighting
+    champions and monsters.
+stats:
+  health_points: 610
+  attack_damage: 68
+  attack_speed: 0
+spells:
+- id: aa
+  name: Auto Attack
+  max_rank: 1
+  damage:
+  - 68
+  cooldown:
+  - 0
+  cast: 0
+- id: MonkeyKingDoubleAttack
+  name: Crushing Blow
+  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 8
+  - 7.5
+  - 7
+  - 6.5
+  - 6
+  cast: 0
+- id: MonkeyKingDecoy
+  name: Warrior Trickster
+  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 22
+  - 19.5
+  - 17
+  - 14.5
+  - 12
+  cast: 0
+- id: MonkeyKingNimbus
+  name: Nimbus Strike
+  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 10
+  - 9.5
+  - 9
+  - 8.5
+  - 8
+  cast: 0
+- id: MonkeyKingSpinToWin
+  name: Cyclone
+  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 130
+  - 110
+  - 90
+  cast: 0

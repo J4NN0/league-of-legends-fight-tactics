@@ -1,0 +1,81 @@
+id: RekSai
+name: Rek'Sai
+title: the Void Burrower
+tags: Fighter
+passive:
+  name: Fury of the Xer'Sai
+  description: Rek'sai generates Fury by Attack and hitting with basic abilities.
+    She consumes this Fury while Burrowed to restore health.
+stats:
+  health_points: 640
+  attack_damage: 61
+  attack_speed: 0
+spells:
+- id: aa
+  name: Auto Attack
+  max_rank: 1
+  damage:
+  - 61
+  cooldown:
+  - 0
+  cast: 0
+- id: RekSaiQ
+  name: Queen's Wrath / Prey Seeker
+  max_rank: 5
+  damage:
+  - 21
+  - 27
+  - 33
+  - 39
+  - 45
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: RekSaiW
+  name: Burrow / Un-burrow
+  max_rank: 5
+  damage:
+  - 1500
+  - 1500
+  - 1500
+  - 1500
+  - 1500
+  cooldown:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  cast: 0
+- id: RekSaiE
+  name: Furious Bite / Tunnel
+  max_rank: 5
+  damage:
+  - 55
+  - 60
+  - 65
+  - 70
+  - 75
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: RekSaiRWrapper
+  name: Void Rush
+  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 100
+  - 90
+  - 80
+  cast: 0

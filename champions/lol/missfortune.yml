@@ -1,31 +1,33 @@
-version: 12.3.1
-name: MissFortune
+id: MissFortune
+name: Miss Fortune
+title: the Bounty Hunter
 tags: Marksman
+passive:
+  name: Love Tap
+  description: Miss Fortune deals bonus physical damage whenever she basic attacks
+    a new target.
 stats:
-  hp: 570
-  hp_per_level: 93
-  armor: 28
-  armor_per_level: 3
-  spell_block: 30
-  spell_block_per_level: 0.5
+  health_points: 640
   attack_damage: 52
-  attack_damage_per_level: 2.7
-  attack_speed: 0.656
-  attack_speed_per_level: 3
+  attack_speed: 0
 spells:
 - id: aa
   name: Auto Attack
+  max_rank: 1
   damage:
   - 52
-  max_rank: 1
   cooldown:
-  - 0.656
+  - 0
   cast: 0
 - id: MissFortuneRicochetShot
   name: Double Up
-  damage:
-  - 1
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 7
   - 6
@@ -35,13 +37,13 @@ spells:
   cast: 0
 - id: MissFortuneViciousStrikes
   name: Strut
+  max_rank: 5
   damage:
   - 0
   - 0
   - 0
   - 0
   - 0
-  max_rank: 5
   cooldown:
   - 12
   - 12
@@ -51,29 +53,27 @@ spells:
   cast: 0
 - id: MissFortuneScattershot
   name: Make It Rain
-  damage:
-  - 80
-  - 115
-  - 150
-  - 185
-  - 220
   max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   cooldown:
   - 18
+  - 17
   - 16
+  - 15
   - 14
-  - 12
-  - 10
   cast: 0
 - id: MissFortuneBulletTime
   name: Bullet Time
+  max_rank: 3
   damage:
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  max_rank: 3
   cooldown:
   - 120
   - 110
