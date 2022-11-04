@@ -32,33 +32,53 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
        git clone https://github.com/J4NN0/league-of-legends-fight-tactics.git
        cd league-of-legends-fight-tactics
 
-3. Install
+3. Install CLI
 
        make install-lol-tactics
 
 # Usage
 
-- Show help
+- Shows list of commands or help for one command
 
-      loltactics --help
+      loltactics --help, -h
+
+    or using MAKE
+
+      make run-lol-tactics-help
 
 - Download and/or upload champion data
-   - Fetch specific champion data
+   - Fetch specific champion data (e.g. `jhin`)
 
-         loltactics --download=CHAMPION_NAME
+         loltactics --download=jhin
+  
+     or using MAKE
+  
+         make run-lol-tactics-download -d=jhin
 
    - Fetch all champions data
 
          loltactics --download_all
 
+     or using MAKE
+    
+         make run-lol-tactics-download-all
+
 - Fight tactics
    - Fight tactics between two (no more) champions (e.g. `lucian` vs `jhin`)
 
          loltactics --fight=lucian --fight=jhin
+  
+     or using MAKE
+
+         make run-lol-tactics-fight -f1=lucian -f2=jhin
 
    - Generate all fights tactics
 
          loltactics --tactics
+
+     or using MAKE
+
+         make run-lol-tactics-all
 
 - Clean
   - Clean tactics file
