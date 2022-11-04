@@ -157,4 +157,5 @@ spells:
 - [GitHub Community Dragon](https://github.com/CommunityDragon)
 - [Community Dragon](https://raw.communitydragon.org)
 - [Raw CDragon](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/)
+- [Riot API Libraries](https://riot-api-libraries.readthedocs.io/en/latest/libraries.html)
 - [League Wikia](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
