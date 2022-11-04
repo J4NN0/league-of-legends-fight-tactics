@@ -17,7 +17,7 @@ install-lol-tactics:
 
 # === RUN =======================================================
 # Shows a list of commands or help for one command
-run-lol-tactics-fight:
+run-lol-tactics-help:
 	go run ./cmd/league-of-legends-tactics-cli/main.go -h
 .PHONY: run-lol-tactics-help
 
@@ -32,7 +32,7 @@ run-lol-tactics-all:
 .PHONY: run-lol-tactics-all
 
 # Download and update a specific league of legends champion
-run-lol-tactics-download-all:
+run-lol-tactics-download:
 	go run ./cmd/league-of-legends-tactics-cli/main.go -d $(d)
 .PHONY: run-lol-tactics-download
 
