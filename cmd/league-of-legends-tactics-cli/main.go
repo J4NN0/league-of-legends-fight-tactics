@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"errors"
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"net/http"
 	"os"
 	"strings"
 
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/controller"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
