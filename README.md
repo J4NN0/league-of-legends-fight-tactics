@@ -10,11 +10,23 @@ Once the data has been downloaded (custom data can be also provided as far as th
 
 The best spells output is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round (until he reaches zero hp).
 
+### Data Quality
+
+Unfortunately the data quality is not the best and apparently this is a [problem known to riot and its community](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html#common-issues):
+> The data in ddragon is inaccurate, especially champion spell data and item stats. This is an unfortunate situation that is surprisingly difficult to solve. If you want to know why, you can ask on Discord. There is no perfect or even close to perfect source for champion spell data, despite significant effort.
+
+The current best resource should be [League Wikia](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki). Since there is no official API, it is not easy (and sustainable/feasible over time) to download the data from the previously mentioned site.
+
+In conclusion, this tool will perform at its best if the data quality is medium/good. If you are interested in the outcome of the fight between two champions - and do not want to rely on the data download from Data Dragon League of Legends - you can manually edit the relevant `.yml` file and use the tool as shown below.
+
+Last but not least, take a look at the resources listed below - they might be helpful.
+
 # Table of Contents
 
 - [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
 - [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
+- [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
 
 # Setup
 
@@ -94,7 +106,7 @@ The best spells output is saved in the corresponding `.loltactics` file where yo
 Each league of legends champion is described by a `.yml` as follows:
 ```yml
 version: 1.1.0
-name: champion name
+name: Champion Name
 tags: Fighter, Tank
 stats:
   hp: 500
@@ -109,21 +121,26 @@ stats:
   attack_speed_per_level: 2
 spells:
   - id: aa
-    name: spell name
+    name: AA Spell Name
     damage: 5 
     cooldown: 0 
     cast: 2
   - id: q
-    name: name1
-    damage: 10
+    name: Q Spell Name
     max_rank: 5
+    damage:
+    - 20
+    - 22
+    - 25
+    - 30
+    - 35
     cooldown:
     - 15
     - 14
     - 13
     - 12
     - 11
-    cast: 1
+    cast: 2
 ...
 ```
 
@@ -133,3 +150,11 @@ spells:
 - `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (i.e. `aa`).
 - `cooldown`: Minimum length of time (in seconds) to wait after using an ability before it can be used again.
 - `cast`: Length of time (in seconds) needed to summoning a spell.
+
+# Resources
+
+- [Data Dragon](https://developer.riotgames.com/docs/lol#data-dragon_champions)
+- [GitHub Community Dragon](https://github.com/CommunityDragon)
+- [Community Dragon](https://raw.communitydragon.org)
+- [Raw CDragon](https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/)
+- [League Wikia](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki)
