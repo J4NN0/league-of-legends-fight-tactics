@@ -8,9 +8,11 @@ import (
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
 )
 
-// TODO: only considering spell's max rank atm (i.e. spell.MaxRank-1), but need to consider all (e.g. 'q' has 5 ranks, etc.)
+//TODO: only considering spell's max rank atm (i.e. spell.MaxRank-1), but need to consider all (e.g. 'q' has 5 ranks, etc.)
 
 type Tactics interface {
+	ReadChampion(filePath string) (champion Champion, err error)
+	WriteChampion(champion Champion, filePath string) error
 	Fight(champion1, champion2 Champion)
 }
 
@@ -18,7 +20,7 @@ type FightTactics struct {
 	log logger.Logger
 }
 
-func New(log logger.Logger) Tactics {
+func NewTactics(log logger.Logger) Tactics {
 	return &FightTactics{log: log}
 }
 

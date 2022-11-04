@@ -37,6 +37,7 @@ Last but not least, take a look at the resources listed below - they might be he
     - Install packages: 
 
           brew install make
+          brew install mockery
           brew install golangci-lint
 
 2. Clone repo
@@ -72,7 +73,7 @@ Last but not least, take a look at the resources listed below - they might be he
 	  PBE                 = "pbe1"
    ```
 
-    Before running (either with CLI or MAKE), add environment variables above and then source them however you like
+    Before running (either with CLI or `make`), add environment variables above and then source them however you like
 
        cp .env.sample .env
 
@@ -82,7 +83,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
       loltactics --help, -h
 
-    or using MAKE
+    or using `make`
 
       make run-lol-tactics-help
 
@@ -91,7 +92,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
          loltactics --download=jhin
   
-     or using MAKE
+     or using `make`
   
          make run-lol-tactics-download -d=jhin
 
@@ -99,7 +100,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
          loltactics --download_all
 
-     or using MAKE
+     or using `make`
     
          make run-lol-tactics-download-all
 
@@ -108,7 +109,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
          loltactics --fight=lucian --fight=jhin
   
-     or using MAKE
+     or using `make`
 
          make run-lol-tactics-fight -f1=lucian -f2=jhin
 
@@ -116,7 +117,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
          loltactics --tactics
 
-     or using MAKE
+     or using `make`
 
          make run-lol-tactics-all
 

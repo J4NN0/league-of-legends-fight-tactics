@@ -3,16 +3,10 @@ package lol
 import (
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
 
 	"gopkg.in/yaml.v2"
-)
-
-const (
-	BaseChampionPath = "champions/lol/"
-	fileExtension    = ".yml"
 )
 
 // Champion LoL champion data struct
@@ -46,8 +40,8 @@ type Spell struct {
 	Cast     float64   `yaml:"cast"`
 }
 
-func Read(championName string) (champion Champion, err error) {
-	yamlFile, err := os.ReadFile(getYMLPath(championName))
+func (f *FightTactics) ReadChampion(filePath string) (champion Champion, err error) {
+	yamlFile, err := os.ReadFile(filePath)
 	if err != nil {
 		return Champion{}, err
 	}
@@ -60,23 +54,18 @@ func Read(championName string) (champion Champion, err error) {
 	return champion, nil
 }
 
-func Write(champion Champion) error {
-	fileName := getYMLPath(champion.ID)
-	file.Create(fileName)
+func (f *FightTactics) WriteChampion(champion Champion, filePath string) error {
+	file.Create(filePath)
 
 	data, err := yaml.Marshal(&champion)
 	if err != nil {
 		return err
 	}
 
-	err = os.WriteFile(fileName, data, 0)
+	err = os.WriteFile(filePath, data, 0)
 	if err != nil {
 		return err
 	}
 
 	return nil
-}
-
-func getYMLPath(championName string) string {
-	return BaseChampionPath + strings.ReplaceAll(strings.ToLower(championName), " ", "") + fileExtension
 }

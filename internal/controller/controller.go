@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
@@ -12,109 +13,120 @@ import (
 	"github.com/KnutZuidema/golio/datadragon"
 )
 
+const (
+	baseChampionPath = "champions/lol"
+	fileExtension    = "yml"
+)
+
 type Controller struct {
-	log          logger.Logger
-	riotClient   riot.Client
-	fightTactics lol.Tactics
+	log        logger.Logger
+	riotClient riot.Client
+	lolTactics lol.Tactics
 }
 
-func New(log logger.Logger, riotClient riot.Client, fightTactics lol.Tactics) *Controller {
-	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
+func New(log logger.Logger, riotClient riot.Client, lolTactics lol.Tactics) *Controller {
+	return &Controller{log: log, riotClient: riotClient, lolTactics: lolTactics}
 }
 
-func (c *Controller) ChampionsFight(championName1, championName2 string) {
+func (c *Controller) ChampionsFight(championName1, championName2 string) error {
 	c.log.Printf("Loading %s vs %s champions data ...\n", championName1, championName2)
 
-	lolChampion1, err := lol.Read(championName1)
+	lolChampion1, err := c.lolTactics.ReadChampion(championName1)
 	if err != nil {
-		c.log.Fatalf("Error loading champion %s: %v", championName1, err)
-		return
+		return fmt.Errorf("loading champion %s: %v", championName1, err)
 	}
 
-	lolChampion2, err := lol.Read(championName2)
+	lolChampion2, err := c.lolTactics.ReadChampion(championName2)
 	if err != nil {
-		c.log.Fatalf("Error loading champion %s: %v", championName2, err)
-		return
+		return fmt.Errorf("loading champion %s: %v", championName2, err)
 	}
 
-	c.fightTactics.Fight(lolChampion1, lolChampion2)
+	c.lolTactics.Fight(lolChampion1, lolChampion2)
+
+	return nil
 }
 
-func (c *Controller) AllChampionsFight() {
-	var wg sync.WaitGroup
-	var champions []string
-
-	err := filepath.Walk(lol.BaseChampionPath, func(path string, info os.FileInfo, err error) error {
-		champions = append(champions, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
+func (c *Controller) AllChampionsFight() error {
+	var championsName []string
+	err := filepath.Walk(baseChampionPath, func(path string, info os.FileInfo, err error) error {
+		if path != baseChampionPath {
+			championsName = append(championsName, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
+		}
 		return nil
 	})
 	if err != nil {
-		c.log.Fatalf("Error listing champions data files in path %s: %v", lol.BaseChampionPath, err)
-		return
+		return fmt.Errorf("listing champions data files in path %s: %v", baseChampionPath, err)
 	}
 
-	champions = champions[1:]
-
-	for _, c1 := range champions {
-		for _, c2 := range champions {
+	var wg sync.WaitGroup
+	for _, c1 := range championsName {
+		for _, c2 := range championsName {
 			if c1 != c2 {
 				wg.Add(1)
 				c1 := c1
 				c2 := c2
 				go func() {
 					defer wg.Done()
-					c.ChampionsFight(c1, c2)
+					err = c.ChampionsFight(c1, c2)
+					if err != nil {
+						c.log.Warningf("Could not generate fight tactics between %s vs %s: %v", c1, c2, err)
+					}
 				}()
 			}
 		}
 	}
-
 	wg.Wait()
+
+	return nil
 }
 
-func (c *Controller) FetchChampion(championName string) {
+func (c *Controller) FetchChampion(championName string) error {
 	c.log.Printf("Fetching %s ...", championName)
 
 	championData, err := c.riotClient.GetLoLChampion(championName)
 	if err != nil {
-		c.log.Fatalf("Error while fetching league of legends champions: %v", err)
-		return
+		return fmt.Errorf("fetching league of legends champions: %v", err)
 	}
 
-	err = storeChampionToYMLFile(championData)
+	err = c.storeChampionToYMLFile(championData)
 	if err != nil {
-		c.log.Fatalf("Could not store %s champion data: %v", championName, err)
-		return
+		return fmt.Errorf("could not store %s champion data: %v", championName, err)
 	}
 
 	c.log.Printf("%s successfully stored", championName)
+
+	return nil
 }
 
-func (c *Controller) FetchAllChampions() {
+func (c *Controller) FetchAllChampions() error {
 	c.log.Printf("Fetching all league of legends champions ...\n")
 
 	ddChampions, err := c.riotClient.GetAllLoLChampions()
 	if err != nil {
-		c.log.Fatalf("Error while fetching all league of legends champions: %v", err)
-		return
+		return fmt.Errorf("fetching all league of legends champions: %v", err)
 	}
 
 	for _, champion := range ddChampions {
-		err = storeChampionToYMLFile(champion)
+		err = c.storeChampionToYMLFile(champion)
 		if err != nil {
 			c.log.Warningf("Could not store %s champion data: %v", champion.ChampionData.Name, err)
 		} else {
 			c.log.Printf("%s successfully stored", champion.ChampionData.Name)
 		}
 	}
+
+	return nil
 }
 
-func storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
+func (c *Controller) storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
 	lolChampion := mapChampionResponseToLolChampionStruct(ddChampion)
-	err := lol.Write(lolChampion)
+	filePath := getYMLPath(lolChampion.ID)
+
+	err := c.lolTactics.WriteChampion(lolChampion, filePath)
 	if err != nil {
 		return err
 	}
+
 	return nil
 }
 
@@ -163,4 +175,8 @@ func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataEx
 	}
 
 	return lolChampion
+}
+
+func getYMLPath(championName string) string {
+	return fmt.Sprintf("%s/%s.%s", baseChampionPath, strings.ReplaceAll(strings.ToLower(championName), " ", ""), fileExtension)
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/http"
 	"os"
 	"strings"
@@ -25,23 +26,23 @@ func main() {
 	ctx := context.Background()
 
 	// Logger
-	logger := logger.New(appName)
+	log := logger.New(appName)
 
 	// Config
 	cliConfig, err := config.ReadConfig()
 	if err != nil {
-		logger.Fatalf("config reading failed: %v", err)
+		log.Fatalf("config reading failed: %v", err)
 		return
 	}
 
 	// Riot Client
-	riotClient := riot.NewClient(logger, &http.Client{}, cliConfig.RiotAPIKey, cliConfig.LoLRegion)
+	riotClient := riot.NewClient(log, &http.Client{}, cliConfig.RiotAPIKey, cliConfig.LoLRegion)
 
 	// LoL Tactics
-	fightTactics := lol.New(logger)
+	lolTactics := lol.NewTactics(log)
 
 	// Controller
-	ctrl := controller.New(logger, riotClient, fightTactics)
+	ctrl := controller.New(log, riotClient, lolTactics)
 
 	// CLI App
 	app := &cli.App{
@@ -59,11 +60,15 @@ func main() {
 				Action: func(context *cli.Context, i []string) error {
 					c1Name := i[0]
 					c2Name := i[1]
-					if c1Name != "" && c2Name != "" {
-						ctrl.ChampionsFight(strings.ToLower(c1Name), strings.ToLower(c2Name))
-						return nil
+					if c1Name == "" || c2Name == "" {
+						return errors.New("champion name is empty")
 					}
-					return errors.New("champion name is empty")
+
+					err = ctrl.ChampionsFight(strings.ToLower(c1Name), strings.ToLower(c2Name))
+					if err != nil {
+						return fmt.Errorf("champion fight failed: %w", err)
+					}
+					return nil
 				},
 			},
 			&cli.BoolFlag{
@@ -74,8 +79,13 @@ func main() {
 				Required:    false,
 				Destination: &tactics,
 				Action: func(context *cli.Context, b bool) error {
-					if b {
-						ctrl.AllChampionsFight()
+					if !b {
+						return nil
+					}
+
+					err = ctrl.AllChampionsFight()
+					if err != nil {
+						return fmt.Errorf("all champions fight failed: %w", err)
 					}
 					return nil
 				},
@@ -88,11 +98,15 @@ func main() {
 				Required:    false,
 				Destination: &download,
 				Action: func(context *cli.Context, s string) error {
-					if s != "" {
-						ctrl.FetchChampion(strings.ToLower(download))
-						return nil
+					if s == "" {
+						return errors.New("champion name is empty")
 					}
-					return errors.New("champion name is empty")
+
+					err = ctrl.FetchChampion(strings.ToLower(download))
+					if err != nil {
+						return fmt.Errorf("fetch champion failed: %w", err)
+					}
+					return nil
 				},
 			},
 			&cli.BoolFlag{
@@ -103,8 +117,13 @@ func main() {
 				Required:    false,
 				Destination: &downloadAll,
 				Action: func(context *cli.Context, b bool) error {
-					if b {
-						ctrl.FetchAllChampions()
+					if !b {
+						return nil
+					}
+
+					err = ctrl.FetchAllChampions()
+					if err != nil {
+						return fmt.Errorf("fetch all champions failed: %w", err)
 					}
 					return nil
 				},
@@ -124,7 +143,7 @@ func main() {
 			Context: ctx,
 			App:     app,
 		})
-		logger.Fatalf("%v", err)
+		log.Fatalf("%v", err)
 	}
 }
 

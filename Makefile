@@ -4,6 +4,13 @@ COVER_PROFILE="build/cover.out"
 
 
 # === BUILD =======================================================
+# Generate mocks for interfaces
+genmocks:
+	@echo "---> Generating mocks"
+	./scripts/genmocks.sh
+.PHONY: genmocks
+
+# Build
 build-lol-tactics:
 	@echo "---> Building $(PROJECT_NAME)"
 	go build -o build/league_of_legends_tactics_cli cmd/$(PROJECT_NAME)/main.go
@@ -91,4 +98,4 @@ run-lint:
 .PHONY: run-lint
 
 # === DEVELOPMENT =======================================================
-pre-commit: tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test
+pre-commit: genmocks tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test
