@@ -2,7 +2,7 @@
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
-Make two champions fight and get the best combination of spells based on the time (in seconds) it takes to kill the enemy champion.
+Make two champions fight and get the best combination of spells based on the time (in seconds) taken to kill the enemy champion.
 
 Each champion data can be downloaded/updated from the official [Data Dragon League of Legends APIs](https://developer.riotgames.com/docs/lol#data-dragon_champions). Data Dragon is a way, used by Riot Games, of centralizing League of Legends game data and assets, including champions, items, runes, summoner spells, and profile icons. All of which can be used by third-party developers.
 
