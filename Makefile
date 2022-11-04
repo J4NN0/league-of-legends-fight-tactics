@@ -16,11 +16,13 @@ build-lol-tactics:
 	go build -o build/league_of_legends_tactics_cli cmd/$(PROJECT_NAME)/main.go
 .PHONY: build-lol-tactics
 
+
 # === INSTALL =======================================================
 install-lol-tactics:
 	@echo "--> Installing $(PROJECT_NAME)"
 	@go install  ./cmd/league-of-legends-tactics-cli
 .PHONY: install-lol-tactics
+
 
 # === RUN =======================================================
 # Shows a list of commands or help for one command
@@ -48,11 +50,13 @@ run-lol-tactics-download-all:
 	go run ./cmd/league-of-legends-tactics-cli/main.go -a
 .PHONY: run-lol-tactics-download-all
 
+
 # === TEST =======================================================
 test:
 	@echo "---> Running all tests"
 	go test -race -cover -coverprofile=$(COVER_PROFILE) ./...
 .PHONY: test
+
 
 # === CLEAN =======================================================
 # Clean lol fights
@@ -66,6 +70,7 @@ clean-lol-champions:
 	@echo "---> Cleaning lol champions data"
 	rm champions/lol/*
 .PHONY: clean-lol-champions
+
 
 # === TOOLS =======================================================
 # Get a decorated HTML presentation of cover file: showing the covered (green), uncovered (red), and un-instrumented (grey) source.
@@ -96,6 +101,7 @@ run-lint:
 	@echo "---> Running linter"
 	golangci-lint run ./... --timeout=3m
 .PHONY: run-lint
+
 
 # === DEVELOPMENT =======================================================
 pre-commit: genmocks tool-mod-tidy tool-fmt build-lol-tactics run-lint tool-vet test
