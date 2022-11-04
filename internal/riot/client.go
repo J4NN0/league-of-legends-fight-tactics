@@ -53,7 +53,7 @@ func (c *Concrete) GetAllLoLChampions() ([]datadragon.ChampionDataExtended, erro
 		return []datadragon.ChampionDataExtended{}, err
 	}
 
-	ddChampions := make([]datadragon.ChampionDataExtended, len(ddAllChampionsResp.Data))
+	ddChampions := make([]datadragon.ChampionDataExtended, 0, len(ddAllChampionsResp.Data))
 	for championName := range ddAllChampionsResp.Data {
 		c.log.Printf("Fetching %s ...", championName)
 		ddChampion, err := c.GetLoLChampion(championName)
