@@ -96,7 +96,10 @@ func main() {
 			},
 		},
 		Action: func(context *cli.Context) error {
-			return errors.New("no input provided")
+			if !isInputProvided(tactics, downloadAll, download, championsName) {
+				return errors.New("no input provided")
+			}
+			return nil
 		},
 	}
 
@@ -108,4 +111,11 @@ func main() {
 		})
 		logger.Fatalf("%v", err)
 	}
+}
+
+func isInputProvided(tactics, downloadAll bool, download string, championsName *cli.StringSlice) bool {
+	if tactics == false && downloadAll == false && download == "" && championsName == nil {
+		return false
+	}
+	return true
 }
