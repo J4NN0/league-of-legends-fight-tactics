@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient"
 	"github.com/KnutZuidema/golio"
 	"github.com/KnutZuidema/golio/api"
@@ -27,12 +27,12 @@ type Client interface {
 }
 
 type Concrete struct {
-	log    log.Logger
+	log    logger.Logger
 	hc     *http.Client
 	riotDD *golio.Client
 }
 
-func NewClient(log log.Logger, hc *http.Client, apiKey, region string) Client {
+func NewClient(log logger.Logger, hc *http.Client, apiKey, region string) Client {
 	client := golio.NewClient(apiKey,
 		golio.WithRegion(api.Region(region)),
 		golio.WithLogger(logrus.New().WithField("riot", region)),

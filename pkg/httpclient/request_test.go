@@ -1,10 +1,10 @@
 package httpclient
 
 import (
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient/httpclienttest"
 	"net/http"
 	"testing"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/tests/mock"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -18,9 +18,9 @@ func TestGetSuccess(t *testing.T) {
 	expected := MockStruct{Field1: "Field1", Field2: "Field2"}
 	dest := MockStruct{}
 
-	client := mock.NewTestClient(func(req *http.Request) *http.Response {
+	client := httpclienttest.NewTestClient(func(req *http.Request) *http.Response {
 		assert.Equal(t, req.URL.String(), path)
-		return mock.Response(expected, 200)
+		return httpclienttest.Response(expected, 200)
 	})
 
 	_ = Get(client, path, &dest)
@@ -29,8 +29,8 @@ func TestGetSuccess(t *testing.T) {
 }
 
 func TestGetFail_Not200(t *testing.T) {
-	client := mock.NewTestClient(func(req *http.Request) *http.Response {
-		return mock.Response([]string{}, 400)
+	client := httpclienttest.NewTestClient(func(req *http.Request) *http.Response {
+		return httpclienttest.Response([]string{}, 400)
 	})
 	dest := struct{}{}
 	err := Get(client, "", &dest)
@@ -42,9 +42,9 @@ func TestGetFail_UnmarshalWrongStruct(t *testing.T) {
 	path := "some/path"
 	dest := MockStruct{}
 
-	client := mock.NewTestClient(func(req *http.Request) *http.Response {
+	client := httpclienttest.NewTestClient(func(req *http.Request) *http.Response {
 		assert.Equal(t, req.URL.String(), path)
-		return mock.Response([]byte("xxx"), 200)
+		return httpclienttest.Response([]byte("xxx"), 200)
 	})
 
 	err := Get(client, path, &dest)

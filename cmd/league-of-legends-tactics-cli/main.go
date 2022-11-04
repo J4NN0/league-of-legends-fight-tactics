@@ -9,7 +9,7 @@ import (
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/controller"
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/riot"
 	"github.com/urfave/cli/v2"
@@ -25,7 +25,7 @@ func main() {
 	ctx := context.Background()
 
 	// Logger
-	logger := log.New(appName)
+	logger := logger.New(appName)
 
 	// Config
 	cliConfig, err := config.ReadConfig()

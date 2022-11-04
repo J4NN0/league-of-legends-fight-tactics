@@ -6,19 +6,19 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/riot"
 	"github.com/KnutZuidema/golio/datadragon"
 )
 
 type Controller struct {
-	log          log.Logger
+	log          logger.Logger
 	riotClient   riot.Client
 	fightTactics lol.Tactics
 }
 
-func New(log log.Logger, riotClient riot.Client, fightTactics lol.Tactics) *Controller {
+func New(log logger.Logger, riotClient riot.Client, fightTactics lol.Tactics) *Controller {
 	return &Controller{log: log, riotClient: riotClient, fightTactics: fightTactics}
 }
 

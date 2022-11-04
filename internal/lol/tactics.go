@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/log"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
 )
 
@@ -15,10 +15,10 @@ type Tactics interface {
 }
 
 type FightTactics struct {
-	log log.Logger
+	log logger.Logger
 }
 
-func New(log log.Logger) Tactics {
+func New(log logger.Logger) Tactics {
 	return &FightTactics{log: log}
 }
 
