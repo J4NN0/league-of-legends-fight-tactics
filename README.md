@@ -10,12 +10,12 @@ Once the data has been downloaded (custom data can be also provided as far as th
 
 The best spells output is saved in the corresponding `.loltactics` file where you can find the order of the spells, their name/id, damage and how much life the enemy has left in each spell round (until he reaches zero hp).
 
-### Data Quality
+### DISCLAIMER
 
-Unfortunately the data quality is not the best and apparently this is a [problem known to riot and its community](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html#common-issues):
+Unfortunately the **data quality** is not the best and apparently this is a [problem known to riot and its community](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html#common-issues):
 > The data in ddragon is inaccurate, especially champion spell data and item stats. This is an unfortunate situation that is surprisingly difficult to solve. If you want to know why, you can ask on Discord. There is no perfect or even close to perfect source for champion spell data, despite significant effort.
 
-The current best resource should be [League Wikia](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki). Since there is no official API, it is not easy (and sustainable/feasible over time) to download the data from the previously mentioned site.
+The current best resource should be [League Wikia](https://leagueoflegends.fandom.com/wiki/League_of_Legends_Wiki). Since there is no official API, it is not easy (and mostly sustainable/feasible over time) to download the data from the previously mentioned site (as it would need web scraping).
 
 In conclusion, this tool will perform at its best if the data quality is medium/good. If you are interested in the outcome of the fight between two champions - and do not want to rely on the data download from Data Dragon League of Legends - you can manually edit the relevant `.yml` file and use the tool as shown below.
 
