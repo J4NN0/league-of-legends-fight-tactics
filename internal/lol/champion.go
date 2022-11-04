@@ -17,13 +17,13 @@ const (
 
 // Champion LoL champion data struct
 type Champion struct {
-	DataDragonID string  `yaml:"id"`
-	Name         string  `yaml:"name"`
-	Title        string  `yaml:"title"`
-	Tags         string  `yaml:"tags"`
-	Passive      Passive `yaml:"passive"`
-	Stats        Stats   `yaml:"stats"`
-	Spells       []Spell `yaml:"spells"`
+	ID      string  `yaml:"id"`
+	Name    string  `yaml:"name"`
+	Title   string  `yaml:"title"`
+	Tags    string  `yaml:"tags"`
+	Passive Passive `yaml:"passive"`
+	Stats   Stats   `yaml:"stats"`
+	Spells  []Spell `yaml:"spells"`
 }
 
 type Passive struct {
@@ -61,7 +61,7 @@ func Read(championName string) (champion Champion, err error) {
 }
 
 func Write(champion Champion) error {
-	fileName := getYMLPath(champion.Name)
+	fileName := getYMLPath(champion.ID)
 	file.Create(fileName)
 
 	data, err := yaml.Marshal(&champion)

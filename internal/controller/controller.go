@@ -120,10 +120,10 @@ func storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
 
 func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataExtended) lol.Champion {
 	lolChampion := lol.Champion{
-		DataDragonID: ddChampion.ID,
-		Name:         ddChampion.ChampionData.Name,
-		Title:        ddChampion.Title,
-		Tags:         strings.Join(ddChampion.Tags, ", "),
+		ID:    ddChampion.ID,
+		Name:  ddChampion.ChampionData.Name,
+		Title: ddChampion.Title,
+		Tags:  strings.Join(ddChampion.Tags, ", "),
 		Passive: lol.Passive{
 			Name:        ddChampion.Passive.Name,
 			Description: ddChampion.Passive.Description,
@@ -151,6 +151,7 @@ func mapChampionResponseToLolChampionStruct(ddChampion datadragon.ChampionDataEx
 		if len(spell.Effect) >= 1 {
 			spellDamages = spell.Effect[1] // effect and effectBurn arrays have a null value in the 0 index (aka they are arrays 1-based)
 		}
+
 		lolChampion.Spells = append(lolChampion.Spells, lol.Spell{
 			ID:       spell.ID,
 			Name:     spell.Name,
