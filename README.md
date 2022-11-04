@@ -47,6 +47,34 @@ Last but not least, take a look at the resources listed below - they might be he
 3. Install CLI
 
        make install-lol-tactics
+   
+4. Set up environment variables
+
+    | Variable     | Description                                                | Optional |
+     --------------|------------------------------------------------------------|----------|
+    | RIOT_API_KEY | Riot Developer [API Key](https://developer.riotgames.com). | Yes      |
+    | LOL_REGION   | League of Legends region code.                             | No       | 
+
+    Valid `LOL_REGION`:
+
+    ```
+	  Brasil              = "br1"
+	  Europe North East   = "eun1"
+	  Europe West         = "euw1"
+	  Japan               = "jp1"
+	  Korea               = "kr"
+	  Latin America North = "la1"
+	  Latin America South = "la2"
+	  North America       = "na1"
+	  Oceania             = "oc1"
+	  Turkey              = "tr1"
+	  Russia              = "ru"
+	  PBE                 = "pbe1"
+   ```
+
+    Before running (either with CLI or MAKE), add environment variables above and then source them however you like
+
+       cp .env.sample .env
 
 # Usage
 
@@ -105,48 +133,48 @@ Last but not least, take a look at the resources listed below - they might be he
 
 Each league of legends champion is described by a `.yml` as follows:
 ```yml
-version: 1.1.0
-name: Champion Name
-tags: Fighter, Tank
+id: Chogath
+name: Cho'Gath
+title: the Terror of the Void
+tags: Tank, Mage
+passive:
+  name: Carnivore
+  description: Whenever Cho'Gath kills a unit, he recovers Health and Mana. The values restored increase with Cho'Gath's level.
 stats:
-  hp: 500
-  hp_per_level: 80
-  armor: 20
-  armor_per_level: 4
-  spell_block: 30
-  spell_block_per_level: 0.5
-  attack_damage: 50
-  attack_damage_per_level: 5
-  attack_speed: 0.6
-  attack_speed_per_level: 2
+  health_points: 644
+  attack_damage: 69
+  attack_speed: 0
 spells:
   - id: aa
-    name: AA Spell Name
-    damage: 5 
-    cooldown: 0 
-    cast: 2
-  - id: q
-    name: Q Spell Name
+    name: Auto Attack
+    max_rank: 1
+    damage:
+      - 69
+    cooldown:
+      - 0
+    cast: 0
+  - id: Rupture
+    name: Rupture
     max_rank: 5
     damage:
-    - 20
-    - 22
-    - 25
-    - 30
-    - 35
+      - 80
+      - 135
+      - 190
+      - 245
+      - 300
     cooldown:
-    - 15
-    - 14
-    - 13
-    - 12
-    - 11
-    cast: 2
+      - 6
+      - 6
+      - 6
+      - 6
+      - 6
+    cast: 0
 ...
 ```
 
 ### Data overview
 
-- `version`: data dragon [version](https://developer.riotgames.com/docs/lol#data-dragon_versions).
+- `id`: riot champions internal name (where `name` is the "public" champion's name).
 - `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (i.e. `aa`).
 - `cooldown`: Minimum length of time (in seconds) to wait after using an ability before it can be used again.
 - `cast`: Length of time (in seconds) needed to summoning a spell.
