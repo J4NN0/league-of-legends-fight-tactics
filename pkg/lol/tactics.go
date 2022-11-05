@@ -3,7 +3,7 @@ package lol
 import (
 	"math"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
 )
 
 //TODO: only considering spell's max rank atm (i.e. spell.MaxRank-1), but need to consider all (e.g. 'q' has 5 ranks, etc.)

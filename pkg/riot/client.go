@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
 	"github.com/KnutZuidema/golio"
 	"github.com/KnutZuidema/golio/api"
 	"github.com/KnutZuidema/golio/datadragon"

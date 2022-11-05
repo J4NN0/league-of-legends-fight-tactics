@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	lol "github.com/J4NN0/league-of-legends-fight-tactics/internal/lol"
+	lol "github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
 	mock "github.com/stretchr/testify/mock"
 )
 
