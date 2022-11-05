@@ -35,7 +35,7 @@ func readMockTestChampion(mockFileName string) (champion Champion, err error) {
 func TestGetBestRoundOfSpells(t *testing.T) {
 	t.Run("aa", func(t *testing.T) {
 		var sol []Spell
-		var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
+		var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 		var enemyHp = 200.0
 
 		champion, err := readMockTestChampion(mockChampion1)
@@ -57,7 +57,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 
 	t.Run("only one spell", func(t *testing.T) {
 		var sol []Spell
-		var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
+		var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 		var enemyHp = 200.0
 
 		champion, err := readMockTestChampion(mockChampion2)
@@ -79,7 +79,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 
 	t.Run("only spells (no re-usage)", func(t *testing.T) {
 		var sol []Spell
-		var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
+		var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 		var enemyHp = 450.0
 
 		champion, err := readMockTestChampion(mockChampion3)
@@ -101,7 +101,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 
 	t.Run("only spells (with re-usage)", func(t *testing.T) {
 		var sol []Spell
-		var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
+		var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 		var enemyHp = 600.0
 
 		champion, err := readMockTestChampion(mockChampion3)
@@ -404,35 +404,4 @@ func TestGetAdditionalTimeIfSpellIsInCooldown(t *testing.T) {
 
 		assert.Equal(t, expectedTimeToWait, timeToWait)
 	})
-}
-
-func TestGetRoundSpellsToString(t *testing.T) {
-	var benchmark, hp = 3.0, 15.0
-	spells := []Spell{
-		{
-			ID:       "q",
-			Damage:   []float64{6, 7, 8, 9, 10},
-			MaxRank:  5,
-			Cooldown: []float64{4, 3, 2, 1, 1},
-		},
-		{
-			ID:       "w",
-			Damage:   []float64{6, 7, 8, 9, 20},
-			MaxRank:  5,
-			Cooldown: []float64{5, 4, 3, 2, 2},
-		},
-	}
-
-	spellsToString := getRoundSpellsToString(spells, hp, benchmark)
-	expectedString := fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", spells[0].ID, spells[0].Damage, hp, hp-spells[0].Damage[spells[0].MaxRank-1])
-	expectedString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", spells[1].ID, spells[1].Damage, hp-spells[0].Damage[spells[0].MaxRank-1], hp-spells[0].Damage[spells[0].MaxRank-1]-spells[1].Damage[spells[0].MaxRank-1])
-	expectedString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
-
-	assert.Equal(t, expectedString, spellsToString)
-}
-
-func TestSetFilePath(t *testing.T) {
-	filename := setFilePath(Champion{Name: "Name1"}, Champion{Name: "Name2"})
-
-	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }

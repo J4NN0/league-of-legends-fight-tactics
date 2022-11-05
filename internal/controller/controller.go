@@ -2,6 +2,7 @@ package controller
 
 import (
 	"fmt"
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/file"
 	"os"
 	"path/filepath"
 	"strings"
@@ -31,17 +32,21 @@ func New(log logger.Logger, riotClient riot.Client, lolTactics lol.Tactics) *Con
 func (c *Controller) ChampionsFight(championName1, championName2 string) error {
 	c.log.Printf("Loading %s vs %s champions data ...\n", championName1, championName2)
 
-	lolChampion1, err := c.lolTactics.ReadChampion(championName1)
+	lolChampion1, err := c.lolTactics.ReadChampion(getYMLPath(championName1))
 	if err != nil {
 		return fmt.Errorf("loading champion %s: %v", championName1, err)
 	}
 
-	lolChampion2, err := c.lolTactics.ReadChampion(championName2)
+	lolChampion2, err := c.lolTactics.ReadChampion(getYMLPath(championName2))
 	if err != nil {
 		return fmt.Errorf("loading champion %s: %v", championName2, err)
 	}
 
-	c.lolTactics.Fight(lolChampion1, lolChampion2)
+	tacticsSol := c.lolTactics.Fight(lolChampion1, lolChampion2)
+
+	fileName := setFilePath(lolChampion1, lolChampion2)
+	file.Create(fileName)
+	file.Write(fileName, getRoundSpellsToString(tacticsSol.RoundOfSpells, lolChampion2.Stats.HealthPoints, tacticsSol.Benchmark))
 
 	return nil
 }
@@ -78,6 +83,20 @@ func (c *Controller) AllChampionsFight() error {
 	wg.Wait()
 
 	return nil
+}
+
+func setFilePath(champion1, champion2 lol.Champion) string {
+	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
+}
+
+func getRoundSpellsToString(spells []lol.Spell, hp, benchmark float64) string {
+	var spellsToString string
+	for _, s := range spells {
+		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", s.ID, s.Damage, hp, hp-s.Damage[s.MaxRank-1])
+		hp = hp - s.Damage[s.MaxRank-1]
+	}
+	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
+	return spellsToString
 }
 
 func (c *Controller) FetchChampion(championName string) error {

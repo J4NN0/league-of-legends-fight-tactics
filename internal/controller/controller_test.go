@@ -2,6 +2,7 @@ package controller
 
 import (
 	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger/loggertest"
@@ -79,18 +80,6 @@ func getMockDDChampion() datadragon.ChampionDataExtended {
 }
 
 func TestChampionsFight(t *testing.T) {
-	t.Run("success", func(t *testing.T) {
-		mockLol := &lolMocks.Tactics{}
-		mockLol.On("ReadChampion", mock.AnythingOfType("string")).Return(getMockLoLChampion(), nil)
-		mockLol.On("Fight", mock.AnythingOfType("lol.Champion"), mock.AnythingOfType("lol.Champion")).Once().Return()
-
-		ctrl := New(&loggertest.Logger{}, nil, mockLol)
-
-		err := ctrl.ChampionsFight("mockName1", "mockName2")
-
-		assert.Nil(t, err)
-	})
-
 	t.Run("fail first Read", func(t *testing.T) {
 		mockLol := &lolMocks.Tactics{}
 		mockLol.On("ReadChampion", mock.AnythingOfType("string")).Return(lol.Champion{}, errors.New("some error"))
@@ -115,16 +104,35 @@ func TestChampionsFight(t *testing.T) {
 	})
 }
 
-func TestAllChampionsFight(t *testing.T) {
-	mockLol := &lolMocks.Tactics{}
-	mockLol.On("ReadChampion", mock.AnythingOfType("string")).Return(getMockLoLChampion(), nil)
-	mockLol.On("Fight", mock.AnythingOfType("lol.Champion"), mock.AnythingOfType("lol.Champion")).Once().Return()
+func TestGetRoundSpellsToString(t *testing.T) {
+	var benchmark, hp = 3.0, 15.0
+	spells := []lol.Spell{
+		{
+			ID:       "q",
+			Damage:   []float64{6, 7, 8, 9, 10},
+			MaxRank:  5,
+			Cooldown: []float64{4, 3, 2, 1, 1},
+		},
+		{
+			ID:       "w",
+			Damage:   []float64{6, 7, 8, 9, 20},
+			MaxRank:  5,
+			Cooldown: []float64{5, 4, 3, 2, 2},
+		},
+	}
 
-	ctrl := New(&loggertest.Logger{}, nil, mockLol)
+	spellsToString := getRoundSpellsToString(spells, hp, benchmark)
+	expectedString := fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", spells[0].ID, spells[0].Damage, hp, hp-spells[0].Damage[spells[0].MaxRank-1])
+	expectedString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", spells[1].ID, spells[1].Damage, hp-spells[0].Damage[spells[0].MaxRank-1], hp-spells[0].Damage[spells[0].MaxRank-1]-spells[1].Damage[spells[0].MaxRank-1])
+	expectedString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 
-	err := ctrl.AllChampionsFight()
+	assert.Equal(t, expectedString, spellsToString)
+}
 
-	assert.Nil(t, err)
+func TestSetFilePath(t *testing.T) {
+	filename := setFilePath(lol.Champion{Name: "Name1"}, lol.Champion{Name: "Name2"})
+
+	assert.Equal(t, "fights/Name1_vs_Name2.loltactics", filename)
 }
 
 func TestFetchChampion(t *testing.T) {

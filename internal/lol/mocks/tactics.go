@@ -13,8 +13,17 @@ type Tactics struct {
 }
 
 // Fight provides a mock function with given fields: champion1, champion2
-func (_m *Tactics) Fight(champion1 lol.Champion, champion2 lol.Champion) {
-	_m.Called(champion1, champion2)
+func (_m *Tactics) Fight(champion1 lol.Champion, champion2 lol.Champion) lol.TacticsSol {
+	ret := _m.Called(champion1, champion2)
+
+	var r0 lol.TacticsSol
+	if rf, ok := ret.Get(0).(func(lol.Champion, lol.Champion) lol.TacticsSol); ok {
+		r0 = rf(champion1, champion2)
+	} else {
+		r0 = ret.Get(0).(lol.TacticsSol)
+	}
+
+	return r0
 }
 
 // ReadChampion provides a mock function with given fields: filePath

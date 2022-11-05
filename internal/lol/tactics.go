@@ -1,11 +1,9 @@
 package lol
 
 import (
-	"fmt"
 	"math"
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/logger"
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
 )
 
 //TODO: only considering spell's max rank atm (i.e. spell.MaxRank-1), but need to consider all (e.g. 'q' has 5 ranks, etc.)
@@ -13,7 +11,12 @@ import (
 type Tactics interface {
 	ReadChampion(filePath string) (champion Champion, err error)
 	WriteChampion(champion Champion, filePath string) error
-	Fight(champion1, champion2 Champion)
+	Fight(champion1, champion2 Champion) TacticsSol
+}
+
+type TacticsSol struct {
+	Benchmark     float64 // time (in seconds) taken to slay the enemy
+	RoundOfSpells []Spell
 }
 
 type FightTactics struct {
@@ -24,26 +27,19 @@ func NewTactics(log logger.Logger) Tactics {
 	return &FightTactics{log: log}
 }
 
-type bestSolution struct {
-	Benchmark     float64 // time (in seconds) taken to slay the enemy
-	RoundOfSpells []Spell
-}
-
 // Fight Champion1 vs Champion2 health point
-func (f *FightTactics) Fight(champion1, champion2 Champion) {
+func (f *FightTactics) Fight(champion1, champion2 Champion) TacticsSol {
 	var sol []Spell
-	var bestSol = bestSolution{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
+	var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 
 	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.HealthPoints, &bestSol)
 
 	f.log.Printf("[%s vs %s] Best solution found: enemy slayed in %.2fs\n", champion1.Name, champion2.Name, bestSol.Benchmark)
 
-	fileName := setFilePath(champion1, champion2)
-	file.Create(fileName)
-	file.Write(fileName, getRoundSpellsToString(bestSol.RoundOfSpells, champion2.Stats.HealthPoints, bestSol.Benchmark))
+	return bestSol
 }
 
-func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *bestSolution) {
+func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *TacticsSol) {
 	if isHpZero(sol, hp) {
 		setBenchmark(sol, bestSol)
 		return
@@ -70,7 +66,7 @@ func isHpZero(sol []Spell, hp float64) bool {
 	return false
 }
 
-func setBenchmark(spells []Spell, bestSol *bestSolution) {
+func setBenchmark(spells []Spell, bestSol *TacticsSol) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
 		bestSol.Benchmark = tmpBench
@@ -120,20 +116,4 @@ func getAdditionalTimeIfSpellIsInCooldown(currentSpell Spell, usedSpells []Spell
 	}
 
 	return timeToWait
-}
-
-// getRoundSpellsToString Format spells into string
-func getRoundSpellsToString(spells []Spell, hp, benchmark float64) (spellsToString string) {
-	for _, s := range spells {
-		spellsToString += fmt.Sprintf("%s: %.2f (hp: %.2f -> %.2f)\n", s.ID, s.Damage, hp, hp-s.Damage[s.MaxRank-1])
-		hp = hp - s.Damage[s.MaxRank-1]
-	}
-	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
-
-	return spellsToString
-}
-
-// setFilePath Set filename path
-func setFilePath(champion1, champion2 Champion) string {
-	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }

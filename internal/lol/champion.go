@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/file"
-
 	"gopkg.in/yaml.v2"
 )
 
@@ -55,8 +53,6 @@ func (f *FightTactics) ReadChampion(filePath string) (champion Champion, err err
 }
 
 func (f *FightTactics) WriteChampion(champion Champion, filePath string) error {
-	file.Create(filePath)
-
 	data, err := yaml.Marshal(&champion)
 	if err != nil {
 		return err

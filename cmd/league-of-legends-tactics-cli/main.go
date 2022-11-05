@@ -16,6 +16,8 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+var noInputErr = errors.New("no input provided")
+
 const appName string = "lol-tactics"
 
 func main() {
@@ -130,7 +132,7 @@ func main() {
 		},
 		Action: func(context *cli.Context) error {
 			if !isInputProvided(tactics, downloadAll, download, championsName) {
-				return errors.New("no input provided")
+				return noInputErr
 			}
 			return nil
 		},
@@ -138,10 +140,12 @@ func main() {
 
 	err = app.Run(os.Args)
 	if err != nil {
-		_ = cli.ShowAppHelp(&cli.Context{
-			Context: ctx,
-			App:     app,
-		})
+		if errors.Is(err, noInputErr) {
+			_ = cli.ShowAppHelp(&cli.Context{
+				Context: ctx,
+				App:     app,
+			})
+		}
 		log.Fatalf("%v", err)
 	}
 }
