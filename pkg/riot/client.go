@@ -25,7 +25,9 @@ const (
 
 var wg sync.WaitGroup
 
-const wgN = 30
+const (
+	wgN = 30
+)
 
 type Client interface {
 	GetAllLoLChampions() ([]datadragon.ChampionDataExtended, error)
@@ -66,8 +68,15 @@ func (c *Concrete) GetAllLoLChampions() ([]datadragon.ChampionDataExtended, erro
 		}
 	}()
 
+	ddChampions := make([]datadragon.ChampionDataExtended, 0, len(ddAllChampionsResp.Data))
+	ddChampionRespChan := make(chan datadragon.ChampionDataExtended)
+	go func() {
+		for ddChampion := range ddChampionRespChan {
+			ddChampions = append(ddChampions, ddChampion)
+		}
+	}()
+
 	championNameChan := make(chan string, wgN)
-	ddChampionRespChan := make(chan datadragon.ChampionDataExtended, len(ddAllChampionsResp.Data))
 
 	wg.Add(wgN)
 	for i := 0; i < wgN; i++ {
@@ -80,13 +89,9 @@ func (c *Concrete) GetAllLoLChampions() ([]datadragon.ChampionDataExtended, erro
 
 	close(championNameChan)
 	wg.Wait()
+
 	close(errChan)
 	close(ddChampionRespChan)
-
-	ddChampions := make([]datadragon.ChampionDataExtended, 0)
-	for ddChampion := range ddChampionRespChan {
-		ddChampions = append(ddChampions, ddChampion)
-	}
 
 	return ddChampions, nil
 }
