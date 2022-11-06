@@ -1,11 +1,13 @@
 package riot
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"strings"
+	"sync"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/httpclient"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
 	"github.com/KnutZuidema/golio"
 	"github.com/KnutZuidema/golio/api"
@@ -20,6 +22,10 @@ import (
 const (
 	dDragonLolAllChampionsURL = "https://ddragon.leagueoflegends.com/cdn/12.3.1/data/en_US/champion.json"
 )
+
+var wg sync.WaitGroup
+
+const wgN = 30
 
 type Client interface {
 	GetAllLoLChampions() ([]datadragon.ChampionDataExtended, error)
@@ -48,22 +54,83 @@ type dataDragonLoLAllChampionsResponse struct {
 
 func (c *Concrete) GetAllLoLChampions() ([]datadragon.ChampionDataExtended, error) {
 	var ddAllChampionsResp dataDragonLoLAllChampionsResponse
-	err := httpclient.Get(c.hc, dDragonLolAllChampionsURL, &ddAllChampionsResp)
+	err := c.httpGet(dDragonLolAllChampionsURL, &ddAllChampionsResp)
 	if err != nil {
 		return []datadragon.ChampionDataExtended{}, err
 	}
 
-	ddChampions := make([]datadragon.ChampionDataExtended, 0, len(ddAllChampionsResp.Data))
-	for championName := range ddAllChampionsResp.Data {
-		c.log.Printf("Fetching %s ...", championName)
-		ddChampion, err := c.GetLoLChampion(championName)
-		if err != nil {
-			c.log.Warningf("Could not fetch champion %s: %v", championName, err)
+	errChan := make(chan error)
+	go func() {
+		for e := range errChan {
+			c.log.Warningf("%v", e)
 		}
+	}()
+
+	championNameChan := make(chan string, wgN)
+	ddChampionRespChan := make(chan datadragon.ChampionDataExtended, len(ddAllChampionsResp.Data))
+
+	wg.Add(wgN)
+	for i := 0; i < wgN; i++ {
+		go c.getDDChampionData(championNameChan, ddChampionRespChan, errChan)
+	}
+
+	for championName := range ddAllChampionsResp.Data {
+		championNameChan <- championName
+	}
+
+	close(championNameChan)
+	wg.Wait()
+	close(errChan)
+	close(ddChampionRespChan)
+
+	ddChampions := make([]datadragon.ChampionDataExtended, 0)
+	for ddChampion := range ddChampionRespChan {
 		ddChampions = append(ddChampions, ddChampion)
 	}
 
 	return ddChampions, nil
+}
+
+func (c *Concrete) getDDChampionData(championNameChan chan string, ddChampionRespChan chan datadragon.ChampionDataExtended, errChan chan error) {
+	defer wg.Done()
+	for championName := range championNameChan {
+		c.log.Printf("Fetching %s ...", championName)
+		ddChampion, err := c.GetLoLChampion(championName)
+		if err != nil {
+			errChan <- fmt.Errorf("could not fetch champion %s: %v", championName, err)
+		}
+		ddChampionRespChan <- ddChampion
+	}
+}
+
+func (c *Concrete) httpGet(url string, destination interface{}) error {
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		return fmt.Errorf("failed to create API request: %w", err)
+	}
+
+	req.Header.Set("Accept", "application/json")
+
+	resp, err := c.hc.Do(req)
+	if err != nil {
+		return fmt.Errorf("API request failed: %w", err)
+	}
+	defer resp.Body.Close()
+
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("failed to read response body: %w", err)
+	}
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("got HTTP status code %d: %s", resp.StatusCode, resp.Body)
+	}
+
+	err = json.Unmarshal(respBody, &destination)
+	if err != nil {
+		return fmt.Errorf("failed to unmarshal response body: %w", err)
+	}
+
+	return nil
 }
 
 func (c *Concrete) GetLoLChampion(championName string) (datadragon.ChampionDataExtended, error) {

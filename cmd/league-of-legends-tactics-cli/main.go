@@ -4,15 +4,15 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
-	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/riot"
 	"net/http"
 	"os"
 	"strings"
 
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/controller"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/riot"
 	"github.com/urfave/cli/v2"
 )
 
