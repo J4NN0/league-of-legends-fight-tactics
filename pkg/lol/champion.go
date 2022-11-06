@@ -58,7 +58,7 @@ func (f *FightTactics) WriteChampion(champion Champion, filePath string) error {
 		return err
 	}
 
-	err = os.WriteFile(filePath, data, 0)
+	err = os.WriteFile(filePath, data, 0700)
 	if err != nil {
 		return err
 	}
