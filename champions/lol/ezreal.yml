@@ -1,0 +1,81 @@
+id: Ezreal
+name: Ezreal
+title: the Prodigal Explorer
+tags: Marksman, Mage
+passive:
+  name: Rising Spell Force
+  description: Ezreal gains increasing Attack Speed each time he successfully hits
+    a spell, stacking up to 5 times.
+stats:
+  health_points: 600
+  attack_damage: 60
+  attack_speed: 0
+spells:
+- id: aa
+  name: Auto Attack
+  max_rank: 1
+  damage:
+  - 60
+  cooldown:
+  - 0
+  cast: 0
+- id: EzrealQ
+  name: Mystic Shot
+  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 5.5
+  - 5.25
+  - 5
+  - 4.75
+  - 4.5
+  cast: 0
+- id: EzrealW
+  name: Essence Flux
+  max_rank: 5
+  damage:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 12
+  - 12
+  - 12
+  - 12
+  - 12
+  cast: 0
+- id: EzrealE
+  name: Arcane Shift
+  max_rank: 5
+  damage:
+  - 80
+  - 130
+  - 180
+  - 230
+  - 280
+  cooldown:
+  - 26
+  - 23
+  - 20
+  - 17
+  - 14
+  cast: 0
+- id: EzrealR
+  name: Trueshot Barrage
+  max_rank: 3
+  damage:
+  - 0
+  - 0
+  - 0
+  cooldown:
+  - 120
+  - 105
+  - 90
+  cast: 0
