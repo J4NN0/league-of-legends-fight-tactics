@@ -32,16 +32,16 @@ func (f *FightTactics) Fight(champion1, champion2 Champion) TacticsSol {
 	var sol []Spell
 	var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
 
-	getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.HealthPoints, &bestSol)
+	f.getBestRoundOfSpells(0, champion1.Spells, sol, champion2.Stats.HealthPoints, &bestSol)
 
 	f.log.Printf("[%s vs %s] Best solution found: enemy slayed in %.2fs\n", champion1.Name, champion2.Name, bestSol.Benchmark)
 
 	return bestSol
 }
 
-func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *TacticsSol) {
+func (f *FightTactics) getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *TacticsSol) {
 	if isHpZero(sol, hp) {
-		setBenchmark(sol, bestSol)
+		f.setBenchmark(sol, bestSol)
 		return
 	}
 
@@ -49,7 +49,7 @@ func getBestRoundOfSpells(pos int, spells, sol []Spell, hp float64, bestSol *Tac
 		if spells[i].Damage[0] != 0 {
 			// TODO: excluding spells with zero damage atm, but need to take their passive into account
 			sol = append(sol, spells[i])
-			getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
+			f.getBestRoundOfSpells(pos+1, spells, sol, hp, bestSol)
 			sol = sol[:len(sol)-1] // pop value
 		}
 	}
@@ -66,9 +66,11 @@ func isHpZero(sol []Spell, hp float64) bool {
 	return false
 }
 
-func setBenchmark(spells []Spell, bestSol *TacticsSol) {
+func (f *FightTactics) setBenchmark(spells []Spell, bestSol *TacticsSol) {
 	tmpBench := getBenchmark(spells)
 	if tmpBench < bestSol.Benchmark {
+		f.log.Printf("Found new best round of spells. Enemy slayed in %.2f seconds", tmpBench)
+
 		bestSol.Benchmark = tmpBench
 
 		bestSol.RoundOfSpells = make([]Spell, len(spells))

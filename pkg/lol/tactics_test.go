@@ -6,6 +6,7 @@ import (
 	"os"
 	"testing"
 
+	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger/loggertest"
 	"github.com/stretchr/testify/assert"
 
 	"gopkg.in/yaml.v2"
@@ -33,6 +34,8 @@ func readMockTestChampion(mockFileName string) (champion Champion, err error) {
 }
 
 func TestGetBestRoundOfSpells(t *testing.T) {
+	fightTactics := FightTactics{&loggertest.Logger{}}
+
 	t.Run("aa", func(t *testing.T) {
 		var sol []Spell
 		var bestSol = TacticsSol{Benchmark: math.MaxFloat64, RoundOfSpells: []Spell{}}
@@ -41,7 +44,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 		champion, err := readMockTestChampion(mockChampion1)
 		assert.Nil(t, err)
 
-		getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
+		fightTactics.getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
 
 		aa := champion.Spells[0]
 
@@ -63,7 +66,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 		champion, err := readMockTestChampion(mockChampion2)
 		assert.Nil(t, err)
 
-		getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
+		fightTactics.getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
 
 		qSpell := champion.Spells[0]
 		maxRank := qSpell.MaxRank - 1
@@ -85,7 +88,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 		champion, err := readMockTestChampion(mockChampion3)
 		assert.Nil(t, err)
 
-		getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
+		fightTactics.getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
 
 		usedSpells := []Spell{champion.Spells[0], champion.Spells[1], champion.Spells[2], champion.Spells[3]}
 
@@ -107,7 +110,7 @@ func TestGetBestRoundOfSpells(t *testing.T) {
 		champion, err := readMockTestChampion(mockChampion3)
 		assert.Nil(t, err)
 
-		getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
+		fightTactics.getBestRoundOfSpells(0, champion.Spells, sol, enemyHp, &bestSol)
 
 		spells := []Spell{champion.Spells[0], champion.Spells[1], champion.Spells[2], champion.Spells[3]}
 		usedSpells := []Spell{spells[0], spells[2], spells[0], spells[3], spells[0]}

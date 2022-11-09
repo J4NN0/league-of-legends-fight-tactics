@@ -30,18 +30,19 @@ func New(log logger.Logger, riotClient riot.Client, lolTactics lol.Tactics) *Con
 }
 
 func (c *Controller) ChampionsFight(championName1, championName2 string) error {
-	c.log.Printf("Loading %s vs %s champions data ...\n", championName1, championName2)
-
+	c.log.Printf("Loading %s champion data ...\n", championName1)
 	lolChampion1, err := c.lolTactics.ReadChampion(getYMLPath(championName1))
 	if err != nil {
 		return fmt.Errorf("loading champion %s: %v", championName1, err)
 	}
 
+	c.log.Printf("Loading %s champion data %s ...\n", championName2)
 	lolChampion2, err := c.lolTactics.ReadChampion(getYMLPath(championName2))
 	if err != nil {
 		return fmt.Errorf("loading champion %s: %v", championName2, err)
 	}
 
+	c.log.Printf("Finding fight tactics (%s vs %s) ...\n", championName1, championName2)
 	tacticsSol := c.lolTactics.Fight(lolChampion1, lolChampion2)
 
 	fileName := setFilePath(lolChampion1, lolChampion2)
