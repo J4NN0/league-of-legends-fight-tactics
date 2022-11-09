@@ -5,7 +5,7 @@ import (
 )
 
 type Config struct {
-	RiotAPIKey string `envconfig:"RIOT_API_KEY" required:"true"`
+	RiotAPIKey string `envconfig:"RIOT_API_KEY"`
 	LoLRegion  string `envconfig:"LOL_REGION" required:"true"`
 }
 
