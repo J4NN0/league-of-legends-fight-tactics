@@ -36,7 +36,7 @@ func (c *Controller) ChampionsFight(championName1, championName2 string) error {
 		return fmt.Errorf("loading champion %s: %v", championName1, err)
 	}
 
-	c.log.Printf("Loading %s champion data %s ...\n", championName2)
+	c.log.Printf("Loading %s champion data ...\n", championName2)
 	lolChampion2, err := c.lolTactics.ReadChampion(getYMLPath(championName2))
 	if err != nil {
 		return fmt.Errorf("loading champion %s: %v", championName2, err)
