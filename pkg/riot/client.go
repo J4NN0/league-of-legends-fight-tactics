@@ -1,3 +1,5 @@
+//go:generate mockery --case underscore --dir . --name Client --output ./mocks
+
 package riot
 
 import (

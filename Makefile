@@ -7,7 +7,7 @@ COVER_PROFILE="build/cover.out"
 # Generate mocks for interfaces
 genmocks:
 	@echo "---> Generating mocks"
-	./scripts/genmocks.sh
+	go generate ./...
 .PHONY: genmocks
 
 # Build

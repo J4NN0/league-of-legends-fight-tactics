@@ -1,3 +1,5 @@
+//go:generate mockery --case underscore --dir . --name Tactics --output ./mocks
+
 package lol
 
 import (
