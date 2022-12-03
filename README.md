@@ -21,6 +21,10 @@ In conclusion, this tool will perform at its best if the data quality is medium/
 
 Last but not least, take a look at the resources listed below - they might be helpful.
 
+### Demo
+
+[![Watch the video](https://img.youtube.com/vi/JjLSwIFduQg/maxresdefault.jpg)](https://www.youtube.com/watch?v=JjLSwIFduQg)
+
 # Table of Contents
 
 - [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
