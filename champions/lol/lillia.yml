@@ -7,7 +7,7 @@ passive:
   description: Hitting a champion or monster with a skill will deal additional max
     Health damage over time.
 stats:
-  health_points: 625
+  health_points: 605
   attack_damage: 61
   attack_speed: 0
 spells:
