@@ -45,7 +45,7 @@ func main() {
 	// CLI App
 	var tactics, downloadAll bool
 	var download string
-	var championsName *cli.StringSlice
+	var championsName cli.StringSlice
 	app := &cli.App{
 		Name:    "loltactics",
 		Usage:   "League of Legends Tactics",
@@ -57,7 +57,7 @@ func main() {
 				Value:       nil,
 				Usage:       "league of legends champions name",
 				Required:    false,
-				Destination: championsName,
+				Destination: &championsName,
 				Action: func(context *cli.Context, i []string) error {
 					c1Name := i[0]
 					c2Name := i[1]
@@ -150,8 +150,8 @@ func main() {
 	}
 }
 
-func isInputProvided(tactics, downloadAll bool, download string, championsName *cli.StringSlice) bool {
-	if !tactics && !downloadAll && download == "" && championsName == nil {
+func isInputProvided(tactics, downloadAll bool, download string, championsName cli.StringSlice) bool {
+	if !tactics && !downloadAll && download == "" && championsName.Value() == nil {
 		return false
 	}
 	return true
