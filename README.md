@@ -31,6 +31,7 @@ Last but not least, take a look at the resources listed below - they might be he
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
 - [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
 - [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
+- [Import as Lib](https://github.com/J4NN0/league-of-legends-fight-tactics#import-as-lib)
 
 # Setup
 
@@ -63,19 +64,19 @@ Last but not least, take a look at the resources listed below - they might be he
     Valid `LOL_REGION`:
 
     ```
-	  Brasil              = "br1"
-	  Europe North East   = "eun1"
-	  Europe West         = "euw1"
-	  Japan               = "jp1"
-	  Korea               = "kr"
-	  Latin America North = "la1"
-	  Latin America South = "la2"
-	  North America       = "na1"
-	  Oceania             = "oc1"
-	  Turkey              = "tr1"
-	  Russia              = "ru"
-	  PBE                 = "pbe1"
-   ```
+    Brasil              = "br1"
+    Europe North East   = "eun1"
+    Europe West         = "euw1"
+    Japan               = "jp1"
+    Korea               = "kr"
+    Latin America North = "la1"
+    Latin America South = "la2"
+    North America       = "na1"
+    Oceania             = "oc1"
+    Turkey              = "tr1"
+    Russia              = "ru"
+    PBE                 = "pbe1"
+    ```
 
     Before running (either with CLI or `make`), add environment variables above and then source them however you like
 
@@ -183,6 +184,37 @@ spells:
 - `speels`: Contains the set of spells the champion can use in fight (e.g. `q`, `w`, `e`, `r`), including also auto-attack (i.e. `aa`).
 - `cooldown`: Minimum length of time (in seconds) to wait after using an ability before it can be used again.
 - `cast`: Length of time (in seconds) needed to summoning a spell.
+
+# Import as Lib
+
+You can import tactics tool as external lib and use it as you prefer.
+
+```go
+import (
+    "fmt"
+
+    "github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
+    "github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
+)
+
+log := logger.New("lol-tactics")
+lolTactics := lol.NewTactics(log)
+
+lolChampion1, err := lolTactics.ReadChampion("LOL_CHAMPION")
+if err != nil {
+    fmt.Println("Could not load champion: %v", err)
+    return
+}
+
+lolChampion2, err := lolTactics.ReadChampion("LOL_CHAMPION")
+if err != nil {
+    fmt.Println("Could not load champion: %v", err)
+    return
+}
+
+fightTactic := lolTactics.Fight(lolChampion1, lolChampion2)
+fmt.Println("Enemy defeated: %v", fightTactic)
+```
 
 # Resources
 
