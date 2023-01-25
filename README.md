@@ -30,8 +30,8 @@ Last but not least, take a look at the resources listed below - they might be he
 - [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
 - [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
-- [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
 - [Import as Lib](https://github.com/J4NN0/league-of-legends-fight-tactics#import-as-lib)
+- [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
 
 # Setup
 
