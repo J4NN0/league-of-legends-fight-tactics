@@ -30,7 +30,7 @@ Last but not least, take a look at the resources listed below - they might be he
 - [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
 - [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
 - [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
-- [Import as Lib](https://github.com/J4NN0/league-of-legends-fight-tactics#import-as-lib)
+- [Import Package](https://github.com/J4NN0/league-of-legends-fight-tactics#import-package)
 - [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
 
 # Setup
@@ -185,7 +185,7 @@ spells:
 - `cooldown`: Minimum length of time (in seconds) to wait after using an ability before it can be used again.
 - `cast`: Length of time (in seconds) needed to summoning a spell.
 
-# Import as Lib
+# Import Package
 
 You can import tactics tool as external lib and use it as you prefer.
 
@@ -203,13 +203,13 @@ func main() {
     log := logger.New("lol-tactics")
     lolTactics := lol.NewTactics(log)
     
-    lolChampion1, err := lolTactics.ReadChampion("LOL_CHAMPION")
+    lolChampion1, err := lolTactics.ReadChampion("LOL_CHAMPION_1")
     if err != nil {
         fmt.Println("Could not load champion: %v", err)
         return
     }
     
-    lolChampion2, err := lolTactics.ReadChampion("LOL_CHAMPION")
+    lolChampion2, err := lolTactics.ReadChampion("LOL_CHAMPION_2")
     if err != nil {
         fmt.Println("Could not load champion: %v", err)
         return
