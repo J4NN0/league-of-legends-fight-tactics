@@ -5,8 +5,8 @@ tags: Marksman
 passive:
   name: Lightslinger
   description: Whenever Lucian uses an ability, his next attack becomes a double-shot.
-    When Lucian is empowered by another Ally, his next 2 basic attacks will deal bonus
-    magic damage.
+    When Lucian is healed or shielded by an ally, or when a nearby enemy Champion
+    is immobilized, his next 2 basic attacks will deal bonus magic damage.
 stats:
   health_points: 641
   attack_damage: 60

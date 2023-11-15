@@ -1,13 +1,9 @@
-package controller
+package command
 
 import (
 	"fmt"
-	"os"
-	"path/filepath"
 	"strings"
-	"sync"
 
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/file"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/riot"
@@ -29,63 +25,6 @@ func New(log logger.Logger, riotClient riot.Client, lolTactics lol.Tactics) *Con
 	return &Controller{log: log, riotClient: riotClient, lolTactics: lolTactics}
 }
 
-func (c *Controller) ChampionsFight(championName1, championName2 string) error {
-	c.log.Printf("Loading %s champion data ...\n", championName1)
-	lolChampion1, err := c.lolTactics.ReadChampion(getYMLPath(championName1))
-	if err != nil {
-		return fmt.Errorf("loading champion %s: %v", championName1, err)
-	}
-
-	c.log.Printf("Loading %s champion data ...\n", championName2)
-	lolChampion2, err := c.lolTactics.ReadChampion(getYMLPath(championName2))
-	if err != nil {
-		return fmt.Errorf("loading champion %s: %v", championName2, err)
-	}
-
-	c.log.Printf("Finding fight tactics (%s vs %s) ...\n", championName1, championName2)
-	tacticsSol := c.lolTactics.Fight(lolChampion1, lolChampion2)
-
-	fileName := setFilePath(lolChampion1, lolChampion2)
-	file.Create(fileName)
-	file.Write(fileName, getRoundSpellsToString(tacticsSol.RoundOfSpells, lolChampion2.Stats.HealthPoints, tacticsSol.Benchmark))
-
-	return nil
-}
-
-func (c *Controller) AllChampionsFight() error {
-	var championsName []string
-	err := filepath.Walk(baseChampionPath, func(path string, info os.FileInfo, err error) error {
-		if path != baseChampionPath {
-			championsName = append(championsName, strings.TrimSuffix(filepath.Base(path), filepath.Ext(path)))
-		}
-		return nil
-	})
-	if err != nil {
-		return fmt.Errorf("listing champions data files in path %s: %v", baseChampionPath, err)
-	}
-
-	var wg sync.WaitGroup
-	for _, c1 := range championsName {
-		for _, c2 := range championsName {
-			if c1 != c2 {
-				wg.Add(1)
-				c1 := c1
-				c2 := c2
-				go func() {
-					defer wg.Done()
-					err = c.ChampionsFight(c1, c2)
-					if err != nil {
-						c.log.Warningf("Could not generate fight tactics between %s vs %s: %v", c1, c2, err)
-					}
-				}()
-			}
-		}
-	}
-	wg.Wait()
-
-	return nil
-}
-
 func setFilePath(champion1, champion2 lol.Champion) string {
 	return fmt.Sprintf("fights/%s_vs_%s.loltactics", champion1.Name, champion2.Name)
 }
@@ -98,44 +37,6 @@ func getRoundSpellsToString(spells []lol.Spell, hp, benchmark float64) string {
 	}
 	spellsToString += fmt.Sprintf("\nEnemy defeated in %.2fs\n", benchmark)
 	return spellsToString
-}
-
-func (c *Controller) FetchChampion(championName string) error {
-	c.log.Printf("Fetching %s ...", championName)
-
-	championData, err := c.riotClient.GetLoLChampion(championName)
-	if err != nil {
-		return fmt.Errorf("fetching league of legends champions: %v", err)
-	}
-
-	err = c.storeChampionToYMLFile(championData)
-	if err != nil {
-		return fmt.Errorf("could not store %s champion data: %v", championName, err)
-	}
-
-	c.log.Printf("%s successfully stored", championName)
-
-	return nil
-}
-
-func (c *Controller) FetchAllChampions() error {
-	c.log.Printf("Fetching all league of legends champions ...\n")
-
-	ddChampions, err := c.riotClient.GetAllLoLChampions()
-	if err != nil {
-		return fmt.Errorf("fetching all league of legends champions: %v", err)
-	}
-
-	for _, champion := range ddChampions {
-		err = c.storeChampionToYMLFile(champion)
-		if err != nil {
-			c.log.Warningf("Could not store %s champion data: %v", champion.ChampionData.Name, err)
-		} else {
-			c.log.Printf("%s successfully stored", champion.ChampionData.Name)
-		}
-	}
-
-	return nil
 }
 
 func (c *Controller) storeChampionToYMLFile(ddChampion datadragon.ChampionDataExtended) error {
