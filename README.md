@@ -86,45 +86,25 @@ Last but not least, take a look at the resources listed below - they might be he
 
 - Shows list of commands or help for one command
 
-      loltactics --help, -h
-
-    or using `make`
-
-      make run-lol-tactics-help
+      loltactics help, h
 
 - Download and/or upload champion data
    - Fetch specific champion data (e.g. `jhin`)
 
-         loltactics --download=jhin
-  
-     or using `make`
-  
-         make run-lol-tactics-download -d=jhin
+         loltactics download,d jhin
 
    - Fetch all champions data
 
-         loltactics --download_all
-
-     or using `make`
-    
-         make run-lol-tactics-download-all
+         loltactics download_all, da, a
 
 - Fight tactics
    - Fight tactics between two (no more) champions (e.g. `lucian` vs `jhin`)
 
-         loltactics --fight=lucian --fight=jhin
-  
-     or using `make`
-
-         make run-lol-tactics-fight -f1=lucian -f2=jhin
+         loltactics fight,f lucian jhin
 
    - Generate all fights tactics
 
-         loltactics --tactics
-
-     or using `make`
-
-         make run-lol-tactics-all
+         loltactics tactics, t
 
 - Clean
   - Clean tactics file
