@@ -31,7 +31,7 @@ func main() {
 	ctrl := command.New(log, riotClient, lolTactics)
 
 	rootCmd := &cobra.Command{
-		Use:   "lol-tactics",
+		Use:   "loltactics",
 		Short: "league of legends fight tactics tool",
 	}
 	rootCmd.AddCommand(ctrl.FightCommand())
