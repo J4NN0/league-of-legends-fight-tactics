@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/J4NN0/league-of-legends-fight-tactics/internal/command"
 	"net/http"
 	"os"
 
+	"github.com/J4NN0/league-of-legends-fight-tactics/internal/command"
 	"github.com/J4NN0/league-of-legends-fight-tactics/internal/config"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/logger"
 	"github.com/J4NN0/league-of-legends-fight-tactics/pkg/lol"
