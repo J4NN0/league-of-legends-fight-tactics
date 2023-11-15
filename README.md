@@ -78,7 +78,7 @@ Last but not least, take a look at the resources listed below - they might be he
     PBE                 = "pbe1"
     ```
 
-    Before running (either with CLI or `make`), add environment variables above and then source them however you like
+    Before running (either with CLI or `make`), add environment variables above and then source them however you like:
 
        cp .env.sample .env
 
@@ -88,7 +88,7 @@ Last but not least, take a look at the resources listed below - they might be he
 
       loltactics help, h
 
-- Download and/or upload champion data
+- Download and/or upload champion(s) data
    - Fetch specific champion data (e.g. `jhin`)
 
          loltactics download,d jhin
@@ -98,7 +98,7 @@ Last but not least, take a look at the resources listed below - they might be he
          loltactics download_all, da, a
 
 - Fight tactics
-   - Fight tactics between two (no more) champions (e.g. `lucian` vs `jhin`)
+   - Fight tactics between two (neither less nor more) champions (e.g. `lucian` vs `jhin`)
 
          loltactics fight,f lucian jhin
 
@@ -185,18 +185,18 @@ func main() {
     
     lolChampion1, err := lolTactics.ReadChampion("LOL_CHAMPION_1")
     if err != nil {
-        fmt.Println("Could not load champion: %v", err)
+        fmt.Printf("Could not load champion: %v\n", err)
         return
     }
     
     lolChampion2, err := lolTactics.ReadChampion("LOL_CHAMPION_2")
     if err != nil {
-        fmt.Println("Could not load champion: %v", err)
+        fmt.Printf("Could not load champion: %v\n", err)
         return
     }
     
     fightTactic := lolTactics.Fight(lolChampion1, lolChampion2)
-    fmt.Println("Enemy defeated: %v", fightTactic)
+    fmt.Printf("Enemy defeated: %v\n", fightTactic)
 }
 ```
 
