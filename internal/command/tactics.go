@@ -11,8 +11,8 @@ import (
 
 func (c *Controller) TacticsCommand() *cobra.Command {
 	return &cobra.Command{
-		Use:     "--tactics",
-		Aliases: []string{"-t"},
+		Use:     "tactics",
+		Aliases: []string{"t"},
 		Short:   "generate all fight tactics",
 		Args:    cobra.ExactArgs(0),
 		Run:     c.allChampionsFight,
