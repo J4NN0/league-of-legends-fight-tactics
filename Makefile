@@ -24,33 +24,6 @@ install-lol-tactics:
 .PHONY: install-lol-tactics
 
 
-# === RUN =======================================================
-# Shows a list of commands or help for one command
-run-lol-tactics-help:
-	go run ./cmd/league-of-legends-tactics-cli/main.go -h
-.PHONY: run-lol-tactics-help
-
-# Generate all fight tactics
-run-lol-tactics-fight:
-	go run ./cmd/league-of-legends-tactics-cli/main.go -f $(f1) -f $(f2)
-.PHONY: run-lol-tactics-fight
-
-# Generate fight tactics between specific league of legends champions
-run-lol-tactics-all:
-	go run ./cmd/league-of-legends-tactics-cli/main.go -t
-.PHONY: run-lol-tactics-all
-
-# Download and update a specific league of legends champion
-run-lol-tactics-download:
-	go run ./cmd/league-of-legends-tactics-cli/main.go -d $(d)
-.PHONY: run-lol-tactics-download
-
-# Download and update all league of legends champions
-run-lol-tactics-download-all:
-	go run ./cmd/league-of-legends-tactics-cli/main.go -a
-.PHONY: run-lol-tactics-download-all
-
-
 # === TEST =======================================================
 test:
 	@echo "---> Running all tests"
