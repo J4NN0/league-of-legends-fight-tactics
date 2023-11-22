@@ -21,10 +21,6 @@ In conclusion, this tool will perform at its best if the data quality is medium/
 
 Last but not least, take a look at the resources listed below - they might be helpful.
 
-### Demo
-
-[![Watch the video](https://img.youtube.com/vi/JjLSwIFduQg/maxresdefault.jpg)](https://www.youtube.com/watch?v=JjLSwIFduQg)
-
 # Table of Contents
 
 - [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
@@ -91,7 +87,7 @@ Last but not least, take a look at the resources listed below - they might be he
 - Download and/or upload champion(s) data
    - Fetch specific champion data (e.g. `jhin`)
 
-         loltactics download,d jhin
+         loltactics download, d jhin
 
    - Fetch all champions data
 
@@ -100,7 +96,7 @@ Last but not least, take a look at the resources listed below - they might be he
 - Fight tactics
    - Fight tactics between two (neither less nor more) champions (e.g. `lucian` vs `jhin`)
 
-         loltactics fight,f lucian jhin
+         loltactics fight, f lucian jhin
 
    - Generate all fights tactics
 
