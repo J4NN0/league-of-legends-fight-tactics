@@ -23,11 +23,11 @@ Last but not least, take a look at the resources listed below - they might be he
 
 # Table of Contents
 
-- [Setup](https://github.com/J4NN0/league-of-legends-fight-tactics#setup)
-- [Usage](https://github.com/J4NN0/league-of-legends-fight-tactics#usage)
-- [Champion Data](https://github.com/J4NN0/league-of-legends-fight-tactics#champion-data)
-- [Import Package](https://github.com/J4NN0/league-of-legends-fight-tactics#import-package)
-- [Resources](https://github.com/J4NN0/league-of-legends-fight-tactics#resources)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Champion Data](#champion-data)
+- [Import Package](#import-package)
+- [Resources](#resources)
 
 # Setup
 
